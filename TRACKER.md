@@ -10,16 +10,18 @@ Master status tracker for all eight NeoBookworm demo sites. Update after every w
 
 ## Status at a glance
 
-| # | Site | Status | Current phase | Live URL |
-|---|---|---|---|---|
-| 1 | Hartley Plumbing *(golden template)* | Not started | — | — |
-| 2 | Swift Electrical | Not started | — | — |
-| 3 | Sarah Brooks Decorating | Not started | — | — |
-| 4 | Green Acre Landscapes | Not started | — | — |
-| 5 | Apex Roofing | Not started | — | — |
-| 6 | Hartwood Joinery | Not started | — | — |
-| 7 | Wiltshire Pest Control | Not started | — | — |
-| 8 | Clean Sweep Window Cleaning | Not started | — | — |
+
+| #   | Site                                 | Status      | Current phase | Live URL |
+| --- | ------------------------------------ | ----------- | ------------- | -------- |
+| 1   | Hartley Plumbing *(golden template)* | In progress | 4             | —        |
+| 2   | Swift Electrical                     | Not started | —             | —        |
+| 3   | Sarah Brooks Decorating              | Not started | —             | —        |
+| 4   | Green Acre Landscapes                | Not started | —             | —        |
+| 5   | Apex Roofing                         | Not started | —             | —        |
+| 6   | Hartwood Joinery                     | Not started | —             | —        |
+| 7   | Wiltshire Pest Control               | Not started | —             | —        |
+| 8   | Clean Sweep Window Cleaning          | Not started | —             | —        |
+
 
 **How to read the Current phase column:** use the phase number and name from `PROCESS.md` — e.g. `Phase 1 — Brief`, `Phase 4 — Build`, `Phase 7 — Deploy`. When a site is fully done, set Status to `Complete` and Current phase to `—`.
 
@@ -39,17 +41,19 @@ Use these sections when you want the fuller picture of where a site is. The phas
 - **Live URL:** —
 - **Notes:** Golden template — the other seven sites will be structurally cloned from this one. Take the time to get it right.
 
-| Phase | Status |
-|---|---|
-| 1 — Brief | ⬜ |
-| 2 — Spec | ⬜ |
-| 3 — Images | ⬜ |
-| 4 — Build | ⬜ |
-| 5 — Review | ⬜ |
-| 6 — QA | ⬜ |
-| 7 — Deploy | ⬜ |
-| 8 — Linked | ⬜ |
-| 9 — Closed | ⬜ |
+
+| Phase      | Status |
+| ---------- | ------ |
+| 1 — Brief  | ✅      |
+| 2 — Spec   | ✅      |
+| 3 — Images | ✅      |
+| 4 — Build  | 🟡     |
+| 5 — Review | ⬜      |
+| 6 — QA     | ⬜      |
+| 7 — Deploy | ⬜      |
+| 8 — Linked | ⬜      |
+| 9 — Closed | ⬜      |
+
 
 ### 2. Swift Electrical
 
@@ -59,17 +63,19 @@ Use these sections when you want the fuller picture of where a site is. The phas
 - **Live URL:** —
 - **Notes:** —
 
-| Phase | Status |
-|---|---|
-| 1 — Brief | ⬜ |
-| 2 — Spec | ⬜ |
-| 3 — Images | ⬜ |
-| 4 — Build | ⬜ |
-| 5 — Review | ⬜ |
-| 6 — QA | ⬜ |
-| 7 — Deploy | ⬜ |
-| 8 — Linked | ⬜ |
-| 9 — Closed | ⬜ |
+
+| Phase      | Status |
+| ---------- | ------ |
+| 1 — Brief  | ⬜      |
+| 2 — Spec   | ⬜      |
+| 3 — Images | ⬜      |
+| 4 — Build  | ⬜      |
+| 5 — Review | ⬜      |
+| 6 — QA     | ⬜      |
+| 7 — Deploy | ⬜      |
+| 8 — Linked | ⬜      |
+| 9 — Closed | ⬜      |
+
 
 ### 3. Sarah Brooks Decorating
 
@@ -79,17 +85,19 @@ Use these sections when you want the fuller picture of where a site is. The phas
 - **Live URL:** —
 - **Notes:** —
 
-| Phase | Status |
-|---|---|
-| 1 — Brief | ⬜ |
-| 2 — Spec | ⬜ |
-| 3 — Images | ⬜ |
-| 4 — Build | ⬜ |
-| 5 — Review | ⬜ |
-| 6 — QA | ⬜ |
-| 7 — Deploy | ⬜ |
-| 8 — Linked | ⬜ |
-| 9 — Closed | ⬜ |
+
+| Phase      | Status |
+| ---------- | ------ |
+| 1 — Brief  | ⬜      |
+| 2 — Spec   | ⬜      |
+| 3 — Images | ⬜      |
+| 4 — Build  | ⬜      |
+| 5 — Review | ⬜      |
+| 6 — QA     | ⬜      |
+| 7 — Deploy | ⬜      |
+| 8 — Linked | ⬜      |
+| 9 — Closed | ⬜      |
+
 
 ### 4. Green Acre Landscapes
 
@@ -99,17 +107,19 @@ Use these sections when you want the fuller picture of where a site is. The phas
 - **Live URL:** —
 - **Notes:** —
 
-| Phase | Status |
-|---|---|
-| 1 — Brief | ⬜ |
-| 2 — Spec | ⬜ |
-| 3 — Images | ⬜ |
-| 4 — Build | ⬜ |
-| 5 — Review | ⬜ |
-| 6 — QA | ⬜ |
-| 7 — Deploy | ⬜ |
-| 8 — Linked | ⬜ |
-| 9 — Closed | ⬜ |
+
+| Phase      | Status |
+| ---------- | ------ |
+| 1 — Brief  | ⬜      |
+| 2 — Spec   | ⬜      |
+| 3 — Images | ⬜      |
+| 4 — Build  | ⬜      |
+| 5 — Review | ⬜      |
+| 6 — QA     | ⬜      |
+| 7 — Deploy | ⬜      |
+| 8 — Linked | ⬜      |
+| 9 — Closed | ⬜      |
+
 
 ### 5. Apex Roofing
 
@@ -119,17 +129,19 @@ Use these sections when you want the fuller picture of where a site is. The phas
 - **Live URL:** —
 - **Notes:** —
 
-| Phase | Status |
-|---|---|
-| 1 — Brief | ⬜ |
-| 2 — Spec | ⬜ |
-| 3 — Images | ⬜ |
-| 4 — Build | ⬜ |
-| 5 — Review | ⬜ |
-| 6 — QA | ⬜ |
-| 7 — Deploy | ⬜ |
-| 8 — Linked | ⬜ |
-| 9 — Closed | ⬜ |
+
+| Phase      | Status |
+| ---------- | ------ |
+| 1 — Brief  | ⬜      |
+| 2 — Spec   | ⬜      |
+| 3 — Images | ⬜      |
+| 4 — Build  | ⬜      |
+| 5 — Review | ⬜      |
+| 6 — QA     | ⬜      |
+| 7 — Deploy | ⬜      |
+| 8 — Linked | ⬜      |
+| 9 — Closed | ⬜      |
+
 
 ### 6. Hartwood Joinery
 
@@ -139,17 +151,19 @@ Use these sections when you want the fuller picture of where a site is. The phas
 - **Live URL:** —
 - **Notes:** —
 
-| Phase | Status |
-|---|---|
-| 1 — Brief | ⬜ |
-| 2 — Spec | ⬜ |
-| 3 — Images | ⬜ |
-| 4 — Build | ⬜ |
-| 5 — Review | ⬜ |
-| 6 — QA | ⬜ |
-| 7 — Deploy | ⬜ |
-| 8 — Linked | ⬜ |
-| 9 — Closed | ⬜ |
+
+| Phase      | Status |
+| ---------- | ------ |
+| 1 — Brief  | ⬜      |
+| 2 — Spec   | ⬜      |
+| 3 — Images | ⬜      |
+| 4 — Build  | ⬜      |
+| 5 — Review | ⬜      |
+| 6 — QA     | ⬜      |
+| 7 — Deploy | ⬜      |
+| 8 — Linked | ⬜      |
+| 9 — Closed | ⬜      |
+
 
 ### 7. Wiltshire Pest Control
 
@@ -159,17 +173,19 @@ Use these sections when you want the fuller picture of where a site is. The phas
 - **Live URL:** —
 - **Notes:** —
 
-| Phase | Status |
-|---|---|
-| 1 — Brief | ⬜ |
-| 2 — Spec | ⬜ |
-| 3 — Images | ⬜ |
-| 4 — Build | ⬜ |
-| 5 — Review | ⬜ |
-| 6 — QA | ⬜ |
-| 7 — Deploy | ⬜ |
-| 8 — Linked | ⬜ |
-| 9 — Closed | ⬜ |
+
+| Phase      | Status |
+| ---------- | ------ |
+| 1 — Brief  | ⬜      |
+| 2 — Spec   | ⬜      |
+| 3 — Images | ⬜      |
+| 4 — Build  | ⬜      |
+| 5 — Review | ⬜      |
+| 6 — QA     | ⬜      |
+| 7 — Deploy | ⬜      |
+| 8 — Linked | ⬜      |
+| 9 — Closed | ⬜      |
+
 
 ### 8. Clean Sweep Window Cleaning
 
@@ -179,17 +195,19 @@ Use these sections when you want the fuller picture of where a site is. The phas
 - **Live URL:** —
 - **Notes:** —
 
-| Phase | Status |
-|---|---|
-| 1 — Brief | ⬜ |
-| 2 — Spec | ⬜ |
-| 3 — Images | ⬜ |
-| 4 — Build | ⬜ |
-| 5 — Review | ⬜ |
-| 6 — QA | ⬜ |
-| 7 — Deploy | ⬜ |
-| 8 — Linked | ⬜ |
-| 9 — Closed | ⬜ |
+
+| Phase      | Status |
+| ---------- | ------ |
+| 1 — Brief  | ⬜      |
+| 2 — Spec   | ⬜      |
+| 3 — Images | ⬜      |
+| 4 — Build  | ⬜      |
+| 5 — Review | ⬜      |
+| 6 — QA     | ⬜      |
+| 7 — Deploy | ⬜      |
+| 8 — Linked | ⬜      |
+| 9 — Closed | ⬜      |
+
 
 ---
 
@@ -197,15 +215,13 @@ Use these sections when you want the fuller picture of where a site is. The phas
 
 Repo-wide tasks. Tick once when done.
 
-- [x] Create `neobookworm-demos` GitHub repo
-- [x] Clone repo locally
-- [x] Copy docs and templates into repo root
-- [x] Initial commit pushed
-- [x] Repo opened in Cursor, `.cursorrules` and `CLAUDE.md` loading verified
-- [x] `sites/` folder created
-- [ ] First demo kickoff (Hartley Plumbing) — follow PROCESS.md Phase 1
-
-*(I've ticked these based on your note that one-off tasks are complete. Adjust if I've assumed something you haven't actually done yet.)*
+- Create `neobookworm-demos` GitHub repo
+- Clone repo locally
+- Copy docs and templates into repo root
+- Initial commit pushed
+- Repo opened in Cursor, `.cursorrules` and `CLAUDE.md` loading verified
+- `sites/` folder created
+- First demo kickoff (Hartley Plumbing) — follow PROCESS.md Phase 1
 
 ---
 
