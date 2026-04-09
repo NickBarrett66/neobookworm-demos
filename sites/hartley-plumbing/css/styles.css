@@ -121,6 +121,10 @@ p {
   margin: 0 0 1rem;
 }
 
+.muted {
+  color: var(--color-text-muted);
+}
+
 .kicker {
   text-transform: uppercase;
   letter-spacing: var(--letterspace-caps);
@@ -523,6 +527,85 @@ p {
   padding: 2.25rem 0 2.75rem;
 }
 
+.about-intro {
+  padding: 2.25rem 0;
+}
+
+.about-intro-inner {
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.about-portrait {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(176, 122, 59, 0.18);
+  background: var(--color-bg-alt);
+  box-shadow: var(--shadow-md);
+}
+
+.about-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.about-copy p {
+  color: var(--color-text-muted);
+  max-width: 70ch;
+}
+
+.about-principles {
+  padding: 2.25rem 0;
+  background: rgba(26, 32, 38, 0.35);
+  border-top: var(--border-hairline);
+  border-bottom: var(--border-hairline);
+}
+
+.principles {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.principle {
+  padding: 1.1rem;
+  border-radius: var(--radius-lg);
+  border: var(--border-hairline);
+  background: linear-gradient(180deg, rgba(26, 32, 38, 0.92), rgba(20, 24, 28, 0.78));
+  box-shadow: var(--shadow-sm);
+}
+
+.principle p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.about-blocks {
+  padding: 2.25rem 0;
+}
+
+.about-blocks-inner {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.about-panel {
+  padding: 1.1rem;
+  border-radius: var(--radius-lg);
+  border: var(--border-hairline);
+  background: rgba(26, 32, 38, 0.55);
+}
+
+.about-panel p {
+  color: var(--color-text-muted);
+}
+
+.about-panel ul {
+  margin-top: 0.5rem;
+}
+
 .card-grid {
   display: grid;
   gap: 0.9rem;
@@ -778,6 +861,20 @@ p {
 
   .service-points-wide {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-intro-inner {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 1.75rem;
+    align-items: center;
+  }
+
+  .principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .about-blocks-inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .card-grid {
