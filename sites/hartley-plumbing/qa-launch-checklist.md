@@ -8,7 +8,7 @@ Pre-launch gate. Every item must be ticked or explicitly marked N/A with a reaso
 
 ## 1. Content
 
-- [ ] Every page has been proofread end-to-end
+- [x] Every page has been proofread end-to-end
 - [x] No placeholder text remains (no "Lorem ipsum", no `[TODO]`, no unfilled template fields)
 - [x] All copy matches the tone described in the site brief
 - [x] Business name spelled consistently everywhere
@@ -20,25 +20,25 @@ Pre-launch gate. Every item must be ticked or explicitly marked N/A with a reaso
 
 ## 2. HTML quality
 
-- [ ] One `<h1>` per page
-- [ ] Heading hierarchy sensible (no skipping from `h1` to `h4`)
-- [ ] Every `<img>` has an `alt` attribute (descriptive, or `alt=""` for decorative)
-- [ ] Every form input has a `<label>`
-- [ ] `lang="en"` on `<html>`
-- [ ] Viewport meta tag on every page
-- [ ] No inline styles (all styling in `css/styles.css`)
+- [x] One `<h1>` per page
+- [x] Heading hierarchy sensible (no skipping from `h1` to `h4`)
+- [x] Every `<img>` has an `alt` attribute (descriptive, or `alt=""` for decorative)
+- [x] Every form input has a `<label>`
+- [x] `lang="en"` on `<html>`
+- [x] Viewport meta tag on every page
+- [x] No inline styles (all styling in `css/styles.css`)
 
 ## 3. Meta tags and SEO basics
 
 For every page:
 
-- [ ] `<title>` is unique and descriptive (not the same on every page)
-- [ ] `<meta name="description">` is unique and readable
-- [ ] `og:title` set
-- [ ] `og:description` set
-- [ ] `og:image` points at a real image
-- [ ] `og:url` placeholder present
-- [ ] `og:type` set (`website` for home, `article` or `website` for others)
+- [x] `<title>` is unique and descriptive (not the same on every page)
+- [x] `<meta name="description">` is unique and readable
+- [x] `og:title` set
+- [x] `og:description` set
+- [x] `og:image` points at a real image
+- [x] `og:url` placeholder present
+- [x] `og:type` set (`website` for home, `article` or `website` for others)
 - [ ] Favicon displays in browser tab
 
 ## 4. Accessibility

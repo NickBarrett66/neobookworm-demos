@@ -36,9 +36,9 @@ Use these sections when you want the fuller picture of where a site is. The phas
 ### 1. Hartley Plumbing *(golden template)*
 
 - **Folder:** `sites/hartley-plumbing/`
-- **Started:** —
-- **Completed:** —
-- **Live URL:** —
+- **Started:** 09/04/2026 12:20
+- **Completed:** 09/04/2026 18:05
+- **Live URL:** **[hartley-plumbing-njb-demo.netlify.app](http://hartley-plumbing-njb-demo.netlify.app)**
 - **Notes:** Golden template — the other seven sites will be structurally cloned from this one. Take the time to get it right.
 
 
@@ -47,12 +47,12 @@ Use these sections when you want the fuller picture of where a site is. The phas
 | 1 — Brief  | ✅      |
 | 2 — Spec   | ✅      |
 | 3 — Images | ✅      |
-| 4 — Build  | 🟡     |
-| 5 — Review | ⬜      |
-| 6 — QA     | ⬜      |
-| 7 — Deploy | ⬜      |
-| 8 — Linked | ⬜      |
-| 9 — Closed | ⬜      |
+| 4 — Build  | ✅      |
+| 5 — Review | ✅      |
+| 6 — QA     | ✅      |
+| 7 — Deploy | ✅      |
+| 8 — Linked | ✅      |
+| 9 — Closed | ✅      |
 
 
 ### 2. Swift Electrical
