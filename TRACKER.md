@@ -115,13 +115,13 @@ These are tracked separately because they're repo-wide, not per-site.
 
 | Task | Status | Notes |
 |---|---|---|
-| Create `neobookworm-demos` GitHub repo | ⬜ | Public, add Node .gitignore, initial README |
-| Clone repo locally | ⬜ | `D:\Dropbox\01 Information\Claude\Exercise App\neobookworm-demos` |
-| Copy docs and templates into repo root | ⬜ | See START-HERE.md Step 3 |
-| Initial commit pushed | ⬜ | Message: *Initial docs and templates* |
-| Repo opened in Cursor | ⬜ | Verify `.cursorrules` and `CLAUDE.md` are loaded |
-| `sites/` folder created | ⬜ | Empty, ready for first demo |
-| First demo kickoff (Hartley Plumbing) | ⬜ | Follow PROCESS.md Phase 1 |
+| Create `neobookworm-demos` GitHub repo | ✅ | Public, add Node .gitignore, initial README |
+| Clone repo locally | ✅ | `D:\Dropbox\01 Information\Claude\Exercise App\neobookworm-demos` |
+| Copy docs and templates into repo root | ✅ | See START-HERE.md Step 3 |
+| Initial commit pushed | ✅ | Message: *Initial docs and templates* |
+| Repo opened in Cursor | ✅ | Verify `.cursorrules` and `CLAUDE.md` are loaded |
+| `sites/` folder created | ✅ | Empty, ready for first demo |
+| First demo kickoff (Hartley Plumbing) | ✅ | Follow PROCESS.md Phase 1 |
 
 ---
 
