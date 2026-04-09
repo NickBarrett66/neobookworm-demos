@@ -396,42 +396,154 @@ p {
 .badge-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  align-items: center;
 }
 
-.accred-badge {
+/* NeoBookworm accreditation badge library (subset) + workmanship guarantee */
+.nb-badge {
+  display: flex;
+  align-items: stretch;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 52px;
+  font-family: 'DM Sans', var(--font-body), sans-serif;
+}
+
+.nb-badge .nb-mark {
+  width: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nb-badge .nb-mark svg {
+  display: block;
+}
+
+.nb-badge .nb-text {
+  background: #fff;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nb-badge .nb-top {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.nb-badge .nb-bot {
+  font-size: 7.5px;
+  color: #555;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.nb-gassafe {
+  border: 1.5px solid #1a6db5;
+  min-width: 130px;
+}
+
+.nb-gassafe .nb-mark {
+  background: #1a6db5;
+}
+
+.nb-gassafe .nb-top {
+  color: #1a6db5;
+}
+
+.nb-gassafe.dk .nb-text {
+  background: #1a2f55;
+}
+
+.nb-gassafe.dk .nb-top {
+  color: #60aaef;
+}
+
+.nb-gassafe.dk .nb-bot {
+  color: #a0b4cc;
+}
+
+.nb-insured {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba(176, 122, 59, 0.22);
-  background: rgba(20, 24, 28, 0.55);
-  color: var(--color-text);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1.5px solid #5f5e5a;
+  padding: 0 12px;
+  height: 52px;
+  background: #fff;
+  font-family: 'DM Sans', var(--font-body), sans-serif;
+  min-width: 180px;
 }
 
-.accred-badge::before {
-  content: '';
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--color-accent), var(--color-secondary));
-  box-shadow: 0 0 0 1px rgba(176, 122, 59, 0.18);
+.nb-insured svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
-.badge-gas-safe::before {
-  background: linear-gradient(180deg, rgba(196, 106, 59, 0.9), rgba(176, 122, 59, 0.9));
+.nb-insured .nb-top {
+  font-size: 11px;
+  font-weight: 700;
+  color: #2c2c2a;
+  line-height: 1;
 }
 
-.badge-insured::before {
-  background: linear-gradient(180deg, rgba(243, 239, 231, 0.55), rgba(176, 122, 59, 0.75));
+.nb-insured .nb-bot {
+  font-size: 7.5px;
+  color: #555;
+  line-height: 1.4;
+  margin-top: 2px;
 }
 
-.badge-guarantee::before {
-  background: linear-gradient(180deg, rgba(176, 122, 59, 0.95), rgba(31, 37, 43, 0.95));
+.nb-insured.dk {
+  background: #1a2f55;
+  border-color: #3a5070;
+}
+
+.nb-insured.dk .nb-top {
+  color: #e0eaf5;
+}
+
+.nb-insured.dk .nb-bot {
+  color: #a0b4cc;
+}
+
+.nb-insured.dk svg path {
+  stroke: #a0b4cc;
+}
+
+/* Workmanship guarantee — matches nb-badge pattern (not in shared library file) */
+.nb-workmanship {
+  border: 1.5px solid #c46a3b;
+  min-width: 128px;
+}
+
+.nb-workmanship .nb-mark {
+  background: #c46a3b;
+}
+
+.nb-workmanship .nb-top {
+  color: #c46a3b;
+}
+
+.nb-workmanship.dk .nb-text {
+  background: #1a2f55;
+}
+
+.nb-workmanship.dk .nb-top {
+  color: #e8b080;
+}
+
+.nb-workmanship.dk .nb-bot {
+  color: #a0b4cc;
 }
 
 .section-head {
