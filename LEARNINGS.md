@@ -31,4 +31,14 @@ Dated entries capturing things discovered during demo site builds that should fe
 
 ## Entries
 
-*No entries yet — add the first one after your first build session.*
+## 2026-04-09 — Hartley Plumbing — Phase 2
+
+**What happened:** The site spec was generated successfully, but it wasn’t explicitly saved into the demo site’s folder by default.
+
+**Impact:** Easy to lose the spec between sessions and harder to keep each demo self-contained; adds avoidable rework and confusion about the “source of truth.”
+
+**Root cause:** The Phase 2 prompt/process emphasises generating the spec, but it’s easy to forget the concrete file location rule: the spec must live alongside the brief inside the specific demo’s `sites/<site-name>/` directory.
+
+**Fix for next time:** After Phase 2 output is generated, immediately save it as `sites/<site-name>/site-spec.md` (in the demo site directory) and commit `"<site-name>: spec generated"`.
+
+**Promoted to PROCESS.md?** Pending
