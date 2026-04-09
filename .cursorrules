@@ -1,0 +1,87 @@
+# Cursor Rules — NeoBookworm Demo Sites Repo
+
+This file is loaded automatically by Cursor on every chat session in this workspace. These are the universal build rules that apply to every demo in this repo, regardless of which trade or aesthetic direction a specific site takes.
+
+**Read `PROCESS.md` at the repo root for the full build process. Read `CLAUDE.md` for business context.** These rules are the guardrails; those documents are the instructions.
+
+## Repo purpose
+
+This repo contains demo trade websites for NeoBookworm.uk — a fixed-price web design business serving UK tradespeople. Each demo is a multi-page static site showcasing what NeoBookworm can build. These demos are also the reference implementation for Agent 6, a future pipeline agent that will build real client sites automatically, so every decision should be one that could, in principle, be scripted.
+
+## Per-site design freedom
+
+**Each demo site has its own visual identity.** There is no house style to enforce across demos. Colours, typography, tone of voice, layout, and aesthetic direction are defined per site in that site's `site-spec.md`. Do not reuse colour palettes, fonts, or layouts between demos unless the spec explicitly calls for it. Avoid generic AI-looking designs — commit fully to whatever bold aesthetic the spec specifies.
+
+The NeoBookworm.uk brand (navy/amber, Playfair Display, DM Sans, plain English) applies only to the NeoBookworm.uk marketing site, not to these demos. Do not import those choices into demos unless a specific brief asks for something similar.
+
+## Universal build rules (apply to every demo)
+
+### Structure
+- Every demo is a multi-page static site with exactly five pages: `index.html` (home), `services.html`, `about.html`, `contact.html`, `gallery.html`
+- One shared stylesheet: `css/styles.css`
+- One shared script file if needed: `js/main.js`
+- Vanilla JS only — no frameworks, no build tools, no npm install
+- Header and footer are duplicated into each page (static files, no server-side includes)
+- All images live in `images/` at the site root
+
+### HTML
+- Semantic HTML5 throughout: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`
+- One `<h1>` per page, proper heading hierarchy (no skipping levels)
+- Every `<img>` has meaningful `alt` text, or `alt=""` for purely decorative images
+- Every page has: `<title>`, `<meta name="description">`, Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`), favicon link, canonical URL placeholder
+- `lang="en"` on `<html>`
+- Viewport meta tag on every page
+
+### CSS
+- All colour values as CSS custom properties in `:root`, named per the site spec
+- Mobile-first: write mobile styles first, layer up breakpoints with `min-width` media queries
+- Avoid fixed pixel widths; prefer `rem`, `em`, `%`, `vw`, `clamp()`
+- Use CSS Grid and Flexbox for layout; never use floats for layout
+- No CSS frameworks (no Tailwind, no Bootstrap) — write bespoke CSS
+- Google Fonts loaded in `<head>` with `preconnect` for performance
+
+### JavaScript
+- Vanilla JS only. No jQuery, no React, no build step
+- Progressive enhancement: the site must work with JS disabled. JS adds polish, not core functionality
+- If a feature (e.g. gallery lightbox) needs JS, write it by hand rather than importing a library
+
+### Accessibility
+- WCAG AA colour contrast minimum (4.5:1 for body text, 3:1 for large text)
+- All interactive elements reachable and operable by keyboard
+- Focus states must be visible and clear (never `outline: none` without a replacement)
+- Form inputs have associated `<label>` elements
+- `aria-*` attributes only where native semantics are insufficient
+
+### Accreditation badges
+- Use only the CSS accreditation badge library from the NeoBookworm repo (`accreditations/accreditation-badges.html`)
+- Never use real trademarked accreditation logos (Gas Safe, NICEIC, Checkatrade, etc.) — the CSS badges are deliberately generic-looking reproductions
+- If a site brief requires a badge we don't have a CSS version of, note it and skip rather than importing a real logo
+
+### Performance basics
+- Optimise images before adding them to the repo (target <200KB gallery, <400KB hero, MozJPEG quality 75)
+- Specify `width` and `height` attributes on `<img>` tags to prevent layout shift
+- Minimise render-blocking resources in `<head>`
+
+## Deploy target
+
+Each demo deploys independently to Netlify as a separate site. No build step — static files only. Deployment is currently manual drag-drop; this will move to the Netlify API when Agent 6 is built.
+
+## What Cursor should never do in this repo
+
+- **Do not add `package.json` or a build toolchain.** These are plain static sites. If a chat suggests adding npm, bundlers, or compile steps, refuse and ask for a vanilla solution.
+- **Do not share code between sites.** Each site in `sites/<name>/` is completely self-contained. Do not create shared CSS or JS at the repo root.
+- **Do not import NeoBookworm.uk brand colours, fonts, or copy** into demo sites unless the site's brief explicitly asks for something in that direction.
+- **Do not use real trademarked logos** for accreditations. CSS badge library only.
+- **Do not add code from this repo into the NeoBookworm.uk repo**, or vice versa. The repos are completely independent and only connect via URLs on the Examples page.
+- **Do not water down the aesthetic direction** specified in a site spec. If the spec says bold editorial serif with asymmetric layouts, build that. Don't drift back to generic "tradesperson website" defaults.
+- **Do not skip ahead in PROCESS.md.** If the user is in Phase 2, don't start writing HTML. Each phase has a specific output; respect the sequencing.
+
+## File naming conventions
+
+- All filenames lowercase with hyphens: `services.html`, `about-portrait.jpg`, `gallery-01.jpg`
+- Site folder names use the business name, lowercased, hyphenated: `hartley-plumbing`, `swift-electrical`
+- Image filenames should be descriptive, not numeric-only: `hero-workshop.jpg` not `IMG_4823.jpg`
+
+## When in doubt
+
+Default to: simpler, more semantic, more accessible, more distinctive. If you're about to produce something that looks like every other tradesperson website, stop and reread the site spec — it should be pointing at something more interesting than what you were about to do.
