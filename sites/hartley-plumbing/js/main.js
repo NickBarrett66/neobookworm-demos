@@ -5,16 +5,60 @@
 
   if (!header || !nav || !toggle) return;
 
+  let lastFocused = null;
+
+  const getFocusables = () => {
+    const focusableSelector =
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    return Array.from(nav.querySelectorAll(focusableSelector)).filter((el) => el instanceof HTMLElement);
+  };
+
+  const onKeydown = (e) => {
+    if (!isOpen()) return;
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeNav();
+      return;
+    }
+
+    if (e.key !== 'Tab') return;
+    const focusables = getFocusables();
+    if (!focusables.length) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const active = document.activeElement;
+
+    if (!(active instanceof HTMLElement)) return;
+
+    if (e.shiftKey) {
+      if (active === first || !nav.contains(active)) {
+        e.preventDefault();
+        last.focus();
+      }
+      return;
+    }
+
+    if (active === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  };
+
   const openNav = () => {
+    lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     nav.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    const focusables = getFocusables();
+    if (focusables.length) focusables[0].focus();
   };
 
   const closeNav = () => {
     nav.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
   };
 
   const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
@@ -24,8 +68,13 @@
     else openNav();
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isOpen()) closeNav();
+  document.addEventListener('keydown', onKeydown);
+
+  nav.addEventListener('click', (e) => {
+    if (!isOpen()) return;
+    const target = e.target;
+    if (!(target instanceof Element)) return;
+    if (target.closest('a')) closeNav();
   });
 
   document.addEventListener('click', (e) => {
@@ -38,6 +87,33 @@
 
   window.addEventListener('resize', () => {
     if (window.matchMedia('(min-width: 48rem)').matches) closeNav();
+  });
+})();
+
+(() => {
+  const message =
+    'Demo site note: calling is shown for layout only. In a live build, this would open your dialler.';
+
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!(target instanceof Element)) return;
+    const link = target.closest('a[data-demo-call]');
+    if (!(link instanceof HTMLAnchorElement)) return;
+    e.preventDefault();
+    window.alert(message);
+  });
+})();
+
+(() => {
+  const formMessage =
+    'Demo site note: sending a message is shown for layout only. In a live build, this would submit your enquiry.';
+
+  const form = document.querySelector('form[data-demo-form]');
+  if (!(form instanceof HTMLFormElement)) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    window.alert(formMessage);
   });
 })();
 

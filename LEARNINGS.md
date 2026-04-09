@@ -42,3 +42,27 @@ Dated entries capturing things discovered during demo site builds that should fe
 **Fix for next time:** After Phase 2 output is generated, immediately save it as `sites/<site-name>/site-spec.md` (in the demo site directory) and commit `"<site-name>: spec generated"`.
 
 **Promoted to PROCESS.md?** Pending
+
+## 2026-04-09 — Hartley Plumbing — Phase 4
+
+**What happened:** Demo-safe behaviour for “real” actions (phone `tel:` links, contact form submit) was added after the pages were built: inline copy plus intercepts so nothing actually dials or posts.
+
+**Impact:** Extra pass across every CTA, footer phone link, and the form; risk of missing a link or duplicating inconsistent wording if bolted on late.
+
+**Root cause:** Build rules assumed real-looking CTAs and forms, but **demo sites** need a clear, consistent story from day one: where the explanatory text sits, which elements get `data-*` hooks, and one shared message (or small set) for alerts.
+
+**Fix for next time:** When scoping or building a **demo** trade site, bake in from the first HTML pass: (1) short “demo site” notes near call and form actions, (2) a single JS pattern for blocked `tel:` / form submit with matching copy, (3) checklist every `tel:` and submit button before calling the build done. Consider adding this to Phase 4 prompt or `build-checklist.md` for demos only.
+
+**Promoted to PROCESS.md?** Pending
+
+## 2026-04-09 — Hartley Plumbing — Phase 3 / 4 (tooling)
+
+**What happened:** Workspace search (e.g. file glob / ripgrep-style listing triggered from the agent) repeatedly reported **no files** under `sites/<site-name>/images/`, even while the same `.jpg` assets were open in the editor and existed on disk from the outset.
+
+**Impact:** False “images missing” conclusions; wiring paths to spec filenames while second-guessing the folder; extra back-and-forth with the human to confirm reality.
+
+**Root cause:** Agent file discovery doesn’t always match Cursor’s open-file list or Dropbox-synced trees: indexing lag, workspace root boundaries, or tools not enumerating certain folders reliably. Treating an empty glob as ground truth is brittle.
+
+**Fix for next time:** Don’t treat an empty glob as proof the folder is empty. Use a **direct read** of a known path (or a terminal listing on the absolute `sites/.../images` path), or have the human `@`-mention a single image so the path is authoritative. Document in Phase 3/4: confirm `images/` with one explicit file read (or shell `ls`/`dir`) before assuming absence.
+
+**Promoted to PROCESS.md?** Pending
