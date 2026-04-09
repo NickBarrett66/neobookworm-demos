@@ -316,6 +316,24 @@ p {
   width: 100%;
 }
 
+.page-hero {
+  padding: 2.25rem 0 1.25rem;
+  border-bottom: var(--border-hairline);
+  background: linear-gradient(180deg, rgba(31, 37, 43, 0.35), rgba(20, 24, 28, 0.85));
+}
+
+.page-hero-inner {
+  display: grid;
+  gap: 1rem;
+  align-items: end;
+}
+
+.page-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 .job-card {
   padding: 1.75rem 0 1.25rem;
 }
@@ -418,6 +436,91 @@ p {
 .local-block,
 .testimonials {
   padding: 2.25rem 0;
+}
+
+.service-group {
+  padding: 2.25rem 0;
+}
+
+.service-group-alt {
+  background: rgba(26, 32, 38, 0.35);
+  border-top: var(--border-hairline);
+  border-bottom: var(--border-hairline);
+}
+
+.service-group-plain {
+  padding: 2rem 0;
+  border-top: var(--border-hairline);
+}
+
+.service-item {
+  margin: 0 0 1.25rem;
+}
+
+.service-item:last-child {
+  margin-bottom: 0;
+}
+
+.service-item-inner {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(26, 32, 38, 0.92), rgba(20, 24, 28, 0.78));
+  border: var(--border-hairline);
+  box-shadow: var(--shadow-sm);
+}
+
+.service-copy p {
+  color: var(--color-text-muted);
+}
+
+.minor-heading {
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letterspace-caps);
+  font-size: 0.85rem;
+  margin: 1rem 0 0.6rem;
+  color: var(--color-text-muted);
+}
+
+.service-points {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--color-text);
+}
+
+.service-points li {
+  margin: 0.35rem 0;
+}
+
+.service-points-wide {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.service-note {
+  color: var(--color-text-muted);
+  margin: 0.75rem 0 0;
+}
+
+.service-media {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(176, 122, 59, 0.16);
+  background: var(--color-bg-alt);
+}
+
+.service-media img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.pricing-promise {
+  padding: 2.25rem 0 2.75rem;
 }
 
 .card-grid {
@@ -658,6 +761,23 @@ p {
     align-items: center;
     gap: 2rem;
     padding: 1.25rem 0 0.75rem;
+  }
+
+  .page-hero-inner {
+    grid-template-columns: 1.2fr 0.8fr;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .service-item-inner {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.25rem;
+  }
+
+  .service-points-wide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .card-grid {
