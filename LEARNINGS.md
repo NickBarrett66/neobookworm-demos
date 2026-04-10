@@ -55,6 +55,18 @@ Dated entries capturing things discovered during demo site builds that should fe
 
 **Promoted to PROCESS.md?** Pending
 
+## 2026-04-10 — Swift Electrical — Phase 4
+
+**What happened:** Every page included `<link rel="icon" href="favicon.ico" />` (per spec file tree), but **no `favicon.ico` existed** in `sites/Swift-electical/`, so browsers requested a missing asset.
+
+**Impact:** Broken or generic tab icon in demos; easy to miss because layout and copy still look fine; undermines polish on an otherwise complete static build.
+
+**Root cause:** The spec/checklist names `favicon.ico` as an output, but the build process did not include a concrete step to **create** the file (or an equivalent) before marking HTML done. Placeholder links without a real file are worse than omitting the tag.
+
+**Fix for next time:** Treat favicon as part of the **first** HTML pass, not a later polish item: (1) add a real asset at site root — e.g. **`favicon.svg`** (simple wordmark/monogram, brand colours) plus optional `.ico` for older clients; (2) use `<link rel="icon" href="favicon.svg" type="image/svg+xml" />` on every page; (3) add a **one-line verify** in `build-checklist.md` / Phase 4: “favicon file exists and path matches `<link>`.” Update `site-spec.md` templates to prefer documenting `favicon.svg` (or both) so the file tree matches what ships.
+
+**Promoted to PROCESS.md?** Pending
+
 ## 2026-04-09 — Hartley Plumbing — Phase 3 / 4 (tooling)
 
 **What happened:** Workspace search (e.g. file glob / ripgrep-style listing triggered from the agent) repeatedly reported **no files** under `sites/<site-name>/images/`, even while the same `.jpg` assets were open in the editor and existed on disk from the outset.
