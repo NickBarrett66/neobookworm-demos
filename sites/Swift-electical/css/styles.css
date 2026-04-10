@@ -644,6 +644,32 @@ p {
     border-top: none;
     border-left: var(--border-hairline);
   }
+
+  /* Break the “all images in one line” rhythm */
+  .service:nth-child(even) {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+
+  .service:nth-child(even) .service__media {
+    grid-column: 1;
+    grid-row: 1;
+    border-left: none;
+    border-right: var(--border-hairline);
+  }
+
+  .service:nth-child(even) .service__copy {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* Subtle stagger for a less templated feel */
+  .service:nth-child(3n) .service__media img {
+    object-position: 50% 35%;
+  }
+
+  .service:nth-child(3n + 2) .service__media img {
+    object-position: 50% 60%;
+  }
 }
 
 .credentials {
