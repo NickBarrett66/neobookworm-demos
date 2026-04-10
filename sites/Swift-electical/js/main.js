@@ -37,3 +37,22 @@
     if (window.matchMedia("(min-width: 900px)").matches) close();
   });
 })();
+
+(() => {
+  const form = document.querySelector("[data-contact-form]");
+  if (!(form instanceof HTMLFormElement)) return;
+
+  const success = form.querySelector("[data-contact-success]");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    if (success instanceof HTMLElement) {
+      success.hidden = false;
+      success.focus();
+    }
+
+    form.reset();
+  });
+})();
