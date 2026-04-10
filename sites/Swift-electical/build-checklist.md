@@ -8,29 +8,29 @@ Per-site tickable progress list. Copy this template into the site folder at kick
 
 ## Phase 1 — Site brief
 
-- [ ] `site-brief.md` copied into site folder
-- [ ] Section 1 (The business) filled in
-- [ ] Section 2 (The story) filled in
-- [ ] Section 3 (Services) filled in
-- [ ] Section 4 (Accreditations) filled in
-- [ ] Section 5 (Tone of voice) filled in — **most important section**
-- [ ] Section 6 (Visual direction) filled in
-- [ ] Section 7 (Contact details) filled in
-- [ ] Section 8 (Images and gallery) filled in
-- [ ] Section 9 (Anything else) filled in
-- [ ] Brief committed: *`<site-name>`: brief complete*
+- [x] `site-brief.md` copied into site folder
+- [x] Section 1 (The business) filled in
+- [x] Section 2 (The story) filled in
+- [x] Section 3 (Services) filled in
+- [x] Section 4 (Accreditations) filled in
+- [x] Section 5 (Tone of voice) filled in — **most important section**
+- [x] Section 6 (Visual direction) filled in
+- [x] Section 7 (Contact details) filled in
+- [x] Section 8 (Images and gallery) filled in
+- [x] Section 9 (Anything else) filled in
+- [x] Brief committed: *`<site-name>`: brief complete*
 
 ## Phase 2 — Site spec
 
-- [ ] Phase 2 prompt run in Cursor with brief + template in context
-- [ ] Aesthetic direction reviewed — bold enough? distinct from other demos?
-- [ ] Colour palette reviewed
-- [ ] Font pairing reviewed — not generic?
-- [ ] All page copy read through, tone matches brief
-- [ ] Image manifest complete with Midjourney prompts
-- [ ] Accreditations list matches brief
-- [ ] Spec saved as `site-spec.md`
-- [ ] Spec committed: *`<site-name>`: spec generated*
+- [x] Phase 2 prompt run in Cursor with brief + template in context
+- [x] Aesthetic direction reviewed — bold enough? distinct from other demos?
+- [x] Colour palette reviewed
+- [x] Font pairing reviewed — not generic?
+- [x] All page copy read through, tone matches brief
+- [x] Image manifest complete with Midjourney prompts
+- [x] Accreditations list matches brief
+- [x] Spec saved as `site-spec.md`
+- [x] Spec committed: *`<site-name>`: spec generated*
 
 ## Phase 3 — Images
 
