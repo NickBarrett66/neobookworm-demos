@@ -39,25 +39,6 @@
 })();
 
 (() => {
-  const form = document.querySelector("[data-contact-form]");
-  if (!(form instanceof HTMLFormElement)) return;
-
-  const success = form.querySelector("[data-contact-success]");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!form.reportValidity()) return;
-
-    if (success instanceof HTMLElement) {
-      success.hidden = false;
-      success.focus();
-    }
-
-    form.reset();
-  });
-})();
-
-(() => {
   const overlay = document.querySelector("[data-lightbox]");
   if (!(overlay instanceof HTMLElement)) return;
 
@@ -125,4 +106,91 @@
     if (e.key === "ArrowLeft") setIndex(index - 1);
     if (e.key === "ArrowRight") setIndex(index + 1);
   });
+})();
+
+(() => {
+  const MESSAGES = {
+    tel: "Demo site note: calling is shown for layout only. In a live build, this would open your dialler.",
+    mailto: "Demo site note: email is shown for layout only. In a live build, this would open your mail app.",
+    form:
+      "Thanks — your message has been noted.\n\nDemo site note: this demo form doesn’t send email or store data. In a live build, this would be delivered to the business.",
+  };
+
+  const pop = document.createElement("div");
+  pop.className = "demo-site-pop";
+  pop.setAttribute("role", "dialog");
+  pop.setAttribute("aria-modal", "true");
+  pop.setAttribute("aria-labelledby", "demo-site-pop-msg");
+  pop.hidden = true;
+  pop.innerHTML = `
+    <div class="demo-site-pop__backdrop" data-demo-site-dismiss tabindex="-1"></div>
+    <div class="demo-site-pop__box">
+      <p class="demo-site-pop__text" id="demo-site-pop-msg"></p>
+      <button type="button" class="demo-site-pop__btn" data-demo-site-dismiss>OK</button>
+    </div>
+  `;
+  document.body.appendChild(pop);
+
+  const msgEl = pop.querySelector("#demo-site-pop-msg");
+  const okBtn = pop.querySelector(".demo-site-pop__btn");
+  if (!(msgEl instanceof HTMLElement) || !(okBtn instanceof HTMLButtonElement)) return;
+
+  /** @type {HTMLElement | null} */
+  let lastFocus = null;
+
+  const show = (kind) => {
+    const text = MESSAGES[kind];
+    if (!text) return;
+    msgEl.textContent = text;
+    pop.hidden = false;
+    okBtn.focus();
+  };
+
+  const hide = () => {
+    pop.hidden = true;
+    if (lastFocus instanceof HTMLElement) lastFocus.focus();
+    lastFocus = null;
+  };
+
+  document.addEventListener("click", (e) => {
+    const t = e.target;
+    if (!(t instanceof Element)) return;
+
+    const tel = t.closest("a[href^='tel:']");
+    if (tel instanceof HTMLAnchorElement) {
+      e.preventDefault();
+      lastFocus = tel;
+      show("tel");
+      return;
+    }
+
+    const mail = t.closest("a[href^='mailto:']");
+    if (mail instanceof HTMLAnchorElement) {
+      e.preventDefault();
+      lastFocus = mail;
+      show("mailto");
+      return;
+    }
+  });
+
+  pop.addEventListener("click", (e) => {
+    if (e.target instanceof Element && e.target.closest("[data-demo-site-dismiss]")) hide();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape" || pop.hidden) return;
+    hide();
+  });
+
+  const form = document.querySelector("[data-contact-form]");
+  if (form instanceof HTMLFormElement) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      const submit = form.querySelector('button[type="submit"]');
+      lastFocus = submit instanceof HTMLElement ? submit : null;
+      form.reset();
+      show("form");
+    });
+  }
 })();
