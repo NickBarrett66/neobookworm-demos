@@ -1,6 +1,6 @@
 # Site Spec — `Swift Electrical Ltd`
 
-Generated from `sites/Swift-electical/site-brief.md`. This spec locks content + design before any HTML is written.
+Generated from `sites/swift-electrical/site-brief.md`. This spec locks content + design before any HTML is written.
 
 ---
 
@@ -72,7 +72,7 @@ Inspired by the brief’s “architectural practice reception” + Gloucestershi
 ## 3. File structure
 
 ```
-sites/Swift-electical/
+sites/swift-electrical/
 ├── index.html
 ├── services.html
 ├── about.html
@@ -490,4 +490,4 @@ Vanilla JS only (no libraries):
 
 ---
 
-*Spec complete. Review, tweak if needed, commit as `Swift-electical: spec generated`, and move to Phase 3 of `PROCESS.md`.*
+*Spec complete. Review, tweak if needed, commit as `swift-electrical: spec generated`, and move to Phase 3 of `PROCESS.md`.*

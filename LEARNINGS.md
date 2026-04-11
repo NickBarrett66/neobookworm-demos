@@ -57,7 +57,7 @@ Dated entries capturing things discovered during demo site builds that should fe
 
 ## 2026-04-10 — Swift Electrical — Phase 4
 
-**What happened:** Every page included `<link rel="icon" href="favicon.ico" />` (per spec file tree), but **no `favicon.ico` existed** in `sites/Swift-electical/`, so browsers requested a missing asset.
+**What happened:** Every page included `<link rel="icon" href="favicon.ico" />` (per spec file tree), but **no `favicon.ico` existed** in `sites/swift-electrical/`, so browsers requested a missing asset.
 
 **Impact:** Broken or generic tab icon in demos; easy to miss because layout and copy still look fine; undermines polish on an otherwise complete static build.
 
