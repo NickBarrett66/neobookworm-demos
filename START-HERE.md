@@ -30,6 +30,7 @@ Every file in this repo has a job. Here's what each one does and when you read i
 | **LEARNINGS.md** | Running log of things discovered during builds that should feed back into PROCESS.md. Dated entries. | Add to it whenever something catches you out. Review every few demos. |
 | **CLAUDE.md** | Persistent context for Cursor/Claude Code. Points at PROCESS.md and summarises the business. | Cursor reads this automatically. You don't need to open it often. |
 | **.cursorrules** | Universal build rules Cursor enforces on every session. | Cursor reads this automatically. Edit only when a rule genuinely applies to every demo. |
+| **`shared/README.md`** | Optional reusable **map** scripts (Leaflet UK counties, regional preset, Google Maps reference). How to copy into a site for deploy. | When the brief/spec calls for a map or service-area visual. |
 
 ### Templates (in `templates/` folder)
 
@@ -39,6 +40,7 @@ Every file in this repo has a job. Here's what each one does and when you read i
 | **site-spec.md** | The Claude-generated intermediate artifact. Expands the brief into full copy, page structure, image prompts, design tokens. | Generated from the brief in Phase 2 of the process. You review and approve before any HTML is written. |
 | **build-checklist.md** | The per-site tickable checklist. Tracks build progress for one demo. | Copy into each site's folder and tick off as you build. |
 | **qa-launch-checklist.md** | Pre-launch gate. Accessibility, mobile, meta tags, Netlify config, etc. Must be 100% green before a demo goes live. | Copy into each site's folder and use in Phase 6. |
+| **maps-config.example.js** | Google Maps API key stub (not a secret). | When the spec uses Google Maps, copy to `sites/<name>/js/maps-config.js` and add a browser key (file gitignored). See **`shared/README.md`**. |
 
 ### Per-site folders (created as you go)
 
@@ -50,6 +52,10 @@ When you start a new demo, you create a folder named after it (e.g. `sites/hartl
 - `qa-launch-checklist.md` (in progress or complete)
 - `images/` (Midjourney outputs)
 - The actual site files (`index.html`, `services.html`, `about.html`, `contact.html`, `gallery.html`, `css/`, `js/`, etc.)
+
+### Shared toolkit (optional)
+
+The **`shared/`** folder at the repo root holds **canonical** copies of reusable map scripts and HTML demos (`shared/demos/`). It is **not** part of any single site’s deploy folder. When a site needs a map, **copy** the relevant files into that site’s `js/` per **`shared/README.md`** so Netlify single-folder deploys stay self-contained.
 
 ---
 

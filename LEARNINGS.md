@@ -31,6 +31,18 @@ Dated entries capturing things discovered during demo site builds that should fe
 
 ## Entries
 
+## 2026-04-11 — Repo-wide — Shared map toolkit
+
+**What happened:** UK county maps (Leaflet + ONS), regional presets, and Google Maps (radius + markers) were consolidated under `shared/` with demos and docs.
+
+**Impact:** Future demos and customer sites can reuse the same scripts without inventing paths or duplicating README content in each site.
+
+**Root cause:** N/A (process improvement).
+
+**Fix for next time:** Use **`shared/README.md`**, **`CLAUDE.md`** (Shared map toolkit), and **`PROCESS.md`** Phase 4 for maps; copy vendored JS into `sites/<name>/js/` for deploy; copy **`templates/maps-config.example.js`** to **`maps-config.js`** for Google Maps (gitignored).
+
+**Promoted to PROCESS.md?** Yes
+
 ## 2026-04-09 — Hartley Plumbing — Phase 2
 
 **What happened:** The site spec was generated successfully, but it wasn’t explicitly saved into the demo site’s folder by default.

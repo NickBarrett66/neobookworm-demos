@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Regional map — UK counties highlight preset</title>
+    <meta
+      name="description"
+      content="Demo of the NeoBookworm regional UK counties preset: Gloucestershire, Wiltshire, Oxfordshire, Warwickshire, Swindon."
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f8fafc;
+        --text: #0f172a;
+        --muted: #64748b;
+        --card: #fff;
+        --border: #e2e8f0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+      .wrap {
+        max-width: 56rem;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 1.35rem;
+        font-weight: 650;
+        margin: 0 0 0.35rem;
+        letter-spacing: -0.02em;
+      }
+      .lede {
+        margin: 0 0 1.25rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+        margin-bottom: 1.25rem;
+        font-size: 0.9rem;
+      }
+      .panel h2 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        margin: 0 0 0.5rem;
+        font-weight: 600;
+      }
+      .panel p {
+        margin: 0 0 0.65rem;
+      }
+      .panel p:last-child {
+        margin-bottom: 0;
+      }
+      .panel ul {
+        margin: 0.35rem 0 0;
+        padding-left: 1.2rem;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.84em;
+        background: #f1f5f9;
+        padding: 0.12em 0.35em;
+        border-radius: 4px;
+      }
+      .path {
+        word-break: break-all;
+      }
+      #map-uk-regional {
+        width: 100%;
+        height: 520px;
+        border-radius: 12px;
+        overflow: hidden;
+        font-family: sans-serif;
+        border: 1px solid var(--border);
+      }
+      .see-also {
+        margin-top: 1.25rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .see-also a {
+        color: #1d4ed8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Regional coverage map</h1>
+      <p class="lede">
+        Same Leaflet + ONS counties layer as the generic demo, with the regional preset and automatic framing so the map fits the highlighted counties (Gloucestershire, Wiltshire, Oxfordshire, Warwickshire, Swindon).
+      </p>
+
+      <div class="panel">
+        <h2>Preset</h2>
+        <p>
+          Script <code class="path">shared/js/uk-counties-regional.js</code> wraps <code>initNeoUkCountiesMap</code> and defaults <code>highlighted</code> to:
+        </p>
+        <ul>
+          <li>Gloucestershire</li>
+          <li>Wiltshire</li>
+          <li>Oxfordshire</li>
+          <li>Warwickshire</li>
+          <li>Swindon</li>
+        </ul>
+        <p>
+          Call <code>initNeoUkRegionalCountiesMap('map-id', …)</code>, or read <code>NEO_UK_REGIONAL_HIGHLIGHTS</code> if you need the list elsewhere. By default the view uses <code>fitHighlightedBounds</code> (see <code>uk-counties-leaflet.js</code>); set <code>fitHighlightedBounds: false</code> and supply <code>center</code> / <code>zoom</code> for a fixed opening view.
+        </p>
+      </div>
+
+      <div id="map-uk-regional" aria-label="Map of UK counties with regional highlights"></div>
+
+      <p class="see-also">
+        Generic component and API: <a href="uk-counties-map.html">uk-counties-map.html</a>
+      </p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../js/uk-counties-leaflet.js?v=11"></script>
+    <script src="../js/uk-counties-regional.js"></script>
+    <script>
+      initNeoUkRegionalCountiesMap('map-uk-regional', {
+        scrollWheelZoom: false
+      });
+    </script>
+  </body>
+</html>

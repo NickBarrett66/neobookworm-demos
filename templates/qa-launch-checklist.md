@@ -77,7 +77,15 @@ Widths to test: **320px, 375px, 414px, 768px, 1024px, 1440px, 1920px**
 - [ ] No console errors in browser dev tools
 - [ ] No 404s in the Network tab (every asset loads)
 
-## 7. Cross-browser
+## 7. Maps (N/A if no map on the site)
+
+- [ ] Decision noted: N/A **or** map type matches spec (Leaflet counties / regional preset / Google radius)
+- [ ] Vendored `shared/js/` copies present in the site folder if required
+- [ ] Google Maps: no API key committed; `maps-config.js` gitignored or absent from repo
+- [ ] Map container has accessible name (`aria-label` or `title`) where appropriate
+- [ ] Map tested over HTTP; tiles/data load; framing / circle displays as intended
+
+## 8. Cross-browser
 
 Test in at least two browsers:
 
@@ -86,7 +94,7 @@ Test in at least two browsers:
 - [ ] Safari if on Mac — latest
 - [ ] No obvious rendering differences between browsers
 
-## 8. Links
+## 9. Links
 
 - [ ] Every nav link works on every page
 - [ ] Footer links work
@@ -94,7 +102,7 @@ Test in at least two browsers:
 - [ ] No broken internal links
 - [ ] External links (if any) open in new tab with `rel="noopener"`
 
-## 9. Forms
+## 10. Forms
 
 - [ ] Contact form labels visible and associated with inputs
 - [ ] Required fields marked clearly
@@ -102,13 +110,13 @@ Test in at least two browsers:
 - [ ] Form validates appropriately on submit attempt
 - [ ] Success state or message present (even if simulated)
 
-## 10. Accreditation badges
+## 11. Accreditation badges
 
 - [ ] All badges use the CSS accreditation badge library (no real trademarked logos)
 - [ ] Badges display correctly in their chosen locations
 - [ ] Badges pass colour contrast on their background
 
-## 11. Analytics and cookies
+## 12. Analytics and cookies
 
 For a demo site (not a real client site), analytics and cookie banners are usually unnecessary. Confirm the decision:
 
@@ -116,7 +124,7 @@ For a demo site (not a real client site), analytics and cookie banners are usual
 - [ ] Decision made: cookie banner on/off for this demo
 - [ ] If either is on, it's been tested and works
 
-## 12. Deploy config
+## 13. Deploy config
 
 - [ ] No local file paths hardcoded anywhere (check for `file://` or absolute Windows paths)
 - [ ] No API keys or secrets committed to the repo
@@ -125,7 +133,7 @@ For a demo site (not a real client site), analytics and cookie banners are usual
 - [ ] `sitemap.xml` present (optional for demos but nice to have)
 - [ ] Custom 404 page present (optional but good)
 
-## 13. Final smoke test
+## 14. Final smoke test
 
 - [ ] Close the browser, reopen, visit the local preview, click through every page one last time
 - [ ] Everything still works

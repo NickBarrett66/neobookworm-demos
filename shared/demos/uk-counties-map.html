@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UK counties map (Leaflet) — shared demo</title>
+    <meta
+      name="description"
+      content="Demo of the reusable NeoBookworm UK counties Leaflet map: highlight regions, hover tooltips, Carto light basemap."
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f8fafc;
+        --text: #0f172a;
+        --muted: #64748b;
+        --card: #fff;
+        --border: #e2e8f0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+      .wrap {
+        max-width: 56rem;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 1.35rem;
+        font-weight: 650;
+        margin: 0 0 0.35rem;
+        letter-spacing: -0.02em;
+      }
+      .lede {
+        margin: 0 0 1.25rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+        margin-bottom: 1.25rem;
+        font-size: 0.9rem;
+      }
+      .panel h2 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        margin: 0 0 0.5rem;
+        font-weight: 600;
+      }
+      .panel p {
+        margin: 0 0 0.65rem;
+      }
+      .panel p:last-child {
+        margin-bottom: 0;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.84em;
+        background: #f1f5f9;
+        padding: 0.12em 0.35em;
+        border-radius: 4px;
+      }
+      .path {
+        word-break: break-all;
+      }
+      #map-uk {
+        width: 100%;
+        height: 520px;
+        border-radius: 12px;
+        overflow: hidden;
+        font-family: sans-serif;
+        border: 1px solid var(--border);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>UK counties map (Leaflet)</h1>
+      <p class="lede">
+        Shared component for demo sites: England counties / unitary authorities from ONS data (GeoJSON), with optional highlighted regions and hover labels.
+      </p>
+
+      <div class="panel">
+        <h2>Reuse in a site</h2>
+        <p>
+          Copy or reference <code class="path">shared/js/uk-counties-leaflet.js</code> from this repo. Include Leaflet 1.9.x CSS and JS from unpkg (or your bundler), add a container <code>div</code> with an <code>id</code>, then call <code>initNeoUkCountiesMap('your-id', options)</code>. See the script header in that file for the full API.
+        </p>
+      </div>
+
+      <div id="map-uk" aria-label="Map of UK counties"></div>
+
+      <p style="margin-top:1.25rem;font-size:0.9rem;color:#64748b">
+        Regional highlight preset (same data, fixed county list): <a href="uk-counties-regional-map.html" style="color:#1d4ed8">uk-counties-regional-map.html</a>
+      </p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../js/uk-counties-leaflet.js?v=11"></script>
+    <script>
+      initNeoUkCountiesMap('map-uk', {
+        highlighted: ['Gloucestershire', 'Wiltshire', 'Oxfordshire', 'Warwickshire', 'Swindon'],
+        scrollWheelZoom: false
+      });
+    </script>
+  </body>
+</html>

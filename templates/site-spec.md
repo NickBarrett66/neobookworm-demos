@@ -75,7 +75,10 @@ sites/<site-name>/
 ├── css/
 │   └── styles.css
 ├── js/
-│   └── main.js
+│   ├── main.js
+│   ├── uk-counties-leaflet.js   (optional — copy from shared/ if spec uses Leaflet county map)
+│   ├── uk-counties-regional.js  (optional — copy from shared/ if spec uses regional preset)
+│   └── maps-config.js           (optional — Google Maps only; gitignored; copy from `templates/maps-config.example.js`)
 ├── images/
 │   ├── hero.jpg
 │   ├── about-portrait.jpg
@@ -135,6 +138,10 @@ sites/<site-name>/
 ### 4.4 Contact (`contact.html`)
 
 *Same structure. Contact form fields specified explicitly.*
+
+**Map / service area (if any):**
+- **None**, or specify: **Leaflet UK counties** (which counties/unitaries to highlight, which page), **regional preset** (`shared/js/uk-counties-regional.js` defaults), or **Google Maps** (centre point, radius in miles/metres, optional town markers, API key via `maps-config.js` only).
+- Legend copy, accessibility (`aria-label` on map container), and fallback when no API key (for Google) — all specified here.
 
 ### 4.5 Gallery (`gallery.html`)
 
@@ -196,9 +203,12 @@ Anything that needs JavaScript:
 
 - **Mobile navigation menu:** hamburger toggle, full-screen overlay on open
 - **Gallery lightbox:** click image to view full-size in overlay, arrow-key navigation
+- **Maps (optional):** see **`shared/README.md`**. Allowed third-party scripts for maps only:
+  - **Leaflet 1.9.x** (CDN) + vendored scripts from **`shared/js/`** for UK county / unitary boundaries (ONS)
+  - **Google Maps JavaScript API** (CDN loader) for radius circle + markers; key in **`js/maps-config.js`** (gitignored; copy from **`templates/maps-config.example.js`**), never committed
 - **[etc]**
 
-Every item here should be vanilla JS, no libraries.
+Other interactive features: vanilla JS only, no npm libraries. Map libraries are exceptions only as above.
 
 ---
 

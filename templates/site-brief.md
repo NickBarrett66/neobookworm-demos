@@ -14,6 +14,9 @@ The field structure mirrors what NeoBookworm's client intake form captures, so w
 
 **Location served (town, county, radius):**
 
+**Map / coverage visual (if any):**
+*(Optional. e.g. “Leaflet UK counties highlighting [list] on About”, “Google Maps 15-mile radius from [town] on Contact”, or “None — text only”.)*
+
 **Years in business (real or fictional):**
 
 **Size (solo, two-person, small team):**

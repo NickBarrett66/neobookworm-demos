@@ -93,6 +93,11 @@ Requirements:
 - For the Home page hero, specify one hero image slot with a detailed
   description.
 - List any icons, illustrations, or decorative elements needed.
+- If the business needs a **service area** or **coverage** visual, specify which
+  map approach (if any): **UK county / unitary map (Leaflet + ONS)** from
+  `shared/`, **regional preset** (default county list in `shared/js/uk-counties-regional.js`),
+  **Google Maps** (radius circle + markers; key via gitignored `maps-config.js`, from **`templates/maps-config.example.js`**), or **none**.
+  Say which page(s) it appears on and any copy/legend requirements.
 - Note which CSS accreditation badges apply (from the NeoBookworm badge
   library) — Gas Safe, NICEIC, CHAS, Checkatrade, TrustMark, etc. Only use
   the CSS badge library, never real trademark logos.
@@ -200,6 +205,12 @@ Build rules:
   (2) a single JS pattern for blocked `tel:` / form submit with matching 
   copy, (3) checklist every `tel:` and submit button before calling the 
   build done.
+- **Maps (only if the spec asks for them):** follow `shared/README.md`.
+  **Copy** the required files from `shared/js/` into this site's `js/` folder
+  so Netlify single-folder deploy works; load Leaflet or Google Maps from CDN
+  as documented. Never commit API keys — copy **`templates/maps-config.example.js`**
+  to **`js/maps-config.js`** (gitignored) for Google Maps. For Leaflet county maps,
+  bump `?v=` on script URLs when updating vendored files.
 
 Build page-by-page, starting with index.html. Show me each page's HTML and
 the styles.css additions before moving to the next page so I can review.
@@ -216,6 +227,10 @@ the styles.css additions before moving to the next page so I can review.
   confirm the folder the same way as Phase 3 (terminal listing or read a file by
   path). An empty IDE/agent glob is not proof the folder is empty.
 - If Cursor forgets the CSS badge library, paste in the relevant snippet from the NeoBookworm repo's `accreditations/accreditation-badges.html`
+- **Maps:** if the site includes a Leaflet or Google map, open the site over **HTTP**
+  (`python -m http.server` or similar from the site folder) and confirm the map
+  loads, frames correctly, and has no console errors. See `shared/README.md` and
+  `shared/demos/` for reference behaviour.
 
 ---
 

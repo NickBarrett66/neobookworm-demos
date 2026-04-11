@@ -44,6 +44,7 @@ The NeoBookworm.uk brand (navy/amber, Playfair Display, DM Sans, plain English) 
 - Vanilla JS only. No jQuery, no React, no build step
 - Progressive enhancement: the site must work with JS disabled. JS adds polish, not core functionality
 - If a feature (e.g. gallery lightbox) needs JS, write it by hand rather than importing a library
+- **Maps (exception):** **Leaflet 1.9.x** (CDN) for UK county/unitary maps from **`shared/js/`**; **Google Maps JavaScript API** (CDN) for radius circles and markers when the spec requires. See **`shared/README.md`**. Copy vendored scripts into `sites/<name>/js/` for deploy; for Google keys, copy **`templates/maps-config.example.js`** → **`js/maps-config.js`** (gitignored).
 
 ### Accessibility
 - WCAG AA colour contrast minimum (4.5:1 for body text, 3:1 for large text)
@@ -69,7 +70,8 @@ Each demo deploys independently to Netlify as a separate site. No build step —
 ## What Cursor should never do in this repo
 
 - **Do not add `package.json` or a build toolchain.** These are plain static sites. If a chat suggests adding npm, bundlers, or compile steps, refuse and ask for a vanilla solution.
-- **Do not share code between sites.** Each site in `sites/<name>/` is completely self-contained. Do not create shared CSS or JS at the repo root.
+- **Do not share bespoke design code between sites.** Each site’s **CSS and brand-specific JS** stay in that site’s folder only — no copying one demo’s `styles.css` into another.
+- **Shared toolkit:** optional map scripts live in **`shared/`** (see **`shared/README.md`**). When a site uses them, **copy** the needed `.js` files into that site’s `js/` so Netlify single-folder deploys remain self-contained. Do not reference `../../shared/` in production HTML unless your deploy includes the full repo.
 - **Do not import NeoBookworm.uk brand colours, fonts, or copy** into demo sites unless the site's brief explicitly asks for something in that direction.
 - **Do not use real trademarked logos** for accreditations. CSS badge library only.
 - **Do not add code from this repo into the NeoBookworm.uk repo**, or vice versa. The repos are completely independent and only connect via URLs on the Examples page.

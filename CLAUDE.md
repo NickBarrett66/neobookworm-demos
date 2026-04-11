@@ -49,6 +49,18 @@ Current build status lives in `TRACKER.md`. Always check the tracker before assu
 
 **These are static sites.** No build tools, no frameworks, no npm, no bundlers. HTML, CSS, and vanilla JS only.
 
+## Shared map toolkit (`shared/`)
+
+Optional **map capabilities** for demos and client sites live under **`shared/`** — see **`shared/README.md`** for the full list.
+
+1. **UK counties (Leaflet + ONS GeoJSON)** — `shared/js/uk-counties-leaflet.js`; highlight counties/unitaries and optionally frame the map to those areas (`initNeoUkCountiesMap`).
+2. **Regional preset** — `shared/js/uk-counties-regional.js` plus the Leaflet file; defaults to the Cotswolds / M4 corridor-style county list (`initNeoUkRegionalCountiesMap`).
+3. **Google Maps** — service **radius circle** + optional town **markers**; reference **`sites/swift-electrical/contact.html`**, key via gitignored **`js/maps-config.js`** (copy from **`templates/maps-config.example.js`**).
+
+**Integration rule:** For typical **per-site Netlify deploys**, **copy** the needed scripts from `shared/js/` into `sites/<site-name>/js/` so the deployed folder is self-contained. Do not assume `../../shared/` works in production.
+
+**Libraries:** Leaflet 1.9.x and Google Maps JS API are **allowed** only for these documented patterns; other third-party JS still requires the same restraint as `.cursorrules` (no random npm packages).
+
 ## How to think about sessions
 
 Sessions in this repo tend to be focused on one phase of one site at a time. When a user opens a chat:

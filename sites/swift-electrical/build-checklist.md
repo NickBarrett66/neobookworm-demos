@@ -90,6 +90,12 @@ Per-site tickable progress list. Copy this template into the site folder at kick
 - [ ] CSS accreditation badges added (from NeoBookworm badge library)
 - [ ] All images have meaningful alt text
 
+### Maps (only if spec includes a map — see `shared/README.md`)
+- [ ] Required scripts **copied** from `shared/js/` into this site’s `js/` (for Netlify single-folder deploy)
+- [ ] **Leaflet** county map: Leaflet CSS/JS from CDN; `?v=` on vendored scripts if updated
+- [ ] **Google Maps:** `maps-config.js` present locally for preview (from **`templates/maps-config.example.js`**); **not** committed; `.gitignore` covers it; fallback UI if key missing
+- [ ] Map tested over **http://** local server (not `file://`); no console errors
+
 ### Commits
 - [ ] At least one commit per page completed
 - [ ] Final Phase 4 commit: *`<site-name>`: build complete*
