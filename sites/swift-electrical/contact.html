@@ -208,12 +208,16 @@
           ></div>
 
           <script>
-            function initMap() {
+            async function initMap() {
               const cirencester = { lat: 51.719, lng: -1.9686 };
+
+              await google.maps.importLibrary("maps");
+              const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
               const map = new google.maps.Map(document.getElementById("map"), {
                 center: cirencester,
                 zoom: 10,
+                mapId: "DEMO_MAP_ID",
               });
 
               new google.maps.Circle({
@@ -237,19 +241,22 @@
               ];
 
               locations.forEach((loc) => {
-                new google.maps.Marker({
+                const glyph = document.createElement("div");
+                glyph.className = "contact-map__marker-glyph";
+                glyph.textContent = loc.label;
+                glyph.title = loc.title;
+                new AdvancedMarkerElement({
+                  map,
                   position: loc.pos,
-                  map: map,
-                  label: loc.label,
+                  content: glyph,
                   title: loc.title,
                 });
               });
             }
           </script>
           <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU_KwOJIowjRFSu6g9T5QYdx1J1mgCphQ&amp;callback=initMap"
             async
-            defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU_KwOJIowjRFSu6g9T5QYdx1J1mgCphQ&amp;loading=async&amp;callback=initMap"
           ></script>
 
           <div class="map-placeholder map-placeholder--below-map" role="img" aria-label="Cirencester and 15-mile radius service area">
