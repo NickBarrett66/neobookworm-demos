@@ -915,6 +915,23 @@ p {
   box-shadow: var(--shadow-sm);
 }
 
+.contact-map--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  height: auto;
+  min-height: 8rem;
+  background: var(--color-bg-alt);
+}
+
+.contact-map__fallback {
+  margin: 0;
+  max-width: 36ch;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
 .map-placeholder {
   border: var(--border-hairline);
   border-radius: var(--radius-lg);

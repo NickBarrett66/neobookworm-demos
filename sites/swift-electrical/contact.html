@@ -207,6 +207,7 @@
             aria-label="Map showing Cirencester and approximately 15-mile service radius"
           ></div>
 
+          <script src="js/maps-config.js"></script>
           <script>
             async function initMap() {
               const cirencester = { lat: 51.719, lng: -1.9686 };
@@ -253,11 +254,27 @@
                 });
               });
             }
+
+            (function loadMapsApi() {
+              var key = typeof window.__GMAPS_KEY__ === "string" ? window.__GMAPS_KEY__.trim() : "";
+              if (!key || key === "YOUR_GOOGLE_MAPS_API_KEY") {
+                var mapEl = document.getElementById("map");
+                if (mapEl) {
+                  mapEl.classList.add("contact-map--fallback");
+                  mapEl.innerHTML =
+                    '<p class="contact-map__fallback muted">Copy <code>js/maps-config.example.js</code> to <code>js/maps-config.js</code> and add your Google Maps API key (file is gitignored).</p>';
+                }
+                return;
+              }
+              var s = document.createElement("script");
+              s.async = true;
+              s.src =
+                "https://maps.googleapis.com/maps/api/js?key=" +
+                encodeURIComponent(key) +
+                "&loading=async&callback=initMap";
+              document.body.appendChild(s);
+            })();
           </script>
-          <script
-            async
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU_KwOJIowjRFSu6g9T5QYdx1J1mgCphQ&amp;loading=async&amp;callback=initMap"
-          ></script>
 
           <div class="map-placeholder map-placeholder--below-map" role="img" aria-label="Cirencester and 15-mile radius service area">
             <p class="map-placeholder__label">Cirencester &amp; 15-mile radius</p>
