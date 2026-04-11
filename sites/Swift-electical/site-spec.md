@@ -106,12 +106,15 @@ sites/Swift-electical/
 │   ├── gallery-10.jpg
 │   ├── gallery-11.jpg
 │   └── gallery-12.jpg
-├── favicon.ico
+├── favicon.svg
+├── favicon.ico          (optional — older clients)
 ├── site-brief.md
 ├── site-spec.md
 ├── build-checklist.md
 └── qa-launch-checklist.md
 ```
+
+*Favicon:* list **`favicon.svg`** in this tree for every site (real asset: wordmark or monogram in brand colours). Add **`favicon.ico`** only if you ship it; Phase 4 `<link>` tags must match these paths exactly.
 
 ---
 

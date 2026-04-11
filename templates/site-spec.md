@@ -82,12 +82,15 @@ sites/<site-name>/
 │   ├── service-01-*.jpg
 │   ├── gallery-01.jpg
 │   └── ... (full list below)
-├── favicon.ico
+├── favicon.svg
+├── favicon.ico          (optional — older clients)
 ├── site-brief.md
 ├── site-spec.md
 ├── build-checklist.md
 └── qa-launch-checklist.md
 ```
+
+*Favicon:* list **`favicon.svg`** in this tree for every site (real asset: wordmark or monogram in brand colours). Add **`favicon.ico`** only if you ship it; Phase 4 `<link>` tags must match these paths exactly.
 
 ---
 

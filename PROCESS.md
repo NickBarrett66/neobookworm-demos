@@ -96,9 +96,12 @@ Requirements:
 - Note which CSS accreditation badges apply (from the NeoBookworm badge
   library) — Gas Safe, NICEIC, CHAS, Checkatrade, TrustMark, etc. Only use
   the CSS badge library, never real trademark logos.
-- Specify the file structure you'll create in Phase 4.
+- Specify the file structure you'll create in Phase 4. Include **favicon** assets
+  explicitly: prefer **`favicon.svg`** at site root (simple wordmark or monogram,
+  brand colours), optionally **`favicon.ico`** for older clients — list these in
+  the tree so shipped files match the spec.
 
-Output the complete spec in markdown matching the template structure.
+important: **Output the complete spec in markdown matching the template structure.**
 Do not start writing HTML yet — this phase is spec only.
 ```
 
@@ -133,6 +136,7 @@ Do not start writing HTML yet — this phase is spec only.
 - Midjourney aspect ratios: use `--ar 16:9` for heroes, `--ar 4:3` for gallery, `--ar 1:1` for portraits. Match the spec's intended layout
 - Regenerate anything that looks AI-generic or has obvious artifacts (extra fingers, distorted tools, impossible pipes)
 - These images will also be the fallback library for real client sites when Agent 6 can't find enough client-uploaded photos. Quality matters beyond this one demo
+- **Agents / tooling:** do not treat an **empty workspace glob or file search** as proof that `images/` is empty. Dropbox sync, workspace roots, and indexing can hide files that are on disk. Before assuming no assets exist, confirm with a **terminal listing** on the absolute `sites/<site-name>/images` path, or **read one known file** (e.g. `hero.jpg`) by path. A human can `@`-mention a single image so the path is authoritative.
 
 ---
 
@@ -146,7 +150,7 @@ Do not start writing HTML yet — this phase is spec only.
 
 **Steps:**
 
-1. Open a new Cursor chat with the site folder's `site-brief.md`, `site-spec.md`, and the `images/` folder in context
+1. Open a new Cursor chat with the site folder's `site-brief.md`, `site-spec.md`, and the `images/` folder in context. If you need to verify which files exist in `images/`, use a **terminal `dir` / `ls`** on the absolute path or **read a specific file** — do not rely on an empty glob/search alone (see Phase 3 “What to watch for”).
 2. Paste the Phase 4 prompt below
 3. Cursor will generate the file structure and all pages. Review each page as it's produced
 4. Iterate on anything that doesn't match the spec
@@ -172,8 +176,14 @@ Build rules:
 - Fully responsive: mobile-first CSS, breakpoints at sensible widths
 - Semantic HTML: proper heading hierarchy, landmark elements, alt text on
   every image
+- **Favicon in the first HTML pass** (not a later polish item): add a real file
+  at site root — **`favicon.svg`** (simple wordmark/monogram, brand colours),
+  plus optional **`favicon.ico`** for older clients. On every page:
+  `<link rel="icon" href="favicon.svg" type="image/svg+xml" />` (and a second
+  `<link rel="icon" href="favicon.ico" />` only if you ship `.ico`). Do not link
+  to a favicon path that does not exist.
 - Every page has: <title>, <meta name="description">, Open Graph tags,
-  favicon link, canonical URL placeholder
+  canonical URL placeholder
 - Accreditation badges from the CSS accreditation badge library only (never
   real trademark logos). If the spec requires a badge we don't have a CSS
   version of, add a note and skip it
@@ -185,6 +195,11 @@ Build rules:
 - Commit to the aesthetic direction in the spec. Do not water it down. If
   the spec says editorial and serif-heavy, be editorial and serif-heavy. If
   it says industrial and brutalist, go industrial and brutalist.
+- When scoping or building a **demo** trade site, bake in from the first 
+  HTML pass: (1) short “demo site” notes near call and form actions, 
+  (2) a single JS pattern for blocked `tel:` / form submit with matching 
+  copy, (3) checklist every `tel:` and submit button before calling the 
+  build done.
 
 Build page-by-page, starting with index.html. Show me each page's HTML and
 the styles.css additions before moving to the next page so I can review.
@@ -194,6 +209,12 @@ the styles.css additions before moving to the next page so I can review.
 
 - Cursor sometimes drifts towards generic designs. If you feel the site converging on "another template," push back hard and point at the spec
 - Check responsiveness in the Cursor preview as you go — don't leave it all to Phase 5
+- **Favicon:** confirm the asset file exists at the path referenced in every
+  `<link rel="icon">` before marking the build done (tick the matching line in
+  `build-checklist.md`)
+- **`images/`:** before concluding assets are missing or wiring wrong paths,
+  confirm the folder the same way as Phase 3 (terminal listing or read a file by
+  path). An empty IDE/agent glob is not proof the folder is empty.
 - If Cursor forgets the CSS badge library, paste in the relevant snippet from the NeoBookworm repo's `accreditations/accreditation-badges.html`
 
 ---

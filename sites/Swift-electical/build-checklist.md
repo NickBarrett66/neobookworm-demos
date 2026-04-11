@@ -41,6 +41,7 @@ Per-site tickable progress list. Copy this template into the site folder at kick
 - [ ] All gallery images generated and saved (8–12 total)
 - [ ] All images optimised (under 200KB gallery, under 400KB hero)
 - [ ] All images named descriptively (no `IMG_XXXX.jpg`)
+- [ ] `images/` contents verified (terminal `dir` / `ls` on absolute `sites/<site-name>/images`, or read one file by path). Do not treat an empty workspace search as proof the folder is empty.
 - [ ] Images committed: *`<site-name>`: images added*
 
 ## Phase 4 — Build
@@ -53,13 +54,14 @@ Per-site tickable progress list. Copy this template into the site folder at kick
 - [ ] `gallery.html` created
 - [ ] `css/styles.css` created
 - [ ] `js/main.js` created (if needed)
-- [ ] `favicon.ico` added
+- [ ] `favicon.svg` added at site root (simple wordmark/monogram, brand colours); optional `favicon.ico` for older clients
 
 ### Head setup (every page)
 - [ ] `<title>` set per spec
 - [ ] `<meta name="description">` set
 - [ ] Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`)
-- [ ] Favicon linked
+- [ ] Favicon linked: `<link rel="icon" href="favicon.svg" type="image/svg+xml" />` on every page (and optional `<link rel="icon" href="favicon.ico" />` if `.ico` is shipped)
+- [ ] Favicon file exists and path matches `<link rel="icon">` on every page
 - [ ] Canonical URL placeholder
 - [ ] Google Fonts preconnected and loaded
 - [ ] Viewport meta tag present
@@ -73,6 +75,7 @@ Per-site tickable progress list. Copy this template into the site folder at kick
 - [ ] WCAG AA contrast confirmed
 
 ### Content
+- [ ] Every `<img src="images/...">` path matches a file that exists (re-list `images/` if workspace search was inconclusive)
 - [ ] Home page fully built and matches spec
 - [ ] Services page fully built and matches spec
 - [ ] About page fully built and matches spec

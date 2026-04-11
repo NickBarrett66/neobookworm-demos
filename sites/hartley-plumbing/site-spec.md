@@ -100,12 +100,15 @@ sites/hartley-plumbing/
 │   ├── gallery-09.jpg
 │   ├── gallery-10.jpg
 │   └── ... (if you decide to add 11–12 later)
-├── favicon.ico
+├── favicon.svg
+├── favicon.ico          (optional — older clients)
 ├── site-brief.md
 ├── site-spec.md
 ├── build-checklist.md
 └── qa-launch-checklist.md
 ```
+
+*Favicon:* list **`favicon.svg`** in this tree for every site (real asset: wordmark or monogram in brand colours). Add **`favicon.ico`** only if you ship it; Phase 4 `<link>` tags must match these paths exactly.
 
 ---
 

@@ -41,7 +41,7 @@ Dated entries capturing things discovered during demo site builds that should fe
 
 **Fix for next time:** After Phase 2 output is generated, immediately save it as `sites/<site-name>/site-spec.md` (in the demo site directory) and commit `"<site-name>: spec generated"`.
 
-**Promoted to PROCESS.md?** Pending
+**Promoted to PROCESS.md?** Complete
 
 ## 2026-04-09 — Hartley Plumbing — Phase 4
 
@@ -53,7 +53,7 @@ Dated entries capturing things discovered during demo site builds that should fe
 
 **Fix for next time:** When scoping or building a **demo** trade site, bake in from the first HTML pass: (1) short “demo site” notes near call and form actions, (2) a single JS pattern for blocked `tel:` / form submit with matching copy, (3) checklist every `tel:` and submit button before calling the build done. Consider adding this to Phase 4 prompt or `build-checklist.md` for demos only.
 
-**Promoted to PROCESS.md?** Pending
+**Promoted to PROCESS.md?** Complete
 
 ## 2026-04-10 — Swift Electrical — Phase 4
 
@@ -65,7 +65,7 @@ Dated entries capturing things discovered during demo site builds that should fe
 
 **Fix for next time:** Treat favicon as part of the **first** HTML pass, not a later polish item: (1) add a real asset at site root — e.g. **`favicon.svg`** (simple wordmark/monogram, brand colours) plus optional `.ico` for older clients; (2) use `<link rel="icon" href="favicon.svg" type="image/svg+xml" />` on every page; (3) add a **one-line verify** in `build-checklist.md` / Phase 4: “favicon file exists and path matches `<link>`.” Update `site-spec.md` templates to prefer documenting `favicon.svg` (or both) so the file tree matches what ships.
 
-**Promoted to PROCESS.md?** Pending
+**Promoted to PROCESS.md?** Complete
 
 ## 2026-04-09 — Hartley Plumbing — Phase 3 / 4 (tooling)
 
@@ -77,4 +77,4 @@ Dated entries capturing things discovered during demo site builds that should fe
 
 **Fix for next time:** Don’t treat an empty glob as proof the folder is empty. Use a **direct read** of a known path (or a terminal listing on the absolute `sites/.../images` path), or have the human `@`-mention a single image so the path is authoritative. Document in Phase 3/4: confirm `images/` with one explicit file read (or shell `ls`/`dir`) before assuming absence.
 
-**Promoted to PROCESS.md?** Pending
+**Promoted to PROCESS.md?** Complete
