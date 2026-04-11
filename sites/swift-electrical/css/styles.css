@@ -904,6 +904,17 @@ p {
   margin-top: 0.25rem;
 }
 
+.contact-map {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin: 0 auto 1.25rem;
+  border-radius: 8px;
+  border: var(--border-hairline);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
 .map-placeholder {
   border: var(--border-hairline);
   border-radius: var(--radius-lg);
@@ -912,6 +923,14 @@ p {
   box-shadow: var(--shadow-sm);
   text-align: center;
   padding: 0 0 1.25rem;
+}
+
+.map-placeholder--below-map {
+  padding: 1rem 1rem 1.25rem;
+}
+
+.map-placeholder--below-map .map-placeholder__label {
+  margin-top: 0;
 }
 
 .map-placeholder__graphic {

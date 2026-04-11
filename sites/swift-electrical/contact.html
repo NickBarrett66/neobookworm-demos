@@ -200,18 +200,61 @@
       <section class="section">
         <div class="container">
           <h2 class="visually-hidden">Service area</h2>
-          <div class="map-placeholder" role="img" aria-label="Cirencester and 15-mile radius service area">
-            <div class="map-placeholder__graphic" aria-hidden="true">
-              <svg viewBox="0 0 320 200" class="map-placeholder__svg" xmlns="http://www.w3.org/2000/svg">
-                <rect width="320" height="200" fill="var(--color-bg-alt)" rx="8" />
-                <circle cx="160" cy="100" r="72" fill="none" stroke="var(--color-border)" stroke-width="1.5" />
-                <circle cx="160" cy="100" r="48" fill="none" stroke="var(--color-secondary)" stroke-width="1.5" opacity="0.55" />
-                <circle cx="160" cy="100" r="24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.65" />
-                <circle cx="160" cy="100" r="5" fill="var(--color-primary)" />
-              </svg>
-            </div>
+          <div
+            id="map"
+            class="contact-map"
+            role="region"
+            aria-label="Map showing Cirencester and approximately 15-mile service radius"
+          ></div>
+
+          <script>
+            function initMap() {
+              const cirencester = { lat: 51.719, lng: -1.9686 };
+
+              const map = new google.maps.Map(document.getElementById("map"), {
+                center: cirencester,
+                zoom: 10,
+              });
+
+              new google.maps.Circle({
+                map: map,
+                center: cirencester,
+                radius: 24140,
+                strokeColor: "#1a73e8",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#1a73e8",
+                fillOpacity: 0.08,
+              });
+
+              const locations = [
+                { pos: { lat: 51.719, lng: -1.9686 }, label: "C", title: "Cirencester" },
+                { pos: { lat: 51.8808, lng: -1.7387 }, label: "B", title: "Bourton-on-the-Water" },
+                { pos: { lat: 51.7109, lng: -1.7837 }, label: "F", title: "Fairford" },
+                { pos: { lat: 51.6938, lng: -1.6928 }, label: "L", title: "Lechlade" },
+                { pos: { lat: 51.6357, lng: -2.1604 }, label: "T", title: "Tetbury" },
+                { pos: { lat: 51.7454, lng: -2.2183 }, label: "S", title: "Stroud" },
+              ];
+
+              locations.forEach((loc) => {
+                new google.maps.Marker({
+                  position: loc.pos,
+                  map: map,
+                  label: loc.label,
+                  title: loc.title,
+                });
+              });
+            }
+          </script>
+          <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU_KwOJIowjRFSu6g9T5QYdx1J1mgCphQ&amp;callback=initMap"
+            async
+            defer
+          ></script>
+
+          <div class="map-placeholder map-placeholder--below-map" role="img" aria-label="Cirencester and 15-mile radius service area">
             <p class="map-placeholder__label">Cirencester &amp; 15-mile radius</p>
-            <p class="map-placeholder__meta muted">Static demo — no live map.</p>
+            <p class="map-placeholder__meta muted">Approx. 15 miles from Cirencester — towns shown are indicative.</p>
           </div>
         </div>
       </section>
