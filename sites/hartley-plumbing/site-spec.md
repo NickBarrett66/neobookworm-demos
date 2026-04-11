@@ -81,7 +81,9 @@ sites/hartley-plumbing/
 ├── css/
 │   └── styles.css
 ├── js/
-│   └── main.js
+│   ├── main.js
+│   ├── uk-counties-leaflet.js   (Leaflet + ONS counties — copy from shared/)
+│   └── uk-counties-regional.js  (regional preset — copy from shared/)
 ├── images/
 │   ├── hero.jpg
 │   ├── about-portrait.jpg
@@ -264,7 +266,7 @@ Emergency leak fixes, no-hot-water diagnostics, radiator balancing, tap/toilet/s
 About Gareth Hartley — Hartley Plumbing
 
 **Meta description:**  
-Ex‑British Gas engineer Gareth Hartley runs a small, tidy team serving Swindon and nearby villages. Built on same-day emergency slots, upfront pricing, and explaining the job properly.
+Ex‑British Gas engineer Gareth Hartley runs a small, tidy team based in Swindon, working across Wiltshire and neighbouring counties. Same-day slots where possible, upfront pricing, and explaining the job properly.
 
 **Section structure:**
 
@@ -286,14 +288,14 @@ Ex‑British Gas engineer Gareth Hartley runs a small, tidy team serving Swindon
      - **No surprises** — *You’ll know the cost before we start work.*
      - **No mess** — *We don’t leave a building site behind.*
 
-5. **The team**
+5. **Where we work (regional counties map)**
+   - Leaflet + ONS boundaries; **`initNeoUkRegionalCountiesMap`** highlights Gloucestershire, Wiltshire, Oxfordshire, Warwickshire, Swindon — copy aligned with site copy (Swindon/Wiltshire focus; wider counties for booked work).
+   - Availability hours below the map.
+
+6. **The team**
    - Copy:  
      **We’re a small team of three. That means you’ll get consistent standards and straightforward communication — not a different subcontractor every time.**
    - Note: **Most of our work is repeat customers and referrals.**
-
-6. **Service area and availability**
-   - Copy:  
-     **Based in Swindon, covering Old Town, town centre and surrounding villages within roughly 10 miles. Same‑day callouts Monday–Friday 8am–6pm where possible. Saturdays 9am–2pm. Sundays closed, emergency by arrangement.**
 
 7. **Guarantee + insurance**
    - Bullets:
@@ -310,10 +312,10 @@ Ex‑British Gas engineer Gareth Hartley runs a small, tidy team serving Swindon
 ### 4.4 Contact (`contact.html`)
 
 **Page title:**  
-Contact Hartley Plumbing — Swindon & nearby villages
+Contact Hartley Plumbing — Swindon, Wiltshire & neighbouring counties
 
 **Meta description:**  
-Call Hartley Plumbing on 01793 555247 for same-day emergency slots in Swindon where possible. Or send a message with your issue, postcode, and best time to call back.
+Call Hartley Plumbing on 01793 555247. Same-day slots in Swindon and nearby Wiltshire where possible; wider county work by arrangement. Or send a message with your issue, postcode, and best time to call back.
 
 **Section structure:**
 
@@ -326,7 +328,7 @@ Call Hartley Plumbing on 01793 555247 for same-day emergency slots in Swindon wh
 3. **Quick contact panel**
    - Phone: **01793 555247**
    - Email: **gareth@hartleyplumbing.co.uk**
-   - Area: **Swindon + 10 miles (Old Town, town centre, nearby villages)**
+   - Area: **Swindon, Wiltshire, Glos, Oxon & Warks — same-day priority Swindon & local Wiltshire (link to coverage map on About)**
    - Hours:
      - **Mon–Fri:** 8:00–18:00
      - **Sat:** 9:00–14:00

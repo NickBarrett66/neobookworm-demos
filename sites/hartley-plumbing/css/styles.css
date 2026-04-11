@@ -705,6 +705,51 @@ p {
   color: var(--color-text-muted);
 }
 
+.about-coverage {
+  padding: 2.25rem 0;
+  background: rgba(26, 32, 38, 0.35);
+  border-top: var(--border-hairline);
+  border-bottom: var(--border-hairline);
+}
+
+.coverage-map {
+  width: 100%;
+  height: min(52vh, 440px);
+  min-height: 280px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: var(--border-hairline);
+  background: #1a1f24;
+  box-shadow: var(--shadow-sm);
+}
+
+.coverage-map .leaflet-container {
+  font-family: var(--font-body);
+}
+
+.coverage-note {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  max-width: 75ch;
+}
+
+.coverage-hours {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(176, 122, 59, 0.25);
+}
+
+.coverage-hours-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--color-text-muted);
+}
+
+.coverage-hours-list li {
+  margin-bottom: 0.35rem;
+}
+
 .about-blocks {
   padding: 2.25rem 0;
 }

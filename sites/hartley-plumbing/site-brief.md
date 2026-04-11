@@ -15,7 +15,7 @@ Hartley Plumbing
 Plumber
 
 **Location served (town, county, radius):**
-Anywhere in Wiltshire
+Based in Swindon — most callouts in Wiltshire and Swindon; booked work also across Gloucestershire, Oxfordshire, and Warwickshire (matches regional counties map on About).
 
 **Years in business (real or fictional):**
 10
