@@ -695,6 +695,42 @@ body.nav-open .nav-drawer {
 .page-hero {
   padding-top: clamp(88px, 9vw, 132px);
 }
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero--services {
+  position: relative;
+  background-color: #18232F;
+  overflow: hidden;
+}
+.page-hero--services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(24, 35, 47, 0.86), rgba(24, 35, 47, 0.62)),
+    url("../images/contact-van-tools.jpg");
+  background-size: cover;
+  background-position: 65% 65%;
+  filter: saturate(1.05) contrast(1.05);
+  transform: scale(1.02);
+}
+.page-hero--services h1 {
+  color: #F6F1E7;
+}
+.page-hero--services .prose {
+  color: rgba(246, 241, 231, 0.86);
+}
+.page-hero--services .demo-note {
+  color: rgba(246, 241, 231, 0.58);
+}
+.page-hero--services .chip {
+  background: rgba(246, 241, 231, 0.10);
+  border-color: rgba(246, 241, 231, 0.18);
+  color: rgba(246, 241, 231, 0.92);
+}
 .page-hero__grid {
   display: grid;
   grid-template-columns: 1fr;
