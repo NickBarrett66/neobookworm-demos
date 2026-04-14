@@ -600,29 +600,48 @@ Not used globally; each page gets its own closing CTA specified below.
 
 ### 3) Map embed — Wiltshire coverage (required)
 
-- **Layout description**: section header + embedded map iframe in a rounded frame, with a short line underneath listing towns.
+- **Layout description**: section header + embedded interactive county map (Leaflet) in a rounded frame, with a short line underneath listing towns. Wiltshire is highlighted clearly.
 - **Exact copy**:
 
 > **H2:** Coverage area  
 > **Body:** Wiltshire and nearby — mainly around Royal Wootton Bassett, Swindon and the surrounding towns.
 
-- **Map embed (Google Maps iframe, centred on Royal Wootton Bassett)**:
+- **Map embed (Leaflet + `uk-counties-regional.js`, with Wiltshire highlighted exactly)**:
+
+**HTML (in `contact.html`)**
 
 ```html
-<iframe
-  title="Map - Royal Wootton Bassett and Wiltshire"
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps?q=51.5413,-1.9042&z=10&output=embed"
-  width="100%"
-  height="420"
-  style="border:0;"
-  allowfullscreen>
-</iframe>
+<div class="map-frame">
+  <div id="map-uk" class="uk-counties-map" aria-label="UK counties map showing Wiltshire highlighted"></div>
+</div>
+
+<!-- Leaflet 1.9.x -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- NeoBookworm shared toolkit (vendored into this site folder) -->
+<script src="js/uk-counties-leaflet.js"></script>
+<script src="js/uk-counties-regional.js"></script>
+<script>
+  // Use the regional wrapper, but override its defaults so ONLY Wiltshire is highlighted.
+  initNeoUkRegionalCountiesMap('map-uk', {
+    highlighted: ['Wiltshire'],
+    fitHighlightedBounds: true,
+    fitBoundsMaxZoom: 9,
+    scrollWheelZoom: false
+  });
+</script>
 ```
 
 - **Component notes**:
-  - Add a small overlay label in the top-left of the map frame: “Wiltshire coverage” (CSS absolute positioned) to satisfy the “highlighted” intent without altering Google content.
+  - Add a small overlay label in the top-left of `.map-frame`: “Wiltshire coverage”.
+  - CSS requirements:
+    - `.map-frame` has `border-radius: 14px; overflow: hidden; position: relative;`
+    - `.uk-counties-map` has fixed height: `420px` desktop, `320px` mobile
+  - If the GeoJSON endpoint is unreachable, the script renders a friendly fallback message automatically.
 
 ### 4) Service area list (required)
 
@@ -929,10 +948,11 @@ Include on `index.html` only.
   - Add honeypot field to reduce spam.
   - Add client-side success message based on `?sent=1`.
 
-- **Google Maps embed**:
-  - Use an iframe embed centered on **Royal Wootton Bassett**.
-  - Coordinates: **51.5413, -1.9042** (RWB).
-  - Embed code is specified in the Contact page section (do not add API keys).
+- **Wiltshire highlight map (recommended over Google Maps)**:
+  - Use the shared NeoBookworm toolkit: `uk-counties-leaflet.js` + `uk-counties-regional.js`.
+  - Vendor/copy both files into `sites/lee-morgan-heating-and-plumbing-ltd/js/` so Netlify deploy is self-contained.
+  - Load Leaflet 1.9.x from unpkg (CSS + JS).
+  - Initialise with `initNeoUkRegionalCountiesMap('map-uk', { highlighted: ['Wiltshire'], fitHighlightedBounds: true })` so **Wiltshire is highlighted exactly** and the map frames tightly to it.
 
 - **Demo banner**:
   - Persist dismissal in localStorage and apply on all pages.
@@ -964,6 +984,8 @@ lee-morgan-heating-and-plumbing-ltd/
     badges.css
   js/
     main.js
+    uk-counties-leaflet.js   ← copy from `shared/js/`
+    uk-counties-regional.js  ← copy from `shared/js/`
   images/
     home-hero.jpg
     home-alpha-warranty.jpg
