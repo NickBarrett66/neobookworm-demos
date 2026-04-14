@@ -305,10 +305,46 @@
   <script>
     // Use the regional wrapper, but override its defaults so ONLY Wiltshire is highlighted.
     initNeoUkRegionalCountiesMap('map-uk', {
-      highlighted: ['Wiltshire'],
+      highlighted: ['Wiltshire', 'Swindon'],
       fitHighlightedBounds: true,
-      fitBoundsMaxZoom: 9,
+      fitBoundsPadding: 18,
+      fitBoundsMaxZoom: 10,
       scrollWheelZoom: false
+    }).then(function (ctx) {
+      if (!ctx || !ctx.map || typeof L === 'undefined') {
+        return;
+      }
+
+      var map = ctx.map;
+
+      var townIcon = L.divIcon({
+        className: 'neo-town-marker',
+        html: '<span class="neo-town-pin" aria-hidden="true"></span>',
+        iconSize: [18, 18],
+        iconAnchor: [9, 9]
+      });
+
+      var towns = [
+        // Stagger label directions/offsets to avoid overlap at typical zoom levels.
+        { name: 'Royal Wootton Bassett', lat: 51.5418, lng: -1.9048, dir: 'left', offset: [-12, -2] },
+        { name: 'Swindon', lat: 51.5614, lng: -1.7859, dir: 'top', offset: [0, -14] },
+        { name: 'Chippenham', lat: 51.4600, lng: -2.1150, dir: 'left', offset: [-12, -2] },
+        { name: 'Calne', lat: 51.4386, lng: -2.0066, dir: 'bottom', offset: [0, 12] },
+        { name: 'Marlborough', lat: 51.4203, lng: -1.7276, dir: 'right', offset: [12, -2] },
+        { name: 'Devizes', lat: 51.3519, lng: -1.9943, dir: 'bottom', offset: [0, 12] }
+      ];
+
+      towns.forEach(function (t) {
+        L.marker([t.lat, t.lng], { icon: townIcon, keyboard: false })
+          .addTo(map)
+          .bindTooltip(t.name, {
+            permanent: true,
+            direction: t.dir || 'top',
+            offset: t.offset || [0, -10],
+            className: 'neo-town-label',
+            opacity: 1
+          });
+      });
     });
   </script>
 
