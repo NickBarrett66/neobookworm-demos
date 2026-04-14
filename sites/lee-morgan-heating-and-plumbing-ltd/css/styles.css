@@ -7,8 +7,8 @@
   /* Brand */
   --color-primary: #1E2A36; /* Slate Navy */
   --color-secondary: #2F3F4E; /* Workshop Slate */
-  --color-accent: #B86B3D; /* Copper */
-  --color-accent-hover: #A85F35;
+  --color-accent: #D96B00; /* Flame Amber */
+  --color-accent-hover: #B85A00;
 
   /* Surfaces + type */
   --color-bg: #F6F1E7; /* Parchment */
@@ -390,6 +390,32 @@ body.nav-open .nav-drawer {
 /* Hero */
 .hero {
   padding-top: clamp(88px, 9vw, 132px);
+  background-color: #18232F;
+}
+
+/* Hero dark background — text overrides */
+.hero h1 {
+  color: #F6F1E7;
+}
+.hero .hero__lede,
+.hero .prose {
+  color: rgba(246, 241, 231, 0.82);
+}
+.hero .trustline {
+  color: rgba(246, 241, 231, 0.55);
+}
+.hero .demo-note {
+  color: rgba(246, 241, 231, 0.35);
+}
+.hero .btn--secondary {
+  color: #F6F1E7;
+  border-color: rgba(246, 241, 231, 0.4);
+  background: transparent;
+}
+.hero .btn--secondary:hover {
+  background: rgba(246, 241, 231, 0.1);
+  border-color: rgba(246, 241, 231, 0.7);
+  color: #F6F1E7;
 }
 .hero__grid {
   display: grid;
@@ -424,6 +450,28 @@ body.nav-open .nav-drawer {
 /* Trust strip */
 .trust-strip {
   padding-block: var(--space-8);
+  background-color: #18232F;
+  border-top: 3px solid var(--color-accent);
+  border-bottom: 3px solid var(--color-accent);
+}
+
+/* Trust strip dark background — card overrides */
+.trust-strip .trust-card {
+  background: rgba(246, 241, 231, 0.06);
+  border-color: rgba(246, 241, 231, 0.12);
+  box-shadow: none;
+}
+.trust-strip .trust-card__label {
+  color: #F6F1E7;
+}
+.trust-strip .trust-card__line {
+  color: rgba(246, 241, 231, 0.6);
+}
+.trust-strip .trust-card__icon {
+  background: rgba(246, 241, 231, 0.1);
+}
+.trust-strip .trust-card__icon svg {
+  color: rgba(246, 241, 231, 0.7);
 }
 .trust-grid {
   display: grid;
@@ -535,7 +583,7 @@ body.nav-open .nav-drawer {
 
 /* Alpha callout */
 .alpha-callout {
-  background: var(--color-primary);
+  background: #18232F;
   color: rgba(246, 241, 231, 0.95);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-soft);
@@ -1258,9 +1306,9 @@ body.nav-open .nav-drawer {
   right: 0;
   bottom: 0;
   padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
-  background: rgba(246, 241, 231, 0.92);
+  background: var(--color-accent);
   backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(47, 63, 78, 0.2);
+  border-top: none;
   z-index: 70;
 }
 .callbar a {
@@ -1269,7 +1317,7 @@ body.nav-open .nav-drawer {
   justify-content: center;
   min-height: 44px;
   border-radius: 12px;
-  background: var(--color-accent);
+  background: rgba(0, 0, 0, 0.18);
   color: #fff;
   font-weight: 700;
   text-decoration: none;
