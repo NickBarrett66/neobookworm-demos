@@ -160,10 +160,144 @@ function initDemoBlockedActions() {
   });
 }
 
+function clamp(n, min, max) {
+  return Math.max(min, Math.min(max, n));
+}
+
+function setBa(slider, pct) {
+  slider.style.setProperty("--ba", `${pct}%`);
+}
+
+function getBaPct(slider) {
+  const raw = getComputedStyle(slider).getPropertyValue("--ba").trim();
+  const num = Number.parseFloat(raw.replace("%", ""));
+  return Number.isFinite(num) ? num : 55;
+}
+
+function initBeforeAfterSliders() {
+  const sliders = document.querySelectorAll("[data-ba-slider]");
+  if (!sliders.length) return;
+
+  sliders.forEach((slider) => {
+    if (!(slider instanceof HTMLElement)) return;
+    const handle = slider.querySelector("[data-ba-handle]");
+    if (!(handle instanceof HTMLElement)) return;
+
+    // Default
+    setBa(slider, clamp(getBaPct(slider), 10, 90));
+
+    const updateFromClientX = (clientX) => {
+      const rect = slider.getBoundingClientRect();
+      const x = clamp(clientX - rect.left, rect.width * 0.1, rect.width * 0.9);
+      const pct = (x / rect.width) * 100;
+      setBa(slider, pct);
+    };
+
+    let dragging = false;
+
+    const onPointerDown = (e) => {
+      dragging = true;
+      slider.setPointerCapture?.(e.pointerId);
+      updateFromClientX(e.clientX);
+    };
+    const onPointerMove = (e) => {
+      if (!dragging) return;
+      updateFromClientX(e.clientX);
+    };
+    const onPointerUp = () => {
+      dragging = false;
+    };
+
+    // Drag anywhere in slider
+    slider.addEventListener("pointerdown", onPointerDown);
+    slider.addEventListener("pointermove", onPointerMove);
+    slider.addEventListener("pointerup", onPointerUp);
+    slider.addEventListener("pointercancel", onPointerUp);
+
+    // Keyboard
+    handle.addEventListener("keydown", (e) => {
+      const step = e.shiftKey ? 10 : 2;
+      const current = clamp(getBaPct(slider), 10, 90);
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        setBa(slider, clamp(current - step, 10, 90));
+      }
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        setBa(slider, clamp(current + step, 10, 90));
+      }
+    });
+  });
+}
+
+function initLightbox() {
+  const root = document.querySelector("[data-lightbox]");
+  if (!(root instanceof HTMLElement)) return;
+
+  const overlay = root.querySelector("[data-lightbox-overlay]");
+  const closeBtn = root.querySelector("[data-lightbox-close]");
+  const img = root.querySelector("[data-lightbox-img]");
+  if (!(overlay instanceof HTMLElement)) return;
+  if (!(closeBtn instanceof HTMLElement)) return;
+  if (!(img instanceof HTMLImageElement)) return;
+
+  let lastFocus = null;
+
+  const open = (src, alt) => {
+    lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    img.src = src;
+    img.alt = alt || "";
+    root.hidden = false;
+    root.setAttribute("aria-hidden", "false");
+    closeBtn.focus();
+  };
+
+  const close = () => {
+    root.hidden = true;
+    root.setAttribute("aria-hidden", "true");
+    img.src = "";
+    img.alt = "";
+    lastFocus?.focus?.();
+  };
+
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!(target instanceof Element)) return;
+
+    const btn = target.closest("[data-lightbox-btn]");
+    if (!(btn instanceof HTMLElement)) return;
+
+    const src = btn.getAttribute("data-lightbox-src");
+    if (!src) return;
+    const alt = btn.getAttribute("data-lightbox-alt") || "";
+    open(src, alt);
+  });
+
+  overlay.addEventListener("click", close);
+  closeBtn.addEventListener("click", close);
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !root.hidden) close();
+  });
+}
+
+function initContactSentMessage() {
+  const el = document.querySelector("[data-form-success]");
+  if (!(el instanceof HTMLElement)) return;
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("sent") === "1") {
+    el.hidden = false;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initDemoBanner();
   initHeaderShadow();
   initNavActive();
   initNavDrawer();
   initDemoBlockedActions();
+  initBeforeAfterSliders();
+  initLightbox();
+  initContactSentMessage();
 });
