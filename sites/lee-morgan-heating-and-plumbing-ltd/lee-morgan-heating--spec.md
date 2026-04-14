@@ -46,6 +46,44 @@ Site type: static HTML/CSS/vanilla JS, 5 pages (Home, About, Services, Gallery, 
   - **Usage**: secondary copy, captions, meta lines, helper text, testimonial attribution.  
   - **Why**: keeps the site grounded and calm; supports the “straight-talking” voice (no shouty grey-on-grey).
 
+**Implementation token names (use CSS custom properties in `:root`)**
+
+```css
+:root {
+  /* Brand */
+  --color-primary: #1E2A36;    /* Slate Navy */
+  --color-secondary: #2F3F4E;  /* Workshop Slate */
+  --color-accent: #B86B3D;     /* Copper */
+  --color-accent-hover: #A85F35;
+
+  /* Surfaces + type */
+  --color-bg: #F6F1E7;         /* Parchment */
+  --color-text: #1B1D1F;       /* Charcoal */
+  --color-heading: #13202C;    /* Deep Navy Ink */
+  --color-muted: #4E5860;      /* Muted Slate (darkened for WCAG contrast on parchment) */
+
+  /* Layout */
+  --radius-card: 14px;
+  --radius-control: 12px;
+  --shadow-soft: 0 10px 30px rgba(19, 32, 44, 0.12);
+
+  /* Spacing (4px grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Global fixed UI */
+  --banner-h: 52px; /* JS should measure actual banner height and update this */
+}
+```
+
 ### Typography
 
 - **Heading font**: Google Font **`Saira Condensed`**  
@@ -95,6 +133,29 @@ Use one shadow only:
 
 ```css
 box-shadow: 0 10px 30px rgba(19, 32, 44, 0.12);
+```
+
+### Layout primitives (required so all sections feel consistent)
+
+- **Max content width**: `1200px`
+- **Page gutters**: `padding-inline: clamp(16px, 4vw, 32px)`
+- **Section vertical padding**: `padding-block: clamp(48px, 8vw, 88px)`
+- **Readable line length**: body copy max width `65ch`
+
+Suggested implementation:
+
+```css
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+}
+.section {
+  padding-block: clamp(48px, 8vw, 88px);
+}
+.prose {
+  max-width: 65ch;
+}
 ```
 
 ### Button style
@@ -165,7 +226,7 @@ Not used globally; each page gets its own closing CTA specified below.
 - **Image slot**:
   - Hero image, **16:9**: “Gas Safe engineer in clean workwear kneeling beside a modern wall-hung combi boiler in a bright utility room, copper pipework neat, slate navy + warm parchment colour grade, shallow depth of field, no face visible”
 - **Component notes**:
-  - “Call Lee” uses `tel:07739583768`
+  - “Call Lee” uses `tel:+447739583768` (display as `07739 583768`)
   - “Get a quote” scrolls to Home contact CTA section (or links to `contact.html`)
   - On mobile: image stacks above copy; CTAs become full-width
 
@@ -294,8 +355,9 @@ Not used globally; each page gets its own closing CTA specified below.
 
 - **Image slot**: none
 - **Component notes**:
-  - Primary button uses `tel:07739583768`
+  - Primary button uses `tel:+447739583768` (display as `07739 583768`)
   - Secondary links to `contact.html#form`
+  - Add `id="contact-cta"` to this section so the Home hero “Get a quote” button can scroll here.
 
 ---
 
@@ -378,7 +440,8 @@ Not used globally; each page gets its own closing CTA specified below.
 > **Body:** Call and I’ll tell you what I can do and when I can do it.  
 > **Button:** Call Lee
 
-- **Component notes**: button uses `tel:07739583768`
+- **Component notes**: button uses `tel:+447739583768` (display as `07739 583768`)
+ - **Component notes**: button uses `tel:+447739583768` (display as `07739 583768`)
 
 ---
 
@@ -532,7 +595,7 @@ Not used globally; each page gets its own closing CTA specified below.
     - Handle is focusable button with `aria-label="Before and after slider"`
     - Arrow keys adjust ±2%; Shift+arrow ±10%
 
-### 3) Google review strip mockup (required)
+### 3) Facebook recommendation strip mockup (required)
 
 - **Layout description**: slim strip card with left: rating, middle: summary, right: “Read on Facebook” button (non-functional link to FB).
 - **Exact copy**:
@@ -572,7 +635,7 @@ Not used globally; each page gets its own closing CTA specified below.
 > **Service area line:** Royal Wootton Bassett • Swindon • Chippenham • Calne • Marlborough • Devizes
 
 - **Component notes**:
-  - Phone uses `tel:07739583768`
+  - Phone link uses `tel:+447739583768` (display text remains `07739 583768`)
 
 ### 2) Contact form (Netlify Forms) (required fields: name, phone, message)
 
@@ -597,6 +660,11 @@ Not used globally; each page gets its own closing CTA specified below.
   - Netlify attributes: `name="contact"`, `method="POST"`, `data-netlify="true"`
   - Include Netlify honeypot field: `data-netlify-honeypot="bot-field"` + hidden input
   - Success behaviour: redirect to same page with `?sent=1` and show inline confirmation banner (JS)
+  - Add `id="form"` to this section so links to `contact.html#form` work.
+  - Recommended placeholders:
+    - Name: `e.g. Sarah`
+    - Phone number: `e.g. 07700 900000`
+    - Message: `Boiler not firing / annual service / new boiler quote — what’s happening?`
 
 ### 3) Map embed — Wiltshire coverage (required)
 
@@ -642,6 +710,13 @@ Not used globally; each page gets its own closing CTA specified below.
     - `.map-frame` has `border-radius: 14px; overflow: hidden; position: relative;`
     - `.uk-counties-map` has fixed height: `420px` desktop, `320px` mobile
   - If the GeoJSON endpoint is unreachable, the script renders a friendly fallback message automatically.
+  - **Brand colour note (important):** the vendored `js/uk-counties-leaflet.js` currently uses hardcoded blue highlight colours (`#3b82f6`). For this site, update the *vendored copy inside this site folder* so:
+    - `highlightStyle.color` → `#B86B3D`
+    - `highlightStyle.fillColor` → `#B86B3D`
+    - `defaultStyle.color` → `#2F3F4E`
+    - `defaultStyle.fillColor` → `#1E2A36`
+    - Keep opacities subtle (0.20–0.35) to match the warm craft palette.
+  - Do **not** edit the canonical `shared/js/` file as part of a site build; edit only the copied versions under `sites/lee-morgan-heating-and-plumbing-ltd/js/`.
 
 ### 4) Service area list (required)
 
@@ -682,7 +757,13 @@ Not used globally; each page gets its own closing CTA specified below.
   - Active link gets copper underline + slightly brighter text on navy
   - On mobile drawer, active link has a copper left border
 - **CTA in nav**: yes — **“Call Lee”** button (secondary style on desktop; primary style in mobile drawer footer).
-  - Link: `tel:07739583768`
+  - Link: `tel:+447739583768`
+
+- **Active state application (must be deterministic)**:
+  - Implement in `js/main.js` so the correct item highlights on every page without manual per-page HTML edits:
+    - On `DOMContentLoaded`, read `window.location.pathname`
+    - Match against each nav `<a href="...">`
+    - Add class `.nav__link--active` to the matching link
 
 ---
 
@@ -761,6 +842,26 @@ Footer appears on every page.
 @media (min-width: 761px) { .callbar { display: none; } }
 ```
 
+- **Prevent callbar overlap (required)**:
+
+```css
+@media (max-width: 760px) {
+  body {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+}
+```
+
+- **Z-index stack (required; avoids banner/nav/drawer/callbar clashes)**:
+
+```css
+.site-banner { z-index: 100; }
+.site-header { z-index: 90; }
+.nav-drawer-overlay { z-index: 80; }
+.nav-drawer { z-index: 85; }
+.callbar { z-index: 70; }
+```
+
 - **Navigation collapse behaviour**:
   - Desktop shows full nav
   - Mobile shows hamburger + drawer; drawer closes on link click and on overlay click
@@ -785,6 +886,100 @@ Use badges from the allowed list only.
 - **Badges to use**:
   - `Gas Safe`
   - `Fully Insured` (or generic “Fully Insured” — use the one that exists in the library)
+
+- **Badge library source (in this repo)**:
+  - Master snippet file: `accreditations/accreditation-badges.html`
+  - **Rule (site-specific override for this demo)**:
+    - **Gas Safe**: use **official Gas Safe artwork** (real engineer, real registration number).
+    - **Everything else**: use the NeoBookworm CSS badge snippets (do not use other real trademarked logos).
+
+- **Gas Safe official artwork (implementation spec)**:
+  - Asset: add an official Gas Safe logo file provided by Gas Safe / member portal (preferred formats in order: SVG, then PNG).
+  - Filenames (choose one and use consistently):
+    - `images/badges/gas-safe.svg` (preferred)
+    - `images/badges/gas-safe.png` (fallback)
+  - Where it appears:
+    - Home trust strip (prominent)
+    - Services hero trust chips (prominent)
+    - Footer (every page, minimum)
+  - Display rules:
+    - Never stretch; preserve aspect ratio.
+    - Target height: 28–34px in the Home trust strip; 24–28px in the footer.
+    - Always pair the logo with text: `Gas Safe no. [GAS SAFE NO]`.
+  - Accessibility:
+    - If used as an `<img>`, alt text: `Gas Safe Register` (keep the reg number in adjacent text, not in the alt).
+    - If the official artwork is SVG inline, ensure it has `role="img"` and an accessible name.
+  - Fallback:
+    - If the official asset is unavailable in the demo build, temporarily use the CSS badge snippet below (clearly marked as fallback only).
+
+- **How to implement (developer steps)**:
+  - **Fully Insured**:
+    - Copy the **“BADGE CSS”** block from `accreditations/accreditation-badges.html` into `css/badges.css` (include the `.nb-insured` rules at minimum).
+    - Copy the exact HTML snippet below into the required sections.
+    - For dark navy backgrounds (header/footer), add the `dk` class.
+  - **Gas Safe**:
+    - Add the official Gas Safe artwork file under `images/badges/` and use it via `<img>` in the required placements.
+    - Do not recreate the mark in CSS for the live demo build.
+
+- **Gas Safe CSS badge HTML (fallback only; use only if official artwork is missing)**:
+
+```html
+<!-- Light background -->
+<div class="nb-badge nb-gassafe">
+  <div class="nb-mark">
+    <svg width="18" height="22" viewBox="0 0 24 30" fill="none" aria-hidden="true" focusable="false">
+      <path d="M12 28C7 28 3 24 3 18.5C3 14 6 11 8 8C8 12 10 13 12 11C14 9 13 5 11 2C16 4 21 9 21 16C21 22.5 17 28 12 28Z" fill="white" opacity="0.9"/>
+      <path d="M12 24C10 24 8.5 22.5 8.5 20.5C8.5 18.5 10 17 11 15.5C11 17 11.8 17.5 12.5 16.5C13.2 15.5 13 14 12 13C14.5 14 16.5 16.5 16.5 19.5C16.5 22 14.5 24 12 24Z" fill="#f5a623"/>
+    </svg>
+  </div>
+  <div class="nb-text">
+    <div class="nb-top">GAS SAFE</div>
+    <div class="nb-bot">REGISTER<br>Reg. No. [GAS SAFE NO]</div>
+  </div>
+</div>
+
+<!-- Dark background -->
+<div class="nb-badge nb-gassafe dk">
+  <div class="nb-mark">
+    <svg width="18" height="22" viewBox="0 0 24 30" fill="none" aria-hidden="true" focusable="false">
+      <path d="M12 28C7 28 3 24 3 18.5C3 14 6 11 8 8C8 12 10 13 12 11C14 9 13 5 11 2C16 4 21 9 21 16C21 22.5 17 28 12 28Z" fill="white" opacity="0.9"/>
+      <path d="M12 24C10 24 8.5 22.5 8.5 20.5C8.5 18.5 10 17 11 15.5C11 17 11.8 17.5 12.5 16.5C13.2 15.5 13 14 12 13C14.5 14 16.5 16.5 16.5 19.5C16.5 22 14.5 24 12 24Z" fill="#f5a623"/>
+    </svg>
+  </div>
+  <div class="nb-text">
+    <div class="nb-top">GAS SAFE</div>
+    <div class="nb-bot">REGISTER · Reg. No. [GAS SAFE NO]</div>
+  </div>
+</div>
+```
+
+- **Fully insured badge HTML (light + dark)**:
+
+```html
+<!-- Light background -->
+<div class="nb-insured">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+    <path d="M12 2L4 6V12C4 16.4 7.4 20.5 12 22C16.6 20.5 20 16.4 20 12V6L12 2Z" stroke="#5f5e5a" stroke-width="1.5" fill="none"/>
+    <path d="M9 12L11 14L15 10" stroke="#5f5e5a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div>
+    <div class="nb-top">Fully Insured</div>
+    <div class="nb-bot">Public liability cover<br>up to £5 million</div>
+  </div>
+</div>
+
+<!-- Dark background -->
+<div class="nb-insured dk">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+    <path d="M12 2L4 6V12C4 16.4 7.4 20.5 12 22C16.6 20.5 20 16.4 20 12V6L12 2Z" stroke="#a0b4cc" stroke-width="1.5" fill="none"/>
+    <path d="M9 12L11 14L15 10" stroke="#a0b4cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div>
+    <div class="nb-top">Fully Insured</div>
+    <div class="nb-bot">Public liability £5m</div>
+  </div>
+</div>
+```
 
 - **Placement rules**:
   - **Gas Safe**:
@@ -938,10 +1133,110 @@ Include on `index.html` only.
 
 ## 9. Implementation notes
 
+### Shared `<head>` template (required on every page)
+
+Every page must include: charset, viewport, title, meta description, canonical, Open Graph, favicon, font loading, and the shared CSS. Use `lang="en-GB"`.
+
+```html
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>[PAGE TITLE]</title>
+  <meta name="description" content="[PAGE META DESCRIPTION]" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://leemorgangasman.co.uk/[PAGE PATH]" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="[PAGE TITLE]" />
+  <meta property="og:description" content="[PAGE META DESCRIPTION]" />
+  <meta property="og:url" content="https://leemorgangasman.co.uk/[PAGE PATH]" />
+  <meta property="og:image" content="https://leemorgangasman.co.uk/images/home-hero.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/badges.css" />
+</head>
+```
+
+Notes:
+- For `index.html` canonical should be `https://leemorgangasman.co.uk/` (no `index.html`).
+- Only `contact.html` needs the Leaflet CSS/JS CDN includes.
+
 - **Before/after slider**:
   - Use **lightweight JS** (no jQuery, no libraries) with Pointer Events.
   - Use CSS `clip-path: inset(0 calc(100% - var(--ba)) 0 0);` or a width-based clip wrapper for the “after” image.
   - Add keyboard controls for accessibility.
+  - Include required CSS structure (so it works without guessing):
+
+```css
+.ba-slider {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  background: #000;
+  touch-action: pan-y;
+}
+.ba-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.ba-slider .after {
+  clip-path: inset(0 0 0 var(--ba, 55%));
+}
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--ba, 55%);
+  transform: translateX(-50%);
+  width: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: col-resize;
+  z-index: 2;
+}
+.ba-handle-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255,255,255,0.9);
+}
+.ba-handle-knob {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  border: 2px solid rgba(255,255,255,0.95);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+```
+
+  - JS should set `--ba` as a percentage string (e.g. `slider.style.setProperty('--ba', pct + '%')`).
 
 - **Contact form**:
   - Use **Netlify Forms** (static HTML only).
@@ -957,6 +1252,11 @@ Include on `index.html` only.
 - **Demo banner**:
   - Persist dismissal in localStorage and apply on all pages.
   - Ensure banner height is accounted for in sticky header offset.
+  - Implementation approach:
+    - Banner is `position: fixed; top: 0`
+    - Header is `position: sticky` and uses `top: var(--banner-h)`
+    - On load, measure banner height and set `document.documentElement.style.setProperty('--banner-h', banner.offsetHeight + 'px')`
+    - When dismissed, set body class `banner-dismissed` and set `--banner-h: 0px`
 
 - **Font loading strategy**:
   - `preconnect` to Google Fonts domains
@@ -979,14 +1279,18 @@ lee-morgan-heating-and-plumbing-ltd/
   services.html
   gallery.html
   contact.html
+  favicon.svg
   css/
-    style.css
+    styles.css
     badges.css
   js/
     main.js
     uk-counties-leaflet.js   ← copy from `shared/js/`
     uk-counties-regional.js  ← copy from `shared/js/`
   images/
+    badges/
+      gas-safe.svg            ← official Gas Safe artwork (preferred)
+      gas-safe.png            ← optional fallback if SVG unavailable
     home-hero.jpg
     home-alpha-warranty.jpg
     home-coverage-map.jpg
@@ -1005,6 +1309,33 @@ lee-morgan-heating-and-plumbing-ltd/
     contact-van-tools.jpg
   netlify.toml
 ```
+
+### Image build constraints (required; prevents layout shift + keeps performance sane)
+
+Target sizes and usage:
+
+| File | Aspect | Suggested px size | Max size | Notes |
+|---|---:|---:|---:|---|
+| `images/home-hero.jpg` | 16:9 | 1200×675 | 400KB | Use as `og:image` |
+| `images/home-alpha-warranty.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/home-coverage-map.jpg` | 16:9 | 1200×675 | 150KB | Static illustration |
+| `images/about-portrait.jpg` | 3:4 | 675×900 | 200KB | Lazy-load |
+| `images/about-tools-analyser.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/services-alpha-feature.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/gallery-01-before.jpg` | 4:3 | 900×675 | 200KB | Slider “before” |
+| `images/gallery-01-after.jpg` | 4:3 | 900×675 | 200KB | Slider “after” |
+| `images/gallery-02-diptych.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/gallery-03-diptych.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/gallery-04-diptych.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/gallery-05-diptych.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/gallery-06-diptych.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/gallery-07-diptych.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/gallery-08-diptych.jpg` | 4:3 | 900×675 | 200KB | Lazy-load |
+| `images/contact-van-tools.jpg` | 16:9 | 1200×675 | 300KB | Optional |
+
+Implementation requirements:
+- Every `<img>` must include `width` and `height` attributes matching the image’s pixel size.
+- Use `loading="lazy"` on non-hero images.
 
 ### `netlify.toml` rules
 
