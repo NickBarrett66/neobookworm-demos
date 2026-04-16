@@ -8,6 +8,15 @@
   --color-bg-alt: #FFF9F1;
   --color-border: #D8D0C4;
 
+  /* Decorative palette chips (color-mix from core tokens — paint swatch strips) */
+  --palette-bridge: color-mix(in srgb, var(--color-primary) 52%, var(--color-secondary) 48%);
+  --palette-slate-wash: color-mix(in srgb, var(--color-secondary) 38%, var(--color-bg) 62%);
+  --palette-navy-wash: color-mix(in srgb, var(--color-primary) 22%, var(--color-bg) 78%);
+  --palette-honey: color-mix(in srgb, var(--color-accent) 34%, var(--color-bg-alt) 66%);
+  --palette-apricot: color-mix(in srgb, var(--color-accent) 52%, var(--color-bg) 48%);
+  --palette-rust: color-mix(in srgb, var(--color-accent) 42%, var(--color-primary) 58%);
+  --palette-ink-mist: color-mix(in srgb, var(--color-text) 55%, var(--color-bg) 45%);
+
   --font-display: "Bricolage Grotesque", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
   --font-body: "Albert Sans", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
 
@@ -114,6 +123,191 @@ select:focus-visible {
   font-weight: 700;
   font-size: 0.75rem;
   color: var(--color-text-muted);
+}
+
+/* Decorative paint swatch rhythm (shared site motif — hero + section heads / key breaks) */
+.paint-swatches-wrap {
+  margin: 0.35rem 0 0.85rem;
+}
+
+.paint-swatches-wrap--section {
+  margin: 0 0 0.65rem;
+}
+
+.paint-swatches-wrap--delay-1 {
+  animation-delay: 110ms;
+}
+
+.paint-swatches-wrap--delay-2 {
+  animation-delay: 210ms;
+}
+
+.paint-swatches-wrap--delay-3 {
+  animation-delay: 300ms;
+}
+
+.paint-swatches {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.paint-swatches li {
+  margin: 0;
+  position: relative;
+}
+
+.paint-swatches li + li {
+  margin-left: -0.38rem;
+}
+
+.paint-swatches--dense li + li {
+  margin-left: -0.34rem;
+}
+
+/* Overlap stack: earlier chips sit above the next (long strips supported) */
+.paint-swatches li:nth-child(1) {
+  z-index: 12;
+}
+.paint-swatches li:nth-child(2) {
+  z-index: 11;
+}
+.paint-swatches li:nth-child(3) {
+  z-index: 10;
+}
+.paint-swatches li:nth-child(4) {
+  z-index: 9;
+}
+.paint-swatches li:nth-child(5) {
+  z-index: 8;
+}
+.paint-swatches li:nth-child(6) {
+  z-index: 7;
+}
+.paint-swatches li:nth-child(7) {
+  z-index: 6;
+}
+.paint-swatches li:nth-child(8) {
+  z-index: 5;
+}
+.paint-swatches li:nth-child(9) {
+  z-index: 4;
+}
+.paint-swatches li:nth-child(10) {
+  z-index: 3;
+}
+.paint-swatches li:nth-child(11) {
+  z-index: 2;
+}
+.paint-swatches li:nth-child(12) {
+  z-index: 1;
+}
+
+.paint-swatch {
+  display: block;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px rgba(246, 241, 232, 0.95),
+    0 2px 6px rgba(16, 20, 24, 0.12),
+    inset 0 0 0 1px rgba(16, 20, 24, 0.12);
+}
+
+.paint-swatches--dense .paint-swatch {
+  width: 1.28rem;
+  height: 1.28rem;
+}
+
+.paint-swatch--primary {
+  background: var(--color-primary);
+}
+
+.paint-swatch--secondary {
+  background: var(--color-secondary);
+}
+
+.paint-swatch--accent {
+  background: var(--color-accent);
+}
+
+.paint-swatch--paper {
+  background: var(--color-bg-alt);
+  box-shadow:
+    0 0 0 2px rgba(246, 241, 232, 0.95),
+    0 2px 6px rgba(16, 20, 24, 0.1),
+    inset 0 0 0 1px rgba(216, 208, 196, 0.95);
+}
+
+.paint-swatch--stone {
+  background: var(--color-text-muted);
+}
+
+.paint-swatch--bridge {
+  background: var(--palette-bridge);
+}
+
+.paint-swatch--slate-wash {
+  background: var(--palette-slate-wash);
+}
+
+.paint-swatch--navy-wash {
+  background: var(--palette-navy-wash);
+  box-shadow:
+    0 0 0 2px rgba(246, 241, 232, 0.95),
+    0 2px 6px rgba(16, 20, 24, 0.08),
+    inset 0 0 0 1px rgba(14, 27, 42, 0.08);
+}
+
+.paint-swatch--honey {
+  background: var(--palette-honey);
+  box-shadow:
+    0 0 0 2px rgba(246, 241, 232, 0.95),
+    0 2px 6px rgba(16, 20, 24, 0.1),
+    inset 0 0 0 1px rgba(208, 122, 45, 0.22);
+}
+
+.paint-swatch--apricot {
+  background: var(--palette-apricot);
+  box-shadow:
+    0 0 0 2px rgba(246, 241, 232, 0.95),
+    0 2px 6px rgba(16, 20, 24, 0.1),
+    inset 0 0 0 1px rgba(208, 122, 45, 0.18);
+}
+
+.paint-swatch--rust {
+  background: var(--palette-rust);
+}
+
+.paint-swatch--putty {
+  background: var(--color-border);
+  box-shadow:
+    0 0 0 2px rgba(246, 241, 232, 0.95),
+    0 2px 6px rgba(16, 20, 24, 0.08),
+    inset 0 0 0 1px rgba(85, 96, 106, 0.12);
+}
+
+.paint-swatch--ink-mist {
+  background: var(--palette-ink-mist);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .paint-swatches-wrap {
+    animation: paint-swatches-in 720ms ease-out both;
+  }
+
+  @keyframes paint-swatches-in {
+    from {
+      opacity: 0;
+      transform: translateX(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 h1,
