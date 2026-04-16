@@ -253,7 +253,20 @@
                 <button class="btn btn-primary" type="submit">Send my details</button>
               </div>
 
-              <p class="form-success" data-form-success hidden></p>
+              <div class="form-success-banner" data-form-success-banner hidden>
+                <p
+                  class="form-success"
+                  data-form-success
+                  tabindex="-1"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+                <div class="form-success-actions">
+                  <button type="button" class="btn btn-secondary" data-form-dismiss>
+                    Send another message
+                  </button>
+                </div>
+              </div>
 
               <p class="demo-note" style="margin-top: 0.75rem; color: rgba(16, 20, 24, 0.72)">
                 Demo site note: this form doesn’t send anywhere — it just shows a confirmation message.

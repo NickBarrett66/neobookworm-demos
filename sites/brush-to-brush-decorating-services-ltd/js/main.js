@@ -100,8 +100,50 @@ function initContactFormDemoUX() {
   if (!form) return;
 
   const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+  const bannerEl = form.querySelector("[data-form-success-banner]");
   const successEl = form.querySelector("[data-form-success]");
+  const dismissBtn = form.querySelector("[data-form-dismiss]");
   const message = "Thanks — we’ve got your message. We’ll be in touch as soon as we can.";
+
+  function showSuccess() {
+    if (bannerEl && successEl) {
+      successEl.textContent = message;
+      bannerEl.hidden = false;
+      window.requestAnimationFrame(() => {
+        successEl.focus();
+      });
+      return;
+    }
+    if (successEl) {
+      successEl.textContent = message;
+      successEl.hidden = false;
+    } else {
+      window.alert(message);
+    }
+  }
+
+  function hideSuccess() {
+    if (bannerEl) bannerEl.hidden = true;
+    else if (successEl) successEl.hidden = true;
+    if (successEl) successEl.textContent = "";
+    if (submitBtn) submitBtn.disabled = false;
+  }
+
+  function dismissSuccess() {
+    form.reset();
+    hideSuccess();
+    const first = form.querySelector("#full-name");
+    if (first && typeof first.focus === "function") first.focus();
+  }
+
+  if (dismissBtn) dismissBtn.addEventListener("click", dismissSuccess);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (!bannerEl || bannerEl.hidden) return;
+    e.preventDefault();
+    dismissSuccess();
+  });
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -109,29 +151,14 @@ function initContactFormDemoUX() {
     const hp = form.querySelector("#company");
     if (hp && String(hp.value || "").trim() !== "") {
       if (submitBtn) submitBtn.disabled = true;
-      if (successEl) {
-        successEl.textContent = message;
-        successEl.hidden = false;
-      }
-      window.setTimeout(() => {
-        if (submitBtn) submitBtn.disabled = false;
-      }, 1200);
+      showSuccess();
       return;
     }
 
     if (!form.reportValidity()) return;
 
     if (submitBtn) submitBtn.disabled = true;
-    if (successEl) {
-      successEl.textContent = message;
-      successEl.hidden = false;
-    } else {
-      window.alert(message);
-    }
-
-    window.setTimeout(() => {
-      if (submitBtn) submitBtn.disabled = false;
-    }, 1200);
+    showSuccess();
   });
 }
 

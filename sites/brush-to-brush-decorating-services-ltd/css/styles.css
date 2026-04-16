@@ -827,14 +827,25 @@ p {
   display: none;
 }
 
-.form-success {
+.form-success-banner {
   margin: 0.85rem 0 0;
-  padding: 0.85rem 0.9rem;
+  padding: 0.9rem 0.95rem;
   border-radius: var(--radius-md);
   border: 1px solid rgba(14, 27, 42, 0.22);
   background: rgba(14, 27, 42, 0.06);
+}
+
+.form-success-banner .form-success {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
   font-weight: 750;
   color: rgba(14, 27, 42, 0.95);
+}
+
+.form-success-actions {
+  margin-top: 0.75rem;
 }
 
 .map-panel {
