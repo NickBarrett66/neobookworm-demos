@@ -15,14 +15,14 @@ The field structure mirrors what NeoBookworm's client intake form captures, so w
 **Location served (town, county, radius):** Bristol and surrounding areas — BS4 postcode area as their base, serving wider Bristol, South Gloucestershire, and North Somerset.
 
 **Map / coverage visual (if any):**
-Google Maps 10-mile radius from Knowle, Bristol on Contact page.
+Uk-counties-map showing wider Bristol South Gloucestershire and North Somerset highlighted on Contact page.
 
-**Years in business (real or fictional):** Incorporated March 2021 (5 years as a limited company), but the team claim 25–30 years of combined experience in the trade. Active on MyBuilder since January 2018, suggesting they were trading before incorporation. Use "over 25 years of combined experience" on the site — this is what they lead with on every platform.
+**Years in business (real ):** Incorporated March 2021 (5 years as a limited company), but the team claim 25–30 years of combined experience in the trade. Active on MyBuilder since January 2018, suggesting they were trading before incorporation. Use "over 25 years of combined experience" on the site — this is what they lead with on every platform.
 
-**Size (solo, two-person, small team):** Small team. Family-run business founded by two brothers-in-law. At least three named team members appear in reviews: Matt (appears to be the lead / main point of contact), Dave (co-owner, involved in quoting), and Dan (painter). They describe having "a good team of decorators on board" capable of handling both small and large jobs.
+**Size (solo, two-person, small team):** Small team. Family-run business founded by two brothers-in-law. At least three named team members appear in reviews: Matt Harding (appears to be the lead / main point of contact), Dave Sanders (co-owner, involved in quoting), and Dan (painter). They describe having "a good team of decorators on board" capable of handling both small and large jobs.
 
 **Owner name and one-line persona:**
-Matt — a straight-talking Bristol decorator who runs his family business with his brother-in-law, takes pride in leaving every job spotless, and believes you're only as good as the last job you've done. ⚠️ *See assumptions below — full name not confirmed from public sources.*
+Matt Harding — a straight-talking Bristol decorator who runs his family business with his brother-in-law, takes pride in leaving every job spotless, and believes you're only as good as the last job you've done. 
 
 ---
 
@@ -70,11 +70,11 @@ No evidence of plumbing, electrics, or structural work. They appear to refer out
 
 - **CSCS Registered:** Construction Skills Certification Scheme — confirms competence on construction sites.
 - **Fully Insured:** Generic "Fully Insured" badge — public liability insurance confirmed at £2,000,000 indemnity.
-
-⚠️ *No Gas Safe, NICEIC, Part P, TrustMark, FENSA, Checkatrade, or Which? Trusted Trader registrations found. They are on Rated People and MyBuilder but neither of these has a CSS badge in the NeoBookworm library. Consider whether to create a simple "NVQ Qualified" or "City & Guilds" badge, or keep it to CSCS + Fully Insured only.*
+- **Rated People:** They are on Rated People.
+- **MyBuilder:** They are on MyBuilder. 
 
 **Insurance / guarantees:**
-- Public Liability Insurance: £2,000,000 (confirmed via MyBuilder profile — ⚠️ the displayed expiry was Sep 2023; assume renewed but worth confirming)
+- Public Liability Insurance: £2,000,000 
 - NVQ Level 2 & 3 in Painting and Decorating (City & Guilds)
 - First Aid Qualified
 - No explicit workmanship guarantee period found — consider using "All work guaranteed" as a generic trust signal on the demo site, or omit.
@@ -116,23 +116,21 @@ A solid, slightly rounded sans-serif for headings (something with warmth — not
 ## 7. Contact details
 
 **Phone number(s):**
-⚠️ *Not confirmed from public search results. MyBuilder and Rated People do not display phone numbers publicly. The Yell listing at 1 Kinvara Road does not show a phone number. You will need to source this from the Notion prospect record or the original scrape data.*
+07804688987
 
 **Email address:**
-⚠️ *Not found in public listings. This is a Ltd company so email outreach is PECR-compliant, but the email address will need to come from the prospect record or a Hunter.io/Apollo.io lookup.*
+brush2brushltd@gmail.com
 
 **Physical address or service area description:**
 Registered office: 1 Kinvara Road, Bristol, BS4 1LG (Knowle area). For the demo site, use "Based in Knowle, Bristol — serving Bristol and the surrounding areas" rather than the full residential address.
 
 **Hours of operation:**
-⚠️ *Not confirmed. Yell lists "Open 24 Hours" which is almost certainly a default setting, not real hours. Suggest using "Monday–Friday 7:30am–5:30pm, Saturday by arrangement" as a reasonable demo default for a decorating business. Flag as assumed.*
+"Monday–Friday 7:30am–5:30pm, Saturday by arrangement" 
 
 **Social media handles (optional):**
-- Facebook: Linked from Yell listing (page exists but URL not confirmed — handle appears to be linked from their Yell profile)
-- Instagram: Linked from Yell listing (page exists but handle not confirmed)
+- Facebook: https://www.facebook.com/profile.php?id=100083186504480
+- Instagram: https://www.instagram.com/brush2brushltd/
 - LinkedIn: Profile exists at linkedin.com/in/brush-2-brush-decorating-services-ltd-289187b8
-
-*For the demo site, include social media icons as visual elements but do not link to unverified accounts.*
 
 ---
 
@@ -170,27 +168,11 @@ A team shot would be ideal — two or three decorators in clean work gear, holdi
 
 ## Assumptions & Flags for Nick
 
-### ⚠️ Must resolve before progressing
-
-1. **Owner's full name:** Reviews reference "Matt" and "Dave" (and one review mentions "Matthew and Dave" giving a quote). I cannot confirm surnames from public sources. The Companies House officers page would confirm directors' full names — worth checking before the site goes live. The demo site can use first names only if needed.
-
-2. **Phone number:** Not found in any public listing. Must come from the Notion prospect record or original Apify scrape data.
-
-3. **Email address:** Not publicly listed. If this is on the email track (Ltd company confirmed), you'll need to source this via Hunter.io, Apollo.io, or direct outreach.
-
-4. **Postcode discrepancy:** You provided "BS4B57" in your request — the confirmed Companies House postcode is **BS4 1LG**. The "B57" portion doesn't match any UK postcode format. Please verify which is correct in the prospect record; the Apify scrape may have concatenated or corrupted the postcode.
-
 ### ℹ️ Assumptions made (reasonable defaults for demo)
 
 5. **Hours of operation:** Assumed "Monday–Friday 7:30am–5:30pm, Saturday by arrangement". No real hours found.
 
 6. **Insurance validity:** Public liability insurance was last confirmed on MyBuilder with a Sep 2023 expiry. Almost certainly renewed but cannot confirm. Demo site will show "Fully Insured — £2M Public Liability" as a trust signal.
-
-7. **Service area radius:** Set at 10 miles from Knowle based on the pattern of Bristol-based reviews. No explicit service area stated by the business.
-
-8. **Houzz profile:** You mentioned they're active on Houzz, but I couldn't find a specific Houzz profile for Brush 2 Brush. There are 95+ Bristol painters on Houzz but this business didn't appear in search results. May be listed under a different name, or the Houzz presence may be minimal/new.
-
-9. **Accreditation badges:** Only CSCS and generic "Fully Insured" are confirmable. No premium accreditations (TrustMark, Checkatrade, etc.) found. The demo site will use these two plus the NVQ/City & Guilds qualifications as text trust signals.
 
 10. **Workmanship guarantee:** None stated publicly. Demo site will either omit or use a generic "all work guaranteed" — your call.
 

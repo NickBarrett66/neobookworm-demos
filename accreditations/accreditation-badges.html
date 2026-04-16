@@ -197,6 +197,54 @@
   .nb-chas.dk .nb-top { color: #60aaef; }
   .nb-chas.dk .nb-bot { color: #a0b4cc; }
 
+  /* ── CSCS (Construction Skills Certification Scheme) ── */
+  .nb-cscs {
+    border: 1.5px solid #0072CE;
+    min-width: 120px;
+  }
+  .nb-cscs .nb-mark { background: #0072CE; }
+  .nb-cscs .nb-top { color: #0072CE; }
+  /* Dark version */
+  .nb-cscs.dk .nb-text { background: #1a2f55; }
+  .nb-cscs.dk .nb-top { color: #73b9ff; }
+  .nb-cscs.dk .nb-bot { color: #a0b4cc; }
+
+  /* ── CITY & GUILDS ── */
+  .nb-cityandguilds {
+    border: 1.5px solid #6B2D8B;
+    min-width: 140px;
+  }
+  .nb-cityandguilds .nb-mark { background: #6B2D8B; }
+  .nb-cityandguilds .nb-top { font-size: 10px; color: #6B2D8B; }
+  /* Dark version */
+  .nb-cityandguilds.dk .nb-text { background: #1a2f55; }
+  .nb-cityandguilds.dk .nb-top { color: #c9a2dd; }
+  .nb-cityandguilds.dk .nb-bot { color: #a0b4cc; }
+
+  /* ── NVQ QUALIFIED ── */
+  .nb-nvq {
+    border: 1.5px solid #1B5E20;
+    min-width: 130px;
+  }
+  .nb-nvq .nb-mark { background: #1B5E20; }
+  .nb-nvq .nb-top { font-size: 9px; color: #1B5E20; }
+  /* Dark version */
+  .nb-nvq.dk .nb-text { background: #1a2f55; }
+  .nb-nvq.dk .nb-top { color: #7bd27f; }
+  .nb-nvq.dk .nb-bot { color: #a0b4cc; }
+
+  /* ── FIRST AID QUALIFIED ── */
+  .nb-firstaid {
+    border: 1.5px solid #C62828;
+    min-width: 130px;
+  }
+  .nb-firstaid .nb-mark { background: #C62828; }
+  .nb-firstaid .nb-top { color: #C62828; }
+  /* Dark version */
+  .nb-firstaid.dk .nb-text { background: #1a2f55; }
+  .nb-firstaid.dk .nb-top { color: #f2a3a3; }
+  .nb-firstaid.dk .nb-bot { color: #a0b4cc; }
+
   /* ── FULLY INSURED (generic trust signal) ── */
   .nb-insured {
     display: inline-flex;
@@ -389,6 +437,84 @@
 
 
 <!-- ============================================================
+     QUALIFICATIONS & SITE CARDS
+============================================================ -->
+<div class="preview-section">
+  <div class="preview-label">Qualifications &amp; Site Cards</div>
+  <div class="badge-row">
+
+    <!-- CSCS (site card — common for construction, plastering, roofing, joinery, general building)
+         Used on: any trade that works on building sites or requires site access
+    -->
+    <div class="nb-badge nb-cscs">
+      <div class="nb-mark">
+        <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+          <path d="M4 8.5C4 5.5 6.7 3 10 3C13.3 3 16 5.5 16 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 10.5H17" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6.5 3.7V2.2C6.5 1.5 7.1 1 7.8 1H12.2C12.9 1 13.5 1.5 13.5 2.2V3.7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="nb-text">
+        <div class="nb-top">CSCS</div>
+        <div class="nb-bot">Registered · Site Safe</div>
+      </div>
+    </div>
+
+    <!-- CITY & GUILDS (awarding body — often cited by electricians, plumbers, heating engineers, joiners)
+         Used on: trades that highlight formal training/awards
+    -->
+    <div class="nb-badge nb-cityandguilds">
+      <div class="nb-mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L20 6V12C20 17 16.6 20.7 12 22C7.4 20.7 4 17 4 12V6L12 2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M8 12.5C9.4 11.1 10.8 11.1 12 12.5C13.2 13.9 14.6 13.9 16 12.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8.7 15.5H15.3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="nb-text">
+        <div class="nb-top">CITY &amp; GUILDS</div>
+        <div class="nb-bot">Qualified Tradesperson</div>
+      </div>
+    </div>
+
+    <!-- NVQ QUALIFIED (qualification level — common across almost all trades)
+         Used on: any trade where a specific NVQ level/trade is stated
+    -->
+    <div class="nb-badge nb-nvq">
+      <div class="nb-mark">
+        <svg width="20" height="16" viewBox="0 0 24 18" fill="none">
+          <path d="M2 7L12 2L22 7L12 12L2 7Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M6 9V13.5C8.5 15.2 10.6 16 12 16C13.4 16 15.5 15.2 18 13.5V9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 7V13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="nb-text">
+        <div class="nb-top">NVQ LEVEL 2 &amp; 3</div>
+        <div class="nb-bot">Painting &amp; Decorating</div>
+      </div>
+    </div>
+
+    <!-- FIRST AID QUALIFIED (site readiness — useful for construction crews, roofing, landscaping, larger contractors)
+         Used on: any trade team working on-site or higher-risk environments
+    -->
+    <div class="nb-badge nb-firstaid">
+      <div class="nb-mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <rect x="10" y="4" width="4" height="16" fill="white"/>
+          <rect x="4" y="10" width="16" height="4" fill="white"/>
+        </svg>
+      </div>
+      <div class="nb-text">
+        <div class="nb-top">FIRST AID</div>
+        <div class="nb-bot">Qualified · On-Site Ready</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ============================================================
      GENERIC TRUST SIGNALS (any trade)
 ============================================================ -->
 <div class="preview-section">
@@ -486,6 +612,65 @@
         </div>
       </div>
 
+      <!-- CSCS (site card — common for construction, plastering, roofing, joinery, general building) -->
+      <div class="nb-badge nb-cscs dk">
+        <div class="nb-mark">
+          <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+            <path d="M4 8.5C4 5.5 6.7 3 10 3C13.3 3 16 5.5 16 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M3 10.5H17" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6.5 3.7V2.2C6.5 1.5 7.1 1 7.8 1H12.2C12.9 1 13.5 1.5 13.5 2.2V3.7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nb-text">
+          <div class="nb-top">CSCS</div>
+          <div class="nb-bot">Registered · Site Safe</div>
+        </div>
+      </div>
+
+      <!-- CITY & GUILDS (awarding body — often cited by electricians, plumbers, heating engineers, joiners) -->
+      <div class="nb-badge nb-cityandguilds dk">
+        <div class="nb-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L20 6V12C20 17 16.6 20.7 12 22C7.4 20.7 4 17 4 12V6L12 2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8 12.5C9.4 11.1 10.8 11.1 12 12.5C13.2 13.9 14.6 13.9 16 12.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8.7 15.5H15.3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nb-text">
+          <div class="nb-top">CITY &amp; GUILDS</div>
+          <div class="nb-bot">Qualified Tradesperson</div>
+        </div>
+      </div>
+
+      <!-- NVQ QUALIFIED (qualification level — common across almost all trades) -->
+      <div class="nb-badge nb-nvq dk">
+        <div class="nb-mark">
+          <svg width="20" height="16" viewBox="0 0 24 18" fill="none">
+            <path d="M2 7L12 2L22 7L12 12L2 7Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M6 9V13.5C8.5 15.2 10.6 16 12 16C13.4 16 15.5 15.2 18 13.5V9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 7V13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nb-text">
+          <div class="nb-top">NVQ LEVEL 2 &amp; 3</div>
+          <div class="nb-bot">Painting &amp; Decorating</div>
+        </div>
+      </div>
+
+      <!-- FIRST AID QUALIFIED (site readiness — useful for construction crews, roofing, landscaping, larger contractors) -->
+      <div class="nb-badge nb-firstaid dk">
+        <div class="nb-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="10" y="4" width="4" height="16" fill="white"/>
+            <rect x="4" y="10" width="16" height="4" fill="white"/>
+          </svg>
+        </div>
+        <div class="nb-text">
+          <div class="nb-top">FIRST AID</div>
+          <div class="nb-bot">Qualified · On-Site Ready</div>
+        </div>
+      </div>
+
       <div class="nb-badge nb-checkatrade dk">
         <div class="nb-mark">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -527,6 +712,7 @@
     <li><strong>Font:</strong> Requires DM Sans. Already loaded on all NeoBookworm client sites.</li>
     <li><strong>Checkatrade stars:</strong> Swap <code>4.9 · 94 reviews</code> for real figures if the client has a Checkatrade profile.</li>
     <li><strong>Gas Safe reg number:</strong> Replace <code>000000</code> with the client's actual 6-digit registration number.</li>
+    <li><strong>Qualifications:</strong> NVQ <code>.nb-bot</code> text should be swapped to match the client's actual trade (e.g. 'Electrical Installation' or 'Carpentry &amp; Joinery'). City &amp; Guilds is the awarding body; NVQ is the qualification level — use one or both depending on what the tradesperson holds.</li>
   </ul>
 </div>
 
