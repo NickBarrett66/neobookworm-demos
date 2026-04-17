@@ -18,7 +18,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://example.com/" />
-    <meta property="og:image" content="https://example.com/sites/fraynes-lofts-ltd/images/hero.svg" />
+    <meta property="og:image" content="https://example.com/sites/fraynes-lofts-ltd/images/hero.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -91,36 +91,29 @@
     </div>
 
     <main id="main">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <p class="eyebrow">Loft conversions &amp; extensions in Bath &amp; Wiltshire</p>
-            <h1>Loft conversions, without the building-company drama.</h1>
-            <p class="lead">
-              You deal with Olly from the first survey to the final sign-off. Clear plan. Fixed price. Tidy site. Proper
-              finish.
-            </p>
+      <section class="hero hero--bleed">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="images/hero.jpg" alt="" loading="eager" decoding="async" />
+        </div>
 
-            <div class="cta-row">
-              <a class="btn btn-primary" href="contact.html#form">Get a fixed quote</a>
-              <a class="btn btn-secondary" href="gallery.html">See recent work</a>
-            </div>
+        <div class="container hero-content">
+          <p class="eyebrow hero-eyebrow">Loft conversions &amp; extensions in Bath &amp; Wiltshire</p>
+          <h1 class="hero-title">Loft conversions, without the building-company drama.</h1>
+          <p class="lead hero-lead">
+            You deal with Olly from the first survey to the final sign-off. Clear plan. Fixed price. Tidy site. Proper
+            finish.
+          </p>
 
-            <div class="trust-line" aria-label="Service area and trust line">
-              <span>Serving Bath, Chippenham and the surrounding towns — based in Sutton Benger, SN15.</span>
-              <span class="dot" aria-hidden="true"></span>
-              <span aria-label="Fully insured (footer badge for details)">Fully insured</span>
-            </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="contact.html#form">Get a fixed quote</a>
+            <a class="btn btn-secondary btn-on-hero" href="gallery.html">See recent work</a>
           </div>
 
-          <figure class="hero-media">
-            <img
-              src="images/hero.svg"
-              alt="Placeholder hero image showing a bright finished loft room with a dormer-style window and warm light."
-              loading="eager"
-              decoding="async"
-            />
-          </figure>
+          <div class="trust-line trust-line--on-hero" aria-label="Service area and trust line">
+            <span>Serving Bath, Chippenham and the surrounding towns — based in Sutton Benger, SN15.</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span aria-label="Fully insured (footer badge for details)">Fully insured</span>
+          </div>
         </div>
       </section>
 
