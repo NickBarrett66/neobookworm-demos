@@ -26,18 +26,18 @@ Not “builder blue” templates, not stock-brochure claims, not generic “we p
 
 ```css
 :root {
-  --color-primary: #1E1C18;    /* soot-charcoal; headings, nav, primary text accents */
-  --color-secondary: #2F3E3F;  /* deep slate; section headers, secondary panels */
-  --color-accent: #B4573B;     /* kiln-clay; CTAs, links, pull quotes, small highlights only */
-  --color-text: #1E1C18;       /* body text */
-  --color-text-muted: #5C5A55; /* supporting copy, labels */
-  --color-bg: #F4F0E8;         /* limestone wash; main background */
-  --color-bg-alt: #EFE8DE;     /* warmer panel background; cards/stripes */
-  --color-border: #D7D0C6;     /* hairline rules, separators */
+  --color-primary: #262626;    /* logo charcoal; headings, nav, body text */
+  --color-secondary: #3A3A3A;  /* graphite; panels, secondary headers, dark UI */
+  --color-accent: #C89B2D;     /* logo gold; CTAs, links, pull quotes, key highlights */
+  --color-text: #262626;       /* body text */
+  --color-text-muted: #5F5F5F; /* supporting copy, labels */
+  --color-bg: #F6F2EA;         /* warm limestone wash; main background */
+  --color-bg-alt: #EEE8DD;     /* warm card/panel background */
+  --color-border: #D8D2C7;     /* hairline rules, separators */
 }
 ```
 
-*Notes on the palette:* inspired by Bath stone, timber, and site dust: warm light backgrounds with near-black structure. **Accent is “rare”:** buttons, active states, pull quotes, and small dividers—never large backgrounds and never long paragraphs in accent.
+*Notes on the palette:* updated to match the supplied logo: **charcoal + gold on warm stone neutrals**. Usage rule: gold is for **CTAs, links, key dividers, and short emphasis only** (no full gold backgrounds; avoid long passages of gold text).
 
 ### Typography
 
@@ -79,6 +79,7 @@ sites/fraynes-lofts-ltd/
 │   ├── main.js
 │   └── maps-config.js            (optional — Google Maps only; gitignored; copy from `templates/maps-config.example.js`)
 ├── images/
+│   ├── logo.jpg
 │   ├── hero.jpg
 │   ├── about-portrait.jpg
 │   ├── service-01-dormer.jpg
@@ -105,7 +106,7 @@ sites/fraynes-lofts-ltd/
 └── qa-launch-checklist.md
 ```
 
-*Favicon:* ship `favicon.svg` as a simple **“FL” monogram** or **Frayne Lofts wordmark** in `--color-primary` with a small `--color-accent` detail (e.g. a single underline). Add `favicon.ico` only if you actually generate/ship it.
+*Logo + favicon:* use the supplied mark as the basis. In Phase 4, copy/rename `images/Freynes-lofts-logo.jpg` to `images/logo.jpg` for consistent references, and use it in the header/footer. Ship `favicon.svg` as a simplified mono version (gold mark on charcoal, or charcoal mark on warm stone) so it stays crisp at small sizes. Add `favicon.ico` only if you actually generate/ship it.
 
 ---
 
@@ -122,7 +123,7 @@ Owner-led loft conversions and home extensions across Bath and Wiltshire. Olly F
 **Section structure:**
 
 1. **Header + navigation**
-   - Logo / wordmark: `Frayne Lofts Ltd` (text-based)
+   - Logo: `images/logo.jpg` (linked to Home) with `alt="Frayne Lofts Ltd"`
    - Nav links: Home, Services, About, Gallery, Contact
    - CTA button: **Get a fixed quote** → `contact.html#form`
 
