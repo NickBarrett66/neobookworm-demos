@@ -94,8 +94,117 @@ function initDemoActionBlockers() {
   });
 }
 
+function initGalleryLightbox() {
+  const lightbox = document.querySelector("[data-gallery-lightbox]");
+  const grid = document.querySelector("[data-gallery-grid]");
+  if (!lightbox || !grid) return;
+
+  const triggers = Array.from(grid.querySelectorAll("[data-gallery-item]"));
+  if (!triggers.length) return;
+
+  const imgEl = lightbox.querySelector("[data-lightbox-img]");
+  const capEl = lightbox.querySelector("[data-lightbox-caption]");
+  const dialog = lightbox.querySelector("[data-lightbox-dialog]");
+  const backdrop = lightbox.querySelector("[data-lightbox-backdrop]");
+  const closeBtn = lightbox.querySelector("[data-lightbox-close]");
+  const prevBtn = lightbox.querySelector("[data-lightbox-prev]");
+  const nextBtn = lightbox.querySelector("[data-lightbox-next]");
+
+  if (!imgEl || !capEl || !dialog || !backdrop || !closeBtn || !prevBtn || !nextBtn) return;
+
+  const slides = triggers.map((t) => ({
+    src: t.getAttribute("data-full-src") || "",
+    alt: t.getAttribute("data-alt") || "",
+    caption: t.getAttribute("data-caption-long") || "",
+  }));
+
+  let index = 0;
+  let untrap = null;
+  let lastFocus = null;
+  let keyHandler = null;
+
+  function isOpen() {
+    return !lightbox.hasAttribute("hidden");
+  }
+
+  function render() {
+    const s = slides[index];
+    if (!s || !s.src) return;
+    imgEl.src = s.src;
+    imgEl.alt = s.alt;
+    capEl.textContent = s.caption;
+  }
+
+  function go(delta) {
+    index = (index + delta + slides.length) % slides.length;
+    render();
+  }
+
+  function close() {
+    if (!isOpen()) return;
+
+    lightbox.setAttribute("hidden", "");
+    document.documentElement.style.overflow = "";
+    if (untrap) untrap();
+    untrap = null;
+
+    if (keyHandler) {
+      document.removeEventListener("keydown", keyHandler);
+      keyHandler = null;
+    }
+
+    imgEl.src =
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+    imgEl.alt = "";
+    capEl.textContent = "";
+
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+  }
+
+  function open(i) {
+    index = (i + slides.length) % slides.length;
+    lastFocus = document.activeElement;
+
+    lightbox.removeAttribute("hidden");
+    document.documentElement.style.overflow = "hidden";
+    render();
+
+    untrap = trapFocus(dialog, closeBtn);
+
+    keyHandler = (e) => {
+      if (!isOpen()) return;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        close();
+        return;
+      }
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        go(-1);
+        return;
+      }
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        go(1);
+      }
+    };
+
+    document.addEventListener("keydown", keyHandler);
+  }
+
+  triggers.forEach((btn, i) => {
+    btn.addEventListener("click", () => open(i));
+  });
+
+  closeBtn.addEventListener("click", close);
+  backdrop.addEventListener("click", close);
+  prevBtn.addEventListener("click", () => go(-1));
+  nextBtn.addEventListener("click", () => go(1));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initDemoActionBlockers();
+  initGalleryLightbox();
 });
 

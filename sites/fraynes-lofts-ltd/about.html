@@ -172,57 +172,70 @@
 
             <script src="js/maps-config.js"></script>
             <script>
-              async function initMap() {
-                const centre = { lat: 51.507206, lng: -2.077756 }; // Sutton Benger
-                const mapEl = document.getElementById("about-map");
+              function showMapError(message) {
+                var mapEl = document.getElementById("about-map");
                 if (!mapEl) return;
+                mapEl.classList.add("coverage-map--fallback");
+                mapEl.innerHTML = '<p class="coverage-map__fallback muted">' + message + "</p>";
+              }
 
-                await google.maps.importLibrary("maps");
-                const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+              async function initMap() {
+                window.__NB_MAP_INIT_CALLED__ = true;
+                try {
+                  const centre = { lat: 51.507206, lng: -2.077756 }; // Sutton Benger
+                  const mapEl = document.getElementById("about-map");
+                  if (!mapEl) return;
 
-                const map = new google.maps.Map(mapEl, {
-                  center: centre,
-                  zoom: 10,
-                  mapId: "DEMO_MAP_ID",
-                });
+                  await google.maps.importLibrary("maps");
+                  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-                const css = getComputedStyle(document.documentElement);
-                const gold = (css.getPropertyValue("--color-accent") || "#C89B2D").trim();
-
-                new google.maps.Circle({
-                  map: map,
-                  center: centre,
-                  radius: 40233.6,
-                  strokeColor: gold,
-                  strokeOpacity: 0.9,
-                  strokeWeight: 2,
-                  fillColor: gold,
-                  fillOpacity: 0.09,
-                });
-
-                const locations = [
-                  { pos: centre, label: "S", title: "Sutton Benger" },
-                  { pos: { lat: 51.381386, lng: -2.359696 }, label: "B", title: "Bath" },
-                  { pos: { lat: 51.459066, lng: -2.116074 }, label: "C", title: "Chippenham" },
-                  { pos: { lat: 51.4323, lng: -2.1849 }, label: "Co", title: "Corsham" },
-                  { pos: { lat: 51.319, lng: -2.208 }, label: "T", title: "Trowbridge" },
-                  { pos: { lat: 51.229, lng: -2.322 }, label: "F", title: "Frome" },
-                  { pos: { lat: 51.413, lng: -2.497 }, label: "K", title: "Keynsham" },
-                  { pos: { lat: 51.372, lng: -2.141 }, label: "M", title: "Melksham" },
-                ];
-
-                locations.forEach((loc) => {
-                  const glyph = document.createElement("div");
-                  glyph.className = "coverage-map__marker-glyph";
-                  glyph.textContent = loc.label;
-                  glyph.title = loc.title;
-                  new AdvancedMarkerElement({
-                    map,
-                    position: loc.pos,
-                    content: glyph,
-                    title: loc.title,
+                  const map = new google.maps.Map(mapEl, {
+                    center: centre,
+                    zoom: 10,
                   });
-                });
+
+                  const css = getComputedStyle(document.documentElement);
+                  const gold = (css.getPropertyValue("--color-accent") || "#C89B2D").trim();
+
+                  new google.maps.Circle({
+                    map: map,
+                    center: centre,
+                    radius: 40233.6,
+                    strokeColor: gold,
+                    strokeOpacity: 0.9,
+                    strokeWeight: 2,
+                    fillColor: gold,
+                    fillOpacity: 0.09,
+                  });
+
+                  const locations = [
+                    { pos: centre, label: "S", title: "Sutton Benger" },
+                    { pos: { lat: 51.381386, lng: -2.359696 }, label: "B", title: "Bath" },
+                    { pos: { lat: 51.459066, lng: -2.116074 }, label: "C", title: "Chippenham" },
+                    { pos: { lat: 51.4323, lng: -2.1849 }, label: "Co", title: "Corsham" },
+                    { pos: { lat: 51.319, lng: -2.208 }, label: "T", title: "Trowbridge" },
+                    { pos: { lat: 51.229, lng: -2.322 }, label: "F", title: "Frome" },
+                    { pos: { lat: 51.413, lng: -2.497 }, label: "K", title: "Keynsham" },
+                    { pos: { lat: 51.372, lng: -2.141 }, label: "M", title: "Melksham" },
+                  ];
+
+                  locations.forEach((loc) => {
+                    const glyph = document.createElement("div");
+                    glyph.className = "coverage-map__marker-glyph";
+                    glyph.textContent = loc.label;
+                    glyph.title = loc.title;
+                    new AdvancedMarkerElement({
+                      map,
+                      position: loc.pos,
+                      content: glyph,
+                      title: loc.title,
+                    });
+                  });
+                } catch (err) {
+                  showMapError(
+                    "Google Maps failed to initialise. Check the console for details (common causes: referrer restrictions or billing not enabled for the API key).",
+                  );
+                }
               }
 
               (function loadMapsApi() {
@@ -235,13 +248,34 @@
                     '<p class="coverage-map__fallback muted">Demo-safe map: copy <code>templates/maps-config.example.js</code> to <code>js/maps-config.js</code> in this site folder and add your Google Maps API key (gitignored).</p>';
                   return;
                 }
+
+                window.gm_authFailure = function () {
+                  showMapError(
+                    "Google Maps authentication failed. Check API key restrictions (HTTP referrers) and that billing is enabled for the key.",
+                  );
+                };
+
                 var s = document.createElement("script");
                 s.async = true;
+                s.onerror = function () {
+                  showMapError(
+                    "Google Maps script failed to load. Check network access and API key restrictions (HTTP referrers).",
+                  );
+                };
                 s.src =
                   "https://maps.googleapis.com/maps/api/js?key=" +
                   encodeURIComponent(key) +
-                  "&loading=async&callback=initMap";
+                  "&v=weekly&loading=async&callback=initMap";
                 document.body.appendChild(s);
+
+                window.__NB_MAP_INIT_CALLED__ = false;
+                window.setTimeout(function () {
+                  if (window.__NB_MAP_INIT_CALLED__) return;
+                  // If Google's script loaded but callback never fired, show an actionable hint.
+                  showMapError(
+                    "Google Maps didn’t finish loading. This is usually an API key restriction (HTTP referrer) or billing issue. Open the browser console to see the exact Google error.",
+                  );
+                }, 8000);
               })();
             </script>
           </div>
