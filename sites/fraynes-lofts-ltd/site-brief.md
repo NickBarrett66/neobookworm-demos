@@ -16,29 +16,36 @@ Loft Conversion & Home Extension Specialist
 Bath, Chippenham, Wiltshire and surrounding areas (Corsham, Trowbridge, Frome, Keynsham, Melksham — roughly a 25-mile radius from Sutton Benger)
 
 **Map / coverage visual (if any):**
-Google Maps radius circle centred on Sutton Benger, SN15, showing a 25-mile coverage area — on the Contact page. Alternatively: none — text description of coverage area only. [RESEARCH COULDN'T DETERMINE — please fill in preference]
+Google Maps radius circle centred on Sutton Benger, SN15, showing a 25-mile coverage area — on the Contact page. 
 
 **Years in business (real or fictional):**
-6 years (incorporated March 2019)
+7 years (incorporated March 2019)
 
 **Size (solo, two-person, small team):**
-Small team — sole director Oliver Frayne with a crew of trusted tradespeople [generated — please verify]
+Small team — sole director Oliver Frayne with a crew of trusted tradespeople 
 
 **Owner name and one-line persona:**
-Oliver Frayne — a hands-on builder who runs every job himself rather than handing clients off to a site manager they've never met, because he believes that's how you get work worth being proud of. [generated — please verify]
+Olly Frayne — a hands-on builder who runs every job himself rather than handing clients off to a site manager they've never met, because he believes that's how you get work worth being proud of. 
 
 ---
 
 ## 2. The story
 
 **Why does this business exist?**
-Oliver started Frayne Lofts in 2019 after years working for larger firms where he watched projects get handed between managers until nobody owned the quality anymore. He went out on his own so he could be the person who turns up on day one and is still there on the last day — answering questions directly, making the calls, standing behind the work. The Bath and Wiltshire housing market is full of families who need space but can't afford to move; Frayne Lofts exists to give them that space without the drama of a building company that's too big to care. [generated — please verify]
+Olly started Frayne Lofts in 2019 after years working for larger firms where he watched projects get handed between managers until nobody owned the quality anymore. He went out on his own so he could be the person who turns up on day one and is still there on the last day — answering questions directly, making the calls, standing behind the work. The Bath and Wiltshire housing market is full of families who need space but can't afford to move; Frayne Lofts exists to give them that space without the drama of a building company that's too big to care. 
 
 **What do customers most often say about them?**
-Based on 8 five-star Google reviews (full text not publicly accessible): the pattern for this type of small specialist builder in this market is feedback around reliability, quality of finish, and communication. Likely phrases include: "wouldn't hesitate to recommend", "tidier than expected", "Oliver was on site throughout", "exactly what we wanted", "genuinely impressed". [RESEARCH COULDN'T DETERMINE — please verify against actual reviews and replace with real phrases]
+Facebook - 'We were extremely happy with the work carried out by Frayne Lofts on our house. From the first time we met Olly to discuss the loft extension we felt we were in safe hands. His friendly, professional and detailed-oriented approach meant we were very confident he would do a good job…and we weren’t wrong! Throughout the project we were able to approach Olly with any questions and we had complete confidence that any problems that arose during the building work would be resolved. Furthermore, the whole process was made much easier by having Olly as the one point of contact for any questions or issues.
+We couldn’t be happier with the quality and look of our new loft and would highly recommend Frayne Lofts for any building work.'
+Facebook 'Olly from Frayne Lofts has just completed an en suite for me. Can I say I couldn't be more pleased with the job he has done. A superb carpenter in his own rights he also managed the project to time and budget, even additions requested by myself where no trouble. The additional trades he used, electrician, plumber and plasterer were first rate. I have no hesitation in recommending this company. I am happy to let people have photos of the work if they contact me.'
+Facebook - 'Olly is a top guy and I have no hesitation in recommending him.  We had a bathroom / shower room upgrade in the Spring of 2019.  His personal workmanship is to a high standard and he project managed all his sub-contractors to deliver quality and on time, whilst respectfully managing any disruption whilst the works were carried out.'
+Facewbook 'Very professional builder. Ollie works quietly and efficiently with minimum fuss. If you are looking for someone to undertake a project whilst you remain in your home Ollie is the person for you.
+All waste is removed at the end of each day and the area left cleaned and hoovered. I would highly recommend - he is returning to do another job at our convenience.
+ Mr and Mrs Wainwright.
+Loft conversion and new roof.  Summer 2019'
 
 **What's the unique angle?**
-Owner-led from survey to sign-off — you deal with Oliver, not a rotating cast of project managers. In a trade where the horror stories are almost always about communication breakdown and accountability gaps, this is a meaningful differentiator. Six years of clean five-star reviews in a market full of established competitors with 10–15 years' experience says the work stands up. [generated — please verify]
+Owner-led from survey to sign-off — you deal with Olly, not a rotating cast of project managers. In a trade where the horror stories are almost always about communication breakdown and accountability gaps, this is a meaningful differentiator. Seven years of clean reviews in a market full of established competitors with 10–15 years' experience says the work stands up. 
 
 ---
 
@@ -54,10 +61,10 @@ Owner-led from survey to sign-off — you deal with Oliver, not a rotating cast 
 - **Full project management:** One point of contact from design through to completion, including all trades.
 
 **Any specialisms or premium offerings worth highlighting?**
-Bath and North East Somerset conservation area experience — working with listed buildings and heritage properties where roof alterations require careful handling and additional consent. [generated — please verify]
+Bath and North East Somerset conservation area experience — working with listed buildings and heritage properties where roof alterations require careful handling and additional consent. 
 
 **Anything they explicitly don't do?**
-[RESEARCH COULDN'T DETERMINE — please fill in]
+unknown
 
 ---
 
@@ -65,18 +72,18 @@ Bath and North East Somerset conservation area experience — working with liste
 
 Based on trade standards for this market — actual accreditations not confirmed from research. Please verify and remove/amend before use:
 
-- **TrustMark:** The government-endorsed quality scheme — highly relevant for this trade and market. [RESEARCH COULDN'T DETERMINE — verify if held]
+
 - **Fully Insured:** Public liability insurance — essential for this trade and expected by customers. Use the generic "Fully Insured" CSS badge.
 
 **Insurance / guarantees:**
-Public liability insurance held (standard for Ltd company in this trade). Workmanship guarantee length: [RESEARCH COULDN'T DETERMINE — please fill in]. Building regulations completion certificates provided on all applicable works (standard, but worth stating explicitly — mortgage and resale implications mean customers increasingly ask).
+Public liability insurance held (standard for Ltd company in this trade). Building regulations completion certificates provided on all applicable works .
 
 ---
 
 ## 5. Tone of voice
 
 **Pick 3–5 adjectives that describe how this business talks:**
-Direct, craftsman-proud, no-nonsense, quietly confident, unpretentious. [generated — please verify]
+Direct, craftsman-proud, no-nonsense, quietly confident, unpretentious. 
 *(Not "friendly and professional." The gap in this market is builders who write like human beings instead of brochures.)*
 
 **Describe the voice as a person:**
@@ -99,7 +106,7 @@ Warm industrial-craft. Think a quality builder's business card that wouldn't loo
 Warm off-white or pale stone background (Bath limestone reference without being clichéd) with deep charcoal or near-black for text and headers. A single warm accent — either timber/amber or a muted terracotta — for highlights, CTAs, and pull quotes. Nothing that reads as generic "builder blue." [generated — please verify]
 
 **Reference images or sites (optional):**
-[RESEARCH COULDN'T DETERMINE — if you have a mood board or sites you like, add here. Consider looking at: joinery firms, bespoke furniture makers, or quality renovation contractors for aesthetic reference rather than loft company websites, which all look the same.]
+not specified
 
 **Typography direction:**
 A strong, characterful serif for display headings — something with weight and craft feel (Playfair Display, Cormorant Garamond, or similar — not a generic option). Clean, readable sans for body copy (DM Sans, Instrument Sans, or similar). The combination should feel considered and confident, not default. [generated — please verify]
@@ -118,7 +125,7 @@ fraynelofts@gmail.com
 Based in Sutton Benger, Chippenham, Wiltshire SN15 4RE. Serving Bath, Chippenham, Corsham, Trowbridge, Frome, Keynsham, Melksham and surrounding areas.
 
 **Hours of operation:**
-[RESEARCH COULDN'T DETERMINE — please fill in]
+standard
 
 **Social media handles (optional):**
 Facebook: facebook.com/FrayneLoftsLtd
@@ -151,7 +158,7 @@ Owner portrait (Oliver) — relaxed, on-site or in a completed loft space, not s
 
 ## 9. Anything else
 
-The competitors in this market all lead with "10-year guarantee" and "15 years' experience." Frayne Lofts can't compete on years (6 years trading) but can compete on something none of them say: **owner-led, every job**. That should be threaded through the site consistently.
+The competitors in this market all lead with "10-year guarantee" and "15 years' experience." Frayne Lofts can't compete on years (7 years trading) but can compete on something none of them say: **owner-led, every job**. That should be threaded through the site consistently.
 
 The Bath market specifically: many of the homes in the area are Georgian or Victorian, which means planning considerations, conservation areas, and the aesthetic expectation that a loft conversion should respect the existing architecture rather than just adding a box to the roof. If Oliver has experience with this type of property, it's worth foregrounding.
 
