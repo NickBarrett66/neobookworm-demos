@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Placeholder: hero">
-  <rect width="1600" height="900" fill="#F6F1E8"/>
-  <rect x="48" y="48" width="1504" height="804" rx="28" fill="none" stroke="#D8D0C4" stroke-width="6"/>
-  <text x="800" y="450" text-anchor="middle" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="36" font-weight="700" fill="#0E1B2A">Placeholder</text>
-  <text x="800" y="498" text-anchor="middle" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="22" fill="#55606A">hero</text>
-</svg>
