@@ -55,7 +55,15 @@ Optional **map capabilities** for demos and client sites live under **`shared/`*
 
 1. **UK counties (Leaflet + ONS GeoJSON)** — `shared/js/uk-counties-leaflet.js`; highlight counties/unitaries and optionally frame the map to those areas (`initNeoUkCountiesMap`).
 2. **Regional preset** — `shared/js/uk-counties-regional.js` plus the Leaflet file; defaults to the Cotswolds / M4 corridor-style county list (`initNeoUkRegionalCountiesMap`).
-3. **Google Maps** — service **radius circle** + optional town **markers**; reference **`sites/swift-electrical/contact.html`**, key via gitignored **`js/maps-config.js`** (copy from **`templates/maps-config.example.js`**).
+3. **Google Maps** — service **radius circle** + optional town **markers**; reference **`sites/swift-electrical/contact.html`** and **`sites/fraynes-lofts-ltd/contact.html`** (layout + legend patterns), key via gitignored **`js/maps-config.js`** (copy from **`templates/maps-config.example.js`**).
+
+**Google Maps — pitfalls (read `LEARNINGS.md` 2026-04-18):**
+
+- **API key only** in demos: set **`window.__GMAPS_KEY__`** locally. Do **not** commit keys. Referrer restrictions and billing must match how you host (not `file://`). A bad key shows “This page can’t load Google Maps correctly.”
+- **Default marker pattern:** **`google.maps.Marker`** + small **SVG data-URL** icons — **no Map ID** required. Expect a **deprecation** console message; that’s the trade-off for avoiding Cloud Map ID setup on simple demos.
+- **`AdvancedMarkerElement`** needs a valid **`mapId`** from Google Cloud. Do **not** gate the map loader on Map ID for sites that use classic markers only — that **breaks** key-only sites (e.g. Swift).
+- **Framing:** `map.fitBounds(circle.getBounds(), padding)` — **lower padding = closer** (more zoomed in), **higher padding = wider** view. Tune padding before adding extra `setZoom` hacks.
+- **Flexible layout:** If the map sits in a **flex/grid** column whose height changes, use **`ResizeObserver`** (or resize handler), **`google.maps.event.trigger(map, 'resize')`**, and **refit** bounds so the circle stays correct.
 
 **Integration rule:** For typical **per-site Netlify deploys**, **copy** the needed scripts from `shared/js/` into `sites/<site-name>/js/` so the deployed folder is self-contained. Do not assume `../../shared/` works in production.
 

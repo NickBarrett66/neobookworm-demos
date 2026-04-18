@@ -31,6 +31,29 @@ Dated entries capturing things discovered during demo site builds that should fe
 
 ## Entries
 
+## 2026-04-18 — Frayne Lofts Ltd — Google Maps (contact + about)
+
+**What happened:** Several Google Maps issues stacked up while wiring the coverage map: “This page can’t load Google Maps correctly”; console noise about **Advanced Markers** without a valid **Map ID**; **classic `Circle`** sometimes hard to notice next to **markers**; **marker labels** overlapping at some zooms; **flex layout** on contact meant the map didn’t refit when the pane resized; a **Map-ID–gated** loader was briefly applied repo-wide and **broke Swift Electrical**, which only ever needed a browser API key.
+
+**Impact:** Rework across `about.html`, `contact.html`, `maps-config` docs, and a Swift revert; risk of repeating the same mistakes on the next site that copies a “modern” Maps snippet from Google’s docs.
+
+**Root cause:**
+
+1. **Keys & restrictions** — Invalid, restricted, or billing-disabled keys produce the generic load failure overlay. Keys must not be committed; **`sites/*/js/maps-config.js`** is gitignored for a reason.
+2. **`AdvancedMarkerElement`** — Requires a real **Cloud Map ID** on the `Map` options. Without it, expect console warnings and unreliable behaviour. **`google.maps.Marker`** + **inline SVG** icons need **no Map ID** (trade-off: Google’s deprecation notice in console; still supported).
+3. **Cross-site copy-paste** — Frayne needed alignment with Swift’s **key-only** pattern. Adding **`__GMAPS_MAP_ID__`** checks to every site **breaks** demos that don’t use Map IDs.
+4. **Framing** — **`map.fitBounds(circle.getBounds(), padding)`**: **smaller padding → zoom in** (tighter), **larger padding → zoom out**. Mixing **`setZoom(getZoom()+1)`** after `fitBounds` is a blunt extra step; prefer tuning padding first.
+5. **CSS flex + map height** — If the map container’s height changes after init (e.g. stretched column beside a form), call **`google.maps.event.trigger(map, 'resize')`** and **refit** bounds; a **`ResizeObserver`** on the map element is a solid pattern.
+
+**Fix for next time:**
+
+- Default **demo pattern** (matches Swift + Frayne): **`google.maps.Map`**, **`google.maps.Circle`**, **`google.maps.Marker`** with **SVG data-URL** icons; **`templates/maps-config.example.js`** → **`js/maps-config.js`** with **`window.__GMAPS_KEY__` only**; show a **fallback** when the key is missing.
+- Only introduce **`AdvancedMarkerElement` + `mapId`** on a site if you **document** both in that site’s local setup and **never** require Map ID on sites that don’t use it.
+- After layout/CSS changes to the map wrapper, verify **resize/refit** on desktop and mobile.
+- See **`CLAUDE.md`** (Shared map toolkit / Google Maps pitfalls).
+
+**Promoted to PROCESS.md?** Pending
+
 ## 2026-04-11 — Repo-wide — Shared map toolkit
 
 **What happened:** UK county maps (Leaflet + ONS), regional presets, and Google Maps (radius + markers) were consolidated under `shared/` with demos and docs.
