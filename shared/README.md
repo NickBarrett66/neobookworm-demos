@@ -34,7 +34,7 @@ For local development you can also serve from the repo root so `shared/` is visi
 **Reference implementation:** `sites/swift-electrical/contact.html`  
 **Config:** Copy **`templates/maps-config.example.js`** to **`sites/<site-name>/js/maps-config.js`** (gitignored) with a browser-restricted API key. Existing demos (e.g. Swift Electrical) may also keep `js/maps-config.example.js` beside the page for the same copy-to-`maps-config.js` workflow.
 
-- Uses **`google.maps.Map`**, **`google.maps.Circle`** (radius in **metres**), and **`AdvancedMarkerElement`** for town markers.
+- Uses **`google.maps.Map`**, **`google.maps.Circle`** (radius in **metres**), and **`google.maps.Marker`** with small **SVG data-URL** icons for town labels (no Map ID required).
 - Shows a **fallback** message if no key is configured (demo-safe).
 - Use for **“X miles from [town]”** service areas; distinct from the county polygon map.
 

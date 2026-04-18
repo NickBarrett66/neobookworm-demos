@@ -213,15 +213,47 @@
               const cirencester = { lat: 51.719, lng: -1.9686 };
 
               await google.maps.importLibrary("maps");
-              const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
               const map = new google.maps.Map(document.getElementById("map"), {
                 center: cirencester,
                 zoom: 10,
-                mapId: "DEMO_MAP_ID",
               });
 
-              new google.maps.Circle({
+              const css = getComputedStyle(document.documentElement);
+              const markerFill = (css.getPropertyValue("--color-primary") || "#1a73e8").trim();
+              const markerInk = (css.getPropertyValue("--color-bg") || "#ffffff").trim();
+
+              function contactMarkerIcon(label, fill, color) {
+                var safe = String(label)
+                  .replace(/&/g, "&amp;")
+                  .replace(/</g, "&lt;")
+                  .replace(/>/g, "&gt;")
+                  .replace(/"/g, "&quot;")
+                  .replace(/'/g, "&apos;");
+                var fs = String(label).length > 1 ? 10 : 11;
+                var svg =
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34">' +
+                  '<circle cx="17" cy="17" r="15" fill="' +
+                  fill +
+                  '" stroke="' +
+                  color +
+                  '" stroke-width="2"/>' +
+                  '<text x="17" y="17" text-anchor="middle" dominant-baseline="central" font-family="system-ui, sans-serif" font-size="' +
+                  fs +
+                  '" font-weight="700" fill="' +
+                  color +
+                  '">' +
+                  safe +
+                  "</text>" +
+                  "</svg>";
+                return {
+                  url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg),
+                  scaledSize: new google.maps.Size(34, 34),
+                  anchor: new google.maps.Point(17, 17),
+                };
+              }
+
+              const coverageCircle = new google.maps.Circle({
                 map: map,
                 center: cirencester,
                 radius: 24140,
@@ -231,6 +263,11 @@
                 fillColor: "#1a73e8",
                 fillOpacity: 0.08,
               });
+
+              const coverageBounds = coverageCircle.getBounds();
+              if (coverageBounds) {
+                map.fitBounds(coverageBounds, 48);
+              }
 
               const locations = [
                 { pos: { lat: 51.719, lng: -1.9686 }, label: "C", title: "Cirencester" },
@@ -242,15 +279,11 @@
               ];
 
               locations.forEach((loc) => {
-                const glyph = document.createElement("div");
-                glyph.className = "contact-map__marker-glyph";
-                glyph.textContent = loc.label;
-                glyph.title = loc.title;
-                new AdvancedMarkerElement({
-                  map,
+                new google.maps.Marker({
+                  map: map,
                   position: loc.pos,
-                  content: glyph,
                   title: loc.title,
+                  icon: contactMarkerIcon(loc.label, markerFill, markerInk),
                 });
               });
             }

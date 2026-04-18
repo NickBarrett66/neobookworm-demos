@@ -1,7 +1,7 @@
 /**
  * Google Maps browser API key (local only — not committed).
  *
- * For any site that uses Google Maps (radius circle, markers):
+ * For any site that uses Google Maps (radius circle, classic markers):
  *   1. Copy this file to `sites/<site-name>/js/maps-config.js`.
  *   2. Replace YOUR_GOOGLE_MAPS_API_KEY with your browser-restricted key.
  *   3. `sites/*/js/maps-config.js` is gitignored — do not commit it.
