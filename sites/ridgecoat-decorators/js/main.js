@@ -77,21 +77,30 @@ function initMobileNav() {
 }
 
 function initDemoActionBlockers() {
-  const message =
-    "Demo site: this action is disabled. Use the contact form to request a quote.";
+  const telMessage = "Demo site: this action is disabled.";
+  const mailMessage =
+    "Demo site: email is disabled here — this demo doesn’t open a mail client or send messages.";
 
   document.addEventListener("click", (e) => {
-    const link = e.target.closest('a[href^="tel:"][data-demo-block]');
-    if (!link) return;
-    e.preventDefault();
-    window.alert(message);
+    const tel = e.target.closest('a[href^="tel:"][data-demo-block]');
+    if (tel) {
+      e.preventDefault();
+      window.alert(telMessage);
+      return;
+    }
+
+    const mail = e.target.closest('a[href^="mailto:"][data-demo-block]');
+    if (mail) {
+      e.preventDefault();
+      window.alert(mailMessage);
+    }
   });
 
   document.addEventListener("submit", (e) => {
     const form = e.target.closest("form[data-demo-block]");
     if (!form) return;
     e.preventDefault();
-    window.alert(message);
+    window.alert(telMessage);
   });
 }
 
