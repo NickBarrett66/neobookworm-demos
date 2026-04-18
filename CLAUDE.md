@@ -39,6 +39,14 @@ The demo sites in this repo showcase the kind of work NeoBookworm delivers — e
 
 Current build status lives in `TRACKER.md`. Always check the tracker before assuming anything about a site's state.
 
+## Site folder naming (prospect work vs NeoBookworm demos)
+
+**Prospect / client builds** — sites being produced for a **specific prospect** use a folder name that ends with **`ltd`** (e.g. `fraynes-lofts-ltd`), matching the formal business naming used for that engagement.
+
+**NeoBookworm showcase demos** — sites intended as **examples on neobookworm.uk** use the **business slug only**, with **no** `ltd` suffix (e.g. `hartley-plumbing`, `swift-electrical`, `ridgecoat-decorators`).
+
+This keeps client-pipeline folders visually distinct from the fixed demo set in the tracker and Examples page.
+
 ## Critical boundaries
 
 **Each demo has its own visual identity.** There is no house style. Do not reuse colour palettes, typography, or layouts between demos. Each site commits to a bold, distinct aesthetic direction defined in its `site-spec.md`. The NeoBookworm.uk brand (navy/amber, Playfair Display + DM Sans) applies only to the marketing site, never to demos.
