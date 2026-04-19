@@ -5,9 +5,9 @@ Site type: static HTML/CSS/vanilla JS, 5 pages (Home, About, Services, Gallery, 
 
 **Global required element (all pages): NeoBookworm demo banner**
 
-> “This is a free demo site built for Lee Morgan Heating & Plumbing by [NeoBookworm.uk](https://neobookworm.uk). Like what you see? Get your own →”
+> “This is a free demo site built for Lee Morgan Heating & Plumbing by [NeoBookworm.uk](https://neobookworm.uk/contact.html). Like what you see? Get in touch.”
 
-- Must include a **CTA button** linking to `https://neobookworm.uk`
+- Must include a **CTA button** linking to `https://neobookworm.uk/contact.html`
 - Must include a **close button** (dismiss)
 - Dismiss preference stored in `localStorage` so it stays dismissed across pages
 - Styling: visible but not obtrusive; does **not** compete with the site’s primary CTA
@@ -190,9 +190,9 @@ Suggested implementation:
 - **Layout description**: full-width slim bar, fixed at top. 3 columns on desktop: message (left), CTA button (center/right), close button (far right). On mobile: message wraps to 2 lines, CTA button below message, close button stays top-right.
 - **Exact copy**:
 
-> This is a free demo site built for Lee Morgan Heating & Plumbing by NeoBookworm.uk. Like what you see? Get your own →
+> This is a free demo site built for Lee Morgan Heating & Plumbing by NeoBookworm.uk. Like what you see? Get in touch.
 
-> Button label: Get a website like this
+> Button label: Contact NeoBookworm
 
 - **Component notes**:
   - Stored in `localStorage` key: `nbw_demoBannerDismissed_v1 = "1"`
