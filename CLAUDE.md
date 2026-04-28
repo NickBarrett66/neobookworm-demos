@@ -87,6 +87,19 @@ Sessions in this repo tend to be focused on one phase of one site at a time. Whe
 
 Commit messages across the repo follow the pattern: `<site-name>: <what changed>` — e.g. `hartley-plumbing: spec generated`, `swift-electrical: gallery images added`.
 
+## SEO Baseline
+
+Every site built in this repo — demos and client builds alike — must pass all items in the **SEO Gate section (Section 4)** of `qa-launch-checklist.md` before it is considered complete. There are no exceptions and no partial passes.
+
+The **SEO Outputs section (Section 5) of `site-spec.md`** is the source of truth for all title tags, meta descriptions, og tags, and the LocalBusiness JSON-LD schema. The builder copies from there; they do not write these from scratch during the build. If the spec's SEO Outputs section contains placeholders, the spec is not ready and the build should not start.
+
+Key rules derived from this baseline:
+
+- Title tags are keyword-targeted and page-specific. They differ from H1s — H1s are brand copy, title tags are for search.
+- Meta descriptions are under 155 characters and end with a CTA.
+- The phone number displayed on the site must be the business number (Sonetel or dedicated line) from the brief's SEO Inputs section — not the owner's personal mobile. It must appear identically in every page header and footer.
+- `sitemap.xml` and `robots.txt` (with a `Sitemap:` declaration) are required in every site root before deploy.
+
 ## Future-facing notes
 
 When all eight demos are live and stable, the next phase of work is formalising PROCESS.md as an Agent 6 spec. That means every implicit judgment a human makes during a build needs to be made explicit in PROCESS.md. If you notice a decision being made during a build that isn't documented, flag it — that's exactly the kind of gap Agent 6 will trip on later.

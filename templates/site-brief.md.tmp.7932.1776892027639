@@ -115,27 +115,6 @@ This is the most important section in the brief. It drives every word and visual
 
 ---
 
-## 8. SEO Inputs
-
-These fields feed directly into the SEO Outputs section of `site-spec.md` and the LocalBusiness schema. Use the business number (Sonetel or dedicated line) — NOT the owner's personal mobile.
-
-**Business phone number (for NAP consistency):**
-*(The number that will appear on every page header, footer, and in the schema. Must match across site, Google Business Profile, and any directories.)*
-
-**Business address / area served:**
-*(E.g. "Based in Swindon, serving Swindon, Wiltshire, and surrounding areas within 20 miles." If no fixed address, describe the service area.)*
-
-**Primary trade category (schema @type):**
-*(E.g. "Plumber", "Electrician", "Painter", "GeneralContractor" — pick the closest schema.org type.)*
-
-**Target location keywords (2–3):**
-*(E.g. "Swindon, Wiltshire, Bath" — the towns and county that should appear in title tags and meta descriptions.)*
-
-**Google Business Profile URL:**
-*(Leave blank if not yet created. Add later.)*
-
----
-
 ## 9. Images and gallery
 
 **What should the hero image show?**
@@ -152,7 +131,7 @@ These fields feed directly into the SEO Outputs section of `site-spec.md` and th
 
 ---
 
-## 10. Anything else
+## 9. Anything else
 
 Free text. Anything the structured sections didn't capture — a specific phrase the owner uses, a story worth telling, a competitor you want to differentiate from, a particular kind of customer you want to attract or repel.
 

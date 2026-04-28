@@ -46,6 +46,7 @@ Total per site: roughly 4–6 hours for the first one (Hartley Plumbing); should
 - Don't describe the website — describe the *business*. Site copy and layout decisions come later
 - The tone-of-voice section is the most important single field. It drives everything downstream
 - Pick a colour direction that suits the trade and owner, not one that matches NeoBookworm.uk. Each demo should look completely different
+- Fill in the **SEO Inputs section (Section 8)** of the brief — specifically the business phone number (not the owner's personal mobile), area served, primary trade category, and target location keywords. These feed directly into the spec's SEO Outputs and LocalBusiness schema
 
 ---
 
@@ -115,6 +116,7 @@ Do not start writing HTML yet — this phase is spec only.
 - If Cursor produces generic copy ("Welcome to Hartley Plumbing, your trusted local plumber..."), reject it and ask for a rewrite with more personality. The brief's tone-of-voice section should be reflected in every sentence
 - If the colour palette looks bland, ask for a bolder one with a specific reference (e.g. "more editorial, like a magazine")
 - If the font pairing is generic, push back by name and ask for something more distinctive
+- Confirm that the **SEO Outputs section (Section 5)** is fully populated: a unique keyword-targeted title tag and meta description for all five pages, matching og:title and og:description, and the LocalBusiness JSON-LD schema pre-filled from the brief. If any field is left as a placeholder, fix it before committing the spec
 
 ---
 
@@ -220,6 +222,8 @@ the styles.css additions before moving to the next page so I can review.
 
 - Cursor sometimes drifts towards generic designs. If you feel the site converging on "another template," push back hard and point at the spec
 - Check responsiveness in the Cursor preview as you go — don't leave it all to Phase 5
+- Ensure the **phone number from the brief's SEO Inputs section** appears in the header and footer of every page. NAP consistency matters — the number must be identical everywhere
+- Include **`sitemap.xml`** and **`robots.txt`** in the site root. `robots.txt` must include a `Sitemap:` declaration pointing at the sitemap URL. Both are required for the SEO Gate in the QA checklist
 - **Favicon:** confirm the asset file exists at the path referenced in every
   `<link rel="icon">` before marking the build done (tick the matching line in
   `build-checklist.md`)

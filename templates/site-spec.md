@@ -149,7 +149,54 @@ sites/<site-name>/
 
 ---
 
-## 5. Copy bank
+## 5. SEO Outputs
+
+*Generated from the brief. This section is the source of truth for all title tags, meta descriptions, og tags, and LocalBusiness schema across the site. Populate every field before the build starts — the builder copies from here, not from memory.*
+
+### Per-page SEO
+
+| Page | Title tag (≤65 chars) | Meta description (≤155 chars, includes CTA) | og:title | og:description |
+|---|---|---|---|---|
+| Home (`index.html`) | | | | |
+| Services (`services.html`) | | | | |
+| About (`about.html`) | | | | |
+| Contact (`contact.html`) | | | | |
+| Gallery (`gallery.html`) | | | | |
+
+*Title tag rules: keyword first, business name last, separated by `—` or `\|`. Example: `Plumber in Swindon — Hartley Plumbing`. H1s are brand copy; title tags are for search — they should differ.*
+
+*Meta description rules: one sentence, under 155 characters, ends with a clear CTA. Example: `Gas Safe registered plumber covering Swindon and Wiltshire. Available 7 days. Call for a free quote.`*
+
+### LocalBusiness JSON-LD schema
+
+Paste this block verbatim into the `<head>` of every page (update the `url` field per page if desired):
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "[Primary trade category from brief — e.g. Plumber, Electrician, GeneralContractor]",
+  "name": "[Business name]",
+  "description": "[One sentence describing the business and area served]",
+  "telephone": "[Business phone number from brief Section 8]",
+  "email": "[Email address from brief Section 7]",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "[Town]",
+    "addressRegion": "[County]",
+    "addressCountry": "GB"
+  },
+  "areaServed": "[Area served description from brief Section 8]",
+  "url": "[Site URL — fill in after Netlify deploy]",
+  "priceRange": "££",
+  "openingHours": "[e.g. Mo-Fr 08:00-18:00, Sa 09:00-13:00]"
+}
+```
+
+*Notes: `@type` should match the brief's "Primary trade category" field. `priceRange` is indicative — adjust if the brief implies budget or premium positioning. All fields derived from the brief; fill in completely before handing to the builder.*
+
+---
+
+## 6. Copy bank
 
 All unique microcopy gathered in one place for easy review:
 
@@ -162,7 +209,7 @@ All unique microcopy gathered in one place for easy review:
 
 ---
 
-## 6. Image manifest
+## 7. Image manifest
 
 Complete list of every image needed for this site, with Midjourney prompts.
 
@@ -188,7 +235,7 @@ Complete list of every image needed for this site, with Midjourney prompts.
 
 ---
 
-## 7. Accreditations
+## 8. Accreditations
 
 List of CSS badges to include from the NeoBookworm badge library, and where each should appear on the site.
 
@@ -197,7 +244,7 @@ List of CSS badges to include from the NeoBookworm badge library, and where each
 
 ---
 
-## 8. Interactive elements
+## 9. Interactive elements
 
 Anything that needs JavaScript:
 
@@ -212,7 +259,7 @@ Other interactive features: vanilla JS only, no npm libraries. Map libraries are
 
 ---
 
-## 9. Accessibility notes
+## 10. Accessibility notes
 
 Any accessibility considerations specific to this design:
 
@@ -221,7 +268,7 @@ Any accessibility considerations specific to this design:
 
 ---
 
-## 10. Open questions
+## 11. Open questions
 
 Anything the spec couldn't fully resolve from the brief and needs Nick's decision before build:
 

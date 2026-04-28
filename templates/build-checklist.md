@@ -16,8 +16,9 @@ Per-site tickable progress list. Copy this template into the site folder at kick
 - [ ] Section 5 (Tone of voice) filled in — **most important section**
 - [ ] Section 6 (Visual direction) filled in
 - [ ] Section 7 (Contact details) filled in
-- [ ] Section 8 (Images and gallery) filled in
-- [ ] Section 9 (Anything else) filled in
+- [ ] Section 8 (SEO Inputs) filled in — business phone number, area served, trade category, target keywords
+- [ ] Section 9 (Images and gallery) filled in
+- [ ] Section 10 (Anything else) filled in
 - [ ] Brief committed: *`<site-name>`: brief complete*
 
 ## Phase 2 — Site spec
@@ -29,6 +30,7 @@ Per-site tickable progress list. Copy this template into the site folder at kick
 - [ ] All page copy read through, tone matches brief
 - [ ] Image manifest complete with Midjourney prompts
 - [ ] Accreditations list matches brief
+- [ ] SEO Outputs section (Section 5) fully populated — title tags and meta descriptions for all 5 pages, og tags, LocalBusiness JSON-LD schema pre-filled
 - [ ] Spec saved as `site-spec.md`
 - [ ] Spec committed: *`<site-name>`: spec generated*
 
@@ -55,11 +57,14 @@ Per-site tickable progress list. Copy this template into the site folder at kick
 - [ ] `css/styles.css` created
 - [ ] `js/main.js` created (if needed)
 - [ ] `favicon.svg` added at site root (simple wordmark/monogram, brand colours); optional `favicon.ico` for older clients
+- [ ] `sitemap.xml` created in site root
+- [ ] `robots.txt` created in site root (with `Sitemap:` declaration pointing at the sitemap URL)
 
 ### Head setup (every page)
-- [ ] `<title>` set per spec
-- [ ] `<meta name="description">` set
+- [ ] `<title>` set per spec (keyword-targeted, from SEO Outputs section)
+- [ ] `<meta name="description">` set (from SEO Outputs section, under 155 chars)
 - [ ] Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`)
+- [ ] LocalBusiness JSON-LD schema added to `<head>` (copied from spec Section 5)
 - [ ] Favicon linked: `<link rel="icon" href="favicon.svg" type="image/svg+xml" />` on every page (and optional `<link rel="icon" href="favicon.ico" />` if `.ico` is shipped)
 - [ ] Favicon file exists and path matches `<link rel="icon">` on every page
 - [ ] Canonical URL placeholder
@@ -85,6 +90,8 @@ Per-site tickable progress list. Copy this template into the site folder at kick
 
 ### Shared elements
 - [ ] Header/nav consistent across all pages
+- [ ] Phone number (from brief Section 8 SEO Inputs) visible in header on all pages
+- [ ] Phone number visible in footer on all pages (must match header exactly — NAP consistency)
 - [ ] Footer consistent across all pages
 - [ ] Mobile menu working
 - [ ] CSS accreditation badges added (from NeoBookworm badge library)

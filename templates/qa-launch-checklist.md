@@ -41,7 +41,21 @@ For every page:
 - [ ] `og:type` set (`website` for home, `article` or `website` for others)
 - [ ] Favicon displays in browser tab
 
-## 4. Accessibility
+## 4. SEO Gate
+
+Every item in this section is a hard requirement. Do not proceed to deploy if any item is unresolved.
+
+- [ ] Every page has a unique, keyword-targeted `<title>` tag under 65 characters (H1s may differ — title tags are for search)
+- [ ] Every page has a `<meta name="description">` under 155 characters that ends with a clear CTA
+- [ ] Every page has `og:title` and `og:description` tags matching the spec's SEO Outputs section
+- [ ] LocalBusiness JSON-LD schema present in `<head>` on every page (verify `@type`, phone, address, areaServed are all filled — no placeholders)
+- [ ] Phone number visible in the header on all pages
+- [ ] Phone number visible in the footer on all pages (identical to header — NAP consistency)
+- [ ] `sitemap.xml` accessible at `/sitemap.xml` (open the URL and confirm it loads)
+- [ ] `robots.txt` accessible at `/robots.txt` and includes a `Sitemap:` declaration
+- [ ] Every page has exactly one `<h1>` tag
+
+## 5. Accessibility
 
 - [ ] Body text contrast passes WCAG AA (4.5:1 minimum). Test with [WebAIM contrast checker](https://webaim.org/resources/contrastchecker/)
 - [ ] Large text contrast passes AA (3:1 minimum)
@@ -54,7 +68,7 @@ For every page:
 - [ ] No auto-playing audio or video
 - [ ] Form errors (if any) are announced accessibly
 
-## 5. Responsive design
+## 6. Responsive design
 
 Test at each of these widths. Every item must pass at every width.
 
@@ -68,7 +82,7 @@ Widths to test: **320px, 375px, 414px, 768px, 1024px, 1440px, 1920px**
 - [ ] Gallery grid reflows sensibly across breakpoints
 - [ ] Footer layout works at every width
 
-## 6. Performance basics
+## 7. Performance basics
 
 - [ ] All images optimised (spot-check file sizes in `images/` folder)
 - [ ] `width` and `height` attributes on all `<img>` tags (prevents layout shift)
@@ -77,7 +91,7 @@ Widths to test: **320px, 375px, 414px, 768px, 1024px, 1440px, 1920px**
 - [ ] No console errors in browser dev tools
 - [ ] No 404s in the Network tab (every asset loads)
 
-## 7. Maps (N/A if no map on the site)
+## 8. Maps (N/A if no map on the site)
 
 - [ ] Decision noted: N/A **or** map type matches spec (Leaflet counties / regional preset / Google radius)
 - [ ] Vendored `shared/js/` copies present in the site folder if required
@@ -85,7 +99,7 @@ Widths to test: **320px, 375px, 414px, 768px, 1024px, 1440px, 1920px**
 - [ ] Map container has accessible name (`aria-label` or `title`) where appropriate
 - [ ] Map tested over HTTP; tiles/data load; framing / circle displays as intended
 
-## 8. Cross-browser
+## 9. Cross-browser
 
 Test in at least two browsers:
 
@@ -94,7 +108,7 @@ Test in at least two browsers:
 - [ ] Safari if on Mac — latest
 - [ ] No obvious rendering differences between browsers
 
-## 9. Links
+## 10. Links
 
 - [ ] Every nav link works on every page
 - [ ] Footer links work
@@ -102,7 +116,7 @@ Test in at least two browsers:
 - [ ] No broken internal links
 - [ ] External links (if any) open in new tab with `rel="noopener"`
 
-## 10. Forms
+## 11. Forms
 
 - [ ] Contact form labels visible and associated with inputs
 - [ ] Required fields marked clearly
@@ -110,13 +124,13 @@ Test in at least two browsers:
 - [ ] Form validates appropriately on submit attempt
 - [ ] Success state or message present (even if simulated)
 
-## 11. Accreditation badges
+## 12. Accreditation badges
 
 - [ ] All badges use the CSS accreditation badge library (no real trademarked logos)
 - [ ] Badges display correctly in their chosen locations
 - [ ] Badges pass colour contrast on their background
 
-## 12. Analytics and cookies
+## 13. Analytics and cookies
 
 For a demo site (not a real client site), analytics and cookie banners are usually unnecessary. Confirm the decision:
 
@@ -124,7 +138,7 @@ For a demo site (not a real client site), analytics and cookie banners are usual
 - [ ] Decision made: cookie banner on/off for this demo
 - [ ] If either is on, it's been tested and works
 
-## 13. Deploy config
+## 14. Deploy config
 
 - [ ] No local file paths hardcoded anywhere (check for `file://` or absolute Windows paths)
 - [ ] No API keys or secrets committed to the repo
@@ -133,7 +147,7 @@ For a demo site (not a real client site), analytics and cookie banners are usual
 - [ ] `sitemap.xml` present (optional for demos but nice to have)
 - [ ] Custom 404 page present (optional but good)
 
-## 14. Final smoke test
+## 15. Final smoke test
 
 - [ ] Close the browser, reopen, visit the local preview, click through every page one last time
 - [ ] Everything still works
