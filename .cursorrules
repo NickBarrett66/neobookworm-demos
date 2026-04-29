@@ -31,6 +31,8 @@ The NeoBookworm.uk brand (navy/amber, Playfair Display, DM Sans, plain English) 
 - Every page has: `<title>`, `<meta name="description">`, Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`), favicon link, canonical URL placeholder
 - `lang="en"` on `<html>`
 - Viewport meta tag on every page
+- Every page must have <link rel="canonical" href="..."> in <head>
+- Every page must have a <main> element wrapping the content between <nav> and <footer>
 
 ### CSS
 - All colour values as CSS custom properties in `:root`, named per the site spec
@@ -62,6 +64,7 @@ The NeoBookworm.uk brand (navy/amber, Playfair Display, DM Sans, plain English) 
 - Optimise images before adding them to the repo (target <200KB gallery, <400KB hero, MozJPEG quality 75)
 - Specify `width` and `height` attributes on `<img>` tags to prevent layout shift
 - Minimise render-blocking resources in `<head>`
+- images must be converted to WebP format before adding to the repo, with PNGs and JPGs kept as originals in a backup folder but not deployed.
 
 ## Deploy target
 

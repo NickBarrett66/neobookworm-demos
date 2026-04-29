@@ -27,6 +27,8 @@ Pre-launch gate. Every item must be ticked or explicitly marked N/A with a reaso
 - [ ] `lang="en"` on `<html>`
 - [ ] Viewport meta tag on every page
 - [ ] No inline styles (all styling in `css/styles.css`)
+- [ ] <link rel="canonical"> present on every page
+- [ ] <main> landmark present on every page
 
 ## 3. Meta tags and SEO basics
 
@@ -90,6 +92,9 @@ Widths to test: **320px, 375px, 414px, 768px, 1024px, 1440px, 1920px**
 - [ ] No unused CSS obviously bloating `styles.css`
 - [ ] No console errors in browser dev tools
 - [ ] No 404s in the Network tab (every asset loads)
+- [ ] All images served as WebP (originals kept but not deployed)
+- [ ] Run Google PageSpeed Insights before launch — minimum score 90 desktop / 70 mobile
+- [ ] Run Google Mobile-Friendly Test — must pass
 
 ## 8. Maps (N/A if no map on the site)
 
