@@ -26,13 +26,16 @@ The NeoBookworm.uk brand (navy/amber, Playfair Display, DM Sans, plain English) 
 
 ### HTML
 - Semantic HTML5 throughout: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`
+- **`<main id="main">` is required on every page**, wrapping all content between the closing `</header>` tag and the opening `<footer>` tag. This is a hard requirement for both accessibility (WCAG) and achieving a PageSpeed accessibility score of 100.
+- **A skip link must be the first child of `<body>` on every page:**
+  ```html
+  <a class="skip-link" href="#main">Skip to content</a>
+  ```
 - One `<h1>` per page, proper heading hierarchy (no skipping levels)
 - Every `<img>` has meaningful `alt` text, or `alt=""` for purely decorative images
-- Every page has: `<title>`, `<meta name="description">`, Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`), favicon link, canonical URL placeholder
+- Every page has: `<title>`, `<meta name="description">` (140–155 characters, ends with a CTA), Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`), favicon link, canonical URL
 - `lang="en"` on `<html>`
 - Viewport meta tag on every page
-- Every page must have <link rel="canonical" href="..."> in <head>
-- Every page must have a <main> element wrapping the content between <nav> and <footer>
 
 ### CSS
 - All colour values as CSS custom properties in `:root`, named per the site spec
@@ -61,10 +64,11 @@ The NeoBookworm.uk brand (navy/amber, Playfair Display, DM Sans, plain English) 
 - If a site brief requires a badge we don't have a CSS version of, note it and skip rather than importing a real logo
 
 ### Performance basics
-- Optimise images before adding them to the repo (target <200KB gallery, <400KB hero, MozJPEG quality 75)
-- Specify `width` and `height` attributes on `<img>` tags to prevent layout shift
+- **All images must be WebP format.** Convert originals using Squoosh (quality 80) before adding to the repo. Keep originals in `images/originals/` but do not deploy that subfolder. Target sizes: hero <100 KB, gallery images <80 KB, thumbnails <30 KB. Do not add PNGs or JPGs to the deployed `images/` folder — WebP only.
+- Specify `width` and `height` attributes on all `<img>` tags matching the image's natural pixel dimensions. This prevents layout shift (CLS) by letting the browser reserve space before the file loads.
 - Minimise render-blocking resources in `<head>`
-- images must be converted to WebP format before adding to the repo, with PNGs and JPGs kept as originals in a backup folder but not deployed.
+- Run **Google PageSpeed Insights** (pagespeed.web.dev) before considering any page complete. Minimum acceptable scores: 90 desktop / 70 mobile performance, 100 accessibility, 100 SEO.
+- Run **Chrome Lighthouse** (Chrome DevTools → Lighthouse tab → Mobile) before deploy to verify mobile layout, tap targets, and font legibility. Note: Google's standalone Mobile-Friendly Test tool was retired in December 2023; Lighthouse is Google's recommended replacement.
 
 ## Deploy target
 
@@ -73,19 +77,20 @@ Each demo deploys independently to Netlify as a separate site. No build step —
 ## What Cursor should never do in this repo
 
 - **Do not add `package.json` or a build toolchain.** These are plain static sites. If a chat suggests adding npm, bundlers, or compile steps, refuse and ask for a vanilla solution.
-- **Do not share bespoke design code between sites.** Each site’s **CSS and brand-specific JS** stay in that site’s folder only — no copying one demo’s `styles.css` into another.
-- **Shared toolkit:** optional map scripts live in **`shared/`** (see **`shared/README.md`**). When a site uses them, **copy** the needed `.js` files into that site’s `js/` so Netlify single-folder deploys remain self-contained. Do not reference `../../shared/` in production HTML unless your deploy includes the full repo.
+- **Do not share bespoke design code between sites.** Each site's **CSS and brand-specific JS** stay in that site's folder only — no copying one demo's `styles.css` into another.
+- **Shared toolkit:** optional map scripts live in **`shared/`** (see **`shared/README.md`**). When a site uses them, **copy** the needed `.js` files into that site's `js/` so Netlify single-folder deploys remain self-contained. Do not reference `../../shared/` in production HTML unless your deploy includes the full repo.
 - **Do not import NeoBookworm.uk brand colours, fonts, or copy** into demo sites unless the site's brief explicitly asks for something in that direction.
 - **Do not use real trademarked logos** for accreditations. CSS badge library only.
 - **Do not add code from this repo into the NeoBookworm.uk repo**, or vice versa. The repos are completely independent and only connect via URLs on the Examples page.
 - **Do not water down the aesthetic direction** specified in a site spec. If the spec says bold editorial serif with asymmetric layouts, build that. Don't drift back to generic "tradesperson website" defaults.
 - **Do not skip ahead in PROCESS.md.** If the user is in Phase 2, don't start writing HTML. Each phase has a specific output; respect the sequencing.
+- **Do not add PNG or JPG images to the deployed `images/` folder.** WebP only. If a source image is provided in PNG or JPG, convert it in Squoosh before adding it to the repo.
 
 ## File naming conventions
 
 - All filenames lowercase with hyphens: `services.html`, `about-portrait.jpg`, `gallery-01.jpg`
 - Site folder names use the business name, lowercased, hyphenated: `hartley-plumbing`, `swift-electrical`
-- Image filenames should be descriptive, not numeric-only: `hero-workshop.jpg` not `IMG_4823.jpg`
+- Image filenames should be descriptive, not numeric-only: `hero-workshop.webp` not `IMG_4823.webp`
 
 ## When in doubt
 

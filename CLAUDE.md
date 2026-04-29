@@ -67,8 +67,8 @@ Optional **map capabilities** for demos and client sites live under **`shared/`*
 
 **Google Maps — pitfalls (read `LEARNINGS.md` 2026-04-18):**
 
-- **API key only** in demos: set **`window.__GMAPS_KEY__`** locally. Do **not** commit keys. Referrer restrictions and billing must match how you host (not `file://`). A bad key shows “This page can’t load Google Maps correctly.”
-- **Default marker pattern:** **`google.maps.Marker`** + small **SVG data-URL** icons — **no Map ID** required. Expect a **deprecation** console message; that’s the trade-off for avoiding Cloud Map ID setup on simple demos.
+- **API key only** in demos: set **`window.__GMAPS_KEY__`** locally. Do **not** commit keys. Referrer restrictions and billing must match how you host (not `file://`). A bad key shows "This page can't load Google Maps correctly."
+- **Default marker pattern:** **`google.maps.Marker`** + small **SVG data-URL** icons — **no Map ID** required. Expect a **deprecation** console message; that's the trade-off for avoiding Cloud Map ID setup on simple demos.
 - **`AdvancedMarkerElement`** needs a valid **`mapId`** from Google Cloud. Do **not** gate the map loader on Map ID for sites that use classic markers only — that **breaks** key-only sites (e.g. Swift).
 - **Framing:** `map.fitBounds(circle.getBounds(), padding)` — **lower padding = closer** (more zoomed in), **higher padding = wider** view. Tune padding before adding extra `setZoom` hacks.
 - **Flexible layout:** If the map sits in a **flex/grid** column whose height changes, use **`ResizeObserver`** (or resize handler), **`google.maps.event.trigger(map, 'resize')`**, and **refit** bounds so the circle stays correct.
@@ -99,6 +99,10 @@ Key rules derived from this baseline:
 - Meta descriptions are under 155 characters and end with a CTA.
 - The phone number displayed on the site must be the business number (Sonetel or dedicated line) from the brief's SEO Inputs section — not the owner's personal mobile. It must appear identically in every page header and footer.
 - `sitemap.xml` and `robots.txt` (with a `Sitemap:` declaration) are required in every site root before deploy.
+- Every page must have a `<main id="main">` landmark wrapping all content between the site header and footer. A skip link `<a class="skip-link" href="#main">Skip to content</a>` must be the first child of `<body>`. This is required for accessibility and for achieving a PageSpeed accessibility score of 100.
+- All images must be **WebP format**. Convert originals using Squoosh (quality 80) before adding to the repo. Keep originals in an `images/originals/` subfolder but do not deploy them. Target sizes: hero <100 KB, gallery images <80 KB, thumbnails <30 KB.
+- Run **Google PageSpeed Insights** (pagespeed.web.dev) before deploy — minimum scores: 90 desktop / 70 mobile performance, 100 accessibility, 100 SEO.
+- Run **Chrome Lighthouse** (Chrome DevTools → Lighthouse tab → Mobile) before deploy to verify mobile layout, tap targets, and font legibility. Note: Google's standalone Mobile-Friendly Test tool was retired in December 2023; Lighthouse is Google's recommended replacement.
 
 ## Future-facing notes
 
