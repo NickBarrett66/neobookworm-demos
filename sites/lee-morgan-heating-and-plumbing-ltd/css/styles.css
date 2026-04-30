@@ -408,6 +408,17 @@ body.nav-open .nav-drawer {
   transform: translateY(-1px);
 }
 
+/* Header Call Lee — same visual scale as Menu + brand line (not full hero buttons) */
+.site-header .nav-cta.btn {
+  min-height: 40px;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-width: 1px;
+  border-radius: 10px;
+  line-height: 1.2;
+}
+
 .btn-row {
   display: flex;
   flex-wrap: wrap;
@@ -1421,27 +1432,31 @@ body.nav-open .nav-drawer {
   font-size: 0.9375rem;
 }
 
-/* Callbar */
+/* Callbar — compact strip on small screens only */
 .callbar {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
+  padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
   background: var(--color-accent);
   backdrop-filter: blur(10px);
-  border-top: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
   z-index: 70;
 }
 .callbar a {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  border-radius: 12px;
+  gap: 8px;
+  min-height: 40px;
+  padding-block: 7px;
+  border-radius: 10px;
   background: rgba(0, 0, 0, 0.18);
   color: #fff;
   font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
   text-decoration: none;
 }
 @media (min-width: 761px) {
@@ -1451,7 +1466,25 @@ body.nav-open .nav-drawer {
 }
 @media (max-width: 760px) {
   body {
-    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+    /* Match slimmed callbar: ~8 + 40 + 8 padding + safe area */
+    padding-bottom: calc(58px + env(safe-area-inset-bottom));
+  }
+
+  .site-footer {
+    padding-block: var(--space-8);
+    margin-top: var(--space-8);
+  }
+  .footer-grid {
+    gap: var(--space-6);
+  }
+  .footer-meta {
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    font-size: 0.875rem;
+  }
+
+  .toast {
+    bottom: calc(72px + env(safe-area-inset-bottom));
   }
 }
 
@@ -1459,7 +1492,7 @@ body.nav-open .nav-drawer {
 .toast {
   position: fixed;
   left: 50%;
-  bottom: calc(92px + env(safe-area-inset-bottom));
+  bottom: calc(24px + env(safe-area-inset-bottom));
   transform: translateX(-50%);
   width: min(560px, calc(100% - 24px));
   background: rgba(19, 32, 44, 0.96);
@@ -1486,13 +1519,24 @@ body.nav-open .nav-drawer {
 @media (max-width: 959px) {
   .site-header__inner {
     padding-block: var(--space-3);
-    gap: var(--space-3);
+    gap: var(--space-2);
   }
   .brand__top {
     font-size: 1.125rem;
   }
   .brand__bot {
     font-size: 0.8125rem;
+  }
+  .nav-toggle {
+    width: auto;
+    min-width: 44px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
   }
 }
 
