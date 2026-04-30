@@ -6,6 +6,25 @@ function setBannerHeightPx(px) {
   document.documentElement.style.setProperty("--banner-h", `${px}px`);
 }
 
+function syncBannerHeight() {
+  const banner = document.querySelector("[data-demo-banner]");
+  if (!banner) return;
+  if (banner.classList.contains("is-dismissed")) {
+    setBannerHeightPx(0);
+    return;
+  }
+  const h = Math.ceil(banner.getBoundingClientRect().height);
+  setBannerHeightPx(Math.max(0, h));
+}
+
+function debounce(fn, ms) {
+  let t = null;
+  return (...args) => {
+    window.clearTimeout(t);
+    t = window.setTimeout(() => fn(...args), ms);
+  };
+}
+
 function getPathBasename() {
   const path = window.location.pathname;
   const last = path.split("/").filter(Boolean).pop() || "index.html";
@@ -295,6 +314,11 @@ function initContactSentMessage() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initDemoBanner();
+  syncBannerHeight();
+  window.addEventListener("resize", debounce(syncBannerHeight, 120), { passive: true });
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => syncBannerHeight());
+  }
   initHeaderShadow();
   initNavActive();
   initNavDrawer();
