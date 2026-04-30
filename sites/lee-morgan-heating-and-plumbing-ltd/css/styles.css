@@ -7,8 +7,8 @@
   /* Brand */
   --color-primary: #1E2A36; /* Slate Navy */
   --color-secondary: #2F3F4E; /* Workshop Slate */
-  --color-accent: #D96B00; /* Flame Amber */
-  --color-accent-hover: #B85A00;
+  --color-accent: #B85A00; /* Flame Amber (darkened for WCAG contrast with white text) */
+  --color-accent-hover: #9E4D00;
 
   /* Surfaces + type */
   --color-bg: #F6F1E7; /* Parchment */
@@ -402,10 +402,10 @@ body.nav-open .nav-drawer {
   color: rgba(246, 241, 231, 0.82);
 }
 .hero .trustline {
-  color: rgba(246, 241, 231, 0.55);
+  color: rgba(246, 241, 231, 0.82);
 }
 .hero .demo-note {
-  color: rgba(246, 241, 231, 0.35);
+  color: rgba(246, 241, 231, 0.78);
 }
 .hero .btn--secondary {
   color: #F6F1E7;
@@ -465,13 +465,13 @@ body.nav-open .nav-drawer {
   color: #F6F1E7;
 }
 .trust-strip .trust-card__line {
-  color: rgba(246, 241, 231, 0.6);
+  color: rgba(246, 241, 231, 0.78);
 }
 .trust-strip .trust-card__icon {
   background: rgba(246, 241, 231, 0.1);
 }
 .trust-strip .trust-card__icon svg {
-  color: rgba(246, 241, 231, 0.7);
+  color: rgba(246, 241, 231, 0.85);
 }
 .trust-grid {
   display: grid;

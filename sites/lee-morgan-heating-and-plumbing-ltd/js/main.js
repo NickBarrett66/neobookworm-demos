@@ -23,7 +23,8 @@ function initDemoBanner() {
     return;
   }
 
-  setBannerHeightPx(banner.offsetHeight || 52);
+  const measure = () => setBannerHeightPx(banner.offsetHeight || 52);
+  measure();
 
   const closeBtn = banner.querySelector("[data-banner-close]");
   if (closeBtn) {
@@ -34,16 +35,22 @@ function initDemoBanner() {
     });
   }
 
-  // Re-measure on resize (wrap changes height)
-  window.addEventListener(
-    "resize",
-    () => {
-      if (!banner.classList.contains("is-dismissed")) {
-        setBannerHeightPx(banner.offsetHeight || 52);
-      }
-    },
-    { passive: true }
-  );
+  // Re-measure when the banner's size actually changes (wrap / font load)
+  if ("ResizeObserver" in window) {
+    const ro = new ResizeObserver(() => {
+      if (!banner.classList.contains("is-dismissed")) measure();
+    });
+    ro.observe(banner);
+  } else {
+    // Fallback: re-measure on resize (wrap changes height)
+    window.addEventListener(
+      "resize",
+      () => {
+        if (!banner.classList.contains("is-dismissed")) measure();
+      },
+      { passive: true }
+    );
+  }
 }
 
 function initHeaderShadow() {
@@ -81,16 +88,27 @@ function initNavDrawer() {
   const drawer = document.querySelector("[data-nav-drawer]");
   if (!openBtn || !closeBtn || !overlay || !drawer) return;
 
+  // Ensure hidden drawer content isn't focusable.
+  drawer.setAttribute("inert", "");
+  overlay.setAttribute("inert", "");
+  openBtn.setAttribute("aria-expanded", "false");
+
   const open = () => {
     document.body.classList.add("nav-open");
     drawer.setAttribute("aria-hidden", "false");
     overlay.setAttribute("aria-hidden", "false");
+    drawer.removeAttribute("inert");
+    overlay.removeAttribute("inert");
+    openBtn.setAttribute("aria-expanded", "true");
     closeBtn.focus();
   };
   const close = () => {
     document.body.classList.remove("nav-open");
     drawer.setAttribute("aria-hidden", "true");
     overlay.setAttribute("aria-hidden", "true");
+    drawer.setAttribute("inert", "");
+    overlay.setAttribute("inert", "");
+    openBtn.setAttribute("aria-expanded", "false");
     openBtn.focus();
   };
 
@@ -186,8 +204,10 @@ function initBeforeAfterSliders() {
     // Default
     setBa(slider, clamp(getBaPct(slider), 10, 90));
 
+    // Cache geometry during drag to avoid layout reads on every pointermove.
+    let dragRect = null;
     const updateFromClientX = (clientX) => {
-      const rect = slider.getBoundingClientRect();
+      const rect = dragRect || slider.getBoundingClientRect();
       const x = clamp(clientX - rect.left, rect.width * 0.1, rect.width * 0.9);
       const pct = (x / rect.width) * 100;
       setBa(slider, pct);
@@ -197,6 +217,7 @@ function initBeforeAfterSliders() {
 
     const onPointerDown = (e) => {
       dragging = true;
+      dragRect = slider.getBoundingClientRect();
       slider.setPointerCapture?.(e.pointerId);
       updateFromClientX(e.clientX);
     };
@@ -206,6 +227,7 @@ function initBeforeAfterSliders() {
     };
     const onPointerUp = () => {
       dragging = false;
+      dragRect = null;
     };
 
     // Drag anywhere in slider

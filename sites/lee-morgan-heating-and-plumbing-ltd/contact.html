@@ -24,19 +24,37 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap"
+  />
+  <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap"
+    media="print"
+    onload="this.media='all'"
   />
 
   <!-- Leaflet 1.9.x -->
+  <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    media="print"
+    onload="this.media='all'"
   />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/badges.css" />
+  <link rel="preload" as="style" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'" />
+  <link rel="preload" as="style" href="css/badges.css" />
+  <link rel="stylesheet" href="css/badges.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/badges.css" />
+  </noscript>
 </head>
 <body>
   <!-- NeoBookworm demo banner -->
@@ -44,7 +62,7 @@
     <div class="container site-banner__inner">
       <div class="site-banner__message">
         This is a free demo site built for Lee Morgan Heating &amp; Plumbing by
-        <a href="https://neobookworm.uk/contact.html">NeoBookworm.uk</a>. Like what you see? Get in touch.
+        <a href="https://neobookworm.uk/contact.html">Contact NeoBookworm.uk</a>. Like what you see? Get in touch.
       </div>
       <div class="site-banner__actions">
         <a class="btn btn--primary" href="https://neobookworm.uk/contact.html">Contact NeoBookworm</a>
@@ -75,8 +93,8 @@
   </header>
 
   <!-- Mobile drawer -->
-  <div class="nav-drawer-overlay" data-nav-overlay aria-hidden="true"></div>
-  <aside class="nav-drawer" data-nav-drawer aria-hidden="true" aria-label="Menu">
+  <div class="nav-drawer-overlay" data-nav-overlay aria-hidden="true" inert></div>
+  <aside class="nav-drawer" data-nav-drawer aria-hidden="true" inert aria-label="Menu">
     <button class="nav-drawer__close" type="button" data-nav-close aria-label="Close menu">×</button>
     <ul class="nav-drawer__links" data-nav>
       <li><a href="index.html">Home</a></li>
