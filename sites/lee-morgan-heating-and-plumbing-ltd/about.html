@@ -98,10 +98,10 @@
     <div class="container site-banner__inner">
       <div class="site-banner__message">
         This is a free demo site built for Lee Morgan Heating &amp; Plumbing by
-        <a href="https://neobookworm.uk/contact.html">Contact NeoBookworm.uk</a>. Like what you see? Get in touch.
+        <a href="https://www.neobookworm.uk/contact.html" target="_blank" rel="noopener">Contact NeoBookworm.uk</a>. Like what you see? Get in touch.
       </div>
       <div class="site-banner__actions">
-        <a class="btn btn--primary" href="https://neobookworm.uk/contact.html">Contact NeoBookworm</a>
+        <a class="btn btn--primary" href="https://www.neobookworm.uk/contact.html" target="_blank" rel="noopener">Contact NeoBookworm</a>
       </div>
       <button class="site-banner__close" type="button" data-banner-close aria-label="Dismiss demo banner">×</button>
     </div>
@@ -111,8 +111,11 @@
   <header class="site-header" data-site-header>
     <div class="container site-header__inner">
       <a class="brand" href="index.html">
-        <span class="brand__top">Lee Morgan</span>
-        <span class="brand__bot">Heating &amp; Plumbing Ltd</span>
+        <img class="brand__logo" src="images/Lee-Morgan-Logo.webp" alt="Lee Morgan Heating &amp; Plumbing Ltd logo" width="80" height="24" decoding="async" />
+        <span class="brand__text">
+          <span class="brand__top">Lee Morgan</span>
+          <span class="brand__bot">Heating &amp; Plumbing Ltd</span>
+        </span>
       </a>
 
       <nav class="nav" aria-label="Primary navigation" data-nav>
@@ -153,17 +156,19 @@
           <h1>The story behind the name</h1>
           <p class="prose">I trained as a printer. Weekends I was on the tools with my dad. He was a plumber and the trade got into my blood.</p>
           <p class="prose">I qualified in gas, worked in the industry for 18 years, then the company I’d been with for 10 years closed down and I was made redundant. In March 2021 I went out on my own. Same standards. Just my name on the van.</p>
-          <p class="demo-note">Demo site: click‑to‑call is disabled.</p>
         </div>
 
         <div class="page-hero__media">
-          <img
-            src="images/about-portrait.webp"
-            alt="A gas engineer in clean workwear standing beside a modern boiler installation."
-            width="675"
-            height="900"
-            loading="lazy"
-          />
+          <figure class="portrait">
+            <img
+              src="images/about-portrait.webp"
+              alt="A gas engineer in clean workwear standing beside a modern boiler installation."
+              width="675"
+              height="900"
+              loading="lazy"
+            />
+            <figcaption class="portrait__caption">A picture of you could go in here Lee</figcaption>
+          </figure>
         </div>
       </div>
     </section>
