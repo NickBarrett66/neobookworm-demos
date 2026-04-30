@@ -23,9 +23,6 @@ function initDemoBanner() {
     return;
   }
 
-  const measure = () => setBannerHeightPx(banner.offsetHeight || 52);
-  measure();
-
   const closeBtn = banner.querySelector("[data-banner-close]");
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
@@ -33,23 +30,6 @@ function initDemoBanner() {
       banner.classList.add("is-dismissed");
       setBannerHeightPx(0);
     });
-  }
-
-  // Re-measure when the banner's size actually changes (wrap / font load)
-  if ("ResizeObserver" in window) {
-    const ro = new ResizeObserver(() => {
-      if (!banner.classList.contains("is-dismissed")) measure();
-    });
-    ro.observe(banner);
-  } else {
-    // Fallback: re-measure on resize (wrap changes height)
-    window.addEventListener(
-      "resize",
-      () => {
-        if (!banner.classList.contains("is-dismissed")) measure();
-      },
-      { passive: true }
-    );
   }
 }
 

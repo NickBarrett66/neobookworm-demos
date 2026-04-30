@@ -34,7 +34,14 @@
   --space-16: 64px;
 
   /* Global fixed UI */
-  --banner-h: 52px;
+  /* Reserve space for the fixed demo banner to prevent CLS on load. */
+  --banner-h: 92px;
+}
+
+@media (min-width: 720px) {
+  :root {
+    --banner-h: 52px;
+  }
 }
 
 *,
