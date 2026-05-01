@@ -334,7 +334,9 @@ p {
   gap: var(--space-2);
 }
 .nav-drawer__links a {
-  display: block;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   padding: 12px 12px;
   border-radius: 12px;
   color: rgba(246, 241, 231, 0.95);
@@ -439,6 +441,11 @@ body.nav-open .nav-drawer {
 .hero h1 {
   color: #F6F1E7;
 }
+@media (max-width: 719px) {
+  .hero h1 {
+    font-size: clamp(1.75rem, 5vw + 0.75rem, 2.25rem);
+  }
+}
 .hero .hero__lede,
 .hero .prose {
   color: rgba(246, 241, 231, 0.82);
@@ -485,7 +492,7 @@ body.nav-open .nav-drawer {
 }
 .demo-note {
   margin-top: var(--space-3);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--color-muted);
 }
 

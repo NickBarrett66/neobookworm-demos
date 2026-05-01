@@ -5,9 +5,9 @@ Site type: static HTML/CSS/vanilla JS, 5 pages (Home, About, Services, Gallery, 
 
 **Global required element (all pages): NeoBookworm demo banner**
 
-> “This is a free demo site built for Lee Morgan Heating & Plumbing by [NeoBookworm.uk](https://neobookworm.uk/contact.html). Like what you see? Get in touch.”
+> “This is a free demo site built for Lee Morgan Heating & Plumbing by [NeoBookworm.uk](https://neobookworm.uk/contact). Like what you see? Get in touch.”
 
-- Must include a **CTA button** linking to `https://neobookworm.uk/contact.html`
+- Must include a **CTA button** linking to `https://neobookworm.uk/contact` (note: no `.html` — Netlify serves Pretty URLs)
 - Must include a **close button** (dismiss)
 - Dismiss preference stored in `localStorage` so it stays dismissed across pages
 - Styling: visible but not obtrusive; does **not** compete with the site’s primary CTA

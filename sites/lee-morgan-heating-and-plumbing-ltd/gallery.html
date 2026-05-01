@@ -23,6 +23,10 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnGc5Q962f.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnGc5Q-a2fli0.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="https://fonts.gstatic.com/s/sourcesans3/v19/nwpStKy2OAdR1K-IwhWudF-R3w8aZQ.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="https://fonts.gstatic.com/s/sourcesans3/v19/nwpStKy2OAdR1K-IwhWudF-R3wEaZfrc.woff2" as="font" type="font/woff2" crossorigin />
   <link
     rel="preload"
     as="style"
@@ -47,15 +51,15 @@
   <style>
   #cc-main {
     --cc-bg: #1E2A36;
-    --cc-primary-color: #B85A00;
+    --cc-primary-color: #F6F1E7;
     --cc-secondary-color: #F6F1E7;
     --cc-text-color: #F6F1E7;
     --cc-text-color-headline: #F6F1E7;
     --cc-separator-border-color: rgba(255,255,255,0.1);
-    --cc-btn-primary-bg: #B85A00;
-    --cc-btn-primary-color: #1E2A36;
-    --cc-btn-primary-hover-bg: #9E4D00;
-    --cc-btn-primary-hover-color: #1E2A36;
+    --cc-btn-primary-bg: #8E4A10;
+    --cc-btn-primary-color: #FFFFFF;
+    --cc-btn-primary-hover-bg: #763D0D;
+    --cc-btn-primary-hover-color: #FFFFFF;
     --cc-btn-secondary-bg: transparent;
     --cc-btn-secondary-color: #F6F1E7;
     --cc-btn-secondary-border-color: rgba(255,255,255,0.3);
@@ -63,7 +67,7 @@
     --cc-btn-secondary-hover-color: #F6F1E7;
     --cc-toggle-on-bg: #B85A00;
     --cc-toggle-off-bg: rgba(255,255,255,0.2);
-    --cc-toggle-enabled-icon-color: #1E2A36;
+    --cc-toggle-enabled-icon-color: #FFFFFF;
     --cc-toggle-readonly-bg: rgba(255,255,255,0.15);
     --cc-cookie-category-block-bg: rgba(255,255,255,0.05);
     --cc-cookie-category-block-border: rgba(255,255,255,0.1);
@@ -71,6 +75,9 @@
     --cc-modal-border-radius: 4px;
     --cc-btn-border-radius: 3px;
     font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+  #cc-main .cm__title {
+    color: #F6F1E7 !important;
   }
   </style>
 
@@ -81,15 +88,28 @@
     <link rel="stylesheet" href="css/badges.css" />
   </noscript>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ91NBYHCL"></script>
+  <!-- Google tag (gtag.js) — deferred until idle to reduce main-thread contention -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('consent', 'default', { analytics_storage: 'denied' });
-    gtag('config', 'G-VQ91NBYHCL');
+    function nbLoadGtag() {
+      if (window.nbGtagLoaded) return;
+      window.nbGtagLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VQ91NBYHCL';
+      s.async = true;
+      s.onload = function () {
+        gtag('config', 'G-VQ91NBYHCL');
+      };
+      document.head.appendChild(s);
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(nbLoadGtag, { timeout: 4000 });
+    } else {
+      window.addEventListener('load', nbLoadGtag);
+    }
   </script>
 </head>
 <body>
@@ -98,10 +118,10 @@
     <div class="container site-banner__inner">
       <div class="site-banner__message">
         This is a free demo site built for Lee Morgan Heating &amp; Plumbing by
-        <a href="https://neobookworm.uk/contact.html" target="_blank" rel="noopener noreferrer">Contact NeoBookworm.uk</a>. Like what you see? Get in touch.
+        NeoBookworm.uk. Like what you see? Get in touch.
       </div>
       <div class="site-banner__actions">
-        <a class="btn btn--primary" href="https://neobookworm.uk/contact.html" target="_blank" rel="noopener noreferrer">Contact NeoBookworm</a>
+        <a class="btn btn--primary" href="https://neobookworm.uk/contact" target="_blank" rel="noopener">Contact NeoBookworm</a>
       </div>
       <button class="site-banner__close" type="button" data-banner-close aria-label="Dismiss demo banner">×</button>
     </div>
@@ -216,7 +236,7 @@
           <div class="fb-strip__meta">
             <strong>★★★★★ 5.0</strong> · 16 reviews — 100% recommended on Facebook
           </div>
-          <a class="btn btn--secondary" href="https://facebook.com/leemorgangasman" target="_blank" rel="noopener">See reviews</a>
+          <a class="btn btn--secondary" href="https://facebook.com/leemorgangasman" target="_blank" rel="noopener noreferrer">See reviews</a>
         </div>
       </div>
     </section>
@@ -245,7 +265,7 @@
         </div>
         <div>
           <h3>Contact</h3>
-          <p>Call: <a href="tel:+447739583768">07739 583768</a><br>Facebook: <a href="https://facebook.com/leemorgangasman" target="_blank" rel="noopener">leemorgangasman</a><br>Service area: Wiltshire &amp; nearby</p>
+          <p>Call: <a href="tel:+447739583768">07739 583768</a><br>Facebook: <a href="https://facebook.com/leemorgangasman" target="_blank" rel="noopener noreferrer">leemorgangasman</a><br>Service area: Wiltshire &amp; nearby</p>
         </div>
         <div>
           <h3>Trust</h3>
