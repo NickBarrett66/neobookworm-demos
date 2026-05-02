@@ -4,7 +4,7 @@ Persistent context for Claude Code and Cursor sessions in this repo. Loaded auto
 
 ## What this repo is
 
-This is the `neobookworm-demos` repo — a collection of demo trade websites showcasing what NeoBookworm.uk can build for its clients. Each site in `sites/` is a full multi-page static site for a fictional (or real-reference) UK tradesperson business, deployed independently to Netlify, and linked from the Examples page on neobookworm.uk.
+This is the `neobookworm-demos` repo — a collection of demo trade websites showcasing what NeoBookworm.uk can build for its clients. Each site in `sites/` is a full multi-page static site for a fictional (or real-reference) UK tradesperson business, deployed independently to Netlify, some are linked from the Examples page on neobookworm.uk.
 
 This repo also serves as the reference implementation for **Agent 6** — a future pipeline agent that will build real client websites automatically from intake form data. The manual process followed in this repo is the blueprint Agent 6 will eventually execute end-to-end. Every decision captured in `PROCESS.md` should be one that could, in principle, be scripted later.
 
@@ -20,7 +20,7 @@ If a user's request conflicts with one of these documents, surface the conflict 
 
 ## Business context (short version)
 
-**NeoBookworm.uk** is Nick Barrett's one-person web design business in Swindon. It builds fixed-price websites for UK tradespeople — plumbers, electricians, decorators, roofers, joiners, landscapers, pest controllers, window cleaners. The core offer is a £499 fixed-price multi-page site with an optional £20/month maintenance retainer. Contact is email-only; business email is `nick@neobookworm.uk`.
+**NeoBookworm.uk** is Nick Barrett's one-person web design business in Swindon. It builds fixed-price websites for UK tradespeople — plumbers, electricians, decorators, roofers, joiners, landscapers, pest controllers, window cleaners. The core offer is a £299 fixed-price multi-page site with an optional £9.99/month maintenance retainer. Contact is email-only; business email is `neobookworm@icloud.com`.
 
 The demo sites in this repo showcase the kind of work NeoBookworm delivers — eight sites for Wiltshire-area trades, each showing what a £299 website actually looks like. They need to look like real websites for real businesses, not like marketing mockups.
 
@@ -46,6 +46,14 @@ Current build status lives in `TRACKER.md`. Always check the tracker before assu
 **NeoBookworm showcase demos** — sites intended as **examples on neobookworm.uk** use the **business slug only**, with **no** `ltd` suffix (e.g. `hartley-plumbing`, `swift-electrical`, `ridgecoat-decorators`).
 
 This keeps client-pipeline folders visually distinct from the fixed demo set in the tracker and Examples page.
+
+## Available Skills
+
+### NeoBookworm Demo QA
+Instruction set for quality-checking and retrofitting demo sites before outreach.
+Reference file: `.claude/neobookworm-demo-qa.md`
+Use when asked to QA, check, or retrofit any demo site HTML file.
+To run: add the skill file to context and provide the prospect's Netlify URL.
 
 ## Critical boundaries
 
