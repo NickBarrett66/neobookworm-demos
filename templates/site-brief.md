@@ -1,8 +1,8 @@
 # Site Brief — `[Business Name]`
 
-This is the human-written creative seed for a demo site. Fill in every section. If something doesn't apply, write "None" or "N/A" — don't leave fields blank. This is Phase 1 of `PROCESS.md`.
+This brief is generated in Phase 1 of `PROCESS.md` using the **`neobookworm-site-brief` skill in Claude chat** (NeoBookworm project). Provide the prospect's Notion URL or page ID and Claude will research and populate every section. Review the output carefully, request any changes, then download and save to `sites/<site-name>/site-brief.md`.
 
-The field structure mirrors what NeoBookworm's client intake form captures, so when real clients come through later, the same information will flow into this same template shape (just written by them instead of by you).
+The field structure mirrors what NeoBookworm's client intake form captures, so when real clients come through later, the same information will flow into this same template shape.
 
 ---
 
@@ -15,7 +15,7 @@ The field structure mirrors what NeoBookworm's client intake form captures, so w
 **Location served (town, county, radius):**
 
 **Map / coverage visual (if any):**
-*(Optional. e.g. “Leaflet UK counties highlighting [list] on About”, “Google Maps 15-mile radius from [town] on Contact”, or “None — text only”.)*
+*(Optional. e.g. "Leaflet UK counties highlighting [list] on About", "Google Maps 15-mile radius from [town] on Contact", or "None — text only".)*
 
 **Years in business (real or fictional):**
 
@@ -136,19 +136,27 @@ These fields feed directly into the SEO Outputs section of `site-spec.md` and th
 
 ---
 
-## 9. Images and gallery
+## 9. Images
 
-**What should the hero image show?**
-*(One sentence describing the ideal hero shot. E.g. "A plumber's hands installing a modern brass tap on a dark stone worktop, shallow depth of field, warm natural light.")*
+**Trade category slug:** *(must match exactly — see valid slugs below)*
+**Hero image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/{slug}/hero.webp`
+**About image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/{slug}/about.webp` — or use `shared/owner.webp` if a portrait works better for this business
+**CTA background:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/{slug}/cta-bg.webp`
 
-**Gallery ideas (rough list, the spec will turn these into Midjourney prompts):**
-- Image 1:
-- Image 2:
-- Image 3:
-- *(aim for 8–12 ideas)*
+**Shared assets available (any site, any trade):**
+- Van (exterior): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/van.webp`
+- Van (interior / tools): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/tools.webp`
+- Owner portrait: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/owner.webp`
+- British home exterior: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/british-home-exterior.webp`
 
-**Any people shots needed?**
-*(Portrait of the owner? Team shot? Customer interaction?)*
+**Notes on image usage:**
+*(Note here if a shared asset suits a section better than the trade-category image — e.g. owner.webp for About, british-home-exterior.webp for CTA background.)*
+
+**Valid trade category slugs:**
+`plumber` · `gas-engineer` · `electrician` · `painter-decorator` · `plasterer` · `roofer` · `kitchen-fitter` · `bathroom-fitter` · `landscaper` · `driveway-paving` · `carpenter-joiner` · `tiler` · `handyman` · `builder` · `other`
+
+> ⚠️ If this trade category does not yet have images in the R2 library, source and upload before starting Phase 4.
+> See `docs/r2-image-library-checklist.md` in this repo to track progress.
 
 ---
 
