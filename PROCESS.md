@@ -29,6 +29,16 @@ Total per site: roughly 3–5 hours for a new trade type (including any image so
 
 ## Phase 1 — Write the site brief
 
+### Per-site folders (created as you go)
+
+When you start a new demo, you create a folder named after it (e.g. `sites/hartley-plumbing/`). Inside each site folder you'll have:
+
+- `site-brief.md` (filled in)
+- `build-checklist.md` (in progress)
+- `qa-launch-checklist.md` (in progress or complete)
+- `images/` (if needed)
+
+
 **Input:** a prospect name, Notion page ID, or Notion URL.
 
 **Output:** a fully populated `site-brief.md`, reviewed and approved by you, saved into the site folder.
