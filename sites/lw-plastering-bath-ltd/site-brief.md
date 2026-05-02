@@ -3,7 +3,7 @@
 **Slug:** `lw-plastering-bath`
 **Notion record:** https://www.notion.so/33cfe9dde6b981abb2dddf90746fa00a
 **Segment:** A – Established (Ltd, inc. 2007)
-**Brief prepared:** 2026-04-27
+**Brief prepared:** 2026-04-26
 
 ---
 
@@ -15,8 +15,8 @@
 **Location served:** Bath and surrounding area (Somerset/Wiltshire fringes)
 **Map / coverage visual:** Service area badge — "Serving Bath & surrounds" — no detailed map needed; keep it simple
 **Years in business:** ~18 years (incorporated October 2007)
-**Size:** ⚠️ *[generated — please verify]* Small team (1–3 operatives). "Give us a call / message me" language throughout implies solo-or-pair operation.
-**Owner name:** ⚠️ *[generated — please verify]* Identity not publicly confirmed — "LW" initials only.
+**Size:**  Small team (1–3 operatives). "Give us a call / message me" language throughout implies solo-or-pair operation.
+**Owner name:** Unknown
 
 ---
 
@@ -29,6 +29,7 @@ Unhurried, straight-talking, craft-proud. Not salesy. The kind of plasterer who 
 ## 3. Aesthetic / Colour Direction
 
 - **Palette:** Warm plaster-white base, Bath stone ochre accent, dark charcoal text
+- look at C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\sites\lw-plastering-bath-ltd\images\BusinessCard.jpg for colours that the scheme must be  able to work with
 - **Typography:** Slab or humanist serif for headings (deliberately not the sans-serif blue-template most trades use)
 - **Photography direction:** Close-up of a smooth skim finish catching raking light; before/after pairs if available; period stonework if heritage angle confirmed
 - **Overall feel:** Premium-but-approachable. Not a big corporate firm, but clearly not a cowboy either. Bath aesthetic — quality, heritage, substance.
@@ -39,7 +40,7 @@ Unhurried, straight-talking, craft-proud. Not salesy. The kind of plasterer who 
 
 - Skimming & plastering (new build + renovation)
 - Rendering (sand & cement, monocouche, K Rend)
-- ⚠️ *[unconfirmed]* Lime render / heritage/period property work — potentially strong Bath differentiator
+- Lime render / heritage/period property work — potentially strong Bath differentiator
 - Dry lining / plasterboard
 - Repairs and patches
 
@@ -49,8 +50,8 @@ Unhurried, straight-talking, craft-proud. Not salesy. The kind of plasterer who 
 
 - 18 years trading (incorporated 2007) — lead with this
 - Ltd company status — signals seriousness and staying power
-- ⚠️ *[verify]* CSCS card, NVQ, City & Guilds — standard plasterer credentials; unconfirmed but likely
-- ⚠️ *[verify]* TrustMark registration — check Agent 5 data; display badge on demo if confirmed
+- CSCS card, NVQ, City & Guilds — standard plasterer credentials; unconfirmed but likely
+- TrustMark registration — check Agent 5 data; display badge on demo if confirmed
 - Facebook presence (active) — confirms legitimacy
 - Reviews / testimonials — pull 2–3 from Facebook/Checkatrade if available
 
@@ -93,7 +94,7 @@ The `british-home-exterior.webp` could work well for the CTA background given Ba
 
 ## 9. SEO Inputs
 
-- **Business phone:** ⚠️ *Discrepancy — two numbers found:* 07943 160213 (Notion) vs 07743 728199 (Agent 5 summary). Needs resolving before go-live.
+- **Business phone:**  07943 160213 
 - **Area served:** Bath and surrounds (Somerset/Wiltshire fringes)
 - **Primary trade category:** Plasterer & Renderer
 - **Target location keywords:** Bath, Bathampton, Keynsham, Radstock, Midsomer Norton, Frome
@@ -102,13 +103,6 @@ The `british-home-exterior.webp` could work well for the CTA background given Ba
 
 ## Flags to Resolve Before Phase 2
 
-| # | Flag | Action |
-|---|---|---|
-| 1 | Tone section | Confirm "unhurried, straight-talking, craft-proud" feels right |
-| 2 | Aesthetic | Warm plaster-white + Bath stone ochre — confirm |
-| 3 | Owner name | "LW" initials only — do you know who this is? |
-| 4 | Phone number discrepancy | 07943 160213 vs 07743 728199 — which is live? |
-| 5 | Heritage/lime render angle | Unconfirmed — strong if true, remove if not |
 
 ---
 
