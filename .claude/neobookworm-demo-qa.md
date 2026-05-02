@@ -241,7 +241,7 @@ Update this section as sites are QA'd:
 | Prospect | Folder | Live URL | QA Status | Notes |
 |---|---|---|---|---|
 | Lee Morgan Heating & Plumbing Ltd | `lee-morgan-heating-and-plumbing-ltd` | — | ⏳ Pending | First email sent — do not modify until response received |
-| Brush 2 Brush Decorating Services Ltd | `brush-to-brush-decorating-services-ltd` | https://brush2brush-decorating-njb-demo.netlify.app | ⚠️ Manual review | Live Lighthouse home (mobile): Perf 91 / A11y 100 / BP 96 / SEO 100. **Deploy missing `/images/*`** (404s — console error). Added GA4, `robots.txt`, `sitemap.xml` locally — redeploy. Screenshots: `sites/…/qa-screenshots/` |
+| Brush 2 Brush Decorating Services Ltd | `brush-to-brush-decorating-services-ltd` | https://brush2brush-decorating-njb-demo.netlify.app | ⚠️ Manual review | **Pass 2 (live, mobile home):** Perf 77 / A11y 100 / BP 100 / SEO 100 — assets + robots resolve; perf gated by LCP/FCP (large JPEG hero). Repo updated to **WebP** where files exist + `fetchpriority="high"` on hero; redeploy for LH bump. Services **03–06** still JPEG until WebP added. |
 
 ---
 
