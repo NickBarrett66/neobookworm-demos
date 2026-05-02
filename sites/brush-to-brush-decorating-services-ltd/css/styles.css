@@ -1,3 +1,4 @@
+/* NOTE: Inlined into *.html as <style id="site-styles"> for mobile perf (no blocking CSS request). After editing this file, run: node scripts/inline-styles.mjs */
 :root {
   --color-primary: #0E1B2A;
   --color-secondary: #1F2A2E;
