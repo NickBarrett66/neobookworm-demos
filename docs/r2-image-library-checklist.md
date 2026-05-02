@@ -42,9 +42,9 @@
 - [ ] `cta-bg.webp`
 
 ## 📁 kitchen-fitter
-- [ ] `hero.webp`
-- [ ] `about.webp`
-- [ ] `cta-bg.webp`
+- [x] `hero.webp`
+- [x] `about.webp`
+- [x] `cta-bg.webp`
 
 ## 📁 bathroom-fitter
 - [ ] `hero.webp`

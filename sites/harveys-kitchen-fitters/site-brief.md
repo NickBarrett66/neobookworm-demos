@@ -50,7 +50,6 @@ Unknown
 
 ## 5. Tone of voice
 **Pick 3–5 adjectives that describe how this business talks:**
-[generated — please verify]
 - **Understated** — they don't oversell. "Family business" and a bullet list of facts. No exclamation marks in every sentence.
 - **Craft-proud** — they post finished kitchen photos on Instagram (62 posts, 496 followers) because they're proud of the work, not to perform expertise.
 - **Straightforward** — the Facebook bio reads like a CV: what they do, where they do it, how long they've been at it. No marketing fluff.
