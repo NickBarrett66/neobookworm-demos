@@ -4,16 +4,16 @@
 **Business name:** G S Jones Electrical Ltd
 **Trade / category:** Electrician (domestic)
 **Location served (town, county, radius):** Bristol and surrounding areas — Bedminster, Southville, Totterdown, Brislington, Knowle, Bishopston, Clifton, and wider South Bristol; approx. 10–15 mile radius
-**Map / coverage visual (if any):** [RESEARCH COULDN'T DETERMINE — please fill in; suggest South Bristol postcode-shaded coverage map]
+**Map / coverage visual (if any):**  suggest South Bristol postcode-shaded coverage map
 **Years in business (real or fictional):** 12 years as a limited company (incorporated June 2014); 25+ years of hands-on trade experience
 **Size (solo, two-person, small team):** Solo trader / owner-operator (Gary is the face and hands of the business; no evidence of employed staff)
-**Owner name and one-line persona:** Gary Jones — a quietly proud Bedminster sparky who has been fixing Bristol's homes for over two decades, values punctuality like a religion, and leaves every job cleaner than he found it. [generated — please verify]
+**Owner name and one-line persona:** Gary Jones — a quietly proud Bedminster sparky who has been fixing Bristol's homes for over two decades, values punctuality, and leaves every job cleaner than he found it. 
 
 ---
 
 ## 2. The story
 **Why does this business exist?**
-Gary Jones built a career with his hands before he ever built a company. With over 20 years in the trade and a solid local reputation through Checkatrade, G S Jones Electrical Ltd is the formalisation of that trust — a one-man business run by someone who knows every type of Bristol home from Victorian terrace to modern flat, and who takes the same care whether the job is a socket or a full consumer unit upgrade. No call centre, no subcontractors — just Gary, on time, doing the job right. [generated — please verify]
+Gary Jones built a career with his hands before he ever built a company. With over 20 years in the trade and a solid local reputation through Checkatrade, G S Jones Electrical Ltd is the formalisation of that trust — a one-man business run by someone who knows every type of Bristol home from Victorian terrace to modern flat, and who takes the same care whether the job is a socket or a full consumer unit upgrade. No call centre, no subcontractors — just Gary, on time, doing the job right. 
 
 **What do customers most often say about them?**
 Reviewers repeatedly mention: arrives on time, leaves it tidy, competitive pricing, very friendly, returned calls promptly, excellent communication, fair and accurate quotes, advice freely given. The phrase "would highly recommend" appears in virtually every review. One reviewer described Gary as "the complete professional — delightful man."
@@ -37,8 +37,7 @@ Gary combines genuine craft pride with old-school reliability. He's the electric
 EICRs for homeowners and landlords; domestic rewires; competent person scheme (notifiable works self-certification)
 
 **Anything they explicitly don't do?**
-[RESEARCH COULDN'T DETERMINE — no evidence of commercial/industrial work; likely domestic-only. Please confirm with Gary.]
-
+Don't know
 ---
 
 ## 4. Accreditations and trust signals
@@ -48,7 +47,7 @@ EICRs for homeowners and landlords; domestic rewires; competent person scheme (n
 - **Accreditation 4:** 18th Edition Wiring Regulations qualified (standard for any active UK domestic electrician — verify)
 
 **Insurance / guarantees:**
-[RESEARCH COULDN'T DETERMINE — public liability insurance standard for trade; confirm with Gary and display prominently on site]
+public liability insurance standard for trade; confirm with Gary and display prominently on site
 
 **Note:** NICEIC or NAPIT scheme membership is standard and expected for domestic electricians in Bristol. Competitor sites all prominently display these. This should be confirmed with Gary and featured on the demo site as a key trust signal.
 
@@ -56,13 +55,13 @@ EICRs for homeowners and landlords; domestic rewires; competent person scheme (n
 
 ## 5. Tone of voice
 **Pick 3–5 adjectives that describe how this business talks:**
-Unshowy, reliable, local, honest, meticulous [generated — please verify]
+Unshowy, reliable, local, honest, meticulous 
 
 **Describe the voice as a person:**
-A Bristol tradesman who doesn't need to sell himself — he lets the punctuality, the tidy job, and the fair price do the talking. Warm without being chatty, confident without being cocky. Never uses jargon to impress, never undersells to seem humble. [generated — please verify]
+A Bristol tradesman who doesn't need to sell himself — he lets the punctuality, the tidy job, and the fair price do the talking. Warm without being chatty, confident without being cocky. Never uses jargon to impress, never undersells to seem humble. 
 
 **Example of a sentence that sounds like this business:**
-"I'll be there when I say I will, I'll do the job properly, and I won't leave a mess — that's always been the deal." [generated — please verify]
+"I'll be there when I say I will, I'll do the job properly, and I won't leave a mess — that's always been the deal." 
 
 **Example of a sentence that would feel off-brand:**
 "As a leading provider of electrical solutions in the Greater Bristol area, our team of certified professionals is committed to delivering world-class service."
@@ -71,24 +70,23 @@ A Bristol tradesman who doesn't need to sell himself — he lets the punctuality
 
 ## 6. Visual direction
 **Aesthetic direction:**
-Confident and grounded — not slick, not corporate. The feel of a business that has nothing to prove and everything to show. Think: deep charcoal backgrounds, warm accent light tones (like a well-wired room), no stock-photo smiles, no hollow buzzwords. Typography that feels solid. Layouts that breathe without wasting space. This is the opposite of the bright-blue generic electrician template that every other Bristol sparky uses. [generated — please verify]
+Confident and grounded — not slick, not corporate. The feel of a business that has nothing to prove and everything to show. Think: deep charcoal backgrounds, warm accent light tones (like a well-wired room), no stock-photo smiles, no hollow buzzwords. Typography that feels solid. Layouts that breathe without wasting space. This is the opposite of the bright-blue generic electrician template that every other Bristol sparky uses. 
 
 **Colour direction:**
-Deep charcoal / near-black as the primary canvas — suggests quality and craft without being heavy-handed. A warm electric amber or aged brass as the accent — hints at the trade without being literal. White for body text. Avoid safety-yellow and hi-vis orange which reads as cheap. [generated — please verify]
+Deep charcoal / near-black as the primary canvas — suggests quality and craft without being heavy-handed. A warm electric amber or aged brass as the accent — hints at the trade without being literal. White for body text. Avoid safety-yellow and hi-vis orange which reads as cheap. 
 
 **Reference images or sites (optional):**
-[RESEARCH COULDN'T DETERMINE — no reference images found. Compare against: JPS Electrical Services Bristol (jpselectricalservices.co.uk) and Fairway Electrical Bristol (fairwayelectricalbristol.co.uk) — both are good independent Bristol electrician sites, though both have a warmer, lighter palette than what's proposed here.]
+ Compare against: JPS Electrical Services Bristol (jpselectricalservices.co.uk) and Fairway Electrical Bristol (fairwayelectricalbristol.co.uk) — both are good independent Bristol electrician sites, though both have a warmer, lighter palette than what's proposed here.]
 
 **Typography direction:**
-Display: something with a slight industrial character — a geometric sans with real weight (e.g. DM Sans Bold, Space Grotesk, or Syne) — not Inter, not Roboto. Body: a legible, trustworthy serif or a humanist sans with warmth (e.g. Lora or Source Serif). The contrast between a sturdy display and a legible body gives the site presence without template-feel. [generated — please verify]
-
+Display: something with a slight industrial character — a geometric sans with real weight (e.g. DM Sans Bold, Space Grotesk, or Syne) — not Inter, not Roboto. Body: a legible, trustworthy serif or a humanist sans with warmth (e.g. Lora or Source Serif). The contrast between a sturdy display and a legible body gives the site presence without template-feel. 
 ---
 
 ## 7. Contact details
 **Phone number(s):** 07971 000 442
 **Email address:** gjones_54@msn.com
 **Physical address or service area description:** Based in Bedminster, Bristol, BS3 2NG — serves Bristol and surrounding South Bristol areas
-**Hours of operation:** [RESEARCH COULDN'T DETERMINE — standard is Mon–Fri 8am–6pm; please confirm with Gary]
+**Hours of operation:**  — standard is Mon–Fri 8am–6pm; please confirm with Gary
 **Social media handles (optional):** Facebook: facebook.com/GSJoneselectrical
 
 ---
@@ -98,7 +96,7 @@ Display: something with a slight industrial character — a geometric sans with 
 **Business address / area served:** Bedminster, Bristol, BS3 2NG — South Bristol and surrounding areas
 **Primary trade category (schema @type):** ElectricalContractor
 **Target location keywords (2–3):** electrician Bristol, electrician Bedminster, electrician South Bristol
-**Google Business Profile URL:** [RESEARCH COULDN'T DETERMINE — no GBP found; worth creating one at onboarding if Gary doesn't have it]
+**Google Business Profile URL:** worth creating one at onboarding if Gary doesn't have it
 
 ---
 
@@ -112,8 +110,8 @@ Display: something with a slight industrial character — a geometric sans with 
 ---
 
 ## 10. Gallery
-**Section heading:** What Gary's been up to [generated — please verify]
-**Homepage teaser heading:** Real jobs, real Bristol homes [generated — please verify]
+**Section heading:** What Gary's been up to 
+**Homepage teaser heading:** Real jobs, real Bristol homes [
 
 > **Demo stage note:** All gallery cards are icon + text only. No images at demo stage.
 > Real client photos replace the icons at productionisation — zero structural change required.
