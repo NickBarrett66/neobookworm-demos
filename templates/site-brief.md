@@ -160,7 +160,42 @@ These fields feed directly into the SEO Outputs section of `site-spec.md` and th
 
 ---
 
-## 10. Anything else
+## 10. Gallery
+
+**Section heading:**
+*(E.g. "Our Work", "Recent Jobs", "A Few Recent Projects". Match the tone of voice — not generic.)*
+
+**Homepage teaser heading:**
+*(The 3-card teaser on index.html may use a shorter version. E.g. "Recent Work" or "Latest Projects".)*
+
+**Cards (6 total — draw job types and locations from review research):**
+
+> **Demo stage note:** All gallery cards are icon + text only. No images are used at demo stage.
+> Real client photos replace the icons at productionisation — zero structural change to the HTML/CSS required.
+
+| # | Lucide icon suggestion | Job type heading | Location | Micro-quote (optional — from review language) |
+|---|---|---|---|---|
+| 1 | | | | |
+| 2 | | | | |
+| 3 | | | | |
+| 4 | | | | |
+| 5 | | | | |
+| 6 | | | | |
+
+**Icon guidance:** Pick from trade-relevant Lucide icons. Examples:
+- Plumbing / gas: `wrench`, `droplets`, `flame`, `thermometer`, `pipe`
+- Electrical: `zap`, `plug`, `lightbulb`, `cpu`
+- Decorating: `paintbrush`, `brush`, `palette`, `roller`
+- Roofing / building: `home`, `hard-hat`, `hammer`, `brick-wall`
+- Landscaping: `tree-pine`, `leaf`, `shovel`, `sprout`
+- Kitchen / bathroom: `utensils`, `bath`, `shower-head`, `cabinet`
+- General: `check-circle`, `star`, `shield-check`, `tool`
+
+**Micro-quote guidance:** Pull from actual Checkatrade/Google review language. Keep to one sentence or a sentence fragment. E.g. *"Turned up on time, left no mess."* — these make the cards feel real even without photos.
+
+---
+
+## 11. Anything else
 
 Free text. Anything the structured sections didn't capture — a specific phrase the owner uses, a story worth telling, a competitor you want to differentiate from, a particular kind of customer you want to attract or repel.
 

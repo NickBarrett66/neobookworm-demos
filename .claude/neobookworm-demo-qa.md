@@ -12,12 +12,12 @@ Runs a four-step quality check on a single-file HTML demo site and retrofits any
 ## Inputs
 
 Nick provides one of:
-- **A prospect folder name** — e.g. `brush-to-brush-decorating-services-ltd` (Claude finds the HTML file automatically)
-- **A full file path** — e.g. `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\sites\brush-to-brush-decorating-services-ltd\index.html`
+- **A prospect folder name** — e.g. `brush-2-brush-decorating-services` (Claude finds the HTML file automatically)
+- **A full file path** — e.g. `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\neobookworm-demos\sites\brush-2-brush-decorating-services\index.html`
 - **A prospect name** — Claude derives the folder name using the slug rules below
 
 > **Path convention:** All demo sites live at:
-> `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\sites\{prospect-folder-name}\`
+> `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\neobookworm-demos\sites\{prospect-folder-name}\`
 > The HTML file inside is typically `index.html` — if not, take the only `.html` file present.
 
 ---
@@ -36,6 +36,12 @@ Every NeoBookworm demo site must have:
 | `loading="lazy"` | On all `<img>` tags below the fold |
 | `alt` attributes | On every `<img>` tag |
 | `rel="noopener noreferrer"` | On all external `<a target="_blank">` links |
+| `gallery.html` | Present in the site folder |
+| Gallery nav link | Present on every page, pointing to `gallery.html` |
+| Homepage gallery teaser | 3 cards present, "See all our work →" links to `gallery.html` |
+| Gallery page — 6 cards | Full gallery page has exactly 6 cards with icon, heading, location |
+| Gallery — no `<img>` tags | Zero image tags inside gallery cards at demo stage |
+| Gallery icon accessibility | All Lucide icons in gallery have `aria-hidden="true"` |
 
 ---
 
@@ -53,7 +59,7 @@ Every NeoBookworm demo site must have:
 Run Lighthouse against the **local file** using the `file://` protocol, in mobile mode:
 
 ```bash
-npx lighthouse "file:///C:/Users/Nick/Dropbox/00 Neobookworm/Neobookworm Demos/sites/{prospect-folder}/index.html" \
+npx lighthouse "file:///C:/Users/Nick/Dropbox/00 Neobookworm/Neobookworm Demos/neobookworm-demos/sites/{prospect-folder}/index.html" \
   --preset=perf \
   --form-factor=mobile \
   --output=json \
@@ -120,12 +126,35 @@ Review each screenshot and fix the following issues if present:
 | Images not scaling | Ensure `max-width: 100%; height: auto` |
 | Excessive padding wasting vertical space | Reduce `padding` in mobile media query |
 | Phone number not a `tel:` link | Wrap in `<a href="tel:XXXXXXXXXXX">` |
+| Gallery cards not stacking to 1 column on mobile | Ensure grid switches to single column at ≤480px |
 
 Take a final set of screenshots after fixes and confirm no issues remain.
 
 ---
 
-## Step 4 — Content & Copy Check
+## Step 4 — Gallery Check
+
+Check both the homepage gallery teaser and the `gallery.html` page:
+
+**Homepage teaser (`index.html`):**
+- Is there a gallery teaser section with exactly 3 cards?
+- Does the "See all our work →" (or equivalent) link point to `gallery.html`?
+- Are all 3 cards icon/text only (zero `<img>` tags inside gallery card elements)?
+
+**Gallery page (`gallery.html`):**
+- Does the file exist in the site folder?
+- Does the nav on `gallery.html` include all standard links (Home, Services, About, Gallery, Contact)?
+- Are there exactly 6 gallery cards?
+- Does each card contain: a Lucide icon, a job type heading, and a location line?
+- Do all Lucide icons have `aria-hidden="true"`?
+- Are there zero `<img>` tags inside gallery card elements? (**Critical** — flag and remove any that exist)
+- Is the page included in the SEO table (title tag and meta description present)?
+
+**Auto-fix:** If `gallery.html` is missing entirely, flag to Nick — do not attempt to generate it from scratch without a spec.
+
+---
+
+## Step 5 — Content & Copy Check
 
 Read all visible text in the HTML and check for:
 
@@ -137,12 +166,13 @@ Read all visible text in the HTML and check for:
 | Email address present | Flag if missing |
 | Business name appears correctly and consistently | Fix capitalisation/spacing inconsistencies |
 | Contact form has all required fields + submit button | Flag if form is broken |
+| Gallery card job types feel specific and real | Flag if generic (e.g. "Job 1", "Service completed") |
 
 > **Do not rewrite copy** — only fix clear errors. Tone and content decisions belong to Nick.
 
 ---
 
-## Step 5 — Broken Asset Check
+## Step 6 — Broken Asset Check
 
 Check that all referenced resources load correctly:
 
@@ -156,12 +186,13 @@ Flag any resources that return 404 or fail to load:
 - Stylesheets (`<link href="...">`)
 - External scripts (`<script src="...">`)
 - Fonts (`@font-face` URLs)
+- R2 image URLs (hero, about, CTA background — confirm each returns 200)
 
 Self-contained inline styles and scripts need no check.
 
 ---
 
-## Step 6 — GA4 Snippet Injection
+## Step 7 — GA4 Snippet Injection
 
 Check whether the GA4 snippet is already present by searching for `G-VQ91NBYHCL` in the HTML.
 
@@ -180,15 +211,17 @@ Check whether the GA4 snippet is already present by searching for `G-VQ91NBYHCL`
 
 **If already present**, confirm the measurement ID is correct (`G-VQ91NBYHCL`) and move on.
 
+Check that the GA4 snippet is present on `gallery.html` as well as `index.html`.
+
 ---
 
-## Step 7 — Apply all fixes and save
+## Step 8 — Apply all fixes and save
 
-Apply all fixes from Steps 2–6 to the HTML file in a **single write operation**. Do not make incremental saves mid-process — wait until all fixes are identified, then write the corrected file once.
+Apply all fixes from Steps 2–7 to the HTML file in a **single write operation**. Do not make incremental saves mid-process — wait until all fixes are identified, then write the corrected file once.
 
 Save the corrected file back to the original path, overwriting the original.
 
-> **Backup:** Before writing, save a copy as `index-pre-qa.html` in the same folder so Nick can compare if needed.
+> **Backup:** Before writing, save a copy as `index-pre-qa.html` in the same folder so Nick can compare if needed. If `gallery.html` was also modified, save `gallery-pre-qa.html`.
 
 ---
 
@@ -213,8 +246,14 @@ SEO:             [score]/100
 390px (iPhone 14):  [Pass / Issues found and fixed]
 412px (Pixel 7):    [Pass / Issues found and fixed]
 
+✅ GALLERY
+Homepage teaser:    [Pass / Issues found and fixed]
+gallery.html:       [Pass / Issues found and fixed / Missing — flagged]
+Image-free check:   [Pass / img tags found and removed]
+
 ✅ GA4 SNIPPET
-[Injected / Already present]
+index.html:      [Injected / Already present]
+gallery.html:    [Injected / Already present]
 
 ✅ CONTENT & COPY
 [List issues fixed / "No issues found"]
@@ -224,7 +263,7 @@ SEO:             [score]/100
 
 ⚠️  ITEMS REQUIRING YOUR REVIEW
 [Anything that couldn't be auto-fixed — placeholders, colour contrast,
- missing copy, ambiguous business details]
+ missing copy, ambiguous business details, missing gallery.html]
 
 📁 FILES
 Original backed up to: index-pre-qa.html
@@ -238,10 +277,10 @@ Corrected file saved to: index.html
 
 Update this section as sites are QA'd:
 
-| Prospect | Folder | Live URL | QA Status | Notes |
-|---|---|---|---|---|
-| Lee Morgan Heating & Plumbing Ltd | `lee-morgan-heating-and-plumbing-ltd` | — | ⏳ Pending | First email sent — do not modify until response received |
-| Brush 2 Brush Decorating Services Ltd | `brush-to-brush-decorating-services-ltd` | https://brush2brush-decorating-njb-demo.netlify.app | ✅ Deploy verified | **Live Netlify (mobile LH):** Perf **92**, LCP **~3.3 s**, render-blocking **0**, inlined `<style id="site-styles">` + hero preload confirmed on production. After editing `css/styles.css`, run `node sites/brush-to-brush-decorating-services-ltd/scripts/inline-styles.mjs`. Services **03–06** images still JPEG until WebP added. |
+| Prospect | Folder | QA Status | Notes |
+|---|---|---|---|
+| Lee Morgan Heating & Plumbing Ltd | `lee-morgan-heating-and-plumbing-ltd` | ⏳ Pending | First email sent — do not modify until response received |
+| Brush 2 Brush Decorating Services | `brush-2-brush-decorating-services` | ⏳ Pending | First site to run QA on |
 
 ---
 
@@ -254,10 +293,11 @@ Agent 4 (Build) → Deploy to Netlify → write URL to Notion
 Agent 4a (QA)
     ├── Step 1: Lighthouse (mobile) — auto-fix up to 3 iterations
     ├── Step 2: Playwright mobile screenshots (375px, 390px, 412px) — review + auto-fix
-    ├── Step 3: Content & copy check
-    ├── Step 4: Broken asset scan
-    ├── Step 5: GA4 snippet injection
-    └── Write QA scores to Notion: LH Performance, LH Accessibility, LH SEO, Mobile QA Pass
+    ├── Step 3: Gallery check (teaser + full page, image-free enforcement)
+    ├── Step 4: Content & copy check
+    ├── Step 5: Broken asset scan (including R2 URLs)
+    ├── Step 6: GA4 snippet injection (index.html + gallery.html)
+    └── Write QA scores to Notion: LH Performance, LH Accessibility, LH SEO, Mobile QA Pass, Gallery QA Pass
         Status → "QA Passed" / "QA Failed" / "Manual Review Required"
 ```
 
@@ -272,4 +312,6 @@ When Agent 4a is built, this SKILL.md becomes the spec for its system prompt.
 - **Never modify Lee Morgan's site** while outreach is live — check the prospect register above before starting
 - **One write pass** — collect all fixes, write once, keep a backup
 - **Always use the Netlify live URL** for Lighthouse — more accurate than running against a local file
+- **Gallery cards must be image-free at demo stage** — remove any `<img>` tags found inside gallery card elements; flag the removal in the report
+- **gallery.html is mandatory** — flag clearly if missing; do not silently pass a site without it
 - **Report format is mandatory** — always end with the structured report so Nick can see status at a glance
