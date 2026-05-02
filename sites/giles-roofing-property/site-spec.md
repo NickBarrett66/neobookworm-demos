@@ -1,4 +1,4 @@
-﻿# Site Spec — `[Business Name]`
+# Site Spec — `[Business Name]`
 
 This document is generated in Phase 2 of `PROCESS.md` by Cursor, using the site brief as input. It locks in every content and design decision *before* any HTML is written, so you can review and tweak cheaply. It's also the exact artifact Agent 6 will eventually produce and consume internally when building real client sites.
 
@@ -71,7 +71,6 @@ sites/<site-name>/
 ├── services.html
 ├── about.html
 ├── contact.html
-├── gallery.html
 ├── css/
 │   └── styles.css
 ├── js/
@@ -80,11 +79,7 @@ sites/<site-name>/
 │   ├── uk-counties-regional.js  (optional — copy from shared/ if spec uses regional preset)
 │   └── maps-config.js           (optional — Google Maps only; gitignored; copy from `templates/maps-config.example.js`)
 ├── images/
-│   ├── hero.jpg
-│   ├── about-portrait.jpg
-│   ├── service-01-*.jpg
-│   ├── gallery-01.jpg
-│   └── ... (full list below)
+│   └── (none — all images served from R2 library; see Section 7)
 ├── favicon.svg
 ├── favicon.ico          (optional — older clients)
 ├── site-brief.md
@@ -115,7 +110,7 @@ sites/<site-name>/
    - Headline: *[exact copy]*
    - Subheadline: *[exact copy]*
    - CTA buttons: *[text and where they go]*
-   - Hero image: *[filename from images folder]*
+   - Hero image: *[R2 URL from Section 7]*
 
 3. **[Next section name]**
    - *[full copy and structural notes]*
@@ -129,11 +124,13 @@ sites/<site-name>/
 
 ### 4.2 Services (`services.html`)
 
-*Same structure as Home: title, meta, section list with full copy.*
+*Title, meta, and section list with full copy. The core of this page is a **services card grid** — one card per service, each with an icon (from Lucide or the NeoBookworm icon library), a short title, and a one-line description. No images required — CSS/icon-based only.*
+
+*Specify: number of service cards, icon choice per card, card titles, one-liner copy per card.*
 
 ### 4.3 About (`about.html`)
 
-*Same structure.*
+*Same structure: title, meta, section list with full copy.*
 
 ### 4.4 Contact (`contact.html`)
 
@@ -142,10 +139,6 @@ sites/<site-name>/
 **Map / service area (if any):**
 - **None**, or specify: **Leaflet UK counties** (which counties/unitaries to highlight, which page), **regional preset** (`shared/js/uk-counties-regional.js` defaults), or **Google Maps** (centre point, radius in miles/metres, optional town markers, API key via `maps-config.js` only).
 - Legend copy, accessibility (`aria-label` on map container), and fallback when no API key (for Google) — all specified here.
-
-### 4.5 Gallery (`gallery.html`)
-
-*Same structure. Gallery layout described. Each image's position and caption noted.*
 
 ---
 
@@ -161,7 +154,6 @@ sites/<site-name>/
 | Services (`services.html`) | | | | |
 | About (`about.html`) | | | | |
 | Contact (`contact.html`) | | | | |
-| Gallery (`gallery.html`) | | | | |
 
 *Title tag rules: keyword first, business name last, separated by `—` or `\|`. Example: `Plumber in Swindon — Hartley Plumbing`. H1s are brand copy; title tags are for search — they should differ.*
 
@@ -211,27 +203,28 @@ All unique microcopy gathered in one place for easy review:
 
 ## 7. Image manifest
 
-Complete list of every image needed for this site, with Midjourney prompts.
+All images are served from the NeoBookworm R2 library. No Midjourney prompts required unless this is the first site of this trade type and library images don't exist yet — in that case, source and upload before Phase 4 (see `docs/r2-image-library-checklist.md`).
 
-### Hero
-| Filename | Purpose | Aspect ratio | Midjourney prompt |
-|---|---|---|---|
-| `hero.jpg` | Home page hero | 16:9 | *[full prompt]* |
+**Trade category slug:** `[slug from brief Section 9]`
+**R2 base:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library`
 
-### Portraits / people
-| Filename | Purpose | Aspect ratio | Midjourney prompt |
-|---|---|---|---|
-| `about-portrait.jpg` | About page owner photo | 4:5 | *[full prompt]* |
+| Section | Image URL | Notes |
+|---|---|---|
+| Hero | `{R2 base}/{slug}/hero.webp` | Full-width, 1920×1080px |
+| About | `{R2 base}/{slug}/about.webp` | Or use `shared/owner.webp` if portrait suits better |
+| CTA background | `{R2 base}/{slug}/cta-bg.webp` | Used with dark overlay + white text |
 
-### Services
-| Filename | Purpose | Aspect ratio | Midjourney prompt |
-|---|---|---|---|
-| `service-01-[name].jpg` | [service] card image | 4:3 | *[full prompt]* |
+**Shared assets (use where appropriate):**
 
-### Gallery (8–12 images)
-| Filename | Purpose | Aspect ratio | Midjourney prompt |
-|---|---|---|---|
-| `gallery-01.jpg` | [what it shows] | 4:3 | *[full prompt]* |
+| Asset | URL |
+|---|---|
+| Van (exterior) | `{R2 base}/shared/van.webp` |
+| Van (interior / tools) | `{R2 base}/shared/tools.webp` |
+| Owner portrait | `{R2 base}/shared/owner.webp` |
+| British home exterior | `{R2 base}/shared/british-home-exterior.webp` |
+
+**Notes on image placement:**
+*(Specify here which shared assets are used and in which sections, if any.)*
 
 ---
 
@@ -249,7 +242,6 @@ List of CSS badges to include from the NeoBookworm badge library, and where each
 Anything that needs JavaScript:
 
 - **Mobile navigation menu:** hamburger toggle, full-screen overlay on open
-- **Gallery lightbox:** click image to view full-size in overlay, arrow-key navigation
 - **Maps (optional):** see **`shared/README.md`**. Allowed third-party scripts for maps only:
   - **Leaflet 1.9.x** (CDN) + vendored scripts from **`shared/js/`** for UK county / unitary boundaries (ONS)
   - **Google Maps JavaScript API** (CDN loader) for radius circle + markers; key in **`js/maps-config.js`** (gitignored; copy from **`templates/maps-config.example.js`**), never committed
@@ -264,6 +256,7 @@ Other interactive features: vanilla JS only, no npm libraries. Map libraries are
 Any accessibility considerations specific to this design:
 
 - Colour contrast: confirm `--color-text` on `--color-bg` meets WCAG AA
+- All R2 images must have descriptive `alt` attributes specified here, not left to the builder
 - [etc]
 
 ---
