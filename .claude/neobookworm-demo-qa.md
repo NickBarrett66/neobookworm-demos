@@ -12,8 +12,8 @@ Runs a four-step quality check on a single-file HTML demo site and retrofits any
 ## Inputs
 
 Nick provides one of:
-- **A prospect folder name** — e.g. `brush-2-brush-decorating-services` (Claude finds the HTML file automatically)
-- **A full file path** — e.g. `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\neobookworm-demos\sites\brush-2-brush-decorating-services\index.html`
+- **A prospect folder name** — e.g. `brush-to-brush-decorating-services-ltd` (Claude finds the HTML file automatically)
+- **A full file path** — e.g. `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\neobookworm-demos\sites\brush-to-brush-decorating-services-ltd\index.html`
 - **A prospect name** — Claude derives the folder name using the slug rules below
 
 > **Path convention:** All demo sites live at:
@@ -238,10 +238,10 @@ Corrected file saved to: index.html
 
 Update this section as sites are QA'd:
 
-| Prospect | Folder | QA Status | Notes |
-|---|---|---|---|
-| Lee Morgan Heating & Plumbing Ltd | `lee-morgan-heating-and-plumbing-ltd` | ⏳ Pending | First email sent — do not modify until response received |
-| Brush 2 Brush Decorating Services | `brush-2-brush-decorating-services` | ⏳ Pending | First site to run QA on |
+| Prospect | Folder | Live URL | QA Status | Notes |
+|---|---|---|---|---|
+| Lee Morgan Heating & Plumbing Ltd | `lee-morgan-heating-and-plumbing-ltd` | — | ⏳ Pending | First email sent — do not modify until response received |
+| Brush 2 Brush Decorating Services Ltd | `brush-to-brush-decorating-services-ltd` | https://brush2brush-decorating-njb-demo.netlify.app | ⚠️ Manual review | Live Lighthouse home (mobile): Perf 91 / A11y 100 / BP 96 / SEO 100. **Deploy missing `/images/*`** (404s — console error). Added GA4, `robots.txt`, `sitemap.xml` locally — redeploy. Screenshots: `sites/…/qa-screenshots/` |
 
 ---
 

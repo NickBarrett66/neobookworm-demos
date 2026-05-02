@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brush2brush-decorating-njb-demo.netlify.app/sitemap.xml
