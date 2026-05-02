@@ -22,7 +22,7 @@ If a user's request conflicts with one of these documents, surface the conflict 
 
 **NeoBookworm.uk** is Nick Barrett's one-person web design business in Swindon. It builds fixed-price websites for UK tradespeople — plumbers, electricians, decorators, roofers, joiners, landscapers, pest controllers, window cleaners. The core offer is a £499 fixed-price multi-page site with an optional £20/month maintenance retainer. Contact is email-only; business email is `nick@neobookworm.uk`.
 
-The demo sites in this repo showcase the kind of work NeoBookworm delivers — eight sites for Wiltshire-area trades, each showing what a £499 website actually looks like. They need to look like real websites for real businesses, not like marketing mockups.
+The demo sites in this repo showcase the kind of work NeoBookworm delivers — eight sites for Wiltshire-area trades, each showing what a £299 website actually looks like. They need to look like real websites for real businesses, not like marketing mockups.
 
 ## The eight planned demos
 
