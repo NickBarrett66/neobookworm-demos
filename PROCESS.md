@@ -12,9 +12,9 @@ This is the master process for building a NeoBookworm demo trade website. Follow
 
 | Phase | What happens | Output | Estimated time |
 |---|---|---|---|
-| 1 | Write the site brief | Filled-in `site-brief.md` | 20 min |
+| 1 | Write the site brief | Filled-in `site-brief.md` | 10–15 min (Claude drafts, you review) |
 | 2 | Generate the site spec | Filled-in `site-spec.md` | 15 min (mostly waiting on Claude) |
-| 3 | Generate images | `images/` folder populated | 45 min (Midjourney gen time) |
+| 3 | Confirm image library | R2 library checked, gaps sourced if needed | 0–30 min (0 if trade type already exists) |
 | 4 | Build the site | All HTML/CSS/JS pages | 2–4 hours |
 | 5 | Local review | Visual and content review | 30 min |
 | 6 | QA and launch prep | Filled `qa-launch-checklist.md` | 30 min |
@@ -22,31 +22,39 @@ This is the master process for building a NeoBookworm demo trade website. Follow
 | 8 | Link from NeoBookworm.uk | Live on Examples page | 10 min |
 | 9 | Close out | TRACKER and LEARNINGS updated | 5 min |
 
-Total per site: roughly 4–6 hours for the first one (Hartley Plumbing); should compress to 2–3 hours for later demos as the process tightens.
+Total per site: roughly 3–5 hours for a new trade type (including any image sourcing); 2–3 hours for a repeat trade type where the image library already exists.
 
 ---
 
 ## Phase 1 — Write the site brief
 
-**Input:** a blank `site-brief.md` copied into the site folder.
+**Input:** a prospect name, Notion page ID, or Notion URL.
 
-**Output:** the brief filled in with human-written creative direction.
+**Output:** a fully populated `site-brief.md`, reviewed and approved by you, saved into the site folder.
 
-**Who does this:** you. This is the one phase with no Cursor/Claude involvement — it's the human creative seed the rest of the process grows from. Equivalent of what the intake form captures for real clients.
+**Who does this:** Claude (using the `neobookworm-site-brief` skill), with you reviewing and approving the output.
 
 **Steps:**
 
-1. Open `sites/<site-name>/site-brief.md` in Cursor
-2. Fill in every section. If a section doesn't apply (e.g. no accreditations), write "None" — don't leave it blank
-3. Be specific. "Warm and friendly" is not specific; "reassuring like a good family GP, never salesy, uses first names" is
-4. When you're done, commit with message: *`<site-name>`: brief complete*
+1. Open a Claude chat (claude.ai — use the NeoBookworm project so the skill is available)
+2. Provide the prospect's Notion URL or page ID — this is the cheapest option (~1,000 tokens). If you don't have it, the business name alone works but costs more
+   > **Tip:** Copy the Notion URL from the pipeline board before starting. It cuts token cost by ~95% compared to searching by name
+3. Claude will research the prospect, fill in every section of the brief, and present it as a downloadable `site-brief.md`
+4. Review the output carefully, paying particular attention to:
+   - **Tone of voice** — most important section; push back if it feels generic
+   - **Aesthetic and colour direction** — should feel distinct to this business
+   - **Owner persona** — does it ring true based on what you know?
+   - Any fields flagged `[generated — please verify]`
+5. Request any changes before approving — Claude will revise in the same chat
+6. Download the approved `site-brief.md` and save to `sites/<site-name>/site-brief.md` in the repo
+7. Commit with message: *`<site-name>`: brief complete*
 
 **What to watch for:**
 
-- Don't describe the website — describe the *business*. Site copy and layout decisions come later
+- The skill will warn you with ⚠️ if the prospect's trade category has no images in the R2 library yet — sort Phase 3 before proceeding to the build if so
+- Don't describe the website — describe the *business*. Site copy and layout decisions come in Phase 2
 - The tone-of-voice section is the most important single field. It drives everything downstream
-- Pick a colour direction that suits the trade and owner, not one that matches NeoBookworm.uk. Each demo should look completely different
-- Fill in the **SEO Inputs section (Section 8)** of the brief — specifically the business phone number (not the owner's personal mobile), area served, primary trade category, and target location keywords. These feed directly into the spec's SEO Outputs and LocalBusiness schema
+- Each demo should have a visually distinct identity — push back if the aesthetic direction feels like it could belong to any tradesperson
 
 ---
 
@@ -89,10 +97,13 @@ Requirements:
   backgrounds) with hex codes and CSS variable names.
 - Propose a font pairing (display + body) from Google Fonts. Do not pick
   generic choices (no Inter, no Roboto, no Arial). Be distinctive.
-- For the Gallery page, list 8–12 image slots with a description of what
-  each image should show. These become Midjourney prompts in Phase 3.
-- For the Home page hero, specify one hero image slot with a detailed
-  description.
+- Images are served from the NeoBookworm R2 library — do NOT generate
+  Midjourney prompts or propose a gallery of bespoke image slots. Instead,
+  reference the three trade-category images from the brief (hero, about,
+  cta-bg) and any shared assets specified (van, tools, owner portrait,
+  british-home-exterior). The Gallery page should be replaced with a
+  Services card grid (icon + title + one-liner per service) — no photo
+  gallery required.
 - List any icons, illustrations, or decorative elements needed.
 - If the business needs a **service area** or **coverage** visual, specify which
   map approach (if any): **UK county / unitary map (Leaflet + ONS)** from
@@ -120,29 +131,48 @@ Do not start writing HTML yet — this phase is spec only.
 
 ---
 
-## Phase 3 — Generate images
+## Phase 3 — Confirm image library
 
-**Input:** image prompts from the spec.
+**Input:** trade category slug from the site brief.
 
-**Output:** `sites/<site-name>/images/` folder with all required images, named sensibly.
+**Output:** confirmation that all three required images exist in R2 for this trade type, or gaps sourced and uploaded if not.
 
-**Who does this:** you, manually in the Midjourney web app.
+**Who does this:** you — but only if this is the first prospect of a trade type. For repeat trade types this phase takes about 30 seconds.
 
 **Steps:**
 
-1. Open the 88-prompt Midjourney workbook and find the relevant trade section (or use the new prompts from the spec)
-2. Generate each image in Midjourney. Use only `--ar` flags for aspect ratio; do not add `--v` flags (version is set in your account settings)
-3. Download each generated image
-4. Rename using the pattern: `hero.jpg`, `service-1-bathroom-fitting.jpg`, `gallery-01.jpg`, `about-portrait.jpg`, etc. — descriptive and lowercase, no spaces
-5. Place in `sites/<site-name>/images/`
-6. Optimise: run them through [squoosh.app](https://squoosh.app) or similar. Target under 200KB per image for gallery shots, under 400KB for hero images. MozJPEG at quality 75 is a good default
-7. Commit: *`<site-name>`: images added*
+1. Check `docs/r2-image-library-checklist.md` in this repo — find the trade category folder for this prospect
+2. Confirm all three images are ticked off: `hero.webp`, `about.webp`, `cta-bg.webp`
+3. **If all three exist:** you're done. Move to Phase 4
+4. **If any are missing:** source and upload before building:
+   - Source images from Midjourney, Pexels, or Unsplash (see image specs below)
+   - Convert to WebP at ~85% quality using [squoosh.app](https://squoosh.app)
+   - Upload to the R2 bucket at `neobookworm-client-images / demos / library / {slug} /` via the Cloudflare dashboard (drag and drop)
+   - Tick off in `docs/r2-image-library-checklist.md` and commit
+5. Commit (if you uploaded anything): *`library`: `{slug}` images added*
+
+**Image specs:**
+- `hero.webp` — 1920×1080px, person at work or strong finished result, wide landscape crop
+- `about.webp` — 1200×800px, warmer/more personal feel, tradesperson or tools
+- `cta-bg.webp` — 1920×1080px, works well with dark overlay and white text, texture or close-up detail
+
+**Shared assets** (available to any site regardless of trade type):
+- `shared/van.webp` — white transit van on a residential street
+- `shared/tools.webp` — open van interior showing neat shelving and tools
+- `shared/owner.webp` — tradesman in his forties, suitable for About section portrait
+- `shared/british-home-exterior.webp` — exterior shot of a British home
+
+**R2 base URL:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/`
+
+**Midjourney tips (if generating new images):**
+- Hero: `professional {trade} working in a modern British home, natural light, shallow depth of field, high quality photography, warm tones, no text --ar 16:9 --style raw`
+- CTA background: `close up detail of {trade-related material or tools}, shallow depth of field, muted tones, no people, no text --ar 16:9 --style raw`
+- Convert Midjourney PNG output to WebP via squoosh.app before uploading
 
 **What to watch for:**
-
-- Midjourney aspect ratios: use `--ar 16:9` for heroes, `--ar 4:3` for gallery, `--ar 1:1` for portraits. Match the spec's intended layout
-- Regenerate anything that looks AI-generic or has obvious artifacts (extra fingers, distorted tools, impossible pipes)
-- These images will also be the fallback library for real client sites when Agent 6 can't find enough client-uploaded photos. Quality matters beyond this one demo
+- The brief skill will warn you with ⚠️ if a trade type has no library folder yet — don't skip past it
+- Never put prospect-specific images in the `library/` folder — those go under `demos/prospects/{slug}/` if ever needed
+- Once uploaded, these images serve every future site of that trade type — quality matters
 - **Agents / tooling:** do not treat an **empty workspace glob or file search** as proof that `images/` is empty. Dropbox sync, workspace roots, and indexing can hide files that are on disk. Before assuming no assets exist, confirm with a **terminal listing** on the absolute `sites/<site-name>/images` path, or **read one known file** (e.g. `hero.jpg`) by path. A human can `@`-mention a single image so the path is authoritative.
 
 ---
@@ -343,12 +373,13 @@ When you've built all eight demos, PROCESS.md should be tight enough that it cou
 
 ---
 
-## Fallback image library — a note for later
+## Image library — a note for the future
 
-Once all eight demos are live, their `images/` folders become the fallback library Agent 6 uses when real clients don't upload enough photos. At that point we'll need to:
+The R2 image library at `neobookworm-client-images / demos / library /` is the single source of truth for all demo site images. As more trade categories are added and the library grows, Agent 6 will eventually reference it directly when building sites autonomously — no per-prospect image sourcing needed.
 
-- Copy each demo's `images/` folder to a shared location (probably R2 under `shared-fallback-images/<trade>/`)
-- Tag each image with the trade category
-- Add fallback logic to Agent 6 so it pulls from this library when client uploads fall short
+When that time comes we'll need to:
+- Pass the trade category slug from the Notion prospect record into Agent 6
+- Have Agent 6 resolve image URLs from the library automatically (same pattern as the brief skill does today)
+- Add fallback logic so Agent 6 falls back to `shared/` assets if a trade-category folder doesn't exist yet
 
 That's a future task — not part of the per-demo process. Mentioned here so you don't forget it exists.
