@@ -48,11 +48,11 @@ def pill(
 def main() -> int:
     # Source: the contact map screenshot (with both regions highlighted).
     src = Path(
-        r"C:\Users\Nick\.cursor\projects\c-Users-Nick-Dropbox-00-Neobookworm-Neobookworm-Demos-neobookworm-demos\assets"
+        r"C:\Users\Nick\.cursor\projects\c-Users-Nick-Dropbox-00-Neobookworm-Neobookworm-Demos\assets"
     ) / "c__Users_Nick_AppData_Roaming_Cursor_User_workspaceStorage_6e624db6233c9994cacf087ff4fcdf28_images_image-848e59ea-86d7-4ee5-a93d-83acb98416e1.png"
 
     dst = Path(
-        r"C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\neobookworm-demos\sites\lee-morgan-heating-and-plumbing-ltd\images\home-coverage-map.jpg"
+        r"C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\sites\lee-morgan-heating-and-plumbing-ltd\images\home-coverage-map.jpg"
     )
 
     im = Image.open(src).convert("RGB")

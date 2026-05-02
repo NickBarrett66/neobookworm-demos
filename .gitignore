@@ -70,6 +70,9 @@ web_modules/
 .env.*
 !.env.example
 
+# Local Cursor / Claude settings at repo root (optional)
+.claude/settings.local.json
+
 # Google Maps JS API key — copy from templates/maps-config.example.js per site; never commit
 sites/*/js/maps-config.js
 

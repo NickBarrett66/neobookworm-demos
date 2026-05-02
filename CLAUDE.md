@@ -4,6 +4,8 @@ Persistent context for Claude Code and Cursor sessions in this repo. Loaded auto
 
 ## What this repo is
 
+This folder **is** the Git repository root (remote name on GitHub: `neobookworm-demos`). Lighthouse and PageSpeed JSON snapshots (`lh-*.json`, `psi-*.json`) may sit here as local QA outputs; they are not build inputs.
+
 This is the `neobookworm-demos` repo — a collection of demo trade websites showcasing what NeoBookworm.uk can build for its clients. Each site in `sites/` is a full multi-page static site for a fictional (or real-reference) UK tradesperson business, deployed independently to Netlify, some are linked from the Examples page on neobookworm.uk.
 
 This repo also serves as the reference implementation for **Agent 6** — a future pipeline agent that will build real client websites automatically from intake form data. The manual process followed in this repo is the blueprint Agent 6 will eventually execute end-to-end. Every decision captured in `PROCESS.md` should be one that could, in principle, be scripted later.
