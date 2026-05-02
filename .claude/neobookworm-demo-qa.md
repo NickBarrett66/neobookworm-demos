@@ -241,7 +241,7 @@ Update this section as sites are QA'd:
 | Prospect | Folder | Live URL | QA Status | Notes |
 |---|---|---|---|---|
 | Lee Morgan Heating & Plumbing Ltd | `lee-morgan-heating-and-plumbing-ltd` | — | ⏳ Pending | First email sent — do not modify until response received |
-| Brush 2 Brush Decorating Services Ltd | `brush-to-brush-decorating-services-ltd` | https://brush2brush-decorating-njb-demo.netlify.app | ⚠️ Manual review | **Perf fix:** full `styles.css` inlined in each HTML (`<style id="site-styles">`) + `noscript` link fallback — removes render-blocking CSS (local LH mobile **~95**). Re-sync after CSS edits: `node sites/brush-to-brush-decorating-services-ltd/scripts/inline-styles.mjs`. **Redeploy** Netlify to refresh live score (was **~80** before this change). Services **03–06** still JPEG until WebP added. |
+| Brush 2 Brush Decorating Services Ltd | `brush-to-brush-decorating-services-ltd` | https://brush2brush-decorating-njb-demo.netlify.app | ✅ Deploy verified | **Live Netlify (mobile LH):** Perf **92**, LCP **~3.3 s**, render-blocking **0**, inlined `<style id="site-styles">` + hero preload confirmed on production. After editing `css/styles.css`, run `node sites/brush-to-brush-decorating-services-ltd/scripts/inline-styles.mjs`. Services **03–06** images still JPEG until WebP added. |
 
 ---
 
