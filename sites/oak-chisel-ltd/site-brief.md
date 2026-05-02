@@ -1,4 +1,4 @@
-# Site Brief — `Oak & Chisel`
+﻿# Site Brief — `Oak & Chisel`
 
 **Slug:** `oak-chisel`
 **Segment:** B – Growth Phase
@@ -103,26 +103,21 @@ A sturdy serif with visible character for headings (something with ink-trap pers
 
 ---
 
-## 8. Images and gallery
+## 8. Images
 
-**What should the hero image show?**  
-A close-up of a freshly fitted kitchen detail — the line where a bespoke timber door meets a run of units, or a hand touching a finished worktop edge. Oak grain in natural light. Nothing staged; nothing stock. The demo site should use a trade image from the NeoBookworm library (Carpenter / Joiner category). [generated — please verify]
+**Trade category slug:** `carpenter-joiner`
+**Hero image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/carpenter-joiner/hero.webp`
+**About image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/carpenter-joiner/about.webp` — or use `shared/owner.webp` if a portrait works better for this business
+**CTA background:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/carpenter-joiner/cta-bg.webp`
 
-**Gallery ideas:**  
-- Image 1: Full kitchen install — wide shot, clean and finished  
-- Image 2: Joinery detail — dovetail, rebate, or moulding close-up  
-- Image 3: On-site action — measuring, marking, fitting  
-- Image 4: Before/after split if possible — cabinet doors, fitted wardrobe, etc.
+**Shared assets available:**
+- Van (exterior): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/van.webp`
+- Van (interior / tools): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/tools.webp`
+- Owner portrait: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/owner.webp`
+- British home exterior: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/british-home-exterior.webp`
 
-**Any people shots needed?**  
-Optional — a single working shot of Bobbie (hands on timber, not looking at camera) would reinforce the sole-operator authenticity. Only include if Bobbie provides one.
+**Notes on image usage:**
+*(Note here if a shared asset suits a section better than the trade-category image — e.g. owner.webp for About, british-home-exterior.webp for CTA background)*
 
----
-
-## 9. Anything else
-
-Bobbie has a custom email domain (oakchisel.co.uk) that appears to be email-only — no site resolves there. This is a strong pitch hook: the professional infrastructure is already in place, the brand name is strong, the trade experience is genuine. The demo site isn't filling a gap — it's giving the business the home it's already earned. Worth reflecting that framing in the outreach letter.
-
-Instagram activity (117 posts) likely contains usable project images and copy signals — worth reviewing before finalising the spec. Facebook (178 likes) may have project posts too.
-
-No public reviews yet means the site copy will need to lean on experience, craft signals, and the quality of the work shown — not social proof volume.
+> ⚠️ If this trade category does not yet have images in the R2 library, source and upload before starting Phase 4.
+> See `docs/r2-image-library-checklist.md` in this repo to track progress.

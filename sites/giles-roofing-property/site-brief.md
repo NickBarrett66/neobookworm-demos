@@ -1,4 +1,4 @@
-# Site Brief — `Giles Roofing and Property Maintenance Ltd`
+﻿# Site Brief — `Giles Roofing and Property Maintenance Ltd`
 
 **Slug:** `giles-roofing-property`
 **Date drafted:** 2026-04-27
@@ -102,26 +102,21 @@ Chapman Roofing Services (chapmanroofingservices.co.uk) is the closest Bristol c
 
 ---
 
-## 8. Images and gallery
+## 8. Images
 
-**What should the hero image show?**  
-A wide-angle shot of a completed pitched roof with Bristol rooftops or skyline visible in the background — ideally showing clean tile lines, a lead valley or chimney flashing, and clear sky. The craftsmanship should be the subject, not a person.
+**Trade category slug:** `roofer`
+**Hero image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/roofer/hero.webp`
+**About image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/roofer/about.webp` — or use `shared/owner.webp` if a portrait works better for this business
+**CTA background:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/roofer/cta-bg.webp`
 
-**Gallery ideas:**
-- Image 1: Close-up of freshly laid slate or clay roof tiles — the texture and precision of the work
-- Image 2: Completed fascia, soffit, and guttering replacement on a semi-detached Bristol terrace
-- Image 3: Lead flashing detail around a chimney stack — demonstrates specialist skill
-- Image 4: Before/after of a flat roof repair — shows the problem-solving side of the business
-- Image 5: General property maintenance job — a repaired brick, a rehung gate, or a painted exterior — signals the breadth of services
+**Shared assets available:**
+- Van (exterior): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/van.webp`
+- Van (interior / tools): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/tools.webp`
+- Owner portrait: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/owner.webp`
+- British home exterior: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/british-home-exterior.webp`
 
-**Any people shots needed?**  
-[generated — please verify] Optional — a single unposed shot of A. P. Giles on a roof or in work gear would add authenticity, but only if he's comfortable with it. Don't force a posed "founder portrait" — a candid working shot works better for this tone.
+**Notes on image usage:**
+*(Note here if a shared asset suits a section better than the trade-category image — e.g. owner.webp for About, british-home-exterior.webp for CTA background)*
 
----
-
-## 9. Anything else
-
-- The business has no Google Business Profile visible in search results, no Checkatrade listing, and no Yell presence. The website will be the first piece of owned, searchable infrastructure this business has beyond Facebook. That's a significant opportunity — local SEO basics (title tags, area mentions, schema markup) will do real work here.
-- The Nextdoor listing confirms the business is findable there already, which means some local reputation is seeping out even without a website.
-- Consider a short "About" page that leans into the decade-of-trading story — 2016 to now, Bristol rooftops, referral-built reputation. No embellishment needed: the longevity is the story.
-- Legal / copy caution: Do not make specific insurance or accreditation claims on the site without confirming with the owner first. Copy should say "fully insured" only if confirmed.
+> ⚠️ If this trade category does not yet have images in the R2 library, source and upload before starting Phase 4.
+> See `docs/r2-image-library-checklist.md` in this repo to track progress.

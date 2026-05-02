@@ -1,4 +1,4 @@
-# Site Brief — `Harveys Kitchen Fitters Ltd`
+﻿# Site Brief — `Harveys Kitchen Fitters Ltd`
 
 ## 1. The business
 **Business name:** Harvey's Kitchen Fitters Ltd
@@ -94,25 +94,21 @@ Your neighbour's dad who's been in the trade since before you were born. Tells y
 
 ---
 
-## 8. Images and gallery
-**What should the hero image show?**
-A completed Howdens or similar modern kitchen in a Bath property — clean, well-lit, showing the quality of the fit and finish. Ideally a kitchen with character (period property cornicing or tiled floor visible) to signal local expertise. Can be sourced from their Instagram if permission is obtained, or a high-quality stock image of a UK domestic kitchen fit that reads as Bath-appropriate.
+## 8. Images
 
-**Gallery ideas:**
-- Image 1: Modern fitted kitchen — clean Shaker-style door fronts, stone worktop, integrated appliances — the kind of job they post on Instagram
-- Image 2: A corner of a kitchen showing fit quality — drawer runners, perfectly aligned doors, finishing detail
-- Image 3: A "before and after" style pairing if available; or an in-progress shot showing project management capability (electrician and fitter working together)
-- Image 4: A Victorian or Georgian Bath property kitchen (period ceiling rose or original tiles in frame) to signal local knowledge
-- Image 5: A contract/developer kitchen — clean, neutral, multiple identical units — to signal their commercial capability
+**Trade category slug:** `kitchen-fitter`
+**Hero image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/hero.webp`
+**About image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/about.webp` — or use `shared/owner.webp` if a portrait works better for this business
+**CTA background:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/cta-bg.webp`
 
-**Any people shots needed?**
-[generated — please verify] A single photo of the owner or lead fitter on a job — natural, not posed, in work clothes. This would be the most powerful trust signal on the site for a local family business and is absent from all their current online presence. If not possible, omit people shots rather than use stock "tradespeople."
+**Shared assets available:**
+- Van (exterior): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/van.webp`
+- Van (interior / tools): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/tools.webp`
+- Owner portrait: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/owner.webp`
+- British home exterior: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/british-home-exterior.webp`
 
----
+**Notes on image usage:**
+*(Note here if a shared asset suits a section better than the trade-category image — e.g. owner.webp for About, british-home-exterior.webp for CTA background)*
 
-## 9. Anything else
-- The business has no Checkatrade or TrustATrader presence — their only formal review trail is the "top notch" community forum mention and their Facebook/Instagram work photography. The website should lean into the 25-year longevity signal as the primary trust anchor.
-- Facebook pricing tier (£££ / mid-premium) is consistent with Bath's affluent homeowner market. The site copy should speak to homeowners who care about quality of finish, not those shopping purely on price.
-- The domain `harveyskitchenfitters.co.uk` is not currently registered (confirmed at outreach stage per standard NeoBookworm pipeline). This is a strong hook for the initial email — the name they've been trading under for 25 years is unclaimed online.
-- Bath context: the city has a high concentration of period properties (Georgian terraces, Victorian semis) which require more considered kitchen fitting than new-build work. This is an angle worth surfacing on the site — local expertise, not generic fitting.
-- **Slug:** `harveys-kitchen-fitters`
+> ⚠️ If this trade category does not yet have images in the R2 library, source and upload before starting Phase 4.
+> See `docs/r2-image-library-checklist.md` in this repo to track progress.

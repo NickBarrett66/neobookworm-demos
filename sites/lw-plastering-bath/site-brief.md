@@ -70,7 +70,28 @@ Bath context: Period and Georgian properties dominate. Heritage/lime render capa
 
 ---
 
-## 8. SEO Inputs
+## 8. Images
+
+**Trade category slug:** `plasterer`
+**Hero image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/plasterer/hero.webp`
+**About image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/plasterer/about.webp` — or use `shared/owner.webp` if a portrait works better for this business
+**CTA background:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/plasterer/cta-bg.webp`
+
+**Shared assets available:**
+- Van (exterior): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/van.webp`
+- Van (interior / tools): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/tools.webp`
+- Owner portrait: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/owner.webp`
+- British home exterior: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/british-home-exterior.webp`
+
+**Notes on image usage:**
+The `british-home-exterior.webp` could work well for the CTA background given Bath's period property context. The `owner.webp` shared asset suits the About section well for a sole/small operator where a personal feel matters.
+
+> ⚠️ If the `plasterer` category does not yet have images in the R2 library, source and upload before starting Phase 4.
+> See `docs/r2-image-library-checklist.md` in this repo to track progress.
+
+---
+
+## 9. SEO Inputs
 
 - **Business phone:** ⚠️ *Discrepancy — two numbers found:* 07943 160213 (Notion) vs 07743 728199 (Agent 5 summary). Needs resolving before go-live.
 - **Area served:** Bath and surrounds (Somerset/Wiltshire fringes)

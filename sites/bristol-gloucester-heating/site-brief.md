@@ -1,4 +1,4 @@
-# Site Brief — `Bristol & Gloucester Heating Ltd`
+﻿# Site Brief — `Bristol & Gloucester Heating Ltd`
 
 **Slug:** `bristol-gloucester-heating`
 **Notion record:** https://www.notion.so/348fe9dde6b98198a082f5b6f0d26331
@@ -105,25 +105,21 @@ Rationale: No reviews yet to analyse directly, but the Facebook page name "Brist
 
 ---
 
-## 8. Images and gallery
+## 8. Images
 
-**What should the hero image show?**
-A clean, completed central heating installation — ideally a neat boiler fit in a well-presented utility space, or a tidy pipework run. The Severn Vale / Vale of Berkeley countryside as a backdrop for an outdoor shot would reinforce the local identity. No stock photography of generic plumbers.
+**Trade category slug:** `plumber`
+**Hero image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/plumber/hero.webp`
+**About image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/plumber/about.webp` — or use `shared/owner.webp` if a portrait works better for this business
+**CTA background:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/plumber/cta-bg.webp`
 
-**Gallery ideas:**
-- Image 1: Boiler installation — new combi fitted in a kitchen or utility room, clean pipework, no mess
-- Image 2: Radiator installation or bathroom pipework — shows attention to detail
-- Image 3: Engineer at work on-site — human face for the business (check with client: do they want to be pictured?)
-- Image 4: Aerial or landscape of the Berkeley/Severn area — optional, but supports the geographic identity
+**Shared assets available:**
+- Van (exterior): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/van.webp`
+- Van (interior / tools): `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/tools.webp`
+- Owner portrait: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/owner.webp`
+- British home exterior: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/british-home-exterior.webp`
 
-**Any people shots needed?**
-[RESEARCH COULDN'T DETERMINE — please fill in] If the director/engineer is willing to be photographed, a single clean portrait (on-site, in work clothes, no props) would significantly strengthen trust. Confirm with client.
+**Notes on image usage:**
+*(Note here if a shared asset suits a section better than the trade-category image — e.g. owner.webp for About, british-home-exterior.webp for CTA background)*
 
----
-
-## 9. Anything else
-
-- **No reviews exist yet** — the testimonials section will need to either be omitted, or seeded with a placeholder (e.g. "We're just getting started — ask us for references directly"). Do not fabricate testimonials.
-- **Gmail email address** (bgheatingltd@gmail.com) is on the Notion record — the site brief should nudge toward a branded email (e.g. hello@bristolgloucesterheating.co.uk) as part of the professional upgrade conversation.
-- **Gas Safe confirmation is a hard blocker** for the trust/accreditations section. Brief Nick to ask the client directly before copy is finalised.
-- **Facebook page is the only current public presence** — the demo site will be a significant step up. Frame the outreach around that contrast without being critical of the absence.
+> ⚠️ If this trade category does not yet have images in the R2 library, source and upload before starting Phase 4.
+> See `docs/r2-image-library-checklist.md` in this repo to track progress.

@@ -1,4 +1,4 @@
-# Site Spec — `[Business Name]`
+﻿# Site Spec — `[Business Name]`
 
 This document is generated in Phase 2 of `PROCESS.md` by Cursor, using the site brief as input. It locks in every content and design decision *before* any HTML is written, so you can review and tweak cheaply. It's also the exact artifact Agent 6 will eventually produce and consume internally when building real client sites.
 
@@ -108,7 +108,7 @@ sites/<site-name>/
 
 1. **Header + navigation**
    - Logo / wordmark
-   - Nav links: Home, Services, About, Gallery, Contact
+   - Nav links: Home, Services, About, Contact
    - CTA button: [text]
 
 2. **Hero section**
