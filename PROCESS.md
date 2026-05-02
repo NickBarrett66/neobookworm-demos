@@ -19,10 +19,11 @@ This is the master process for building a NeoBookworm demo trade website. Follow
 | 5 | Local review | Visual and content review | 30 min |
 | 6 | QA and launch prep | Filled `qa-launch-checklist.md` | 30 min |
 | 7 | Deploy to Netlify | Live URL | 15 min |
+| 7b | Live QA pass (post-deploy) | NeoBookworm Demo QA skill complete; register updated | 15–30 min |
 | 8 | Link from NeoBookworm.uk | Live on Examples page | 10 min |
 | 9 | Close out | TRACKER and LEARNINGS updated | 5 min |
 
-Total per site: roughly 3–5 hours for a new trade type (including any image sourcing); 2–3 hours for a repeat trade type where the image library already exists.
+Total per site: roughly 3–5 hours for a new trade type (including any image sourcing and **Phase 7b** live QA); 2–3 hours for a repeat trade type where the image library already exists.
 
 ---
 
@@ -303,6 +304,8 @@ the styles.css additions before moving to the next page so I can review.
 4. If you find a problem, fix it and re-tick. The checklist should end 100% green
 5. Commit: *`<site-name>`: QA complete*
 
+This phase is the **pre-deploy** gate (SEO, accessibility, forms, etc.). **After** the site is live on Netlify, run **Phase 7b** using `.claude/neobookworm-demo-qa.md` — Lighthouse on the **live URL**, mobile screenshots, broken assets, GA4 where applicable, and the structured QA report. Do not skip 7b for prospect outreach builds.
+
 ---
 
 ## Phase 7 — Deploy to Netlify
@@ -329,9 +332,29 @@ the styles.css additions before moving to the next page so I can review.
 
 ---
 
+## Phase 7b — Live QA pass (NeoBookworm Demo QA)
+
+**Input:** live Netlify URL for `sites/<site-name>/` (recorded in `TRACKER.md`).
+
+**Output:** QA skill run complete; any fixes committed and redeployed; prospect/site noted in the register inside `.claude/neobookworm-demo-qa.md`.
+
+**Canonical instructions:** `.claude/neobookworm-demo-qa.md` (NeoBookworm Demo QA — Lighthouse on the **live URL**, mobile layout screenshots, content and broken-asset checks, GA4 snippet standard for demos/prospects, mandatory report format).
+
+**Steps:**
+
+1. Open a Cursor chat and attach `.claude/neobookworm-demo-qa.md` plus the site folder (or give the folder slug and paste the live URL).
+2. Follow the skill literally — especially **live Lighthouse (mobile)** rather than `file://`, and the final report block.
+3. If the skill finds issues that need HTML/CSS/JS changes, fix them, commit, and **redeploy** (Phase 7) until the live URL matches what you want recorded.
+4. Update the **Prospect register** table at the bottom of `neobookworm-demo-qa.md` with QA status and notes (live scores, blockers, etc.).
+5. Respect site-specific freezes called out in that register (e.g. do not modify a prospect site while outreach is pending unless Nick says otherwise).
+
+Do **Phase 7b before** linking a new demo from NeoBookworm.uk (Phase 8), so the Examples page only gets URLs you have already validated live.
+
+---
+
 ## Phase 8 — Link from NeoBookworm.uk
 
-**Input:** live demo URL.
+**Input:** live demo URL **after Phase 7b** (live QA pass complete).
 
 **Output:** the demo is linked from the Examples page on NeoBookworm.uk.
 
@@ -349,7 +372,7 @@ the styles.css additions before moving to the next page so I can review.
 
 ## Phase 9 — Close out
 
-**Input:** live demo, linked from NeoBookworm.uk.
+**Input:** live demo, Phase 7b complete, linked from NeoBookworm.uk.
 
 **Output:** a tidy state, ready for the next demo.
 
