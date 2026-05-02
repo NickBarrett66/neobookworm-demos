@@ -241,7 +241,7 @@ Update this section as sites are QA'd:
 | Prospect | Folder | Live URL | QA Status | Notes |
 |---|---|---|---|---|
 | Lee Morgan Heating & Plumbing Ltd | `lee-morgan-heating-and-plumbing-ltd` | — | ⏳ Pending | First email sent — do not modify until response received |
-| Brush 2 Brush Decorating Services Ltd | `brush-to-brush-decorating-services-ltd` | https://brush2brush-decorating-njb-demo.netlify.app | ⚠️ Manual review | **Pass 2 (live, mobile home):** Perf 77 / A11y 100 / BP 100 / SEO 100 — assets + robots resolve; perf gated by LCP/FCP (large JPEG hero). Repo updated to **WebP** where files exist + `fetchpriority="high"` on hero; redeploy for LH bump. Services **03–06** still JPEG until WebP added. |
+| Brush 2 Brush Decorating Services Ltd | `brush-to-brush-decorating-services-ltd` | https://brush2brush-decorating-njb-demo.netlify.app | ⚠️ Manual review | **Pass 3 (live, mobile home):** Perf **74** then **80** on immediate rerun (lab variance); A11y **100** / BP **100** / SEO **100**; console clean; deployed HTML uses **hero.webp**. Full pass metrics incl. **LCP ~4.7 s**, **FCP ~3.8 s** (throttled mobile). Services **03–06** still JPEG until WebP added. |
 
 ---
 
