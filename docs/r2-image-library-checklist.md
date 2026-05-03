@@ -57,9 +57,9 @@
 - [ ] `cta-bg.webp`
 
 ## 📁 driveway-paving
-- [ ] `hero.webp`
-- [ ] `about.webp`
-- [ ] `cta-bg.webp`
+- [x] `hero.webp`
+- [x] `about.webp`
+- [x] `cta-bg.webp`
 
 ## 📁 carpenter-joiner
 - [ ] `hero.webp`
