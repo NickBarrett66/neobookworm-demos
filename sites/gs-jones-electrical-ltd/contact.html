@@ -352,6 +352,7 @@
 
     try {
       await google.maps.importLibrary("maps");
+      const { Marker } = await google.maps.importLibrary("marker");
 
       /* Dark map style to match charcoal site aesthetic */
       var darkStyle = [
@@ -431,7 +432,7 @@
       ];
 
       towns.forEach(function (t) {
-        new google.maps.Marker({
+        new Marker({
           map:      map,
           position: t.pos,
           title:    t.title,

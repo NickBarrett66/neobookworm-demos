@@ -161,6 +161,7 @@
                     if (!mapEl) return;
 
                     await google.maps.importLibrary("maps");
+                    const { Marker } = await google.maps.importLibrary("marker");
 
                     const map = new google.maps.Map(mapEl, {
                       center: centre,
@@ -232,7 +233,7 @@
                     ];
 
                     locations.forEach((loc) => {
-                      new google.maps.Marker({
+                      new Marker({
                         map: map,
                         position: loc.pos,
                         title: loc.title,

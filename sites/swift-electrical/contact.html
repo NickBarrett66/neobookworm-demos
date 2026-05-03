@@ -213,6 +213,7 @@
               const cirencester = { lat: 51.719, lng: -1.9686 };
 
               await google.maps.importLibrary("maps");
+              const { Marker } = await google.maps.importLibrary("marker");
 
               const map = new google.maps.Map(document.getElementById("map"), {
                 center: cirencester,
@@ -279,7 +280,7 @@
               ];
 
               locations.forEach((loc) => {
-                new google.maps.Marker({
+                new Marker({
                   map: map,
                   position: loc.pos,
                   title: loc.title,
