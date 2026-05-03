@@ -83,6 +83,8 @@ sites/<site-name>/
 │   └── (none — all images served from R2 library; see Section 7)
 ├── favicon.svg
 ├── favicon.ico          (optional — older clients)
+├── sitemap.xml
+├── robots.txt
 ├── site-brief.md
 ├── site-spec.md
 ├── build-checklist.md
@@ -94,6 +96,12 @@ sites/<site-name>/
 ---
 
 ## 4. Page specifications
+
+> **Universal requirements — every page without exception:**
+> - `<a class="skip-link" href="#main">Skip to content</a>` must be the **first child of `<body>`**
+> - `<main id="main">` must wrap all content between the closing `</header>` and opening `<footer>` tags
+>
+> These are hard requirements for WCAG compliance and achieving a PageSpeed accessibility score of 100.
 
 ### 4.1 Home (`index.html`)
 
@@ -189,7 +197,7 @@ sites/<site-name>/
 
 ### Per-page SEO
 
-| Page | Title tag (≤65 chars) | Meta description (≤155 chars, includes CTA) | og:title | og:description |
+| Page | Title tag (≤65 chars) | Meta description (140–155 chars, includes CTA) | og:title | og:description |
 |---|---|---|---|---|
 | Home (`index.html`) | | | | |
 | Services (`services.html`) | | | | |
@@ -199,9 +207,9 @@ sites/<site-name>/
 
 *Title tag rules: keyword first, business name last, separated by `—` or `\|`. Example: `Plumber in Swindon — Hartley Plumbing`. H1s are brand copy; title tags are for search — they should differ.*
 
-*Meta description rules: one sentence, under 155 characters, ends with a clear CTA. Example: `Gas Safe registered plumber covering Swindon and Wiltshire. Available 7 days. Call for a free quote.`*
+*Meta description rules: one sentence, **140–155 characters**, ends with a clear CTA. Example: `Gas Safe registered plumber covering Swindon and Wiltshire. Available 7 days. Call for a free quote.`*
 
-*Gallery page title tag example: `Our Work — Hartley Plumbing, Swindon`. Meta description example: `Boiler installs, bathroom refurbs, and heating repairs across Wiltshire. See our recent jobs.`*
+*Gallery page title tag example: `Our Work — Hartley Plumbing, Swindon`. Meta description example: `Boiler installations, bathroom refurbishments, and heating repairs across Swindon and Wiltshire. Browse our recent jobs and call for a free quote.`* (143 chars — target 140–155)*
 
 ### LocalBusiness JSON-LD schema
 
@@ -272,6 +280,8 @@ All images are served from the NeoBookworm R2 library. No Midjourney prompts req
 **Notes on image placement:**
 *(Specify here which shared assets are used and in which sections, if any.)*
 
+> **`width` and `height` attributes:** Every `<img>` tag must include `width` and `height` attributes matching the image's natural pixel dimensions. This lets the browser reserve space before the file loads, preventing layout shift (CLS). Specify the expected dimensions for each image in the notes column above.
+
 > **Gallery — no images at demo stage.** The gallery teaser (index.html) and full gallery page (gallery.html) use icon/text cards only. No R2 URLs are assigned to gallery cards until productionisation. Do not add placeholder `<img>` tags to gallery cards.
 
 ---
@@ -303,8 +313,9 @@ Other interactive features: vanilla JS only, no npm libraries. Map libraries are
 
 Any accessibility considerations specific to this design:
 
-- Colour contrast: confirm `--color-text` on `--color-bg` meets WCOG AA
+- Colour contrast: confirm `--color-text` on `--color-bg` meets WCAG AA (4.5:1 for body text, 3:1 for large text)
 - All R2 images must have descriptive `alt` attributes specified here, not left to the builder
+- Every `<img>` tag must have `width` and `height` attributes matching natural pixel dimensions (prevents CLS)
 - Gallery cards: Lucide icons must have `aria-hidden="true"` (decorative); job type heading provides the accessible label for the card
 - [etc]
 

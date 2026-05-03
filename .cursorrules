@@ -22,7 +22,7 @@ The NeoBookworm.uk brand (navy/amber, Playfair Display, DM Sans, plain English) 
 - One shared script file if needed: `js/main.js`
 - Vanilla JS only — no frameworks, no build tools, no npm install
 - Header and footer are duplicated into each page (static files, no server-side includes)
-- All images live in `images/` at the site root
+- All images are served directly from the NeoBookworm R2 CDN library. The `images/` folder at the site root is empty at demo stage. If a client supplies custom photos later, they go in `images/` (see Performance basics below)
 
 ### HTML
 - Semantic HTML5 throughout: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`
@@ -64,7 +64,7 @@ The NeoBookworm.uk brand (navy/amber, Playfair Display, DM Sans, plain English) 
 - If a site brief requires a badge we don't have a CSS version of, note it and skip rather than importing a real logo
 
 ### Performance basics
-- **All images must be WebP format.** Convert originals using Squoosh (quality 80) before adding to the repo. Keep originals in `images/originals/` but do not deploy that subfolder. Target sizes: hero <100 KB, gallery images <80 KB, thumbnails <30 KB. Do not add PNGs or JPGs to the deployed `images/` folder — WebP only.
+- **All images are served directly from the NeoBookworm R2 CDN library.** R2 URLs (see `templates/site-brief.md` Section 9 and `templates/site-spec.md` Section 7) are used as `src` attributes in production HTML — no local image files are needed for R2 library images, and the `images/` folder is empty at demo stage. If a client supplies custom photos in PNG or JPG, convert using Squoosh (quality 80) into WebP and place in `images/` at the site root; keep originals in `images/originals/` (do not deploy that subfolder). Target sizes if custom photos are used: hero <100 KB, gallery images <80 KB, thumbnails <30 KB. Do not add PNGs or JPGs to the deployed `images/` folder.
 - Specify `width` and `height` attributes on all `<img>` tags matching the image's natural pixel dimensions. This prevents layout shift (CLS) by letting the browser reserve space before the file loads.
 - Minimise render-blocking resources in `<head>`
 - Run **Google PageSpeed Insights** (pagespeed.web.dev) before considering any page complete. Minimum acceptable scores: 90 desktop / 70 mobile performance, 100 accessibility, 100 SEO.

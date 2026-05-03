@@ -106,11 +106,11 @@ The **SEO Outputs section (Section 5) of `site-spec.md`** is the source of truth
 Key rules derived from this baseline:
 
 - Title tags are keyword-targeted and page-specific. They differ from H1s — H1s are brand copy, title tags are for search.
-- Meta descriptions are under 155 characters and end with a CTA.
+- Meta descriptions are **140–155 characters** and end with a CTA.
 - The phone number displayed on the site must be the business number (Sonetel or dedicated line) from the brief's SEO Inputs section — not the owner's personal mobile. It must appear identically in every page header and footer.
 - `sitemap.xml` and `robots.txt` (with a `Sitemap:` declaration) are required in every site root before deploy.
 - Every page must have a `<main id="main">` landmark wrapping all content between the site header and footer. A skip link `<a class="skip-link" href="#main">Skip to content</a>` must be the first child of `<body>`. This is required for accessibility and for achieving a PageSpeed accessibility score of 100.
-- All images must be **WebP format**. Convert originals using Squoosh (quality 80) before adding to the repo. Keep originals in an `images/originals/` subfolder but do not deploy them. Target sizes: hero <100 KB, gallery images <80 KB, thumbnails <30 KB.
+- **Images are served directly from the NeoBookworm R2 CDN library** (URLs in `templates/site-brief.md` Section 9 and `templates/site-spec.md` Section 7). R2 URLs are used as `src` attributes in production HTML; the `images/` folder is empty at demo stage. If a client supplies custom photos in PNG or JPG, convert with Squoosh (quality 80) into WebP and place in `images/`; keep originals in `images/originals/` (not deployed). Target sizes if custom photos are used: hero <100 KB, gallery images <80 KB, thumbnails <30 KB.
 - Run **Google PageSpeed Insights** (pagespeed.web.dev) before deploy — minimum scores: 90 desktop / 70 mobile performance, 100 accessibility, 100 SEO.
 - Run **Chrome Lighthouse** (Chrome DevTools → Lighthouse tab → Mobile) before deploy to verify mobile layout, tap targets, and font legibility. Note: Google's standalone Mobile-Friendly Test tool was retired in December 2023; Lighthouse is Google's recommended replacement.
 
