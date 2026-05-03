@@ -1,14 +1,15 @@
 /* ============================================================
    G S Jones Electrical Ltd — main.js
-   Handles: mobile nav, demo modal (tel: links + form submit)
+   Handles: mobile nav, demo modal (tel:, mailto:, form submit)
    ============================================================ */
 
 (function () {
   'use strict';
 
   /* ── Demo modal copy ─────────────────────────────────────── */
-  const DEMO_TEL_MSG  = 'Phone links aren\'t active on this demo. In the live site, this would call Gary directly on 07971 000 442.';
-  const DEMO_FORM_MSG = 'Form submissions aren\'t active on this demo. In the live site, Gary would receive your message and respond the same day.';
+  const DEMO_TEL_MSG    = 'Phone links aren\'t active on this demo. In the live site, this would call Gary directly on 07971 000 442.';
+  const DEMO_MAILTO_MSG = 'Email links aren\'t active on this demo. In the live site, this would open your email app to message Gary at gjones_54@msn.com.';
+  const DEMO_FORM_MSG   = 'Form submissions aren\'t active on this demo. In the live site, Gary would receive your message and respond the same day.';
 
   /* ── DOM refs ─────────────────────────────────────────────── */
   const modal      = document.getElementById('demo-modal');
@@ -45,30 +46,39 @@
     });
   }
 
-  /* ── Block tel: links ─────────────────────────────────────── */
-  document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      openModal(DEMO_TEL_MSG);
-    });
-  });
+  /* ── Demo intercepts (skip when going live — add data-live-site to <body>) ─ */
+  var liveSite = document.body.hasAttribute('data-live-site');
 
-  /* ── Block form submits ───────────────────────────────────── */
-  document.querySelectorAll('form').forEach(function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      /* Show inline success message if present, else modal */
-      var success = form.querySelector('.form-success');
-      if (success) {
-        success.style.display = 'block';
-        form.querySelector('[type="submit"]').disabled = true;
-        /* Replace modal with success copy specific to demo */
-        success.textContent = 'Demo site — in the live version Gary would receive this and respond the same day.';
-      } else {
-        openModal(DEMO_FORM_MSG);
-      }
+  if (!liveSite) {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal(DEMO_TEL_MSG);
+      });
     });
-  });
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal(DEMO_MAILTO_MSG);
+      });
+    });
+
+    document.querySelectorAll('form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var success = form.querySelector('.form-success');
+        if (success) {
+          success.style.display = 'block';
+          var btn = form.querySelector('[type="submit"]');
+          if (btn) btn.disabled = true;
+          success.textContent = 'Demo site — in the live version Gary would receive this and respond the same day.';
+        } else {
+          openModal(DEMO_FORM_MSG);
+        }
+      });
+    });
+  }
 
   /* ── Mobile nav ───────────────────────────────────────────── */
   function openMobileNav() {
@@ -93,7 +103,7 @@
   if (mobileNav) {
     mobileNav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        /* Allow tel: intercept to fire first, then close nav */
+        /* Allow tel:/mailto: intercept to run first, then close nav */
         setTimeout(closeMobileNav, 80);
       });
     });

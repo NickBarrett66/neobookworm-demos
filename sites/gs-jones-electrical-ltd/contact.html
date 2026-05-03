@@ -157,7 +157,7 @@
           <h2>Send an enquiry</h2>
           <p class="demo-note" style="margin-bottom:1.5rem;">Demo site — form submissions are not active</p>
 
-          <form name="contact" netlify data-netlify="true" novalidate>
+          <form name="contact" method="POST" netlify data-netlify="true" novalidate>
             <input type="hidden" name="form-name" value="contact">
 
             <div class="form-group">
@@ -334,107 +334,132 @@
 <!-- ── GOOGLE MAPS — service area radius circle ──────────────── -->
 <script src="js/maps-config.js"></script>
 <script>
-  async function initGSJonesMap() {
+  /* Exposed globally for Maps bootstrap callback=initGSJonesMap */
+  window.initGSJonesMap = async function initGSJonesMap() {
     var bedminster = { lat: 51.4420, lng: -2.5991 };
-
-    await google.maps.importLibrary("maps");
-
-    /* Dark map style to match charcoal site aesthetic */
-    var darkStyle = [
-      { elementType: "geometry",        stylers: [{ color: "#1A1A22" }] },
-      { elementType: "labels.text.fill",stylers: [{ color: "#8A8984" }] },
-      { elementType: "labels.text.stroke",stylers: [{ color: "#111116" }] },
-      { featureType: "administrative",  elementType: "geometry.stroke", stylers: [{ color: "#2C2C38" }] },
-      { featureType: "road",            elementType: "geometry",        stylers: [{ color: "#252530" }] },
-      { featureType: "road",            elementType: "geometry.stroke", stylers: [{ color: "#111116" }] },
-      { featureType: "road.highway",    elementType: "geometry",        stylers: [{ color: "#2C2C38" }] },
-      { featureType: "water",           elementType: "geometry",        stylers: [{ color: "#0D0D12" }] },
-      { featureType: "poi",             stylers: [{ visibility: "off" }] },
-      { featureType: "transit",         stylers: [{ visibility: "off" }] }
-    ];
-
     var mapEl = document.getElementById("gs-jones-map");
-    var map = new google.maps.Map(mapEl, {
-      center:            bedminster,
-      zoom:              11,
-      styles:            darkStyle,
-      disableDefaultUI:  false,
-      zoomControl:       true,
-      mapTypeControl:    false,
-      streetViewControl: false,
-      fullscreenControl: false,
-    });
 
-    /* Amber circle — 12 miles = 19,312 metres */
-    var coverageCircle = new google.maps.Circle({
-      map:           map,
-      center:        bedminster,
-      radius:        19312,
-      strokeColor:   "#C8871A",
-      strokeOpacity: 0.85,
-      strokeWeight:  2,
-      fillColor:     "#C8871A",
-      fillOpacity:   0.07,
-    });
-
-    /* Fit map to circle bounds */
-    function fitToCircle() {
-      var bounds = coverageCircle.getBounds();
-      if (bounds) map.fitBounds(bounds, 40);
-    }
-    fitToCircle();
-
-    /* ResizeObserver — refit when container resizes (flex/grid layout) */
-    if (typeof ResizeObserver !== "undefined") {
-      new ResizeObserver(function () {
-        google.maps.event.trigger(map, "resize");
-        fitToCircle();
-      }).observe(mapEl);
+    function showMapFallback(message) {
+      if (!mapEl) return;
+      mapEl.classList.add("map-container--fallback");
+      mapEl.removeAttribute("hidden");
+      mapEl.innerHTML = "";
+      var p = document.createElement("p");
+      p.className = "map-container__fallback";
+      p.textContent = message;
+      mapEl.appendChild(p);
     }
 
-    /* Town markers — SVG data-URL icons in amber on near-black */
-    function markerIcon(label) {
-      var svg =
-        '<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34">' +
-        '<circle cx="17" cy="17" r="15" fill="#C8871A" stroke="#111116" stroke-width="2"/>' +
-        '<text x="17" y="17" text-anchor="middle" dominant-baseline="central" ' +
-        'font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#111116">' +
-        label + "</text>" +
-        "</svg>";
-      return {
-        url:       "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg),
-        scaledSize: new google.maps.Size(34, 34),
-        anchor:     new google.maps.Point(17, 17),
-      };
-    }
+    try {
+      await google.maps.importLibrary("maps");
 
-    var towns = [
-      { pos: { lat: 51.4420, lng: -2.5991 }, label: "Bd", title: "Bedminster" },
-      { pos: { lat: 51.4357, lng: -2.6130 }, label: "Sv", title: "Southville" },
-      { pos: { lat: 51.4454, lng: -2.5734 }, label: "Td", title: "Totterdown" },
-      { pos: { lat: 51.4219, lng: -2.5488 }, label: "Br", title: "Brislington" },
-      { pos: { lat: 51.4330, lng: -2.5723 }, label: "Kn", title: "Knowle" },
-      { pos: { lat: 51.4793, lng: -2.5757 }, label: "Bi", title: "Bishopston" },
-      { pos: { lat: 51.4613, lng: -2.6168 }, label: "Cl", title: "Clifton" },
-    ];
+      /* Dark map style to match charcoal site aesthetic */
+      var darkStyle = [
+        { elementType: "geometry",        stylers: [{ color: "#1A1A22" }] },
+        { elementType: "labels.text.fill",stylers: [{ color: "#8A8984" }] },
+        { elementType: "labels.text.stroke",stylers: [{ color: "#111116" }] },
+        { featureType: "administrative",  elementType: "geometry.stroke", stylers: [{ color: "#2C2C38" }] },
+        { featureType: "road",            elementType: "geometry",        stylers: [{ color: "#252530" }] },
+        { featureType: "road",            elementType: "geometry.stroke", stylers: [{ color: "#111116" }] },
+        { featureType: "road.highway",    elementType: "geometry",        stylers: [{ color: "#2C2C38" }] },
+        { featureType: "water",           elementType: "geometry",        stylers: [{ color: "#0D0D12" }] },
+        { featureType: "poi",             stylers: [{ visibility: "off" }] },
+        { featureType: "transit",         stylers: [{ visibility: "off" }] }
+      ];
 
-    towns.forEach(function (t) {
-      new google.maps.Marker({
-        map:      map,
-        position: t.pos,
-        title:    t.title,
-        icon:     markerIcon(t.label),
+      if (!mapEl) return;
+
+      var map = new google.maps.Map(mapEl, {
+        center:            bedminster,
+        zoom:              11,
+        styles:            darkStyle,
+        disableDefaultUI:  false,
+        zoomControl:       true,
+        mapTypeControl:    false,
+        streetViewControl: false,
+        fullscreenControl: false,
       });
-    });
-  }
 
-  /* Load Maps API — graceful fallback if no key is set */
+      /* Amber circle — 12 miles = 19,312 metres */
+      var coverageCircle = new google.maps.Circle({
+        map:           map,
+        center:        bedminster,
+        radius:        19312,
+        strokeColor:   "#C8871A",
+        strokeOpacity: 0.85,
+        strokeWeight:  2,
+        fillColor:     "#C8871A",
+        fillOpacity:   0.07,
+      });
+
+      function fitToCircle() {
+        var bounds = coverageCircle.getBounds();
+        if (bounds) map.fitBounds(bounds, 40);
+      }
+      fitToCircle();
+
+      if (typeof ResizeObserver !== "undefined") {
+        new ResizeObserver(function () {
+          google.maps.event.trigger(map, "resize");
+          fitToCircle();
+        }).observe(mapEl);
+      }
+
+      function markerIcon(label) {
+        var svg =
+          '<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34">' +
+          '<circle cx="17" cy="17" r="15" fill="#C8871A" stroke="#111116" stroke-width="2"/>' +
+          '<text x="17" y="17" text-anchor="middle" dominant-baseline="central" ' +
+          'font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#111116">' +
+          label + "</text>" +
+          "</svg>";
+        return {
+          url:        "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg),
+          scaledSize: new google.maps.Size(34, 34),
+          anchor:     new google.maps.Point(17, 17),
+        };
+      }
+
+      var towns = [
+        { pos: { lat: 51.4420, lng: -2.5991 }, label: "Bd", title: "Bedminster" },
+        { pos: { lat: 51.4357, lng: -2.6130 }, label: "Sv", title: "Southville" },
+        { pos: { lat: 51.4454, lng: -2.5734 }, label: "Td", title: "Totterdown" },
+        { pos: { lat: 51.4219, lng: -2.5488 }, label: "Br", title: "Brislington" },
+        { pos: { lat: 51.4330, lng: -2.5723 }, label: "Kn", title: "Knowle" },
+        { pos: { lat: 51.4793, lng: -2.5757 }, label: "Bi", title: "Bishopston" },
+        { pos: { lat: 51.4613, lng: -2.6168 }, label: "Cl", title: "Clifton" },
+      ];
+
+      towns.forEach(function (t) {
+        new google.maps.Marker({
+          map:      map,
+          position: t.pos,
+          title:    t.title,
+          icon:     markerIcon(t.label),
+        });
+      });
+    } catch (err) {
+      console.error("G S Jones map:", err);
+      showMapFallback(
+        "The map could not load. Check the browser console, that Maps JavaScript API is enabled for your key, billing is active, and HTTP referrer restrictions include your Netlify URL (e.g. https://yoursite.netlify.app/*)."
+      );
+    }
+  };
+
   (function loadMapsApi() {
     var key = typeof window.__GMAPS_KEY__ === "string" ? window.__GMAPS_KEY__.trim() : "";
     if (!key || key === "YOUR_GOOGLE_MAPS_API_KEY") {
-      /* Hide map container; legend text above it remains visible */
       var mapEl = document.getElementById("gs-jones-map");
-      if (mapEl) mapEl.hidden = true;
+      if (mapEl) {
+        mapEl.classList.add("map-container--fallback");
+        mapEl.removeAttribute("hidden");
+        mapEl.innerHTML = "";
+        var p = document.createElement("p");
+        p.className = "map-container__fallback";
+        p.innerHTML =
+          "No Google Maps API key found. For drag-and-drop deploys, copy <code>js/maps-config.example.js</code> to <code>js/maps-config.js</code>, paste your browser-restricted key, and upload the folder again. Ensure referrer restrictions include your live site URL.";
+        mapEl.appendChild(p);
+      }
       return;
     }
     var s = document.createElement("script");
@@ -443,6 +468,17 @@
       "https://maps.googleapis.com/maps/api/js?key=" +
       encodeURIComponent(key) +
       "&loading=async&callback=initGSJonesMap";
+    s.onerror = function () {
+      var mapEl = document.getElementById("gs-jones-map");
+      if (!mapEl) return;
+      mapEl.classList.add("map-container--fallback");
+      mapEl.innerHTML = "";
+      var errP = document.createElement("p");
+      errP.className = "map-container__fallback";
+      errP.textContent =
+        "Could not load the Google Maps script (network blocked or script URL blocked). Check connectivity and ad blockers.";
+      mapEl.appendChild(errP);
+    };
     document.body.appendChild(s);
   })();
 </script>
