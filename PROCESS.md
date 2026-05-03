@@ -109,12 +109,14 @@ Requirements:
 - Propose a font pairing (display + body) from Google Fonts. Do not pick
   generic choices (no Inter, no Roboto, no Arial). Be distinctive.
 - Images are served from the NeoBookworm R2 library — do NOT generate
-  Midjourney prompts or propose a gallery of bespoke image slots. Instead,
-  reference the three trade-category images from the brief (hero, about,
-  cta-bg) and any shared assets specified (van, tools, owner portrait,
-  british-home-exterior). The Gallery page should be replaced with a
-  Services card grid (icon + title + one-liner per service) — no photo
-  gallery required.
+  Midjourney prompts or propose a gallery of bespoke image slots. Reference
+  the three trade-category images from the brief (hero, about, cta-bg) and
+  any shared assets specified (van, tools, owner portrait,
+  british-home-exterior). The Gallery page uses icon/text cards at demo
+  stage — no photos required. Spec the gallery cards using the content from
+  the brief's Gallery section (Section 10): icon suggestion, job type heading,
+  location, and optional micro-quote per card. Real photos are added at
+  productionisation with no structural changes needed.
 - List any icons, illustrations, or decorative elements needed.
 - If the business needs a **service area** or **coverage** visual, specify which
   map approach (if any): **UK county / unitary map (Leaflet + ONS)** from
@@ -208,9 +210,8 @@ Do not start writing HTML yet — this phase is spec only.
 **The prompt:**
 
 ```
-Using the site-brief.md, site-spec.md, and the images in the images/ folder,
-build the complete demo website for this business. Follow the spec exactly
-for copy, colours, typography, and structure.
+Using the site-brief.md and site-spec.md, build the complete demo website
+for this business.
 
 Build rules:
 - Multi-page static site: index.html (home), services.html, about.html,
@@ -238,8 +239,13 @@ Build rules:
 - Contact page should have a working-looking form (HTML only is fine, it
   doesn't need to submit anywhere for a demo) with clear labels and
   accessible inputs
-- Gallery page should use a responsive grid with lightbox-style click-to-
-  enlarge (plain CSS/JS, no libraries)
+- Gallery page uses a responsive card grid — icon/text cards only at demo
+  stage, zero <img> tags inside gallery cards. Each card: Lucide icon
+  (aria-hidden="true"), job type heading, location line, optional
+  micro-quote. Grid: 3-col desktop → 2-col tablet → 1-col mobile. Homepage
+  includes a 3-card teaser linking to gallery.html ("See all our work →"
+  or equivalent). Real photos slot in at productionisation — no structural
+  changes required.
 - Commit to the aesthetic direction in the spec. Do not water it down. If
   the spec says editorial and serif-heavy, be editorial and serif-heavy. If
   it says industrial and brutalist, go industrial and brutalist.
