@@ -70,6 +70,7 @@ sites/<site-name>/
 ├── index.html
 ├── services.html
 ├── about.html
+├── gallery.html
 ├── contact.html
 ├── css/
 │   └── styles.css
@@ -82,6 +83,8 @@ sites/<site-name>/
 │   └── (none — all images served from R2 library; see Section 7)
 ├── favicon.svg
 ├── favicon.ico          (optional — older clients)
+├── sitemap.xml
+├── robots.txt
 ├── site-brief.md
 ├── site-spec.md
 ├── build-checklist.md
@@ -94,6 +97,12 @@ sites/<site-name>/
 
 ## 4. Page specifications
 
+> **Universal requirements — every page without exception:**
+> - `<a class="skip-link" href="#main">Skip to content</a>` must be the **first child of `<body>`**
+> - `<main id="main">` must wrap all content between the closing `</header>` and opening `<footer>` tags
+>
+> These are hard requirements for WCAG compliance and achieving a PageSpeed accessibility score of 100.
+
 ### 4.1 Home (`index.html`)
 
 **Page title:**
@@ -103,7 +112,7 @@ sites/<site-name>/
 
 1. **Header + navigation**
    - Logo / wordmark
-   - Nav links: Home, Services, About, Contact
+   - Nav links: Home, Services, About, Gallery, Contact
    - CTA button: [text]
 
 2. **Hero section**
@@ -115,9 +124,16 @@ sites/<site-name>/
 3. **[Next section name]**
    - *[full copy and structural notes]*
 
-4. *(etc — typically 4–7 sections on a home page)*
+4. **Gallery teaser section**
+   - Section heading: *[from brief Section 10 — homepage teaser heading]*
+   - 3 cards displayed (cards 1–3 from the full 6 — icon + job type + location + optional micro-quote)
+   - "See all our work →" link pointing to `gallery.html`
+   - **No images at demo stage** — icon/text cards only
+   - *(See Section 4.5 for full gallery card spec)*
 
-5. **Footer**
+5. *(etc — typically 4–7 sections on a home page)*
+
+6. **Footer**
    - Contact details
    - Accreditation badges
    - Copyright and credits
@@ -140,6 +156,39 @@ sites/<site-name>/
 - **None**, or specify: **Leaflet UK counties** (which counties/unitaries to highlight, which page), **regional preset** (`shared/js/uk-counties-regional.js` defaults), or **Google Maps** (centre point, radius in miles/metres, optional town markers, API key via `maps-config.js` only).
 - Legend copy, accessibility (`aria-label` on map container), and fallback when no API key (for Google) — all specified here.
 
+### 4.5 Gallery (`gallery.html`)
+
+**Page title:**
+**Meta description:**
+
+**Section heading:** *[from brief Section 10 — full gallery section heading]*
+
+**Card grid layout:**
+- Desktop: 3 columns
+- Tablet (≤768px): 2 columns
+- Mobile (≤480px): 1 column, full width
+
+**Cards (6 total — full spec drawn from brief Section 10):**
+
+> ⚠️ **Demo stage rule:** Gallery cards are **icon + text only**. Zero `<img>` tags in the gallery section or page at demo stage. When real client photos are available at productionisation, each card receives an `<img>` above the icon and the icon is removed — no structural changes required.
+
+| # | Lucide icon | Job type heading | Location | Micro-quote |
+|---|---|---|---|---|
+| 1 | | | | |
+| 2 | | | | |
+| 3 | | | | |
+| 4 | | | | |
+| 5 | | | | |
+| 6 | | | | |
+
+**Card anatomy (each card must include):**
+- Lucide icon (trade-appropriate, sized ~48px, coloured `var(--color-accent)` or `var(--color-primary)`)
+- Job type heading (H3 or strong element)
+- Location line (with 📍 pin emoji or a small location icon)
+- Micro-quote (if provided — italicised, smaller text, `var(--color-text-muted)`)
+
+**"Back to home" link:** Include a visible link back to `index.html` at the top of the page body (below the nav).
+
 ---
 
 ## 5. SEO Outputs
@@ -148,16 +197,19 @@ sites/<site-name>/
 
 ### Per-page SEO
 
-| Page | Title tag (≤65 chars) | Meta description (≤155 chars, includes CTA) | og:title | og:description |
+| Page | Title tag (≤65 chars) | Meta description (140–155 chars, includes CTA) | og:title | og:description |
 |---|---|---|---|---|
 | Home (`index.html`) | | | | |
 | Services (`services.html`) | | | | |
 | About (`about.html`) | | | | |
+| Gallery (`gallery.html`) | | | | |
 | Contact (`contact.html`) | | | | |
 
 *Title tag rules: keyword first, business name last, separated by `—` or `\|`. Example: `Plumber in Swindon — Hartley Plumbing`. H1s are brand copy; title tags are for search — they should differ.*
 
-*Meta description rules: one sentence, under 155 characters, ends with a clear CTA. Example: `Gas Safe registered plumber covering Swindon and Wiltshire. Available 7 days. Call for a free quote.`*
+*Meta description rules: one sentence, **140–155 characters**, ends with a clear CTA. Example: `Gas Safe registered plumber covering Swindon and Wiltshire. Available 7 days. Call for a free quote.`*
+
+*Gallery page title tag example: `Our Work — Hartley Plumbing, Swindon`. Meta description example: `Boiler installations, bathroom refurbishments, and heating repairs across Swindon and Wiltshire. Browse our recent jobs and call for a free quote.`* (143 chars — target 140–155)*
 
 ### LocalBusiness JSON-LD schema
 
@@ -198,6 +250,8 @@ All unique microcopy gathered in one place for easy review:
 - **Form success message:**
 - **404 page message:**
 - **Footer tagline:**
+- **Gallery teaser link text:** *(e.g. "See all our work →")*
+- **Gallery page strapline:** *(optional one-liner beneath the gallery H1)*
 
 ---
 
@@ -225,6 +279,10 @@ All images are served from the NeoBookworm R2 library. No Midjourney prompts req
 
 **Notes on image placement:**
 *(Specify here which shared assets are used and in which sections, if any.)*
+
+> **`width` and `height` attributes:** Every `<img>` tag must include `width` and `height` attributes matching the image's natural pixel dimensions. This lets the browser reserve space before the file loads, preventing layout shift (CLS). Specify the expected dimensions for each image in the notes column above.
+
+> **Gallery — no images at demo stage.** The gallery teaser (index.html) and full gallery page (gallery.html) use icon/text cards only. No R2 URLs are assigned to gallery cards until productionisation. Do not add placeholder `<img>` tags to gallery cards.
 
 ---
 
@@ -255,8 +313,10 @@ Other interactive features: vanilla JS only, no npm libraries. Map libraries are
 
 Any accessibility considerations specific to this design:
 
-- Colour contrast: confirm `--color-text` on `--color-bg` meets WCAG AA
+- Colour contrast: confirm `--color-text` on `--color-bg` meets WCAG AA (4.5:1 for body text, 3:1 for large text)
 - All R2 images must have descriptive `alt` attributes specified here, not left to the builder
+- Every `<img>` tag must have `width` and `height` attributes matching natural pixel dimensions (prevents CLS)
+- Gallery cards: Lucide icons must have `aria-hidden="true"` (decorative); job type heading provides the accessible label for the card
 - [etc]
 
 ---
