@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://[fill-in-after-deploy]/sitemap.xml
