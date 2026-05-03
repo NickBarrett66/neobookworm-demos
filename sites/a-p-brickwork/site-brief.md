@@ -61,8 +61,8 @@
 **Notes on image usage:** All R2 library images — confirm driveway-paving slug exists in R2 before build
 
 ## 10. Gallery
-**Section heading:** [generated — please verify] "Work Across Reading & Berkshire"
-**Homepage teaser heading:** [generated — please verify] "Recent Jobs"
+**Section heading:**  "Work Across Reading & Berkshire"
+**Homepage teaser heading:**  "Recent Jobs"
 
 > **Demo stage note:** All gallery cards are icon + text only. No images at demo stage.
 > Real client photos replace the icons at productionisation — zero structural change required.
@@ -79,7 +79,7 @@
 > **Note:** No public reviews were found to generate real micro-quotes. Gallery card micro-quotes left blank — please populate from your own knowledge of the business or leave empty for demo.
 
 ## 11. Anything else
-- The business has operated under the name "A P Brickwork" but is incorporated as "A & P Brickwork Ltd" — confirm which trading name to use on the site
+- The business has operated under the name "A P Brickwork" but is incorporated as "A & P Brickwork Ltd" — confirm which trading name to use on the site - always use A p Brickwork
 - The permeable-driveways.co.uk domain is their contact email domain, suggesting that permeable/SuDS work may be their primary positioning — worth leaning into this as a differentiator on the site
 - Competitor landscape in Reading is busy (Terrafirma Paving, KS Paving, Ground Force Paving, Berkshire Asphalt, New Driveway Company) — all have polished websites with photo galleries. The opportunity is to position A P Brickwork as the local, craft-first specialist who doesn't need a corporate website to prove their quality
 - Agent 5 noted one Yell review flagged a no-show — do not reference or allude to this anywhere on the site
