@@ -132,4 +132,4 @@ The tone of his Nextdoor posts is notably un-salesy: polite, direct, personal si
 
 Competitor landscape: the BS37/South Gloucestershire handyman market has a mix of multi-trade firms (The Bristol Handyman, Bristol Handyman Team Ltd) and platform-listed sole traders. Most competitor websites lean heavily on template design and generic copy ("reliable, professional, affordable"). DM's opportunity is authenticity and locality — a neighbour who happens to have 15+ years of trade experience.
 
-Domain availability: [RESEARCH COULDN'T DETERMINE — please check]. Suggested slug: `dm-handyman-decorating`. Suggested domain to check: `daran-handyman.co.uk`.
+Domain availability: Suggested slug: `dm-handyman-decorating`. Suggested domain to check: `daran-handyman.co.uk`.
