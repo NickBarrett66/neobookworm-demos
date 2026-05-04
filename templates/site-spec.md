@@ -100,6 +100,7 @@ sites/<site-name>/
 > **Universal requirements — every page without exception:**
 > - `<a class="skip-link" href="#main">Skip to content</a>` must be the **first child of `<body>`**
 > - `<main id="main">` must wrap all content between the closing `</header>` and opening `<footer>` tags
+> - The **GA4 snippet** (see Section 5) must be present in `<head>` on every page
 >
 > These are hard requirements for WCAG compliance and achieving a PageSpeed accessibility score of 100.
 
@@ -237,6 +238,23 @@ Paste this block verbatim into the `<head>` of every page (update the `url` fiel
 ```
 
 *Notes: `@type` should match the brief's "Primary trade category" field. `priceRange` is indicative — adjust if the brief implies budget or premium positioning. All fields derived from the brief; fill in completely before handing to the builder.*
+
+### GA4 snippet
+
+Paste this block verbatim into the `<head>` of every page. Replace `[MEASUREMENT_ID]` with the `G-XXXXXXXXXX` value from brief Section 8:
+
+```html
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=[MEASUREMENT_ID]"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '[MEASUREMENT_ID]');
+</script>
+```
+
+*If no Measurement ID is available at build time, add `<!-- GA4: G-XXXXXXXXXX pending -->` as a placeholder comment and backfill before Phase 7 QA. A missing or placeholder GA4 tag is a QA blocker.*
 
 ---
 

@@ -134,6 +134,9 @@ These fields feed directly into the SEO Outputs section of `site-spec.md` and th
 **Google Business Profile URL:**
 *(Leave blank if not yet created. Add later.)*
 
+**Google Analytics 4 Measurement ID:**
+*(Format: `G-XXXXXXXXXX`. Create the GA4 property during Phase 3 if it doesn't exist yet. Leave blank and backfill at deploy if not yet available — but it must be confirmed before Phase 7 (QA).)*
+
 ---
 
 ## 9. Images
