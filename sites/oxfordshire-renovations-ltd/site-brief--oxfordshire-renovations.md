@@ -6,7 +6,7 @@
 **Location served (town, county, radius) / coverage notes:** Didcot and across Oxfordshire. CH registered address: 16 Cottongrass Road, Didcot, OX11 6GF. Facebook presence indicates Oxfordshire-wide coverage.
 **Years in business (real or fictional):** Incorporated 6 January 2021 — approximately 4–5 years trading
 **Size (solo, two-person, small team):** <mark>Small team — likely 2–4 people based on Facebook following (347 likes) and absence of formal review platforms. No employee band data in Notion.</mark>
-**Owner name and one-line persona:** <mark>Unknown — please fill in. Persona placeholder: A hands-on Didcot builder who got tired of watching homeowners overpay for average work and decided to do it properly himself.</mark>
+**Owner name and one-line persona:** Scott Pavely — a Didcot-based builder who incorporated his own renovation company in early 2021 and has built the business on word of mouth, Facebook, and a 100% recommendation rate.
 
 ---
 
