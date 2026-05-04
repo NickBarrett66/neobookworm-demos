@@ -215,10 +215,12 @@
               if (!mapEl) return;
 
               var cirencester = { lat: 51.719, lng: -1.9686 };
+              /** Prefer raster tiles — avoids vector/WebGL init failures that surface as minified `_.Dm` stacks on some GPUs/browsers. */
               var map = new google.maps.Map(mapEl, {
                 center: cirencester,
                 zoom: 10,
                 mapTypeId: "roadmap",
+                renderingType: "RASTER",
                 mapTypeControl: false,
                 streetViewControl: false,
                 fullscreenControl: false,
@@ -315,7 +317,7 @@
               s.src =
                 "https://maps.googleapis.com/maps/api/js?key=" +
                 encodeURIComponent(key) +
-                "&v=quarterly&callback=neoSwiftContactMapsCallback";
+                "&callback=neoSwiftContactMapsCallback";
               document.head.appendChild(s);
             })();
           </script>
