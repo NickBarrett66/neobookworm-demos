@@ -14,7 +14,8 @@
   --color-secondary:     #252530;
   --color-accent:        #C8871A;
   --color-text:          #EFEDE6;
-  --color-text-muted:    #8A8984;
+  /* WCAG AA vs --color-secondary (#252530): ≥4.5:1 for normal text */
+  --color-text-muted:    #949089;
   --color-bg:            #111116;
   --color-bg-alt:        #1A1A22;
   --color-border:        #2C2C38;
@@ -165,7 +166,6 @@ p { max-width: 68ch; }
   font-size:   0.75rem;
   font-style:  italic;
   color:       var(--color-text-muted);
-  opacity:     0.8;
 }
 
 /* ── DEMO MODAL ────────────────────────────────────────────── */

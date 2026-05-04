@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://[fill-in-after-deploy]/sitemap.xml
+Sitemap: https://gs-jones-electrical-njb-demo.netlify.app/sitemap.xml
