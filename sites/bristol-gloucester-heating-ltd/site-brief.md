@@ -19,16 +19,16 @@ Fields highlighted with `<mark>` are AI-generated — review and adjust if neede
 
 **Years in business:** Incorporated January 2024 — approximately 2 years trading
 
-**Size (solo, two-person, small team):** <mark>Most likely 1–2 engineers; the name and early-stage CH filing pattern suggest a founder-led micro-business, possibly a sole director + one other</mark>
+**Size (solo, two-person, small team):** <mark>Most likely 2 engineers; the name and early-stage CH filing pattern suggest a founder-led micro-business, possibly a sole director + one other</mark>
 
-**Owner name and one-line persona:** <mark>Director name not found in public data. Persona: a hands-on engineer who outgrew subcontracting and incorporated to build something of their own — practical, straight-talking, proud of doing the job properly</mark>
+**Owner name and one-line persona:** <mark>two Directors names found in Companies House. Craig Sheehan and Robert Wheeler. Persona: hands-on engineers who outgrew subcontracting and incorporated to build something of their own — practical, straight-talking, proud of doing the job properly</mark>
 
 ---
 
 ## 2. The story
 
 **Why does this business exist?**
-<mark>Formed in early 2024 by an engineer who had been working the Bristol–Gloucester corridor and decided to go out on their own. The name isn't accidental — spanning two cities signals ambition from day one. Based in Berkeley, they sit almost exactly between Bristol and Gloucester, which makes covering both natural rather than a stretch.</mark>
+<mark>Formed in early 2024 by engineers who had been working the Bristol–Gloucester corridor and decided to go out on their own. The name isn't accidental — spanning two cities signals ambition from day one. Based in Berkeley, they sit almost exactly between Bristol and Gloucester, which makes covering both natural rather than a stretch.</mark>
 
 **What do customers most often say about them?**
 No public reviews found yet — consistent with a business under 2 years old operating primarily through word-of-mouth and Facebook. The Facebook page has 23 likes, suggesting genuine early community traction.
@@ -49,19 +49,19 @@ Geography is the angle. Berkeley sits in the Severn Vale equidistant from Bristo
 Facebook lists HVAC alongside standard plumbing/heating, which may indicate a specialism worth foregrounding. Boiler installation is a high-value service worth highlighting if they do it.
 
 **Anything they explicitly don't do?**
-<mark>Unknown — please fill in</mark>
+<mark>Unknown </mark>
 
 ---
 
 ## 4. Accreditations and trust signals
 
-- **Gas Safe registration:** <mark>Unknown — please fill in</mark> — cannot confirm from public data. Critical trust signal and legal requirement for gas work. Must verify before site launch.
-- **CIPHE:** <mark>Unknown — please fill in</mark>
-- **WaterSafe:** <mark>Unknown — please fill in</mark>
+- **Gas Safe registration:** <mark></mark> — cannot confirm from public data. Critical trust signal and legal requirement for gas work. Must verify before site launch.
+- **CIPHE:** <mark>Unknown </mark>
+- **WaterSafe:** <mark>Unknown </mark>
 - **Checkatrade / TrustATrader:** Not found on either platform
 
 **Insurance / guarantees:**
-<mark>Unknown — please fill in</mark> — public liability insurance is standard; confirm level and whether a workmanship guarantee is offered.
+<mark>Unknown</mark> — public liability insurance is standard; confirm level and whether a workmanship guarantee is offered.
 
 > ⚠️ Do not make any Gas Safe claims on the site without confirming registration with the client.
 
@@ -177,7 +177,7 @@ The dual-city name "Bristol & Gloucester" is the strongest brand asset this busi
 | # | Question | Recommended answer |
 |---|---|---|
 | 1 | Is the business Gas Safe registered? | Almost certainly yes for any heating work — confirm registration number so it can appear on the site. Legal requirement; its absence would be a red flag to prospects. |
-| 2 | What is the director / owner's name? | Not available from public CH records or Facebook. Recommend asking the client directly — even a first name improves the About section considerably. |
+
 | 3 | Does the business have a Google Business Profile? | Not found in research. If not, recommend setting one up — free and critical for local SEO in both Bristol and Gloucester. |
 | 4 | Are hours Mon–Fri 9–5 or does the business offer evenings / weekends? | Defaulted to 9–5. Worth confirming — out-of-hours availability is a common differentiator for sole-trader heating engineers. |
 
