@@ -183,27 +183,25 @@
                 mapEl.innerHTML = '<p class="coverage-map__fallback">' + message + '</p>';
               }
 
-              async function initMap() {
-                window.__NB_CONTACT_MAP_INIT_CALLED__ = true;
+              /** Classic markers + raster tiles; unique callback; overlays after first idle (matches Swift Electrical pattern). */
+              window.neoApBrickworkContactMapsCallback = function neoApBrickworkContactMapsCallback() {
+                window.__NB_AP_BRICKWORK_MAP_INIT_CALLED__ = true;
+                var centre = { lat: 51.420, lng: -0.970 }; /* Shinfield / Reading area */
+                var mapEl = document.getElementById('contact-map');
+                if (!mapEl) return;
+
                 try {
-                  var centre = { lat: 51.420, lng: -0.970 }; /* Shinfield / Reading area */
-                  var mapEl = document.getElementById('contact-map');
-                  if (!mapEl) return;
-
-                  await google.maps.importLibrary('maps');
-                  var markerLib = await google.maps.importLibrary('marker');
-                  var Marker = markerLib.Marker;
-
                   var map = new google.maps.Map(mapEl, {
                     center: centre,
                     zoom: 10,
+                    mapTypeId: 'roadmap',
+                    renderingType: 'RASTER',
                     mapTypeControl: false,
                     streetViewControl: false,
                     fullscreenControl: false,
                   });
 
                   var accentColor = '#B85C38';
-                  var darkColor   = '#4E342E';
 
                   function markerIcon(label) {
                     var safe = String(label)
@@ -222,52 +220,54 @@
                     };
                   }
 
-                  var coverageCircle = new google.maps.Circle({
-                    map: map,
-                    center: centre,
-                    radius: 24140, /* ~15 miles in metres */
-                    strokeColor: accentColor,
-                    strokeOpacity: 0.75,
-                    strokeWeight: 2,
-                    fillColor: accentColor,
-                    fillOpacity: 0.08,
-                  });
-
-                  function refitView() {
-                    var bounds = coverageCircle.getBounds();
-                    if (bounds) map.fitBounds(bounds, { top: 20, right: 20, bottom: 20, left: 20 });
-                  }
-                  refitView();
-
-                  var locations = [
-                    { pos: { lat: 51.454, lng: -0.973 }, label: 'Re', title: 'Reading' },
-                    { pos: { lat: 51.420, lng: -0.967 }, label: 'Sh', title: 'Shinfield' },
-                    { pos: { lat: 51.441, lng: -0.941 }, label: 'Ea', title: 'Earley' },
-                    { pos: { lat: 51.483, lng: -0.981 }, label: 'Ca', title: 'Caversham' },
-                    { pos: { lat: 51.410, lng: -0.832 }, label: 'Wo', title: 'Wokingham' },
-                    { pos: { lat: 51.415, lng: -0.745 }, label: 'Br', title: 'Bracknell' },
-                  ];
-
-                  locations.forEach(function (loc) {
-                    new Marker({
+                  google.maps.event.addListenerOnce(map, 'idle', function () {
+                    var coverageCircle = new google.maps.Circle({
                       map: map,
-                      position: loc.pos,
-                      title: loc.title,
-                      icon: markerIcon(loc.label),
+                      center: centre,
+                      radius: 24140, /* ~15 miles in metres */
+                      strokeColor: accentColor,
+                      strokeOpacity: 0.75,
+                      strokeWeight: 2,
+                      fillColor: accentColor,
+                      fillOpacity: 0.08,
                     });
-                  });
 
-                  if (typeof ResizeObserver !== 'undefined') {
-                    var ro = new ResizeObserver(function () {
-                      google.maps.event.trigger(map, 'resize');
-                      refitView();
+                    function refitView() {
+                      var bounds = coverageCircle.getBounds();
+                      if (bounds) map.fitBounds(bounds, { top: 20, right: 20, bottom: 20, left: 20 });
+                    }
+                    refitView();
+
+                    var locations = [
+                      { pos: { lat: 51.454, lng: -0.973 }, label: 'Re', title: 'Reading' },
+                      { pos: { lat: 51.420, lng: -0.967 }, label: 'Sh', title: 'Shinfield' },
+                      { pos: { lat: 51.441, lng: -0.941 }, label: 'Ea', title: 'Earley' },
+                      { pos: { lat: 51.483, lng: -0.981 }, label: 'Ca', title: 'Caversham' },
+                      { pos: { lat: 51.410, lng: -0.832 }, label: 'Wo', title: 'Wokingham' },
+                      { pos: { lat: 51.415, lng: -0.745 }, label: 'Br', title: 'Bracknell' },
+                    ];
+
+                    locations.forEach(function (loc) {
+                      new google.maps.Marker({
+                        map: map,
+                        position: loc.pos,
+                        title: loc.title,
+                        icon: markerIcon(loc.label),
+                      });
                     });
-                    ro.observe(mapEl);
-                  }
+
+                    if (typeof ResizeObserver !== 'undefined') {
+                      var ro = new ResizeObserver(function () {
+                        google.maps.event.trigger(map, 'resize');
+                        refitView();
+                      });
+                      ro.observe(mapEl);
+                    }
+                  });
                 } catch (err) {
                   showContactMapError('Map unavailable — please call <strong>07990 761750</strong> or use the form to confirm your postcode is covered.');
                 }
-              }
+              };
 
               (function loadMapsApi() {
                 var key = typeof window.__GMAPS_KEY__ === 'string' ? window.__GMAPS_KEY__.trim() : '';
@@ -283,18 +283,23 @@
                   showContactMapError('Map unavailable — please call <strong>07990 761750</strong> or use the form to confirm your postcode is covered.');
                 };
 
+                if (window.__NB_AP_BRICKWORK_MAPS_API_REQUESTED__) return;
+                window.__NB_AP_BRICKWORK_MAPS_API_REQUESTED__ = true;
+
                 var s = document.createElement('script');
                 s.async = true;
+                s.defer = true;
                 s.onerror = function () {
                   showContactMapError('Map failed to load — please call <strong>07990 761750</strong> or use the contact form.');
                 };
                 s.src = 'https://maps.googleapis.com/maps/api/js?key=' +
-                  encodeURIComponent(key) + '&v=weekly&loading=async&callback=initMap';
-                document.body.appendChild(s);
+                  encodeURIComponent(key) + '&callback=neoApBrickworkContactMapsCallback';
 
-                window.__NB_CONTACT_MAP_INIT_CALLED__ = false;
+                window.__NB_AP_BRICKWORK_MAP_INIT_CALLED__ = false;
+                document.head.appendChild(s);
+
                 setTimeout(function () {
-                  if (window.__NB_CONTACT_MAP_INIT_CALLED__) return;
+                  if (window.__NB_AP_BRICKWORK_MAP_INIT_CALLED__) return;
                   showContactMapError('Map took too long to load — this is usually an API key restriction or billing issue. Please use the contact form.');
                 }, 8000);
               })();

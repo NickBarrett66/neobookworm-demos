@@ -334,8 +334,9 @@
 <!-- ── GOOGLE MAPS — service area radius circle ──────────────── -->
 <script src="js/maps-config.js"></script>
 <script>
-  /* Exposed globally for Maps bootstrap callback=initGSJonesMap */
-  window.initGSJonesMap = async function initGSJonesMap() {
+  /** Classic markers + raster tiles; unique callback; overlays after first idle (matches Swift Electrical pattern). */
+  window.neoGsJonesElectricalMapsCallback = function neoGsJonesElectricalMapsCallback() {
+    window.__NB_GS_JONES_MAP_INIT_CALLED__ = true;
     var bedminster = { lat: 51.4420, lng: -2.5991 };
     var mapEl = document.getElementById("gs-jones-map");
 
@@ -351,10 +352,9 @@
     }
 
     try {
-      await google.maps.importLibrary("maps");
-      const { Marker } = await google.maps.importLibrary("marker");
+      if (!mapEl) return;
 
-      /* Dark map style to match charcoal site aesthetic */
+      /* Dark map style — supported on raster roadmap tiles */
       var darkStyle = [
         { elementType: "geometry",        stylers: [{ color: "#1A1A22" }] },
         { elementType: "labels.text.fill",stylers: [{ color: "#8A8984" }] },
@@ -368,11 +368,11 @@
         { featureType: "transit",         stylers: [{ visibility: "off" }] }
       ];
 
-      if (!mapEl) return;
-
       var map = new google.maps.Map(mapEl, {
         center:            bedminster,
         zoom:              11,
+        mapTypeId:         "roadmap",
+        renderingType:     "RASTER",
         styles:            darkStyle,
         disableDefaultUI:  false,
         zoomControl:       true,
@@ -380,31 +380,6 @@
         streetViewControl: false,
         fullscreenControl: false,
       });
-
-      /* Amber circle — 12 miles = 19,312 metres */
-      var coverageCircle = new google.maps.Circle({
-        map:           map,
-        center:        bedminster,
-        radius:        19312,
-        strokeColor:   "#C8871A",
-        strokeOpacity: 0.85,
-        strokeWeight:  2,
-        fillColor:     "#C8871A",
-        fillOpacity:   0.07,
-      });
-
-      function fitToCircle() {
-        var bounds = coverageCircle.getBounds();
-        if (bounds) map.fitBounds(bounds, 40);
-      }
-      fitToCircle();
-
-      if (typeof ResizeObserver !== "undefined") {
-        new ResizeObserver(function () {
-          google.maps.event.trigger(map, "resize");
-          fitToCircle();
-        }).observe(mapEl);
-      }
 
       function markerIcon(label) {
         var svg =
@@ -421,22 +396,48 @@
         };
       }
 
-      var towns = [
-        { pos: { lat: 51.4420, lng: -2.5991 }, label: "Bd", title: "Bedminster" },
-        { pos: { lat: 51.4357, lng: -2.6130 }, label: "Sv", title: "Southville" },
-        { pos: { lat: 51.4454, lng: -2.5734 }, label: "Td", title: "Totterdown" },
-        { pos: { lat: 51.4219, lng: -2.5488 }, label: "Br", title: "Brislington" },
-        { pos: { lat: 51.4330, lng: -2.5723 }, label: "Kn", title: "Knowle" },
-        { pos: { lat: 51.4793, lng: -2.5757 }, label: "Bi", title: "Bishopston" },
-        { pos: { lat: 51.4613, lng: -2.6168 }, label: "Cl", title: "Clifton" },
-      ];
+      google.maps.event.addListenerOnce(map, "idle", function () {
+        var coverageCircle = new google.maps.Circle({
+          map:           map,
+          center:        bedminster,
+          radius:        19312,
+          strokeColor:   "#C8871A",
+          strokeOpacity: 0.85,
+          strokeWeight:  2,
+          fillColor:     "#C8871A",
+          fillOpacity:   0.07,
+        });
 
-      towns.forEach(function (t) {
-        new Marker({
-          map:      map,
-          position: t.pos,
-          title:    t.title,
-          icon:     markerIcon(t.label),
+        function fitToCircle() {
+          var bounds = coverageCircle.getBounds();
+          if (bounds) map.fitBounds(bounds, 40);
+        }
+        fitToCircle();
+
+        if (typeof ResizeObserver !== "undefined") {
+          new ResizeObserver(function () {
+            google.maps.event.trigger(map, "resize");
+            fitToCircle();
+          }).observe(mapEl);
+        }
+
+        var towns = [
+          { pos: { lat: 51.4420, lng: -2.5991 }, label: "Bd", title: "Bedminster" },
+          { pos: { lat: 51.4357, lng: -2.6130 }, label: "Sv", title: "Southville" },
+          { pos: { lat: 51.4454, lng: -2.5734 }, label: "Td", title: "Totterdown" },
+          { pos: { lat: 51.4219, lng: -2.5488 }, label: "Br", title: "Brislington" },
+          { pos: { lat: 51.4330, lng: -2.5723 }, label: "Kn", title: "Knowle" },
+          { pos: { lat: 51.4793, lng: -2.5757 }, label: "Bi", title: "Bishopston" },
+          { pos: { lat: 51.4613, lng: -2.6168 }, label: "Cl", title: "Clifton" },
+        ];
+
+        towns.forEach(function (t) {
+          new google.maps.Marker({
+            map:      map,
+            position: t.pos,
+            title:    t.title,
+            icon:     markerIcon(t.label),
+          });
         });
       });
     } catch (err) {
@@ -463,12 +464,17 @@
       }
       return;
     }
+
+    if (window.__NB_GS_JONES_MAPS_API_REQUESTED__) return;
+    window.__NB_GS_JONES_MAPS_API_REQUESTED__ = true;
+
     var s = document.createElement("script");
     s.async = true;
+    s.defer = true;
     s.src =
       "https://maps.googleapis.com/maps/api/js?key=" +
       encodeURIComponent(key) +
-      "&loading=async&callback=initGSJonesMap";
+      "&callback=neoGsJonesElectricalMapsCallback";
     s.onerror = function () {
       var mapEl = document.getElementById("gs-jones-map");
       if (!mapEl) return;
@@ -480,7 +486,7 @@
         "Could not load the Google Maps script (network blocked or script URL blocked). Check connectivity and ad blockers.";
       mapEl.appendChild(errP);
     };
-    document.body.appendChild(s);
+    document.head.appendChild(s);
   })();
 </script>
 
