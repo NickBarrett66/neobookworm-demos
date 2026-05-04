@@ -50,19 +50,19 @@ Longevity without a website. A Bristol roofing contractor with over a decade of 
 Lead work is a skilled specialism worth calling out — many roofers subcontract it. If A. P. Giles does it in-house, that's a genuine differentiator worth foregrounding.
 
 **Anything they explicitly don't do?**
-<mark>Unknown — please fill in</mark>
+<mark>Unknown </mark>
 
 ---
 
 ## 4. Accreditations and trust signals
 
-- **Public liability insurance:** <mark>Unknown — please fill in</mark> — essential to mention on site; confirm with owner
-- **NFRC membership:** <mark>Unknown — please fill in</mark> — not confirmed, but worth asking; NFRC is the gold standard UK roofing accreditation
-- **TrustMark:** <mark>Unknown — please fill in</mark> — not confirmed; worth asking
+- **Public liability insurance:** <mark>Unknown</mark> — essential to mention on site; confirm with owner
+- **NFRC membership:** <mark>Unknown</mark> — not confirmed, but worth asking; NFRC is the gold standard UK roofing accreditation
+- **TrustMark:** <mark>Unknown</mark> — not confirmed; worth asking
 - **Companies House registration:** 09996699 — can be referenced as a trust signal; confirms legitimate limited company
 
 **Insurance / guarantees:**
-<mark>Unknown — please fill in</mark> — standard for Bristol roofers to offer workmanship guarantees; confirm if they do.
+<mark>Unknown</mark> — standard for Bristol roofers to offer workmanship guarantees; confirm if they do.
 
 > ⚠️ With no review platform presence, accreditations and insurance carry extra weight here. If the owner can provide certificates, include badges. If none, lead with years in business and referral track record.
 
