@@ -6,8 +6,7 @@
    Mobile-first. No frameworks.
 ============================================================ */
 
-/* ── GOOGLE FONTS ───────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=DM+Sans:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+/* Fonts load via <link> in each HTML file (avoids render-blocking @import). */
 
 /* ── CSS CUSTOM PROPERTIES ──────────────────────────────── */
 :root {
@@ -608,7 +607,7 @@ strong { font-weight: 600; }
   font-size: 0.9rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -624,7 +623,7 @@ strong { font-weight: 600; }
   stroke-linejoin: round;
   transition: transform 0.15s;
 }
-.text-link:hover { color: var(--color-primary); }
+.text-link:hover { color: var(--color-accent); }
 .text-link:hover svg { transform: translateX(3px); }
 
 @media (min-width: 600px) {
@@ -1290,17 +1289,23 @@ strong { font-weight: 600; }
 
 .footer-area-note {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.78);
   margin-top: 0.5rem;
   line-height: 1.5;
 }
 
-.footer-trust h4 {
-  color: rgba(255,255,255,0.55);
+.footer-heading {
+  margin: 0;
+}
+
+.footer-trust .footer-heading {
+  color: rgba(255,255,255,0.78);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 .footer-trust-lines {
   display: flex;
@@ -1311,12 +1316,14 @@ strong { font-weight: 600; }
   margin-bottom: 1.25rem;
 }
 
-.footer-nav-section h4 {
-  color: rgba(255,255,255,0.55);
+.footer-nav-section .footer-heading {
+  color: rgba(255,255,255,0.78);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 
 .footer-nav-links {
@@ -1344,7 +1351,17 @@ strong { font-weight: 600; }
   gap: 0.5rem 2rem;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.72);
+}
+
+.footer-bottom a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.footer-bottom a:hover {
+  color: var(--color-white);
 }
 
 /* ── ACCREDITATION BADGE CSS (from NeoBookworm library) ─── */
