@@ -10,7 +10,7 @@
       content="Book an electrician in Cirencester and the surrounding Cotswolds. Call 01285 740 231 or send a message. Same-day written quotes after a site visit."
     />
 
-    <link rel="canonical" href="https://swift-electrical.netlify.app/contact" />
+    <link rel="canonical" href="https://swift-electrical-njb-demo.netlify.app/contact" />
     <meta property="og:site_name" content="Swift Electrical Ltd" />
     <meta property="og:title" content="Contact — Swift Electrical, Cirencester" />
     <meta
@@ -18,8 +18,8 @@
       content="Book an electrician in Cirencester and the surrounding Cotswolds. Call 01285 740 231 or send a message. Same-day written quotes after a site visit."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com/contact" />
-    <meta property="og:image" content="https://example.com/images/hero.jpg" />
+    <meta property="og:url" content="https://swift-electrical-njb-demo.netlify.app/contact" />
+    <meta property="og:image" content="https://swift-electrical-njb-demo.netlify.app/images/hero.jpg" />
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
@@ -209,11 +209,8 @@
 
           <script src="js/maps-config.js"></script>
           <script>
-            async function initMap() {
+            function initMap() {
               const cirencester = { lat: 51.719, lng: -1.9686 };
-
-              await google.maps.importLibrary("maps");
-              const { Marker } = await google.maps.importLibrary("marker");
 
               const map = new google.maps.Map(document.getElementById("map"), {
                 center: cirencester,
@@ -280,7 +277,7 @@
               ];
 
               locations.forEach((loc) => {
-                new Marker({
+                new google.maps.Marker({
                   map: map,
                   position: loc.pos,
                   title: loc.title,
@@ -302,10 +299,11 @@
               }
               var s = document.createElement("script");
               s.async = true;
+              s.defer = true;
               s.src =
                 "https://maps.googleapis.com/maps/api/js?key=" +
                 encodeURIComponent(key) +
-                "&loading=async&callback=initMap";
+                "&callback=initMap";
               document.body.appendChild(s);
             })();
           </script>
