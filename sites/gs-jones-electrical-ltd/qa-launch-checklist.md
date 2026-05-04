@@ -164,3 +164,9 @@ For a demo site (not a real client site), analytics and cookie banners are usual
 **All boxes ticked?** Proceed to Phase 7 (Netlify deploy).
 
 **Commit with message:** *`<site-name>`: QA complete*
+
+Category	    Score
+Performance     90
+Accessibility   100
+Best Practices  96
+SEO             100
