@@ -4,16 +4,16 @@
 **Business name:** C.E.G Painting & Decorating (trading name); registered as ACM Painting & Decorating Limited (CH 08725068)
 **Trade / category:** Painter & Decorator
 **Location served (town, county, radius):** Corsham, Wiltshire; likely covers Chippenham, Box, Melksham, Calne, Bath — standard ~15–20 mile radius for a Corsham decorator
-**Map / coverage visual (if any):** [RESEARCH COULDN'T DETERMINE — please fill in; suggest simple text list of towns served, no map needed at demo stage]
-**Years in business (real or fictional):** 11+ years (incorporated October 2013; over a decade of continuous trading)
-**Size (solo, two-person, small team):** [RESEARCH COULDN'T DETERMINE — Facebook page (90% recommendation rating) suggests consistent local work; likely a sole trader or very small team; treat as solo/owner-operator unless known otherwise]
-**Owner name and one-line persona:** [RESEARCH COULDN'T DETERMINE — initials C.E.G. suggest the owner's name begins with those letters, possibly a first name; no name surfaced publicly] *[generated — please verify]* Suggest placeholder: "The kind of decorator who takes on jobs others won't touch, and finishes them on time."
+**Map / coverage visual (if any):** Corsham, Wiltshire; likely covers Chippenham, Box, Melksham, Calne, Bath — standard ~15–20 mile radius for a Corsham decorator
+**Years in business (real or fictional):** 13+ years (incorporated October 2013; over a decade of continuous trading)
+**Size (solo, two-person, small team):** Facebook page (90% recommendation rating) suggests consistent local work; likely a sole trader or very small team; treat as solo/owner-operator unless known otherwise
+**Owner name and one-line persona:** Aaron McBride: "The kind of decorator who takes on jobs others won't touch, and finishes them on time."
 
 ---
 
 ## 2. The story
 **Why does this business exist?**
-*[generated — please verify]* A Corsham-based decorator who went limited in 2013 and has been building a local reputation through word of mouth ever since. Over a decade in the trade means C.E.G. has worked through every kind of property the area throws at them — Cotswold stone cottages, Victorian terraces, modern new builds. The Facebook presence and 90% recommendation rating tell you something: this isn't a business that needs to chase leads. It's one that ought to be found.
+A Corsham-based decorator who went limited in 2013 and has been building a local reputation through word of mouth ever since. Over a decade in the trade means C.E.G. has worked through every kind of property the area throws at them — Cotswold stone cottages, Victorian terraces, modern new builds. The Facebook presence and 90% recommendation rating tell you something: this isn't a business that needs to chase leads. It's one that ought to be found.
 
 **What do customers most often say about them?**
 No individual review quotes were recoverable from Facebook (robots.txt blocked). Facebook rating of 90% (recommendation-based) indicates solid satisfaction. Corsham-area decorator reviews on aggregator sites typically praise: tidiness, keeping to time, quality of preparation work, and reliability. Applying those trade norms: customers are likely saying this decorator is thorough, turns up when they say, and leaves the place as they found it.
@@ -31,34 +31,34 @@ Over a decade of continuous trading as a limited company in a competitive Wiltsh
 - **Residential work** (primary; likely some commercial given Ltd structure)
 
 **Any specialisms or premium offerings worth highlighting?**
-[RESEARCH COULDN'T DETERMINE — the Facebook page (@CorshamDecorators) is the only digital footprint; no specialist finishes or premium services identified. If the owner does colour consultation, period properties, or specific wallpaper types, include these.]
+None
 
 **Anything they explicitly don't do?**
-[RESEARCH COULDN'T DETERMINE — please fill in]
+No
 
 ---
 
 ## 4. Accreditations and trust signals
 - **Likely fully insured** (standard for a Ltd company operating residentially; not confirmed)
-- **PDA membership (Painting & Decorating Association):** [RESEARCH COULDN'T DETERMINE — worth asking; is the major trade mark of quality for decorators]
-- **TrustMark registration:** [RESEARCH COULDN'T DETERMINE — check; significant trust signal if held]
-- **Checkatrade or TrustATrader profile:** [RESEARCH COULDN'T DETERMINE — not found in search results; may have profiles under different names]
+- **PDA membership (Painting & Decorating Association):** [worth asking; is the major trade mark of quality for decorators]
+- **TrustMark registration:** [check; significant trust signal if held]
+- **Checkatrade or TrustATrader profile:** [not found in search results; may have profiles under different names]
 - **10+ years trading / Ltd company status:** Implicit credibility signal — worth surfacing on the site ("in business since 2013")
 
 **Insurance / guarantees:**
-[RESEARCH COULDN'T DETERMINE — confirm public liability insurance; this is the standard assurance homeowners expect and should be stated explicitly]
+[confirm public liability insurance; this is the standard assurance homeowners expect and should be stated explicitly]
 
 ---
 
 ## 5. Tone of voice
 **Pick 3–5 adjectives that describe how this business talks:**
-*[generated — please verify]* Unhurried. Plainspoken. Craft-proud. Understated. Local.
+Unhurried. Plainspoken. Craft-proud. Understated. Local.
 
 **Describe the voice as a person:**
-*[generated — please verify]* A tradesperson who's been doing this long enough to know what good work looks like and doesn't feel the need to oversell it. Quiet confidence. Answers the phone on the second ring. Gives a straight price.
+A tradesperson who's been doing this long enough to know what good work looks like and doesn't feel the need to oversell it. Quiet confidence. Answers the phone on the second ring. Gives a straight price.
 
 **Example of a sentence that sounds like this business:**
-*[generated — please verify]* "We've been decorating homes in Corsham for over ten years — drop us a message and we'll come and take a look."
+"We've been decorating homes in Corsham for over ten years — drop us a message and we'll come and take a look."
 
 **Example of a sentence that would feel off-brand:**
 "Transform your living space with our premium bespoke interior solutions tailored to your unique vision." (Too corporate, too salesy, too London.)
@@ -67,24 +67,24 @@ Over a decade of continuous trading as a limited company in a competitive Wiltsh
 
 ## 6. Visual direction
 **Aesthetic direction:**
-*[generated — please verify]* Craftsman-quiet. Nothing flashy. Clean whites, a considered accent colour, well-chosen typography that suggests precision without pretension. Think: the calligraphy on a good paint tin label, not a glossy magazine spread. The site should look like it was made by someone who cares about finish — because that's what the client cares about.
+Craftsman-quiet. Nothing flashy. Clean whites, a considered accent colour, well-chosen typography that suggests precision without pretension. Think: the calligraphy on a good paint tin label, not a glossy magazine spread. The site should look like it was made by someone who cares about finish — because that's what the client cares about.
 
 **Colour direction:**
-*[generated — please verify]* Off-white or warm white as the primary canvas. A grounded earthy accent — sage green, muted slate blue, or warm charcoal — to evoke quality paints without referencing any brand. Avoid trade-y bold blues or aggressive greens. The palette should feel like the inside of a well-kept Wiltshire home.
+Off-white or warm white as the primary canvas. A grounded earthy accent — sage green, muted slate blue, or warm charcoal — to evoke quality paints without referencing any brand. Avoid trade-y bold blues or aggressive greens. The palette should feel like the inside of a well-kept Wiltshire home.
 
 **Reference images or sites (optional):**
 [RESEARCH COULDN'T DETERMINE — please fill in; Nick Irelan-Hill's site at nih-decorating.co.uk and S.J. Lewis at sjlewispainterdecorator.co.uk are clean-but-generic local competitors to deliberately contrast against]
 
 **Typography direction:**
-*[generated — please verify]* Display: something with subtle craft character — a slightly humanist serif (e.g. Playfair Display, Cormorant) or a clean geometric with warmth (Josefin Sans). Body: clear, readable, nothing that draws attention to itself — DM Sans or Lato. Avoid Inter, Roboto. The combination should feel made, not generated.
+Display: something with subtle craft character — a slightly humanist serif (e.g. Playfair Display, Cormorant) or a clean geometric with warmth (Josefin Sans). Body: clear, readable, nothing that draws attention to itself — DM Sans or Lato. Avoid Inter, Roboto. The combination should feel made, not generated.
 
 ---
 
 ## 7. Contact details
 **Phone number(s):** 07875 461486 (from Notion record; Yell shows a different number — 07906 188782 — under related listings; primary should be the Notion record number)
 **Email address:** c.e.gdecorating@hotmail.com
-**Physical address or service area description:** 17 South St, Corsham, SN13 9HB (from Yell listing for ACM Painting & Decorating Ltd at same phone / location) *[please verify this is current trading address]*
-**Hours of operation:** [RESEARCH COULDN'T DETERMINE — please fill in]
+**Physical address or service area description:** 17 South St, Corsham, SN13 9HB (from Yell listing for ACM Painting & Decorating Ltd at same phone / location) 
+**Hours of operation:** standard 9-5
 **Social media handles (optional):** Facebook: @CorshamDecorators (https://www.facebook.com/CorshamDecorators/)
 
 ---
@@ -94,7 +94,7 @@ Over a decade of continuous trading as a limited company in a competitive Wiltsh
 **Business address / area served:** Corsham, Wiltshire; Chippenham; Bath and surrounding villages
 **Primary trade category (schema @type):** `HomeAndConstructionBusiness` (subtype: Painter & Decorator)
 **Target location keywords (2–3):** "painter decorator Corsham", "decorator Chippenham", "painting decorating Wiltshire"
-**Google Business Profile URL:** [RESEARCH COULDN'T DETERMINE — no GBP found in search results; may not have one]
+**Google Business Profile URL:** [no GBP found in search results; may not have one]
 
 ---
 
@@ -108,8 +108,8 @@ Over a decade of continuous trading as a limited company in a competitive Wiltsh
 ---
 
 ## 10. Gallery
-**Section heading:** *[generated — please verify]* "Work we're proud of"
-**Homepage teaser heading:** *[generated — please verify]* "A decade of finishing rooms right"
+**Section heading:** "Work we're proud of"
+**Homepage teaser heading:** "A decade of finishing rooms right"
 
 > **Demo stage note:** All gallery cards are icon + text only. No images at demo stage.
 > Real client photos replace the icons at productionisation — zero structural change required.
