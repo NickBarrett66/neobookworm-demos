@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>About Harvey's Kitchen Fitters — Bath's Family Trade</title>
-  <meta name="description" content="25 years fitting kitchens across Bath and Somerset. Meet the Harvey family team and find out how we work. Family-run, fully managed, no shortcuts." />
+  <title>Kitchen Portfolio — Harvey's Kitchen Fitters, Bath</title>
+  <meta name="description" content="See Harvey's finished kitchen installations across Bath and Somerset. 25 years of domestic and contract kitchen fitting — browse our portfolio." />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="About Harvey's Kitchen Fitters — Bath's Family Trade" />
-  <meta property="og:description" content="Family-run kitchen fitters in Bath for over 25 years. Personal service, full project management, and a team who've seen every Bath kitchen." />
+  <meta property="og:title" content="Kitchen Portfolio — Harvey's Kitchen Fitters, Bath" />
+  <meta property="og:description" content="25 years of kitchen installations across Bath, Somerset and Wiltshire. Domestic and contract work — all managed by the Harvey family team." />
   <meta property="og:image" content="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/hero.webp" />
-  <meta property="og:url" content="https://harveys-kitchen-fitters-njb-demo.netlify.app/about.html" />
+  <meta property="og:url" content="https://placeholder.netlify.app/gallery.html" />
 
-  <link rel="canonical" href="https://harveys-kitchen-fitters-njb-demo.netlify.app/about.html" />
+  <link rel="canonical" href="https://placeholder.netlify.app/gallery.html" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +21,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+  /* ── Gallery section ── */
+  .gallery-section {
+    padding: 80px 0;
+    background: var(--color-bg-alt);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 900px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .gallery-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .gallery-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+  }
+
+  .gallery-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    color: var(--color-accent);
+  }
+
+  .gallery-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+  }
+
+  .gallery-card-location {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 12px;
+  }
+
+  .gallery-card-quote {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .gallery-cta {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .gallery-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: var(--color-primary);
+  }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -37,26 +117,17 @@
       "addressCountry": "GB"
     },
     "areaServed": "Bath and approximately 25-mile radius — Somerset, Wiltshire, and Bristol fringe",
-    "url": "https://harveys-kitchen-fitters-njb-demo.netlify.app/about.html",
+    "url": "https://placeholder.netlify.app/gallery.html",
     "priceRange": "££",
     "openingHours": "Mo-Su 00:00-23:59"
   }
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ91NBYHCL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-VQ91NBYHCL');
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="demo-banner" data-demo-banner role="alert">
-    <p><strong>Demo site</strong> — This is an example website built by <a href="https://neobookworm.uk" target="_blank" rel="noopener noreferrer">NeoBookworm</a>. Calls and form submissions are disabled.</p>
+    <p><strong>Demo site</strong> — This is an example website built by <a href="https://neobookworm.uk" target="_blank" rel="noopener">NeoBookworm</a>. Calls and form submissions are disabled.</p>
     <button class="demo-banner__close" data-banner-close aria-label="Dismiss demo notice">&#x2715;</button>
   </div>
 
@@ -76,7 +147,7 @@
           <li><a href="index.html" class="nav__link">Home</a></li>
           <li><a href="services.html" class="nav__link">Services</a></li>
           <li><a href="about.html" class="nav__link">About</a></li>
-          <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+          <li><a href="#gallery" class="nav__link">Gallery</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
       </nav>
@@ -105,7 +176,7 @@
         <li><a href="index.html" class="nav__link">Home</a></li>
         <li><a href="services.html" class="nav__link">Services</a></li>
         <li><a href="about.html" class="nav__link">About</a></li>
-        <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+        <li><a href="#gallery" class="nav__link">Gallery</a></li>
         <li><a href="contact.html" class="nav__link">Contact</a></li>
       </ul>
     </nav>
@@ -115,94 +186,86 @@
   <main id="main">
 
     <!-- Page hero -->
-    <section class="page-hero" aria-label="About">
+    <section class="page-hero" aria-label="Portfolio">
       <div class="container">
-        <h1 class="page-hero__headline">The Harvey Family.<br>Bath's Kitchen Fitters.</h1>
-        <p class="page-hero__sub">We've been at this since the 1990s. Not because we had to be — because we're good at it.</p>
+        <h1 class="page-hero__headline">Our Work</h1>
+        <p class="page-hero__sub">25 years of installations — Georgian townhouses, Victorian terraces, new builds, and everything in between. Every kitchen fitted properly, once.</p>
       </div>
     </section>
 
-    <!-- Story section -->
-    <section class="section" aria-label="Our story">
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="gallery-section">
       <div class="container">
-        <div class="about-story__grid">
-          <div>
-            <span class="section-eyebrow">Family Business. Real Craft. No Shortcuts.</span>
-            <h2 class="section-heading">25 Years in One City.</h2>
-            <div class="about-story__body">
-              <p>Harvey's Kitchen Fitters was founded by Adam Harvey and has been a fixture of the Bath trade scene for over 25 years. The Ltd company was formalised in 2013, but the reputation pre-dates it. When you've been fitting kitchens in the same city for that long, word gets around — not because you run marketing campaigns, but because people recommend you to their neighbours.</p>
-              <p>We're a small team. You'll meet the same faces on day one and on the final day. Adam oversees every project personally — that's not a claim, it's how a family business works. We do domestic work for homeowners across Bath, Somerset, and Wiltshire, and we take on contract work for developers and landlords. The common thread: we manage the whole job. Plumbing, electrics, tiling, delivery — all coordinated by us.</p>
-            </div>
-          </div>
-          <div>
-            <img
-              src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/owner.webp"
-              alt="Adam Harvey, owner of Harvey's Kitchen Fitters, Bath"
-              class="about-story__img"
-              loading="lazy" />
-          </div>
+        <div class="section-header">
+          <h2>Recent Projects</h2>
+          <p>A selection of kitchens we've fitted across Bath and the surrounding area</p>
         </div>
-      </div>
-    </section>
+        <div class="gallery-grid">
 
-    <!-- What 25 years means -->
-    <section class="about-features section" aria-label="What 25 years means">
-      <div class="container">
-        <span class="section-eyebrow">Experience</span>
-        <h2 class="section-heading">What 25 Years in Bath Actually Means</h2>
-        <div class="about-features__grid">
-
-          <div class="feature-block">
-            <div class="feature-block__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
             </div>
-            <h3 class="feature-block__title">Every Property Type</h3>
-            <p class="feature-block__body">Georgian townhouses, Victorian terraces, new builds, rental flats. If it's got a kitchen in Bath, we've probably worked in a version of it.</p>
+            <h3>Full Kitchen Replacement</h3>
+            <p class="gallery-card-location">📍 Bath</p>
+            <p class="gallery-card-quote">"Completely transformed — we couldn't be happier with the result."</p>
           </div>
 
-          <div class="feature-block">
-            <div class="feature-block__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 8v4l3 3"/>
-              </svg>
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
-            <h3 class="feature-block__title">Every Constraint</h3>
-            <p class="feature-block__body">Awkward alcoves, load-bearing walls, period features, difficult plumbing routes. Nothing we haven't solved before.</p>
+            <h3>Howdens Fitted Kitchen</h3>
+            <p class="gallery-card-location">📍 Timsbury</p>
+            <p class="gallery-card-quote">"Top notch work — proper craftsmen."</p>
           </div>
 
-          <div class="feature-block">
-            <div class="feature-block__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             </div>
-            <h3 class="feature-block__title">Trade Relationships</h3>
-            <p class="feature-block__body">The good plumbers, electricians, and tilers in Bath don't advertise. We know who they are, and we've worked with them for years.</p>
+            <h3>Integrated Appliance Fit</h3>
+            <p class="gallery-card-location">📍 Midsomer Norton</p>
+            <p class="gallery-card-quote">"Lamona appliances fitted perfectly — looks exactly as planned."</p>
           </div>
 
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </div>
+            <h3>Open-Plan Kitchen Refit</h3>
+            <p class="gallery-card-location">📍 Radstock</p>
+            <p class="gallery-card-quote">"Managed the whole project start to finish — no stress whatsoever."</p>
+          </div>
+
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3>Extra Storage &amp; Utility</h3>
+            <p class="gallery-card-location">📍 Bristol Fringe</p>
+            <p class="gallery-card-quote">"Added a run of larder units we didn't think would fit — they found a way."</p>
+          </div>
+
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3>Full Project Management</h3>
+            <p class="gallery-card-location">📍 Peasedown St John</p>
+            <p class="gallery-card-quote">"From supply to sign-off — a genuinely painless experience."</p>
+          </div>
+
+        </div><!-- /.gallery-grid -->
+
+        <div class="gallery-cta">
+          <p>Like what you see?</p>
+          <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
         </div>
-      </div>
-    </section>
 
-    <!-- How we work -->
-    <section class="about-approach section" aria-label="How we work">
-      <div class="container">
-        <span class="section-eyebrow">How We Work</span>
-        <h2 class="section-heading">Straightforward. Start to Finish.</h2>
-        <p class="about-approach__subhead">Straightforwardly.</p>
-        <div class="about-approach__body">
-          <p>We come out, we measure, we quote honestly. We tell you what the job involves — including the awkward bits. We give you a schedule that accounts for every trade, not just the fitting. We show up when we say we will. We leave the kitchen clean. We don't disappear when something needs adjusting.</p>
-          <p>We're not the cheapest option in Bath. We're the option where the job gets done right, once, without you needing to manage it yourself.</p>
-        </div>
-      </div>
+      </div><!-- /.container -->
     </section>
+    <!-- END GALLERY SECTION -->
 
     <!-- CTA band -->
     <section class="cta-band" aria-label="Get a quote">
@@ -249,11 +312,11 @@
             </li>
             <li class="footer__contact-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              <a href="https://facebook.com/Harveyskitchenfitters" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a href="https://facebook.com/Harveyskitchenfitters" target="_blank" rel="noopener">Facebook</a>
             </li>
             <li class="footer__contact-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-              <a href="https://instagram.com/harveyskitchenfitters" target="_blank" rel="noopener noreferrer">@harveyskitchenfitters</a>
+              <a href="https://instagram.com/harveyskitchenfitters" target="_blank" rel="noopener">@harveyskitchenfitters</a>
             </li>
           </ul>
         </div>
@@ -281,7 +344,7 @@
       </div>
       <div class="footer__base">
         <span>© 2025 Harvey's Kitchen Fitters Ltd · Registered in England &amp; Wales · Companies House: 08621460</span>
-        <a href="https://neobookworm.uk" target="_blank" rel="noopener noreferrer">Website by NeoBookworm</a>
+        <a href="https://neobookworm.uk" target="_blank" rel="noopener">Website by NeoBookworm</a>
       </div>
     </div>
   </footer>
