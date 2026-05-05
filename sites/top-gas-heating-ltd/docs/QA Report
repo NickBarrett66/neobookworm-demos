@@ -1,0 +1,32 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NEOBOOKWORM QA REPORT — Top Gas Heating & Plumbing Ltd
+Tuesday May 5, 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ LIGHTHOUSE SCORES (after fixes)
+Performance:     86/100
+Accessibility:   91/100
+Best Practices:  96/100
+SEO:             100/100
+✅ MOBILE LAYOUT
+375px (iPhone SE):  Pass
+390px (iPhone 14):  Pass
+412px (Pixel 7):    Pass
+✅ GALLERY
+Homepage teaser:    Pass (3 cards + “See all our work →” to `gallery.html`)
+gallery.html:       Pass (6 cards, correct nav)
+Image-free check:   Pass (no `<img>` inside gallery cards)
+✅ GA4 SNIPPET
+index.html:      Already present
+gallery.html:    Already present
+✅ CONTENT & COPY
+No issues found
+✅ BROKEN ASSETS
+- Fixed broken CTA background (the spec URL `cta-bg.webp` was 404). CTA band now uses `about.webp` (200).
+- Replaced Netlify URL placeholders in canonical/OG/robots/sitemap + JSON-LD `url` across all pages.
+- Removed the exposed Google Maps API key from `js/maps-config.js` (now placeholder key; map will use the built-in fallback message unless a local key is provided).
+⚠️  ITEMS REQUIRING YOUR REVIEW
+- Accessibility contrast: `.card-link` uses accent `#D96714` on `#FAF8F5` (fails WCAG for 14px bold; Lighthouse flags “See this service →”). Per repo rules I did **not** change colours to “fix” contrast.
+📁 FILES
+Original backed up to: index-pre-qa.html, gallery-pre-qa.html
+Corrected file saved to: index.html (plus about/services/gallery/contact/robots/sitemap updated)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
