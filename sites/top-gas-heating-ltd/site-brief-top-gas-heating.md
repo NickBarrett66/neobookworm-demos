@@ -32,7 +32,7 @@ Two decades of trading, family roots in the trade, 100% recommendation record �
 <mark>Unknown — please fill in</mark>
 
 ## 4. Accreditations and trust signals
-- **Accreditation 1:** Gas Safe Register — legally required; assumed registered (must verify via gassaferegister.co.uk before copy is written claiming this)
+- **Accreditation 1:** Gas Safe Register - confirmed 05/05/2026
 - **Accreditation 2:** <mark>Unknown — no Checkatrade, TrustATrader, or Which? Trusted Trader listing found. Confirm with Daniel if any trade body memberships held.</mark>
 - **Insurance / guarantees:** <mark>Unknown — please fill in. Standard expectation: public liability insurance. Worth confirming and citing if held.</mark>
 
@@ -110,7 +110,12 @@ Two decades of trading, family roots in the trade, 100% recommendation record �
 | # | Question | Recommended answer |
 |---|---|---|
 | 1 | **Companies House number discrepancy.** Notion record shows CH number 15510018 (incorporated 2024-02-21, matched to "TIP TOP PLUMBING HEATING AND GAS SERVICES LTD"). Companies House search for "Top Gas Heating & Plumbing Limited" returns 05436069 (incorporated 26 April 2005). These are two different companies. The Agent 4 CH match appears to have latched onto the wrong record. | The correct CH number for this business is almost certainly **05436069** (Top Gas Heating & Plumbing Limited, incorporated 2005, Bristol). The Notion record should be corrected. The 2024-incorporated "Tip Top" entity is a different business. |
+A: Notion record updated manually with the correct number
 | 2 | **Gas Safe registration — confirmed?** Not verified against the Gas Safe Register during research. Copy that calls out Gas Safe registration is essential for this trade. | Check gassaferegister.co.uk using business name or address before the brief is used for copy. |
+A: Gas safe register confirmed 05/05/2026
 | 3 | **Active director name.** Endole lists Daniel Alexander Southard as active director, which aligns with "Daniel: 07917 830613" on Facebook. However, Companies House also shows a resigned director born May 1959 (Dennis) — is Dennis still involved operationally? | Assume Daniel is the active lead and primary contact. Dennis may have reduced involvement. Brief is written for Daniel's voice. |
+A: gas safe register is in Daniels name - confirm he is main contact
 | 4 | **Hours of operation.** Not published on Facebook or any directory. | Default Mon–Fri 8am–6pm in the demo. Confirm with Daniel at client stage. |
+A: ok
 | 5 | **Trade body memberships beyond Gas Safe.** No Checkatrade, TrustATrader, or CIPHE listing found. | Confirm with Daniel. If none, Gas Safe alone is the trust anchor — which is still strong and legally meaningful. |
+A: ok
