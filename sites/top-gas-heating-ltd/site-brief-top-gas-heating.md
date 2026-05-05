@@ -32,7 +32,8 @@ Two decades of trading, family roots in the trade, 100% recommendation record �
 <mark>Unknown — please fill in</mark>
 
 ## 4. Accreditations and trust signals
-- **Accreditation 1:** Gas Safe Register - confirmed 05/05/2026
+- **Accreditation 1:** Gas Safe Register - confirmed 05/05/2026 Registration Number
+215587
 - **Accreditation 2:** <mark>Unknown — no Checkatrade, TrustATrader, or Which? Trusted Trader listing found. Confirm with Daniel if any trade body memberships held.</mark>
 - **Insurance / guarantees:** <mark>Unknown — please fill in. Standard expectation: public liability insurance. Worth confirming and citing if held.</mark>
 
@@ -77,10 +78,10 @@ Two decades of trading, family roots in the trade, 100% recommendation record �
 **Google Business Profile URL:** <mark>Not found — no GBP listing identified during research. Worth checking / creating before outreach.</mark>
 
 ## 9. Images
-**Trade category slug:** `plumber`
-**Hero image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/plumber/hero.webp`
-**About image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/plumber/about.webp`
-**CTA background:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/plumber/cta-bg.webp`
+**Trade category slug:** `gas-engineer`
+**Hero image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/hero.webp`
+**About image:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/about.webp`
+**CTA background:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/cta-bg.webp`
 **Notes on image usage:** Facebook shows a bathroom install photo from June 2022. Instagram (@topgas_heating) has reels — potential source of real job photos at productionisation. Boiler/heating imagery should skew toward domestic interiors (radiators, boilers, bathrooms) rather than commercial plant.
 
 ## 10. Gallery
