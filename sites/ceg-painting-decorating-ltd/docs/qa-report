@@ -1,0 +1,34 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NEOBOOKWORM QA REPORT — C.E.G Painting & Decorating
+05 May 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STANDARD ELEMENTS (all 5 pages)
+lang="en":              Present on all pages
+viewport meta:          Present on all pages
+meta description:       Present on all pages
+GA4 snippet:            G-VQ91NBYHCL present on all pages
+skip-link:              Present on all pages
+main#main:              Present on all pages
+tel: links:             Present on all pages
+lazy loading:           index.html ✅ (hero=eager, about=lazy); about.html ✅ (eager, above fold); others have no <img> tags — correct (gallery is icon-only, services/contact have no images)
+alt attributes:         All <img> tags have alt text (2/2 on index, 1/1 on about, 0 elsewhere — correct)
+noopener noreferrer:    All target="_blank" links covered on all pages
+Copyright year:         © 2026 on all pages ✅
+
+✅ CONTENT & COPY
+No lorem ipsum, [PLACEHOLDER], or content gaps found
+"Your name" in contact.html is a form input placeholder — correct
+Business name consistent throughout
+All gallery cards are icon/text only — no <img> tags ✅
+
+⚠️ NEEDS YOUR REVIEW
+[NETLIFY-URL] placeholders: 3 per page (og:url, canonical, JSON-LD url) — 
+  update all 5 files after Netlify deploy
+streetAddress "17 South St" in JSON-LD on all 5 pages — 
+  verify against Facebook before deploy (flagged at spec stage)
+Lighthouse / mobile screenshots: pending — run separately in Claude Code once deployed
+
+📁 OUTPUT
+No fixes required — all 5 files pass as uploaded. No corrected files to download.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
