@@ -375,19 +375,19 @@ Paste this block verbatim into the `<head>` of every page:
 No Measurement ID confirmed in the brief. Add the following placeholder comment into `<head>` on every page and backfill before Phase 7 QA:
 
 ```html
-<!-- GA4: G-XXXXXXXXXX pending — add before QA -->
+<!-- GA4: G-VQ91NBYHCL pending — add before QA -->
 ```
 
 When confirmed, replace with:
 
 ```html
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ91NBYHCL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-VQ91NBYHCL');
 </script>
 ```
 
@@ -447,7 +447,7 @@ CSS badges from the NeoBookworm badge library:
 ## 9. Interactive elements
 
 - **Mobile navigation menu:** hamburger toggle (Lucide `Menu` icon); full-screen overlay on open with `--color-primary` background; close button (Lucide `X`); trap focus while open; `aria-expanded` state toggled on button
-- **Contact form:** client-side validation (required fields, email format); on success, replace form with success message (no page reload); `action` attribute points to Netlify Forms or equivalent — confirm before Phase 4
+- **Contact form:** client-side validation (required fields, email format); on success, replace form with success message (no page reload); `action` build Netlify Forms markup but comment out the netlify attribute and form-name hidden field for demo stage. Phone tel: links should render as styled buttons but with href="#" and disabled styling so they look real but don't dial.
 - **Google Maps (contact.html):** radius circle + town markers; key via `js/maps-config.js` (gitignored); classic `google.maps.Marker` + SVG data-URL icons (no Map ID required); `map.fitBounds(circle.getBounds(), {padding: 40})`; fallback: if `window.__GMAPS_KEY__` is absent or map fails to load, hide map container and show: *"We cover Kingswood and greater Bristol — approximately 8 miles from BS15. Call us to confirm coverage."*
 - **Smooth scroll:** anchor links use `scroll-behavior: smooth` via CSS (no JS needed)
 
