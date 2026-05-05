@@ -22,6 +22,86 @@
 
   <link rel="stylesheet" href="css/styles.css" />
 
+  <style>
+  /* ── Gallery section ── */
+  .gallery-section {
+    padding: 80px 0;
+    background: var(--color-bg-alt);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 900px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .gallery-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .gallery-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+  }
+
+  .gallery-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    color: var(--color-accent);
+  }
+
+  .gallery-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+  }
+
+  .gallery-card-location {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 12px;
+  }
+
+  .gallery-card-quote {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .gallery-cta {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .gallery-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: var(--color-primary);
+  }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,6 +147,7 @@
           <li><a href="index.html" class="nav__link">Home</a></li>
           <li><a href="services.html" class="nav__link">Services</a></li>
           <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="#gallery" class="nav__link">Gallery</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
       </nav>
@@ -95,6 +176,7 @@
         <li><a href="index.html" class="nav__link">Home</a></li>
         <li><a href="services.html" class="nav__link">Services</a></li>
         <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="#gallery" class="nav__link">Gallery</a></li>
         <li><a href="contact.html" class="nav__link">Contact</a></li>
       </ul>
     </nav>
@@ -111,152 +193,79 @@
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="section" aria-label="Kitchen portfolio gallery" data-lightbox>
-
-      <!-- Lightbox overlay -->
-      <div
-        class="lightbox-overlay"
-        data-lightbox-overlay
-        hidden
-        role="dialog"
-        aria-modal="true"
-        aria-label="Image viewer">
-        <button class="lightbox-close" data-lightbox-close aria-label="Close image viewer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
-            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
-          </svg>
-        </button>
-        <img class="lightbox-img" data-lightbox-img src="" alt="" />
-      </div>
-
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="gallery-section">
       <div class="container">
-        <span class="section-eyebrow">Portfolio</span>
-        <h2 class="section-heading" style="margin-bottom: 2.5rem;">Finished Kitchens</h2>
+        <div class="section-header">
+          <h2>Recent Projects</h2>
+          <p>A selection of kitchens we've fitted across Bath and the surrounding area</p>
+        </div>
+        <div class="gallery-grid">
 
-        <div class="gallery-grid" role="list" aria-label="Kitchen portfolio images">
-
-          <button
-            class="gallery-item"
-            role="listitem"
-            data-lightbox-trigger
-            data-lightbox-src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/hero.webp"
-            data-lightbox-alt="A beautifully fitted modern kitchen with timber cabinets and stone worktop, installed by Harvey's Kitchen Fitters in Bath"
-            aria-label="View: Modern fitted kitchen — timber cabinets and stone worktop">
-            <img
-              src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/hero.webp"
-              alt="A beautifully fitted modern kitchen with timber cabinets and stone worktop"
-              loading="lazy" />
-            <div class="gallery-item__overlay" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" focusable="false">
-                <circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/>
-                <line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/>
-              </svg>
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
             </div>
-          </button>
+            <h3>Full Kitchen Replacement</h3>
+            <p class="gallery-card-location">📍 Bath</p>
+            <p class="gallery-card-quote">"Completely transformed — we couldn't be happier with the result."</p>
+          </div>
 
-          <button
-            class="gallery-item"
-            role="listitem"
-            data-lightbox-trigger
-            data-lightbox-src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/about.webp"
-            data-lightbox-alt="Harvey's kitchen fitter at work in a Bath kitchen during installation"
-            aria-label="View: Kitchen fitting in progress at a Bath property">
-            <img
-              src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/about.webp"
-              alt="Harvey's kitchen fitter at work in a Bath kitchen during installation"
-              loading="lazy" />
-            <div class="gallery-item__overlay" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" focusable="false">
-                <circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/>
-                <line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/>
-              </svg>
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
-          </button>
+            <h3>Howdens Fitted Kitchen</h3>
+            <p class="gallery-card-location">📍 Timsbury</p>
+            <p class="gallery-card-quote">"Top notch work — proper craftsmen."</p>
+          </div>
 
-          <button
-            class="gallery-item"
-            role="listitem"
-            data-lightbox-trigger
-            data-lightbox-src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/cta-bg.webp"
-            data-lightbox-alt="Finished kitchen installation by Harvey's Kitchen Fitters, Bath"
-            aria-label="View: Finished kitchen installation, Bath">
-            <img
-              src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/kitchen-fitter/cta-bg.webp"
-              alt="Finished kitchen installation by Harvey's Kitchen Fitters, Bath"
-              loading="lazy" />
-            <div class="gallery-item__overlay" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" focusable="false">
-                <circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/>
-                <line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/>
-              </svg>
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             </div>
-          </button>
+            <h3>Integrated Appliance Fit</h3>
+            <p class="gallery-card-location">📍 Midsomer Norton</p>
+            <p class="gallery-card-quote">"Lamona appliances fitted perfectly — looks exactly as planned."</p>
+          </div>
 
-          <button
-            class="gallery-item"
-            role="listitem"
-            data-lightbox-trigger
-            data-lightbox-src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/owner.webp"
-            data-lightbox-alt="Adam Harvey, owner of Harvey's Kitchen Fitters, Bath"
-            aria-label="View: Adam Harvey, owner">
-            <img
-              src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/owner.webp"
-              alt="Adam Harvey, owner of Harvey's Kitchen Fitters, Bath"
-              loading="lazy" />
-            <div class="gallery-item__overlay" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" focusable="false">
-                <circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/>
-                <line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/>
-              </svg>
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
             </div>
-          </button>
+            <h3>Open-Plan Kitchen Refit</h3>
+            <p class="gallery-card-location">📍 Radstock</p>
+            <p class="gallery-card-quote">"Managed the whole project start to finish — no stress whatsoever."</p>
+          </div>
 
-          <button
-            class="gallery-item"
-            role="listitem"
-            data-lightbox-trigger
-            data-lightbox-src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/tools.webp"
-            data-lightbox-alt="Kitchen fitting tools laid out on a workbench"
-            aria-label="View: Professional kitchen fitting tools">
-            <img
-              src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/tools.webp"
-              alt="Kitchen fitting tools laid out on a workbench"
-              loading="lazy" />
-            <div class="gallery-item__overlay" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" focusable="false">
-                <circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/>
-                <line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/>
-              </svg>
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
             </div>
-          </button>
+            <h3>Extra Storage &amp; Utility</h3>
+            <p class="gallery-card-location">📍 Bristol Fringe</p>
+            <p class="gallery-card-quote">"Added a run of larder units we didn't think would fit — they found a way."</p>
+          </div>
 
-          <button
-            class="gallery-item"
-            role="listitem"
-            data-lightbox-trigger
-            data-lightbox-src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/van.webp"
-            data-lightbox-alt="Harvey's Kitchen Fitters van — serving Bath and surrounding areas"
-            aria-label="View: Harvey's Kitchen Fitters van">
-            <img
-              src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/shared/van.webp"
-              alt="Harvey's Kitchen Fitters van — serving Bath and surrounding areas"
-              loading="lazy" />
-            <div class="gallery-item__overlay" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" focusable="false">
-                <circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/>
-                <line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/>
-              </svg>
+          <div class="gallery-card">
+            <div class="gallery-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-          </button>
+            <h3>Full Project Management</h3>
+            <p class="gallery-card-location">📍 Peasedown St John</p>
+            <p class="gallery-card-quote">"From supply to sign-off — a genuinely painless experience."</p>
+          </div>
 
+        </div><!-- /.gallery-grid -->
+
+        <div class="gallery-cta">
+          <p>Like what you see?</p>
+          <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
         </div>
 
-        <p style="margin-top: 2.5rem; font-size: 0.9375rem; color: var(--color-text-muted); font-style: italic; max-width: 540px;">
-          Harvey's have 62 posts on Instagram — follow <a href="https://instagram.com/harveyskitchenfitters" target="_blank" rel="noopener" style="color: var(--color-accent);">@harveyskitchenfitters</a> for the full portfolio of finished installations.
-        </p>
-      </div>
+      </div><!-- /.container -->
     </section>
+    <!-- END GALLERY SECTION -->
 
     <!-- CTA band -->
     <section class="cta-band" aria-label="Get a quote">
