@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Our Work — Top Gas Heating &amp; Plumbing, Bristol</title>
-  <meta name="description" content="Boiler installations, central heating and plumbing work across Bristol. Browse recent jobs from Top Gas Heating. Call 0117 961 2862 for a free quote.">
+  <title>Boiler Installer &amp; Gas Engineer, Bristol | Top Gas Heating</title>
+  <meta name="description" content="Gas Safe registered Bristol gas engineers since 2005. Boiler installs, repairs, servicing &amp; CP12. Family-run. Call 0117 961 2862 today.">
 
-  <link rel="canonical" href="https://top-gas-heating-njb-demo.netlify.app/gallery.html">
+  <link rel="canonical" href="https://[NETLIFY-URL-PLACEHOLDER]/index.html">
   <meta property="og:site_name" content="Top Gas Heating &amp; Plumbing Ltd">
-  <meta property="og:title" content="Our Work — Top Gas Heating &amp; Plumbing">
-  <meta property="og:description" content="Recent boiler installations, central heating systems, bathrooms and gas safety certificates completed by Top Gas Heating across greater Bristol.">
+  <meta property="og:title" content="Top Gas Heating &amp; Plumbing — Bristol Gas Engineers">
+  <meta property="og:description" content="Gas Safe registered gas engineers in Bristol. Boiler installations, repairs, CP12 and central heating from a family business with 20 years' experience.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://top-gas-heating-njb-demo.netlify.app/gallery.html">
+  <meta property="og:url" content="https://[NETLIFY-URL-PLACEHOLDER]/index.html">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
@@ -48,7 +48,7 @@
       "addressCountry": "GB"
     },
     "areaServed": "Bristol and surrounding areas including Kingswood, Fishponds, Staple Hill, Warmley, Downend and Clifton",
-    "url": "https://top-gas-heating-njb-demo.netlify.app/",
+    "url": "[Site URL — fill in after Netlify deploy]",
     "priceRange": "££",
     "openingHours": "Mo-Fr 08:00-18:00"
   }
@@ -75,10 +75,10 @@
       </button>
 
       <nav class="site-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
+        <a href="index.html" aria-current="page">Home</a>
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
-        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
       </nav>
 
@@ -101,10 +101,10 @@
         </button>
       </div>
       <nav class="nav-links" aria-label="Primary (mobile)">
-        <a href="index.html">Home</a>
+        <a href="index.html" aria-current="page">Home</a>
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
-        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a class="btn btn-cta" href="tel:01179612862" data-demo-block>Call 0117 961 2862</a>
@@ -113,26 +113,97 @@
 
   <main id="main">
 
-    <section class="page-hero">
-      <div class="container">
-        <a class="gallery-back" href="index.html">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-          Back to home
-        </a>
-        <h1>Twenty Years of Jobs Done Right</h1>
-        <p class="strapline">A selection of what we've been up to. Most of our work comes via recommendation — these are the jobs the customers still talk about.</p>
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+      <img class="hero-bg" src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/hero.webp" alt="Gas engineer inspecting a boiler in a Bristol home" width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <h1 class="hero-headline">Twenty Years.<br>Still Bristol's First Call.</h1>
+        <p class="hero-sub">Gas Safe registered engineers based in Kingswood, covering Bristol and the surrounding area. Boiler installations, repairs, central heating — done properly, by people who've been doing it since 2005.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:01179612862" data-demo-block>Call 0117 961 2862</a>
+          <a class="btn btn-ghost" href="services.html">See our services</a>
+        </div>
+        <div class="trust-strip" aria-label="Trust signals">
+          <span>Gas Safe Reg. 215587</span>
+          <span class="trust-sep" aria-hidden="true">|</span>
+          <span>Trading since 2005</span>
+          <span class="trust-sep" aria-hidden="true">|</span>
+          <span>100% recommendation rate</span>
+        </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="gallery-heading">
+    <!-- SERVICES OVERVIEW -->
+    <section class="section section--alt" aria-labelledby="services-heading">
       <div class="container">
-        <h2 class="visually-hidden" id="gallery-heading">Recent jobs</h2>
+        <div class="section-intro">
+          <h2 id="services-heading">What We Do</h2>
+          <p class="section-sub">From a new boiler to a dripping tap. Gas Safe registered and family-run.</p>
+        </div>
+        <div class="cards-grid cards-grid--3">
 
-        <div class="gallery-grid">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg>
+            </div>
+            <h3 class="card-title">Boiler Installation &amp; Servicing</h3>
+            <p class="card-body">New boilers fitted and existing boilers kept running. All makes.</p>
+            <a class="card-link" href="services.html#boiler-installation">See this service →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+            </div>
+            <h3 class="card-title">Central Heating</h3>
+            <p class="card-body">Full heating system installations and upgrades across Bristol.</p>
+            <a class="card-link" href="services.html#central-heating">See this service →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 4 2.5 2.5"/><path d="M13.5 6.5a4.95 4.95 0 0 0-7 7"/><path d="M15 5 5 15"/><path d="M14 17v.01"/><path d="M10 16v.01"/><path d="M13 13v.01"/><path d="M16 10v.01"/><path d="M11 20v.01"/><path d="M17 14v.01"/><path d="M20 11v.01"/></svg>
+            </div>
+            <h3 class="card-title">Plumbing</h3>
+            <p class="card-body">Bathrooms, leaks, and everything in between.</p>
+            <a class="card-link" href="services.html#plumbing">See this service →</a>
+          </article>
+
+        </div>
+        <div class="section-cta-link">
+          <a href="services.html">See all services, including CP12 and emergency callouts →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY / TRUST -->
+    <section class="section story-section" aria-labelledby="story-heading">
+      <div class="container story-inner">
+        <div class="story-text">
+          <h2 id="story-heading">A Family Business.<br>A Local Reputation.</h2>
+          <p>Top Gas started in 2005, and it's still the same family running it now. Daniel took over from his father Dennis — no announcements, no press release, just a quiet handover the way trades work. We're based in Kingswood and most of our work still comes the same way it always did: someone tells a neighbour.</p>
+          <p>In twenty years of trading through recessions, lockdowns, and a Bristol housing market that never sits still, we haven't changed much. We answer the phone. We turn up when we say we will. We don't make a mess of your house.</p>
+          <p>That's it. Give us a call.</p>
+          <a class="text-link" href="about.html">More about us →</a>
+        </div>
+        <div class="story-image">
+          <img src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/about.webp" alt="Top Gas heating engineer at work in a Bristol property" width="960" height="720" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY TEASER -->
+    <section class="section section--alt" aria-labelledby="gallery-teaser-heading">
+      <div class="container">
+        <div class="section-intro">
+          <h2 id="gallery-teaser-heading">Work We're Proud Of</h2>
+        </div>
+        <div class="cards-grid cards-grid--3">
 
           <article class="card gallery-card">
             <div class="card-icon" aria-hidden="true">
-              <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg>
             </div>
             <h3 class="card-title">New Boiler Installed</h3>
             <p class="card-location">
@@ -144,7 +215,7 @@
 
           <article class="card gallery-card">
             <div class="card-icon" aria-hidden="true">
-              <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
             <h3 class="card-title">Boiler Breakdown Repair</h3>
             <p class="card-location">
@@ -156,7 +227,7 @@
 
           <article class="card gallery-card">
             <div class="card-icon" aria-hidden="true">
-              <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 4 2.5 2.5"/><path d="M13.5 6.5a4.95 4.95 0 0 0-7 7"/><path d="M15 5 5 15"/><path d="M14 17v.01"/><path d="M10 16v.01"/><path d="M13 13v.01"/><path d="M16 10v.01"/><path d="M11 20v.01"/><path d="M17 14v.01"/><path d="M20 11v.01"/></svg>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 4 2.5 2.5"/><path d="M13.5 6.5a4.95 4.95 0 0 0-7 7"/><path d="M15 5 5 15"/><path d="M14 17v.01"/><path d="M10 16v.01"/><path d="M13 13v.01"/><path d="M16 10v.01"/><path d="M11 20v.01"/><path d="M17 14v.01"/><path d="M20 11v.01"/></svg>
             </div>
             <h3 class="card-title">Bathroom Fitted</h3>
             <p class="card-location">
@@ -166,52 +237,16 @@
             <p class="card-quote">"Beautiful finish and cleaned up after themselves."</p>
           </article>
 
-          <article class="card gallery-card">
-            <div class="card-icon" aria-hidden="true">
-              <!-- Thermometer -->
-              <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
-            </div>
-            <h3 class="card-title">Central Heating Installed</h3>
-            <p class="card-location">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              Warmley, Bristol
-            </p>
-            <p class="card-quote">"Been warm every winter since."</p>
-          </article>
-
-          <article class="card gallery-card">
-            <div class="card-icon" aria-hidden="true">
-              <!-- ClipboardCheck -->
-              <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
-            </div>
-            <h3 class="card-title">Landlord Gas Safety Certificate</h3>
-            <p class="card-location">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              Clifton, Bristol
-            </p>
-            <p class="card-quote">"Reliable, certificated, sorted in one visit."</p>
-          </article>
-
-          <article class="card gallery-card">
-            <div class="card-icon" aria-hidden="true">
-              <!-- Gauge -->
-              <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
-            </div>
-            <h3 class="card-title">Annual Boiler Service</h3>
-            <p class="card-location">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              Downend, Bristol
-            </p>
-            <p class="card-quote">"Same engineer, every year. That's how we like it."</p>
-          </article>
-
+        </div>
+        <div class="section-cta-link">
+          <a href="gallery.html">See all our work →</a>
         </div>
       </div>
     </section>
 
     <!-- CTA BAND -->
     <section class="cta-band" aria-label="Contact call to action">
-      <img class="cta-band-bg" src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/about.webp" alt="" aria-hidden="true" width="1920" height="600" loading="lazy" decoding="async">
+      <img class="cta-band-bg" src="https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/cta-bg.webp" alt="" aria-hidden="true" width="1920" height="600" loading="lazy" decoding="async">
       <div class="cta-band-overlay" aria-hidden="true"></div>
       <div class="cta-band-content">
         <h2>Need a gas engineer in Bristol?</h2>

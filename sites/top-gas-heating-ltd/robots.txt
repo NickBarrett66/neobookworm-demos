@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://[NETLIFY-URL-PLACEHOLDER]/sitemap.xml
+Sitemap: https://top-gas-heating-njb-demo.netlify.app/sitemap.xml

@@ -54,6 +54,8 @@ Fields highlighted with `<mark>` are AI-generated — review and adjust if neede
 
 Only list accreditations where the CSS badge library has a matching badge (Gas Safe, NICEIC, Part P, TrustMark, FENSA, Checkatrade, Which? Trusted Trader, CHAS, generic "Fully Insured").
 
+For Gas Safe: verify on gassaferegister.co.uk using the business name or registered address and record the registration number here. The number must be present so Cursor can bake it into trust strips, badges, and schema without leaving a placeholder.
+
 - **Accreditation 1:**
 - **Accreditation 2:**
 
@@ -133,6 +135,18 @@ This is the most important section. It drives every word and visual choice downs
 **CTA background:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/{slug}/cta-bg.webp`
 
 **Notes on image usage:**
+
+---
+
+## 9b. Technical constants (fixed for all demo sites — do not change)
+
+**GA4 Measurement ID:** `G-VQ91NBYHCL` — inject the live snippet on every page, never a placeholder comment.
+
+**Contact form:** Build with Netlify Forms markup (`netlify` attribute + hidden `form-name` field) but **comment both out** for the demo stage. Add a visible demo notice on the form ("Demo form — submissions are not delivered"). Uncomment at productionisation.
+
+**Phone call buttons:** All `tel:` links must carry a `data-demo-block` attribute. The JS in `main.js` uses this to intercept clicks and show a demo notice instead of dialling.
+
+**Copyright year:** Use the current calendar year — do not hardcode a past year.
 
 ---
 

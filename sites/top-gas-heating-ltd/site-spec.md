@@ -364,7 +364,7 @@ Paste this block verbatim into the `<head>` of every page:
     "addressCountry": "GB"
   },
   "areaServed": "Bristol and surrounding areas including Kingswood, Fishponds, Staple Hill, Warmley, Downend and Clifton",
-  "url": "[Site URL — fill in after Netlify deploy]",
+  "url": "https://top-gas-heating-njb-demo.netlify.app/",
   "priceRange": "££",
   "openingHours": "Mo-Fr 08:00-18:00"
 }
@@ -424,7 +424,7 @@ All images are served from the NeoBookworm R2 library.
 |---|---|---|
 | Hero | `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/hero.webp` | Full-width; `width="1920" height="1080"`; dark overlay 55%; `alt="Gas engineer inspecting a boiler in a Bristol home"` |
 | About | `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/about.webp` | Half-width column on about.html and index.html story section; `width="960" height="720"`; `alt="Top Gas heating engineer at work in a Bristol property"` |
-| CTA background | `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/cta-bg.webp` | Full-width band; dark overlay 65%; `width="1920" height="600"`; `alt=""` (decorative — `aria-hidden="true"` on `<img>`) |
+| CTA background | `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/gas-engineer/about.webp` | Full-width band; dark overlay 65%; `width="1920" height="600"`; `alt=""` (decorative — `aria-hidden="true"` on `<img>`) |
 
 **Shared assets — none required at demo stage.** The story of this business is carried by copy and the three trade images above. The van and tools assets are available if the About page needs a second visual; skip unless layout requires it.
 
