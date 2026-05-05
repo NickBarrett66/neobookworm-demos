@@ -1,21 +1,19 @@
-# Site Spec — `[Business Name]`
+# Site Spec — `C.E.G Painting & Decorating`
 
-This document is generated in Phase 2 of `PROCESS.md` by Cursor, using the site brief as input. It locks in every content and design decision *before* any HTML is written, so you can review and tweak cheaply. It's also the exact artifact Agent 6 will eventually produce and consume internally when building real client sites.
-
-**The structure below is what the Phase 2 prompt asks Cursor to produce. When generated, it should be fully filled in — no placeholder sections.**
+This document is generated in Phase 2 of `PROCESS.md` by Cursor, using the site brief as input. It locks in every content and design decision *before* any HTML is written.
 
 ---
 
 ## 1. Creative direction
 
-**Aesthetic statement (one paragraph):**
-*A confident description of the visual POV. What is this site trying to feel like, and why does that suit this business?*
+**Aesthetic statement:**
+Linen and sage. This site reads like the inside of a well-kept Wiltshire home — warm off-white backgrounds, a dusty sage green accent, generous whitespace, and typography that feels made rather than generated. The overall effect is quiet confidence: a business with nothing to prove and no interest in shouting. Every layout decision reinforces the same message as the copy — this decorator is thorough, unhurried, and takes preparation seriously. The site does not try to be impressive. It tries to be trusted.
 
 **The differentiator:**
-*The single memorable thing about this site — the element someone will remember after closing the tab.*
+The stillness. Most trade sites are working hard to convince you. This one just presents the facts — a decade of local work, a straight price, someone who turns up. The whitespace is deliberate; the copy is short and plainspoken. The sage green is the colour of a Farrow & Ball tin, not a branded workwear polo. The site feels finished in the same way a well-painted room does: nothing out of place, nothing unnecessary.
 
 **What this site is deliberately not:**
-*What generic trope it's pushing against.*
+Not a bold-blue-and-white "Power of Painting" corporate-feeling trade site. Not a site that uses words like "bespoke," "transform," or "solutions." Not template-looking. The two local competitors (nih-decorating.co.uk, wiltshiredecorating.co.uk) are functional but generic — this site should feel quieter, more considered, and more confident.
 
 ---
 
@@ -25,39 +23,39 @@ This document is generated in Phase 2 of `PROCESS.md` by Cursor, using the site 
 
 ```css
 :root {
-  --color-primary: #______;    /* description and use */
-  --color-secondary: #______;  /* description and use */
-  --color-accent: #______;     /* description and use */
-  --color-text: #______;
-  --color-text-muted: #______;
-  --color-bg: #______;
-  --color-bg-alt: #______;
-  --color-border: #______;
+  --color-primary:     #2C2A27;   /* Deep warm charcoal — headings, nav, footer bg, CTA buttons */
+  --color-secondary:   #7A9175;   /* Dusty sage green — icons, accent borders, badges, pull elements */
+  --color-accent:      #5A6E57;   /* Darker sage — hover states, active borders, focus rings */
+  --color-text:        #2C2A27;   /* Same as primary — main body text */
+  --color-text-muted:  #7A7570;   /* Warm mid-grey — subheadlines, captions, micro-quotes */
+  --color-bg:          #FAFAF8;   /* Near-white with warmth — main page background */
+  --color-bg-alt:      #F2EDE6;   /* Warm linen — alternate section background */
+  --color-border:      #E0D9D0;   /* Warm light border — card edges, rule lines, dividers */
 }
 ```
 
-*Notes on the palette: what inspired it, how it should feel, any usage rules (e.g. "accent only on CTAs and pull quotes, never on body text").*
+**Palette notes:** The palette is inspired by decorator's materials — linen dust sheets, Farrow & Ball sage, warm plaster. `--color-secondary` (#7A9175) achieves a 3.5:1 contrast ratio against `--color-bg` — sufficient for large text (≥24px regular, ≥18px bold) per WCAG AA, but **not** for body text. Usage rule: `--color-secondary` is for icons, decorative elements, borders, and large display headings only — never for body copy or interactive labels. All CTAs use `--color-primary` (charcoal) background with `--color-bg` (warm white) text for a clear pass on contrast. The CTA band uses the R2 cta-bg image with a dark overlay — white text over the overlay will exceed 4.5:1.
 
 ### Typography
 
-**Display font:** `[Font Name]` from Google Fonts — weights `[e.g. 700, 900]`
-**Body font:** `[Font Name]` from Google Fonts — weights `[e.g. 400, 500]`
+**Display font:** `Cormorant Garamond` from Google Fonts — weights `600, 700`
+**Body font:** `DM Sans` from Google Fonts — weights `400, 500`
 
-*Notes on the pairing: why these two, what mood they create, any usage rules.*
+**Pairing notes:** Cormorant Garamond is a humanist serif with genuine calligraphic roots — it has the craft character the brief asks for without the over-familiarity of Playfair Display. It reads like a label on a quality paint tin: precise, unhurried, slightly old-world. DM Sans is clean and neutral; paired with Cormorant it recedes helpfully, letting the display type carry the character. Usage rule: Cormorant Garamond for all H1–H3 and pull quotes only. DM Sans for all body copy, nav, buttons, and small-print. Do not set body copy in Cormorant — the optical sizes are mismatched and it breaks the hierarchy.
 
 ### Other tokens
 
 ```css
 :root {
-  --font-display: '[Font Name]', serif;
-  --font-body: '[Font Name]', sans-serif;
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --max-width: 1200px;
-  --spacing-unit: 1rem;
+  --font-display:   'Cormorant Garamond', Georgia, serif;
+  --font-body:      'DM Sans', system-ui, sans-serif;
+  --radius-sm:      0.25rem;
+  --radius-md:      0.5rem;
+  --radius-lg:      1rem;
+  --shadow-sm:      0 1px 2px rgba(44, 42, 39, 0.06);
+  --shadow-md:      0 4px 16px rgba(44, 42, 39, 0.10);
+  --max-width:      1200px;
+  --spacing-unit:   1rem;
 }
 ```
 
@@ -66,7 +64,7 @@ This document is generated in Phase 2 of `PROCESS.md` by Cursor, using the site 
 ## 3. File structure
 
 ```
-sites/<site-name>/
+sites/ceg-painting-decorating-ltd/
 ├── index.html
 ├── services.html
 ├── about.html
@@ -76,22 +74,19 @@ sites/<site-name>/
 │   └── styles.css
 ├── js/
 │   ├── main.js
-│   ├── uk-counties-leaflet.js   (optional — copy from shared/ if spec uses Leaflet county map)
-│   ├── uk-counties-regional.js  (optional — copy from shared/ if spec uses regional preset)
-│   └── maps-config.js           (optional — Google Maps only; gitignored; copy from `templates/maps-config.example.js`)
+│   └── maps-config.js           (Google Maps only; gitignored; copy from templates/maps-config.example.js)
 ├── images/
 │   └── (none — all images served from R2 library; see Section 7)
-├── favicon.svg
-├── favicon.ico          (optional — older clients)
+├── favicon.svg                  (CEG monogram — sage green on warm white; see notes below)
 ├── sitemap.xml
 ├── robots.txt
-├── site-brief.md
+├── site-brief-ceg-painting-decorating.md
 ├── site-spec.md
 ├── build-checklist.md
 └── qa-launch-checklist.md
 ```
 
-*Favicon:* list **`favicon.svg`** in this tree for every site (real asset: wordmark or monogram in brand colours). Add **`favicon.ico`** only if you ship it; Phase 4 `<link>` tags must match these paths exactly.
+**Favicon:** `favicon.svg` — a tight monogram "CEG" in Cormorant Garamond 700, `--color-primary` (`#2C2A27`) on a `--color-bg-alt` (`#F2EDE6`) square with rounded corners. No `favicon.ico` required. Phase 4 `<link>` tag: `<link rel="icon" type="image/svg+xml" href="favicon.svg">`.
 
 ---
 
@@ -101,250 +96,394 @@ sites/<site-name>/
 > - `<a class="skip-link" href="#main">Skip to content</a>` must be the **first child of `<body>`**
 > - `<main id="main">` must wrap all content between the closing `</header>` and opening `<footer>` tags
 > - The **GA4 snippet** (see Section 5) must be present in `<head>` on every page
->
-> These are hard requirements for WCAG compliance and achieving a PageSpeed accessibility score of 100.
+> - The **LocalBusiness JSON-LD** (see Section 5) must be present in `<head>` on every page
+> - Phone number `07875 461486` must appear verbatim in the site header (or nav CTA) and footer on every page
 
 ### 4.1 Home (`index.html`)
 
-**Page title:**
-**Meta description:**
+**Page title:** `Painter Decorator Corsham — C.E.G Painting & Decorating`
+**Meta description:** `Trusted painter and decorator based in Corsham, covering Chippenham, Bath and Wiltshire. Over a decade of quality work. Call for a free quote.` *(142 chars)*
 
 **Section structure:**
 
 1. **Header + navigation**
-   - Logo / wordmark
-   - Nav links: Home, Services, About, Gallery, Contact
-   - CTA button: [text]
+   - Wordmark: "C.E.G" in Cormorant Garamond 700 + "Painting & Decorating" in DM Sans 400, smaller, beneath or beside
+   - Nav links: Home · Services · About · Gallery · Contact
+   - CTA button (top right): "Get a free quote" → `contact.html`
+   - Phone number visible in header on desktop: `07875 461486`
 
 2. **Hero section**
-   - Headline: *[exact copy]*
-   - Subheadline: *[exact copy]*
-   - CTA buttons: *[text and where they go]*
-   - Hero image: *[R2 URL from Section 7]*
+   - Headline: *"The finish is everything."*
+   - Subheadline: *"C.E.G Painting & Decorating has been working in homes across Corsham and Wiltshire for over a decade. We come when we say, stick to the price, and leave the place as we found it."*
+   - Primary CTA: "Get a free quote" → `contact.html`
+   - Secondary CTA: "See our work" → `gallery.html`
+   - Layout: text left column (~50%), hero image right column (~50%) on desktop; stacked on mobile with image below text
+   - Hero image: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/painter-decorator/hero.webp` — `width="960" height="640"` — `alt="Painter applying careful finish to a wall interior"`
 
-3. **[Next section name]**
-   - *[full copy and structural notes]*
+3. **Trust bar (3 icons)**
+   - Full-width, `--color-bg-alt` background, subtle `--color-border` top/bottom rule
+   - Three items, equal-width columns:
+     - Lucide `calendar` icon — "In business since 2013" / "Over a decade of local work"
+     - Lucide `shield-check` icon — "Fully insured" / "Public liability covered as standard"
+     - Lucide `map-pin` icon — "Based in Corsham" / "Covering Chippenham, Bath & Wiltshire"
+   - Icon colour: `--color-secondary`; label text: DM Sans 500
 
-4. **Gallery teaser section**
-   - Section heading: *[from brief Section 10 — homepage teaser heading]*
-   - 3 cards displayed (cards 1–3 from the full 6 — icon + job type + location + optional micro-quote)
-   - "See all our work →" link pointing to `gallery.html`
-   - **No images at demo stage** — icon/text cards only
-   - *(See Section 4.5 for full gallery card spec)*
+4. **Services overview**
+   - Section heading: *"What we do"*
+   - Intro paragraph: *"Interior and exterior work, wallpapering, preparation and repair — C.E.G covers the full range of decorating for homes and commercial properties across Corsham and the surrounding area."*
+   - Three feature cards (first three services): Interior Painting, Exterior Masonry & Timber, Wallpapering
+   - Each card: Lucide icon + title + one-line description (see services.html for full copy)
+   - Cards on `--color-bg-alt` background with `--color-border` border
+   - Footer link: "All our services →" → `services.html`
 
-5. *(etc — typically 4–7 sections on a home page)*
+5. **About teaser**
+   - Layout: two columns — text left, about image right (desktop); text above, image below (mobile)
+   - Small label above heading: *"About C.E.G"* in DM Sans 500, `--color-secondary`, uppercase, tracked
+   - Section heading: *"A decorator who's been doing this long enough to know what good work looks like."*
+   - Body copy: *"C.E.G Painting & Decorating was started by Aaron McBride in 2013, and it's been going ever since — not on advertising, but on the kind of word of mouth that happens when someone's pleased with the work. Aaron works on his own, which means one point of contact from first call to final coat. No subcontractors, no surprises."*
+   - CTA link: "About us →" → `about.html`
+   - Image: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/painter-decorator/about.webp` — `width="800" height="600"` — `alt="Decorator carefully preparing a room before painting"`
 
-6. **Footer**
-   - Contact details
-   - Accreditation badges
-   - Copyright and credits
+6. **Gallery teaser**
+   - Section heading: *"A decade of finishing rooms right"*
+   - Subheadline: *"A selection of recent jobs across Corsham, Chippenham, and the surrounding villages."*
+   - 3 cards displayed — cards 1, 2, 3 from Section 4.5 gallery spec (icon + heading + location + micro-quote)
+   - "See all our work →" link → `gallery.html`
+   - **No images — icon/text cards only at demo stage**
+
+7. **CTA band**
+   - Background: `cta-bg.webp` with `rgba(44, 42, 39, 0.72)` dark overlay; white text on top
+   - Image: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/painter-decorator/cta-bg.webp` — `width="1920" height="600"` — `alt=""` (decorative; `aria-hidden="true"` or CSS background)
+   - Heading: *"Ready to get started?"*
+   - Body: *"Drop us a message with what you're after and we'll arrange a time to come and take a look. Free quotes, no obligation."*
+   - CTA button: "Get in touch" → `contact.html`
+   - Prefer CSS `background-image` for this section rather than an `<img>` tag, so `alt` / hidden approach is not needed
+
+8. **Footer**
+   - Left: wordmark + tagline *"Corsham's decorator. In business since 2013."*
+   - Centre: nav links (Home · Services · About · Gallery · Contact)
+   - Right: contact details — `07875 461486`, `c.e.gdecorating@hotmail.com`, Corsham, Wiltshire
+   - Accreditation badges row (see Section 8)
+   - Bottom bar: *"© 2026 C.E.G Painting & Decorating. Website by [NeoBookworm](https://neobookworm.uk)."*
+
+---
 
 ### 4.2 Services (`services.html`)
 
-*Title, meta, and section list with full copy. The core of this page is a **services card grid** — one card per service, each with an icon (from Lucide or the NeoBookworm icon library), a short title, and a one-line description. No images required — CSS/icon-based only.*
+**Page title:** `Painting & Decorating Services — C.E.G, Corsham`
+**Meta description:** `Interior and exterior painting, wallpapering, and preparation work across Corsham, Chippenham, and Wiltshire. Get in touch for a free quote today.` *(147 chars)*
 
-*Specify: number of service cards, icon choice per card, card titles, one-liner copy per card.*
+**Section structure:**
+
+1. **Header + navigation** (as all pages)
+
+2. **Page hero (text only — no image)**
+   - Background: `--color-bg-alt`; generous padding
+   - H1: *"What we do"*
+   - Intro paragraph: *"From a fresh interior repaint to exterior masonry work on a Corsham stone cottage — C.E.G covers the full range of decorating services. The prep takes as long as it takes. That's what makes the finish last."*
+
+3. **Services card grid**
+   - Desktop: 3 columns; Tablet (≤768px): 2 columns; Mobile (≤480px): 1 column
+   - 5 cards total — cards sit on `--color-bg` with `--color-border` border and `--shadow-sm`
+   - **Card 1:** Icon `paintbrush` — *"Interior Painting & Decorating"*
+     - *"Walls, ceilings, and woodwork finished to a standard that lasts. We work through rooms in order, keep the rest of the house protected, and clean up properly at the end of every day."*
+   - **Card 2:** Icon `sun` — *"Exterior Painting & Decorating"*
+     - *"Masonry, render, and timber all need different preparation — particularly in a Wiltshire climate. We assess the surface first, use the right primer, and apply paints suited to outdoor exposure."*
+   - **Card 3:** Icon `layers` — *"Wallpapering"*
+     - *"Standard lining paper or specialist hang — the approach is the same: proper preparation of the surface before a roll is unrolled. Pattern matching and awkward corners are part of the job, not an extra."*
+   - **Card 4:** Icon `wrench` — *"Preparation & Repair"*
+     - *"Filling, sanding, priming, and making good before any paint goes on. This is the part most decorators rush. It's also the difference between a finish that looks good for a year and one that lasts five."*
+   - **Card 5:** Icon `building-2` — *"Residential & Commercial"*
+     - *"Most of our work is in homes, but the same standard applies to commercial jobs. C.E.G has operated as a limited company since 2013 — the right level of cover for residential and commercial clients alike."*
+
+4. **Trust strip**
+   - Full-width, `--color-primary` background, `--color-bg` text
+   - Three items inline: "Fully insured" · "In business since 2013" · "All work guaranteed"
+
+5. **CTA section**
+   - Heading: *"Tell us about your job"*
+   - Body: *"Whether it's a single room or a full exterior, drop us a message and we'll come and take a look. Free quotes, no obligation."*
+   - CTA button: "Get a free quote" → `contact.html`
+
+6. **Footer** (as all pages)
+
+---
 
 ### 4.3 About (`about.html`)
 
-*Same structure: title, meta, section list with full copy.*
+**Page title:** `About C.E.G Painting & Decorating — Corsham, Wiltshire`
+**Meta description:** `Aaron McBride has been decorating homes across Corsham and Wiltshire since 2013. Quality prep, clean finish, straight price. Call to talk about your job.` *(154 chars)*
+
+**Section structure:**
+
+1. **Header + navigation**
+
+2. **Page hero (text only)**
+   - Background: `--color-bg-alt`
+   - H1: *"About C.E.G"*
+   - Intro: *"Corsham-based. In business since 2013. Built on referrals."*
+
+3. **Main story — two column (text left, image right)**
+   - Image: `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library/painter-decorator/about.webp` — `width="800" height="600"` — `alt="Decorator at work on an interior room, brush in hand"`
+   - Body copy (three short paragraphs):
+
+     *"C.E.G Painting & Decorating was started by Aaron McBride in 2013 — as a limited company, which is still how it operates today. No advertising, no leaflet drops. The work came in through word of mouth and stayed that way because the standard stayed consistent."*
+
+     *"Aaron works across Corsham and the surrounding area: Chippenham, Box, Melksham, Calne, Bath. The properties vary — Cotswold stone, Victorian terraces, modern new builds — but the approach stays the same. Good preparation. Careful application. Tidy as you go."*
+
+     *"Working on your own means one person is responsible for the job from start to finish. That's the arrangement, and it's the one that produces the best results. If you'd like to talk about a job, drop a message or give us a ring — we'll come and have a look and give you a straight price."*
+
+4. **Credentials / trust signals**
+   - Background: `--color-bg-alt`
+   - Section heading: *"Why choose C.E.G?"*
+   - Four credential tiles (icon + title + short label):
+     - Lucide `award` — *"Over a decade trading"* / "Limited company since October 2013"
+     - Lucide `shield-check` — *"Fully insured"* / "Public liability insurance as standard"
+     - Lucide `thumbs-up` — *"90% Facebook recommendation"* / "Consistent local satisfaction rating"
+     - Lucide `user` — *"Owner-operated"* / "Aaron handles every job personally — no subcontractors"
+   - **Conditional:** If PDA membership confirmed before build — add Lucide `badge-check` tile: *"PDA Member"* / "Painting & Decorating Association"
+   - **Conditional:** If TrustMark registration confirmed before build — add Lucide `check-circle` tile: *"TrustMark Registered"* / "Government-endorsed quality scheme"
+
+5. **CTA section**
+   - Heading: *"Let's talk about your job."*
+   - Body: *"Drop us a message or call — we'll arrange a time to come and take a look."*
+   - CTA: "Get in touch" → `contact.html`
+
+6. **Footer**
+
+---
 
 ### 4.4 Contact (`contact.html`)
 
-*Same structure. Contact form fields specified explicitly.*
+**Page title:** `Contact C.E.G Painting & Decorating — Corsham`
+**Meta description:** `Get a free quote from C.E.G Painting & Decorating, based in Corsham. Covering Chippenham, Bath, and Wiltshire. Message us or call 07875 461486 today.` *(150 chars)*
 
-**Map / service area (if any):**
-- **None**, or specify: **Leaflet UK counties** (which counties/unitaries to highlight, which page), **regional preset** (`shared/js/uk-counties-regional.js` defaults), or **Google Maps** (centre point, radius in miles/metres, optional town markers, API key via `maps-config.js` only).
-- Legend copy, accessibility (`aria-label` on map container), and fallback when no API key (for Google) — all specified here.
+**Section structure:**
+
+1. **Header + navigation**
+
+2. **Page hero (text only)**
+   - H1: *"Get in touch"*
+   - Intro: *"Drop us a message with what you're after and we'll get back to you to arrange a time to come and look at the job."*
+
+3. **Two-column contact section**
+   - Left (~55%): Contact form
+     - Fields (all required unless noted):
+       - Name (text, `placeholder="Your name"`)
+       - Phone (tel, `placeholder="Your phone number"`)
+       - Email (email, `placeholder="Your email address"`)
+       - Message / job description (textarea, `placeholder="Tell us about the job — which rooms, rough size, any prep work needed"`, rows=5)
+     - Submit button: "Send message" (see Section 6 copy bank)
+     - Form action: Netlify Forms (`netlify` attribute) or configured backend; specify in Phase 4
+   - Right (~45%): Contact details panel
+     - Phone: `07875 461486` (large, tappable on mobile — `<a href="tel:07875461486">`)
+     - Email: `c.e.gdecorating@hotmail.com` (`<a href="mailto:c.e.gdecorating@hotmail.com">`)
+     - Location: *"Based in Corsham, Wiltshire"*
+     - Hours: *"Monday to Friday, 9am–5pm"*
+     - Facebook: [@CorshamDecorators](https://www.facebook.com/CorshamDecorators/) (icon + link)
+
+4. **Service area map**
+   - **Approach: Google Maps** — radius circle + town markers; key via gitignored `js/maps-config.js` (copy from `templates/maps-config.example.js`)
+   - **Centre point:** Corsham, Wiltshire — `lat: 51.4325, lng: -2.1937`
+   - **Radius:** 15 miles (~24,140 metres)
+   - **Circle styling:** `fillColor: '#7A9175'` (sage), `fillOpacity: 0.12`, `strokeColor: '#5A6E57'`, `strokeWeight: 2`
+   - **Town markers (optional, classic `google.maps.Marker` with small SVG data-URL icon):** Corsham (centre), Chippenham, Box, Melksham, Calne, Bath
+   - **Legend copy (below or beside map):** *"We cover Corsham and the surrounding area — roughly a 15-mile radius including Chippenham, Bath, Box, Melksham, and Calne. Not sure if you're in range? Drop us a message."*
+   - **Map container:** `aria-label="Service area map showing C.E.G Painting and Decorating coverage around Corsham, Wiltshire"` — `role="application"`
+   - **Fallback (no API key):** Hide map container; show static text: *"We cover a 15-mile radius around Corsham, including Chippenham, Bath, Box, Melksham, and Calne."*
+   - **Framing:** `map.fitBounds(circle.getBounds(), { padding: 40 })` after render
+
+5. **Footer**
+
+---
 
 ### 4.5 Gallery (`gallery.html`)
 
-**Page title:**
-**Meta description:**
+**Page title:** `Our Work — C.E.G Painting & Decorating, Corsham`
+**Meta description:** `Interior repaints, exterior masonry, wallpapering, and woodwork across Corsham, Chippenham, and Box. Browse recent jobs and get in touch for a quote.` *(149 chars)*
 
-**Section heading:** *[from brief Section 10 — full gallery section heading]*
+**Section heading:** *"Work we're proud of"*
+**Page strapline:** *"A selection of jobs from across Corsham and the surrounding area."*
+
+**"Back to home" link:** Visible text link at top of `<main>`, below nav: "← Back to home" → `index.html`
 
 **Card grid layout:**
 - Desktop: 3 columns
 - Tablet (≤768px): 2 columns
 - Mobile (≤480px): 1 column, full width
 
-**Cards (6 total — full spec drawn from brief Section 10):**
+**Cards (6 total):**
 
-> ⚠️ **Demo stage rule:** Gallery cards are **icon + text only**. Zero `<img>` tags in the gallery section or page at demo stage. When real client photos are available at productionisation, each card receives an `<img>` above the icon and the icon is removed — no structural changes required.
+> ⚠️ **Demo stage rule:** Gallery cards are **icon + text only**. Zero `<img>` tags in the gallery section at demo stage.
 
 | # | Lucide icon | Job type heading | Location | Micro-quote |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
+| 1 | `paintbrush` | Full interior repaint | Corsham | "Left the place cleaner than he found it." |
+| 2 | `house` | Exterior masonry & woodwork | Chippenham | "Finished on time, stuck to the price." |
+| 3 | `layers` | Wallpaper hang — feature wall | Box | "Took the time to get the pattern right." |
+| 4 | `sparkles` | New build finishing | Calne | "Knew exactly what prep the fresh plaster needed." |
+| 5 | `door-open` | Woodwork & skirting refresh | Melksham | "Woodwork looks brand new — you'd never know it wasn't." |
+| 6 | `wrench` | Preparation & repair before repaint | Corsham | "Sorted the cracks before he touched a brush." |
 
-**Card anatomy (each card must include):**
-- Lucide icon (trade-appropriate, sized ~48px, coloured `var(--color-accent)` or `var(--color-primary)`)
-- Job type heading (H3 or strong element)
-- Location line (with 📍 pin emoji or a small location icon)
-- Micro-quote (if provided — italicised, smaller text, `var(--color-text-muted)`)
-
-**"Back to home" link:** Include a visible link back to `index.html` at the top of the page body (below the nav).
+**Card anatomy (every card):**
+- Lucide icon — `aria-hidden="true"`, sized ~48px, coloured `var(--color-secondary)`
+- Job type heading — H3, Cormorant Garamond 600
+- Location line — DM Sans 400, `var(--color-text-muted)`, prefixed with 📍 or small Lucide `map-pin` icon (`aria-hidden="true"`)
+- Micro-quote — italicised, smaller text (~0.875rem), `var(--color-text-muted)`
+- Card background: `--color-bg` with `--color-border` border, `--shadow-sm`, `--radius-md`
 
 ---
 
 ## 5. SEO Outputs
 
-*Generated from the brief. This section is the source of truth for all title tags, meta descriptions, og tags, and LocalBusiness schema across the site. Populate every field before the build starts — the builder copies from here, not from memory.*
-
 ### Per-page SEO
 
-| Page | Title tag (≤65 chars) | Meta description (140–155 chars, includes CTA) | og:title | og:description |
+| Page | Title tag (≤65 chars) | Meta description (140–155 chars) | og:title | og:description |
 |---|---|---|---|---|
-| Home (`index.html`) | | | | |
-| Services (`services.html`) | | | | |
-| About (`about.html`) | | | | |
-| Gallery (`gallery.html`) | | | | |
-| Contact (`contact.html`) | | | | |
-
-*Title tag rules: keyword first, business name last, separated by `—` or `\|`. Example: `Plumber in Swindon — Hartley Plumbing`. H1s are brand copy; title tags are for search — they should differ.*
-
-*Meta description rules: one sentence, **140–155 characters**, ends with a clear CTA. Example: `Gas Safe registered plumber covering Swindon and Wiltshire. Available 7 days. Call for a free quote.`*
-
-*Gallery page title tag example: `Our Work — Hartley Plumbing, Swindon`. Meta description example: `Boiler installations, bathroom refurbishments, and heating repairs across Swindon and Wiltshire. Browse our recent jobs and call for a free quote.`* (143 chars — target 140–155)*
+| Home (`index.html`) | `Painter Decorator Corsham — C.E.G Painting & Decorating` | `Trusted painter and decorator based in Corsham, covering Chippenham, Bath and Wiltshire. Over a decade of quality work. Call for a free quote.` | `C.E.G Painting & Decorating — Corsham` | `Trusted painter and decorator in Corsham, Wiltshire. Over a decade of local work. Get a free quote.` |
+| Services (`services.html`) | `Painting & Decorating Services — C.E.G, Corsham` | `Interior and exterior painting, wallpapering, and preparation work across Corsham, Chippenham, and Wiltshire. Get in touch for a free quote today.` | `Services — C.E.G Painting & Decorating` | `Interior painting, exterior masonry, wallpapering, and prep work. Covering Corsham and Wiltshire.` |
+| About (`about.html`) | `About C.E.G Painting & Decorating — Corsham, Wiltshire` | `Aaron McBride has been decorating homes across Corsham and Wiltshire since 2013. Quality prep, clean finish, straight price. Call to talk about your job.` | `About C.E.G — Corsham's decorator since 2013` | `Owner-operated, insured, and built on referrals. Over a decade of decorating in Corsham and Wiltshire.` |
+| Gallery (`gallery.html`) | `Our Work — C.E.G Painting & Decorating, Corsham` | `Interior repaints, exterior masonry, wallpapering, and woodwork across Corsham, Chippenham, and Box. Browse recent jobs and get in touch for a quote.` | `Our Work — C.E.G Painting & Decorating` | `Recent decorating jobs across Corsham, Chippenham, Box, Melksham, and Calne. Quality prep and finish.` |
+| Contact (`contact.html`) | `Contact C.E.G Painting & Decorating — Corsham` | `Get a free quote from C.E.G Painting & Decorating, based in Corsham. Covering Chippenham, Bath, and Wiltshire. Message us or call 07875 461486 today.` | `Contact C.E.G — Free Quote, Corsham` | `Get in touch with C.E.G Painting & Decorating. Free quotes for jobs in Corsham, Chippenham, Bath, and Wiltshire.` |
 
 ### LocalBusiness JSON-LD schema
 
-Paste this block verbatim into the `<head>` of every page (update the `url` field per page if desired):
+Paste verbatim into `<head>` of every page:
 
 ```json
 {
   "@context": "https://schema.org",
-  "@type": "[Primary trade category from brief — e.g. Plumber, Electrician, GeneralContractor]",
-  "name": "[Business name]",
-  "description": "[One sentence describing the business and area served]",
-  "telephone": "[Business phone number from brief Section 8]",
-  "email": "[Email address from brief Section 7]",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "C.E.G Painting & Decorating",
+  "description": "Painter and decorator based in Corsham, Wiltshire, serving Chippenham, Bath and surrounding villages since 2013.",
+  "telephone": "07875 461486",
+  "email": "c.e.gdecorating@hotmail.com",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "[Town]",
-    "addressRegion": "[County]",
+    "streetAddress": "17 South St",
+    "addressLocality": "Corsham",
+    "addressRegion": "Wiltshire",
+    "postalCode": "SN13 9HB",
     "addressCountry": "GB"
   },
-  "areaServed": "[Area served description from brief Section 8]",
-  "url": "[Site URL — fill in after Netlify deploy]",
+  "areaServed": "Corsham, Chippenham, Bath, Box, Melksham, Calne, Wiltshire",
+  "url": "[fill in after Netlify deploy]",
   "priceRange": "££",
-  "openingHours": "[e.g. Mo-Fr 08:00-18:00, Sa 09:00-13:00]"
+  "openingHours": "Mo-Fr 09:00-17:00"
 }
 ```
 
-*Notes: `@type` should match the brief's "Primary trade category" field. `priceRange` is indicative — adjust if the brief implies budget or premium positioning. All fields derived from the brief; fill in completely before handing to the builder.*
-
 ### GA4 snippet
 
-Paste this block verbatim into the `<head>` of every page. Replace `[MEASUREMENT_ID]` with the `G-XXXXXXXXXX` value from brief Section 8:
+Measurement ID available at spec stage. Add to every page `<head>` 
+
+```html
+<!-- GA4: G-VQ91NBYHCL confirmed -->
 
 ```html
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=[MEASUREMENT_ID]"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ91NBYHCL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '[MEASUREMENT_ID]');
+  gtag('config', 'G-VQ91NBYHCL');
 </script>
 ```
-
-*If no Measurement ID is available at build time, add `<!-- GA4: G-XXXXXXXXXX pending -->` as a placeholder comment and backfill before Phase 7 QA. A missing or placeholder GA4 tag is a QA blocker.*
 
 ---
 
 ## 6. Copy bank
 
-All unique microcopy gathered in one place for easy review:
-
-- **Main CTA text:**
-- **Secondary CTA text:**
-- **Form submit button:**
-- **Form success message:**
-- **404 page message:**
-- **Footer tagline:**
-- **Gallery teaser link text:** *(e.g. "See all our work →")*
-- **Gallery page strapline:** *(optional one-liner beneath the gallery H1)*
+- **Main CTA text:** "Get a free quote"
+- **Secondary CTA text:** "See our work"
+- **Nav CTA (header button):** "Get a free quote"
+- **Form submit button:** "Send message"
+- **Form success message:** "Thanks — we'll be in touch shortly to arrange a time to come and look at the job."
+- **404 page message:** "That page doesn't exist — but we do. Head back home or give us a ring on 07875 461486."
+- **Footer tagline:** "Corsham's decorator. In business since 2013."
+- **Gallery teaser link text:** "See all our work →"
+- **Gallery page strapline:** "A selection of jobs from across Corsham and the surrounding area."
+- **About teaser small label:** "About C.E.G"
+- **Services footer link:** "All our services →"
+- **CTA band heading:** "Ready to get started?"
+- **CTA band body:** "Drop us a message with what you're after and we'll arrange a time to come and take a look. Free quotes, no obligation."
 
 ---
 
 ## 7. Image manifest
 
-All images are served from the NeoBookworm R2 library. No Midjourney prompts required unless this is the first site of this trade type and library images don't exist yet — in that case, source and upload before Phase 4 (see `docs/r2-image-library-checklist.md`).
-
-**Trade category slug:** `[slug from brief Section 9]`
+**Trade category slug:** `painter-decorator`
 **R2 base:** `https://pub-f093c230437d4977b0f5e45607fd9186.r2.dev/demos/library`
 
-| Section | Image URL | Notes |
-|---|---|---|
-| Hero | `{R2 base}/{slug}/hero.webp` | Full-width, 1920×1080px |
-| About | `{R2 base}/{slug}/about.webp` | Or use `shared/owner.webp` if portrait suits better |
-| CTA background | `{R2 base}/{slug}/cta-bg.webp` | Used with dark overlay + white text |
+| Section | Image URL | `width` | `height` | Notes |
+|---|---|---|---|---|
+| Hero (index.html) | `{R2 base}/painter-decorator/hero.webp` | 960 | 640 | Right column of two-col hero layout; `loading="eager"` |
+| About teaser (index.html) | `{R2 base}/painter-decorator/about.webp` | 800 | 600 | Right column of about teaser; `loading="lazy"` |
+| About main (about.html) | `{R2 base}/painter-decorator/about.webp` | 800 | 600 | Right column of main story section; `loading="eager"` |
+| CTA band (index.html) | `{R2 base}/painter-decorator/cta-bg.webp` | 1920 | 600 | CSS `background-image` with dark overlay; no `<img>` tag — set `background-size: cover` |
 
-**Shared assets (use where appropriate):**
+**Shared assets:** Not required for this site at demo stage. If an owner portrait or van shot becomes available at productionisation, they can be added to the about.html section without structural changes.
 
-| Asset | URL |
-|---|---|
-| Van (exterior) | `{R2 base}/shared/van.webp` |
-| Van (interior / tools) | `{R2 base}/shared/tools.webp` |
-| Owner portrait | `{R2 base}/shared/owner.webp` |
-| British home exterior | `{R2 base}/shared/british-home-exterior.webp` |
+**Alt text for all `<img>` tags (copy verbatim into Phase 4 HTML):**
+- Hero image: `alt="Painter applying careful finish to a wall interior"`
+- About image (both pages): `alt="Decorator at work on an interior room, brush in hand"`
 
-**Notes on image placement:**
-*(Specify here which shared assets are used and in which sections, if any.)*
-
-> **`width` and `height` attributes:** Every `<img>` tag must include `width` and `height` attributes matching the image's natural pixel dimensions. This lets the browser reserve space before the file loads, preventing layout shift (CLS). Specify the expected dimensions for each image in the notes column above.
-
-> **Gallery — no images at demo stage.** The gallery teaser (index.html) and full gallery page (gallery.html) use icon/text cards only. No R2 URLs are assigned to gallery cards until productionisation. Do not add placeholder `<img>` tags to gallery cards.
+> **Gallery — no images at demo stage.** All gallery cards are icon/text only. Zero `<img>` tags in any gallery section until productionisation.
 
 ---
 
 ## 8. Accreditations
 
-List of CSS badges to include from the NeoBookworm badge library, and where each should appear on the site.
+Badges drawn from the NeoBookworm CSS badge library only. **Never real trademark logos.**
 
-- **Gas Safe** — footer of every page, services page sidebar
-- **[etc]**
+| Badge | Condition | Placement |
+|---|---|---|
+| **"In business since 2013"** | Always show | Footer of every page; About page credentials section |
+| **"Fully insured"** | Always show (standard for Ltd company) | Footer of every page; About page credentials section |
+| **PDA Member** | **Confirm before build** — check if Aaron McBride / ACM Painting holds current PDA membership | Footer + About page if confirmed; omit if not |
+| **TrustMark** | **Confirm before build** — not confirmed at research stage | Footer + About page if confirmed; omit if not |
+| **Checkatrade** | Not found; omit unless confirmed during onboarding | — |
+
+**Build note:** If neither PDA nor TrustMark can be confirmed before Phase 4, the footer badge row runs with just "In business since 2013" and "Fully insured." This is sufficient — do not add speculative badges.
 
 ---
 
 ## 9. Interactive elements
 
-Anything that needs JavaScript:
-
-- **Mobile navigation menu:** hamburger toggle, full-screen overlay on open
-- **Maps (optional):** see **`shared/README.md`**. Allowed third-party scripts for maps only:
-  - **Leaflet 1.9.x** (CDN) + vendored scripts from **`shared/js/`** for UK county / unitary boundaries (ONS)
-  - **Google Maps JavaScript API** (CDN loader) for radius circle + markers; key in **`js/maps-config.js`** (gitignored; copy from **`templates/maps-config.example.js`**), never committed
-- **[etc]**
-
-Other interactive features: vanilla JS only, no npm libraries. Map libraries are exceptions only as above.
+- **Mobile navigation:** Hamburger toggle (Lucide `menu` icon) → full-width overlay or slide-down menu. Close on outside click, close button, and Escape key. Focus trapped while open.
+- **Google Maps (contact.html):** Radius circle map as specified in Section 4.4. API key via `js/maps-config.js` (gitignored). Use classic `google.maps.Marker` — no Map ID required. See LEARNINGS.md 2026-04-18 for pitfalls.
+- **Contact form:** Client-side validation (required fields, email format). Netlify Forms or equivalent. No third-party JS form library.
+- **Smooth scroll:** Native CSS `scroll-behavior: smooth` only — no JS library.
 
 ---
 
 ## 10. Accessibility notes
 
-Any accessibility considerations specific to this design:
-
-- Colour contrast: confirm `--color-text` on `--color-bg` meets WCAG AA (4.5:1 for body text, 3:1 for large text)
-- All R2 images must have descriptive `alt` attributes specified here, not left to the builder
-- Every `<img>` tag must have `width` and `height` attributes matching natural pixel dimensions (prevents CLS)
-- Gallery cards: Lucide icons must have `aria-hidden="true"` (decorative); job type heading provides the accessible label for the card
-- [etc]
+- **Colour contrast:**
+  - `--color-text` (`#2C2A27`) on `--color-bg` (`#FAFAF8`): ~16:1 — passes AAA ✓
+  - `--color-text` on `--color-bg-alt` (`#F2EDE6`): ~12:1 — passes AAA ✓
+  - `--color-secondary` (`#7A9175`) on `--color-bg`: ~3.5:1 — passes AA for large text only; **do not use for body copy** ✓ (see Section 2 palette notes)
+  - White (`#FAFAF8`) on CTA button (`--color-primary` `#2C2A27`): ~16:1 — passes AAA ✓
+  - White text on CTA band dark overlay (72% opacity over dark image): will exceed 4.5:1 — verify in build ✓
+- **Skip link:** `<a class="skip-link" href="#main">Skip to content</a>` first child of `<body>` on every page. Visually hidden until focused (standard `.skip-link` CSS pattern).
+- **Images:** All `<img>` tags must include `alt`, `width`, and `height` as specified in Section 7. No decorative images with non-empty alt text.
+- **Gallery icons:** All Lucide icons must have `aria-hidden="true"` — the job type H3 provides the accessible card label.
+- **Map:** Container has `aria-label` and `role="application"` as specified in Section 4.4. Fallback text visible when map is unavailable.
+- **Links:** All links must have descriptive text — no "click here" or "read more" without context.
+- **Form:** All inputs must have associated `<label>` elements. Error messages linked to inputs via `aria-describedby`.
 
 ---
 
 ## 11. Open questions
 
-Anything the spec couldn't fully resolve from the brief and needs Nick's decision before build:
-
-- *(none, or list them here)*
+1. **PDA membership** — is Aaron McBride / ACM Painting & Decorating Ltd a current PDA member? Determines whether the PDA badge appears.
+2. **TrustMark** — is the business TrustMark registered? Same.
+3. **GA4 Measurement ID** — not available at brief stage. Backfill before Phase 7 QA.
+4. **Netlify domain** — `corshamdecorators.co.uk` or `ceg-decorating.co.uk` are both natural anchors; domain availability should be checked before deploy and the JSON-LD `url` field updated accordingly.
+5. **Facebook photos** — the @CorshamDecorators Facebook page may contain work photos suitable for productionisation. Worth screenshotting during research for Phase 3 reference.
 
 ---
 
-*Spec complete. Review, tweak if needed, commit as `<site-name>: spec generated`, and move to Phase 3 of PROCESS.md.*
+*Spec generated: May 2026 | NeoBookworm pipeline | C.E.G Painting & Decorating | Phase 2 complete.*
+*Review, tweak if needed, commit as `ceg-painting-decorating-ltd: spec generated`, and move to Phase 3 of PROCESS.md.*
