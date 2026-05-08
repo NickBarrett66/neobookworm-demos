@@ -12,12 +12,12 @@ Runs a four-step quality check on a single-file HTML demo site and retrofits any
 ## Inputs
 
 Nick provides one of:
-- **A prospect folder name** — e.g. `brush-2-brush-decorating-services` (Claude finds the HTML file automatically)
-- **A full file path** — e.g. `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\neobookworm-demos\sites\brush-2-brush-decorating-services\index.html`
+- **A prospect folder name** — e.g. `brush-to-brush-decorating-services-ltd` (Claude finds the HTML file automatically)
+- **A full file path** — e.g. `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\sites\brush-to-brush-decorating-services-ltd\index.html`
 - **A prospect name** — Claude derives the folder name using the slug rules below
 
 > **Path convention:** All demo sites live at:
-> `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\neobookworm-demos\sites\{prospect-folder-name}\`
+> `C:\Users\Nick\Dropbox\00 Neobookworm\Neobookworm Demos\sites\{prospect-folder-name}\`
 > The HTML file inside is typically `index.html` — if not, take the only `.html` file present.
 
 ---
@@ -59,7 +59,7 @@ Every NeoBookworm demo site must have:
 Run Lighthouse against the **local file** using the `file://` protocol, in mobile mode:
 
 ```bash
-npx lighthouse "file:///C:/Users/Nick/Dropbox/00 Neobookworm/Neobookworm Demos/neobookworm-demos/sites/{prospect-folder}/index.html" \
+npx lighthouse "file:///C:/Users/Nick/Dropbox/00 Neobookworm/Neobookworm Demos/sites/{prospect-folder}/index.html" \
   --preset=perf \
   --form-factor=mobile \
   --output=json \

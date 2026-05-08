@@ -75,8 +75,21 @@ web_modules/
 
 # Google Maps JS API key — copy from templates/maps-config.example.js per site; never commit
 sites/*/js/maps-config.js
+sites/*/maps-config.js
 # Never commit a real key under templates/ (canonical stub is maps-config.example.js only)
 templates/maps-config.js
+
+# Lighthouse / PageSpeed Insights audit outputs (local QA snapshots, not source)
+lh-*.json
+psi-*.json
+
+# QA scratch folders and screenshot artifacts
+qa-scratch-*/
+mobile-*.png
+playwright-screenshots.js
+
+# Dropbox conflict copies
+*conflicted copy*
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
