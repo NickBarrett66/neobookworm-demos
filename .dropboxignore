@@ -1,0 +1,4 @@
+# Stop Dropbox syncing git internals.
+# Dropbox conflict-copying files inside .git corrupts the repo.
+# This tells Dropbox to leave the .git folder completely alone.
+.git
