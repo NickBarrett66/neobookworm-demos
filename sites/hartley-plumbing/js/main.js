@@ -105,6 +105,20 @@
 })();
 
 (() => {
+  const message =
+    'Demo site note: email is shown for layout only. In a live build, this would open your mail app.';
+
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!(target instanceof Element)) return;
+    const link = target.closest('a[data-demo-email]');
+    if (!(link instanceof HTMLAnchorElement)) return;
+    e.preventDefault();
+    window.alert(message);
+  });
+})();
+
+(() => {
   const formMessage =
     'Demo site note: sending a message is shown for layout only. In a live build, this would submit your enquiry.';
 
