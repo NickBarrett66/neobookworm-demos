@@ -905,14 +905,22 @@ p {
 }
 
 .contact-map {
+  display: block;
   width: 100%;
   max-width: 800px;
   height: 500px;
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 0.75rem;
   border-radius: 8px;
   border: var(--border-hairline);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+}
+
+.contact-map__caption {
+  max-width: 800px;
+  margin: 0 auto 1.25rem;
+  font-size: 0.875rem;
+  text-align: center;
 }
 
 .contact-map--fallback {

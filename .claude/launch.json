@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "swift-electrical",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "5500", "sites/swift-electrical"],
+      "port": 5500
+    }
+  ]
+}

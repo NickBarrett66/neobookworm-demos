@@ -206,126 +206,61 @@
             role="region"
             aria-label="Map showing Cirencester and approximately 15-mile service radius"
           ></div>
+          <p class="contact-map__caption muted">Cirencester &amp; approx. 15-mile radius — Bourton-on-the-Water, Fairford, Lechlade, Tetbury, Stroud and surrounding villages.</p>
 
-          <script src="js/maps-config.js"></script>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2GKlQ=" crossorigin="" defer></script>
           <script>
-            /** Avoid generic callback names; defer overlays until projection/tiles are ready (prevents flash-then-error on some loads). */
-            window.neoSwiftContactMapsCallback = function neoSwiftContactMapsCallback() {
+            document.addEventListener("DOMContentLoaded", function () {
               var mapEl = document.getElementById("map");
-              if (!mapEl) return;
+              if (!mapEl || typeof L === "undefined") return;
 
-              var cirencester = { lat: 51.719, lng: -1.9686 };
-              /** Prefer raster tiles — avoids vector/WebGL init failures that surface as minified `_.Dm` stacks on some GPUs/browsers. */
-              var map = new google.maps.Map(mapEl, {
-                center: cirencester,
-                zoom: 10,
-                mapTypeId: "roadmap",
-                renderingType: "RASTER",
-                mapTypeControl: false,
-                streetViewControl: false,
-                fullscreenControl: false,
-              });
+              var cirencester = [51.719, -1.9686];
+              var map = L.map("map", { zoomControl: true, scrollWheelZoom: false }).setView(cirencester, 10);
 
-              function contactMarkerIcon(label, fill, color) {
-                var safe = String(label)
-                  .replace(/&/g, "&amp;")
-                  .replace(/</g, "&lt;")
-                  .replace(/>/g, "&gt;")
-                  .replace(/"/g, "&quot;")
-                  .replace(/'/g, "&apos;");
-                var fs = String(label).length > 1 ? 10 : 11;
+              L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19,
+              }).addTo(map);
+
+              var primaryColour = getComputedStyle(document.documentElement).getPropertyValue("--color-primary").trim() || "#1d4ed8";
+
+              L.circle(cirencester, {
+                radius: 24140,
+                color: primaryColour,
+                weight: 2,
+                opacity: 0.7,
+                fillColor: primaryColour,
+                fillOpacity: 0.08,
+              }).addTo(map);
+
+              var locations = [
+                { pos: [51.719,  -1.9686], label: "C", title: "Cirencester (base)" },
+                { pos: [51.8808, -1.7387], label: "B", title: "Bourton-on-the-Water" },
+                { pos: [51.7109, -1.7837], label: "F", title: "Fairford" },
+                { pos: [51.6938, -1.6928], label: "L", title: "Lechlade" },
+                { pos: [51.6357, -2.1604], label: "T", title: "Tetbury" },
+                { pos: [51.7454, -2.2183], label: "S", title: "Stroud" },
+              ];
+
+              var bg = getComputedStyle(document.documentElement).getPropertyValue("--color-bg").trim() || "#ffffff";
+
+              locations.forEach(function (loc) {
                 var svg =
                   '<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34">' +
-                  '<circle cx="17" cy="17" r="15" fill="' +
-                  fill +
-                  '" stroke="' +
-                  color +
-                  '" stroke-width="2"/>' +
-                  '<text x="17" y="17" text-anchor="middle" dominant-baseline="central" font-family="system-ui, sans-serif" font-size="' +
-                  fs +
-                  '" font-weight="700" fill="' +
-                  color +
-                  '">' +
-                  safe +
-                  "</text>" +
-                  "</svg>";
-                return {
-                  url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg),
-                  scaledSize: new google.maps.Size(34, 34),
-                  anchor: new google.maps.Point(17, 17),
-                };
-              }
-
-              google.maps.event.addListenerOnce(map, "idle", function () {
-                var css = getComputedStyle(document.documentElement);
-                var markerFill = (css.getPropertyValue("--color-primary") || "#1a73e8").trim();
-                var markerInk = (css.getPropertyValue("--color-bg") || "#ffffff").trim();
-
-                var coverageCircle = new google.maps.Circle({
-                  map: map,
-                  center: cirencester,
-                  radius: 24140,
-                  strokeColor: "#1a73e8",
-                  strokeOpacity: 0.8,
-                  strokeWeight: 2,
-                  fillColor: "#1a73e8",
-                  fillOpacity: 0.08,
+                  '<circle cx="17" cy="17" r="15" fill="' + primaryColour + '" stroke="' + bg + '" stroke-width="2"/>' +
+                  '<text x="17" y="17" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="' + (loc.label.length > 1 ? 10 : 11) + '" font-weight="700" fill="' + bg + '">' + loc.label + '</text>' +
+                  '</svg>';
+                var icon = L.divIcon({
+                  html: svg,
+                  className: "",
+                  iconSize: [34, 34],
+                  iconAnchor: [17, 17],
                 });
-
-                var coverageBounds = coverageCircle.getBounds();
-                if (coverageBounds) {
-                  map.fitBounds(coverageBounds, 48);
-                }
-
-                var locations = [
-                  { pos: { lat: 51.719, lng: -1.9686 }, label: "C", title: "Cirencester" },
-                  { pos: { lat: 51.8808, lng: -1.7387 }, label: "B", title: "Bourton-on-the-Water" },
-                  { pos: { lat: 51.7109, lng: -1.7837 }, label: "F", title: "Fairford" },
-                  { pos: { lat: 51.6938, lng: -1.6928 }, label: "L", title: "Lechlade" },
-                  { pos: { lat: 51.6357, lng: -2.1604 }, label: "T", title: "Tetbury" },
-                  { pos: { lat: 51.7454, lng: -2.2183 }, label: "S", title: "Stroud" },
-                ];
-
-                locations.forEach(function (loc) {
-                  new google.maps.Marker({
-                    map: map,
-                    position: loc.pos,
-                    title: loc.title,
-                    icon: contactMarkerIcon(loc.label, markerFill, markerInk),
-                  });
-                });
+                L.marker(loc.pos, { icon: icon, title: loc.title }).addTo(map);
               });
-            };
-
-            (function loadMapsApi() {
-              var key = typeof window.__GMAPS_KEY__ === "string" ? window.__GMAPS_KEY__.trim() : "";
-              if (!key || key === "YOUR_GOOGLE_MAPS_API_KEY") {
-                var mapEl = document.getElementById("map");
-                if (mapEl) {
-                  mapEl.classList.add("contact-map--fallback");
-                  mapEl.innerHTML =
-                    '<p class="contact-map__fallback muted">Copy <code>templates/maps-config.example.js</code> to <code>js/maps-config.js</code> (or <code>js/maps-config.example.js</code> → <code>maps-config.js</code> in this folder) and add your Google Maps API key (gitignored).</p>';
-                }
-                return;
-              }
-              if (window.__NB_SWIFT_MAPS_API_REQUESTED__) return;
-              window.__NB_SWIFT_MAPS_API_REQUESTED__ = true;
-
-              var s = document.createElement("script");
-              s.async = true;
-              s.defer = true;
-              s.src =
-                "https://maps.googleapis.com/maps/api/js?key=" +
-                encodeURIComponent(key) +
-                "&callback=neoSwiftContactMapsCallback";
-              document.head.appendChild(s);
-            })();
+            });
           </script>
-
-          <div class="map-placeholder map-placeholder--below-map" role="img" aria-label="Cirencester and 15-mile radius service area">
-            <p class="map-placeholder__label">Cirencester &amp; 15-mile radius</p>
-            <p class="map-placeholder__meta muted">Approx. 15 miles from Cirencester — towns shown are indicative.</p>
-          </div>
         </div>
       </section>
     </main>
