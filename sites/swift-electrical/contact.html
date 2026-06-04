@@ -259,6 +259,21 @@
                 });
                 L.marker(loc.pos, { icon: icon, title: loc.title }).addTo(map);
               });
+
+              var Legend = L.Control.extend({
+                options: { position: "bottomright" },
+                onAdd: function () {
+                  var div = L.DomUtil.create("div", "map-legend");
+                  div.innerHTML = locations.map(function (loc) {
+                    return '<div class="map-legend__row">' +
+                      '<span class="map-legend__dot" style="background:' + primaryColour + ';color:' + bg + '">' + loc.label + '</span>' +
+                      '<span class="map-legend__name">' + loc.title + '</span>' +
+                      '</div>';
+                  }).join("");
+                  return div;
+                },
+              });
+              new Legend().addTo(map);
             });
           </script>
         </div>
